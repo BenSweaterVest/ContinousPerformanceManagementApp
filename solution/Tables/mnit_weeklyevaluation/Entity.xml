@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityInfo>
+    <entity Name="mnit_weeklyevaluation">
+      <LocalizedNames>
+        <LocalizedName description="Weekly Evaluation" languagecode="1033" />
+      </LocalizedNames>
+      <LocalizedCollectionNames>
+        <LocalizedCollectionName description="Weekly Evaluations" languagecode="1033" />
+      </LocalizedCollectionNames>
+      <Descriptions>
+        <Description description="Store supervisor's weekly performance evaluations" languagecode="1033" />
+      </Descriptions>
+      <attributes>
+        <attribute PhysicalName="mnit_weeklyevaluationid">
+          <Type>uniqueidentifier</Type>
+          <Name>mnit_weeklyevaluationid</Name>
+          <LogicalName>mnit_weeklyevaluationid</LogicalName>
+          <RequiredLevel>systemrequired</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind</DisplayMask>
+          <IsPrimaryId>1</IsPrimaryId>
+          <IsValidForCreate>0</IsValidForCreate>
+          <IsValidForRead>1</IsValidForRead>
+          <IsValidForUpdate>0</IsValidForUpdate>
+          <IsCustomField>0</IsCustomField>
+          <IsAuditEnabled>1</IsAuditEnabled>
+          <IsSecured>0</IsSecured>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>0</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>0</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <displaynames>
+            <displayname description="Weekly Evaluation ID" languagecode="1033" />
+          </displaynames>
+          <Descriptions>
+            <Description description="Unique identifier for Weekly Evaluation instances" languagecode="1033" />
+          </Descriptions>
+        </attribute>
+        <attribute PhysicalName="mnit_name">
+          <Type>nvarchar</Type>
+          <Name>mnit_name</Name>
+          <LogicalName>mnit_name</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind</DisplayMask>
+          <IsPrimaryName>1</IsPrimaryName>
+          <Length>100</Length>
+          <AutoNumberFormat>EVAL-{SEQNUM:5}</AutoNumberFormat>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>1</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <displaynames>
+            <displayname description="Evaluation ID" languagecode="1033" />
+          </displaynames>
+          <Descriptions>
+            <Description description="Auto-generated evaluation identifier" languagecode="1033" />
+          </Descriptions>
+        </attribute>
+        <attribute PhysicalName="mnit_staffmember">
+          <Type>lookup</Type>
+          <Name>mnit_staffmember</Name>
+          <LogicalName>mnit_staffmember</LogicalName>
+          <RequiredLevel>applicationrequired</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind</DisplayMask>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>1</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <Targets>
+            <Target>mnit_staffmember</Target>
+          </Targets>
+          <displaynames>
+            <displayname description="Staff Member" languagecode="1033" />
+          </displaynames>
+          <Descriptions>
+            <Description description="The staff member being evaluated" languagecode="1033" />
+          </Descriptions>
+        </attribute>
+        <attribute PhysicalName="mnit_evaluator">
+          <Type>lookup</Type>
+          <Name>mnit_evaluator</Name>
+          <LogicalName>mnit_evaluator</LogicalName>
+          <RequiredLevel>applicationrequired</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind</DisplayMask>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>1</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <Targets>
+            <Target>systemuser</Target>
+          </Targets>
+          <displaynames>
+            <displayname description="Evaluator" languagecode="1033" />
+          </displaynames>
+          <Descriptions>
+            <Description description="The supervisor performing the evaluation" languagecode="1033" />
+          </Descriptions>
+        </attribute>
+        <attribute PhysicalName="mnit_question">
+          <Type>lookup</Type>
+          <Name>mnit_question</Name>
+          <LogicalName>mnit_question</LogicalName>
+          <RequiredLevel>applicationrequired</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind</DisplayMask>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>1</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <Targets>
+            <Target>mnit_evaluationquestion</Target>
+          </Targets>
+          <displaynames>
+            <displayname description="Question" languagecode="1033" />
+          </displaynames>
+          <Descriptions>
+            <Description description="The evaluation question being answered" languagecode="1033" />
+          </Descriptions>
+        </attribute>
+        <attribute PhysicalName="mnit_rating">
+          <Type>picklist</Type>
+          <Name>mnit_rating</Name>
+          <LogicalName>mnit_rating</LogicalName>
+          <RequiredLevel>applicationrequired</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind</DisplayMask>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>1</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <displaynames>
+            <displayname description="Rating" languagecode="1033" />
+          </displaynames>
+          <Descriptions>
+            <Description description="Performance rating (1-5 scale)" languagecode="1033" />
+          </Descriptions>
+          <optionset Name="mnit_rating">
+            <IsSorted>0</IsSorted>
+            <IsGlobal>0</IsGlobal>
+            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <options>
+              <option value="1">
+                <labels>
+                  <label description="1 - Not Satisfactory" languagecode="1033" />
+                </labels>
+              </option>
+              <option value="2">
+                <labels>
+                  <label description="2 - Below Standard" languagecode="1033" />
+                </labels>
+              </option>
+              <option value="3">
+                <labels>
+                  <label description="3 - Meets Standard" languagecode="1033" />
+                </labels>
+              </option>
+              <option value="4">
+                <labels>
+                  <label description="4 - Exceeds Standard" languagecode="1033" />
+                </labels>
+              </option>
+              <option value="5">
+                <labels>
+                  <label description="5 - Exceptional" languagecode="1033" />
+                </labels>
+              </option>
+              <option value="6">
+                <labels>
+                  <label description="Insufficient Data" languagecode="1033" />
+                </labels>
+              </option>
+            </options>
+          </optionset>
+        </attribute>
+        <attribute PhysicalName="mnit_notes">
+          <Type>memo</Type>
+          <Name>mnit_notes</Name>
+          <LogicalName>mnit_notes</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind</DisplayMask>
+          <MaxLength>5000</MaxLength>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>1</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <displaynames>
+            <displayname description="Notes" languagecode="1033" />
+          </displaynames>
+          <Descriptions>
+            <Description description="Additional notes and observations" languagecode="1033" />
+          </Descriptions>
+        </attribute>
+        <attribute PhysicalName="mnit_evaluationdate">
+          <Type>datetime</Type>
+          <Name>mnit_evaluationdate</Name>
+          <LogicalName>mnit_evaluationdate</LogicalName>
+          <RequiredLevel>applicationrequired</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind</DisplayMask>
+          <Format>DateOnly</Format>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>1</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <displaynames>
+            <displayname description="Evaluation Date" languagecode="1033" />
+          </displaynames>
+          <Descriptions>
+            <Description description="Date of the evaluation" languagecode="1033" />
+          </Descriptions>
+        </attribute>
+        <attribute PhysicalName="mnit_evaluationtype">
+          <Type>picklist</Type>
+          <Name>mnit_evaluationtype</Name>
+          <LogicalName>mnit_evaluationtype</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind</DisplayMask>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>1</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <displaynames>
+            <displayname description="Evaluation Type" languagecode="1033" />
+          </displaynames>
+          <Descriptions>
+            <Description description="Type of evaluation" languagecode="1033" />
+          </Descriptions>
+          <optionset Name="mnit_evaluationtype">
+            <IsSorted>0</IsSorted>
+            <IsGlobal>0</IsGlobal>
+            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <options>
+              <option value="1">
+                <labels>
+                  <label description="Weekly Suggested" languagecode="1033" />
+                </labels>
+              </option>
+              <option value="2">
+                <labels>
+                  <label description="Ad Hoc" languagecode="1033" />
+                </labels>
+              </option>
+            </options>
+          </optionset>
+        </attribute>
+      </attributes>
+    </entity>
+  </EntityInfo>
+  <FormXml>
+    <forms type="main">
+      <form>
+        <formid>{1e5f8c9d-7f6e-8a9b-2e1f-3a4b5c6d7e8f}</formid>
+        <IntroducedVersion>1.0.0.0</IntroducedVersion>
+        <FormPresentation>0</FormPresentation>
+        <IsCustomizable>1</IsCustomizable>
+        <CanBeDeleted>1</CanBeDeleted>
+        <IsAIRMerged>0</IsAIRMerged>
+        <FormActivationState>1</FormActivationState>
+        <names>
+          <name description="Information" languagecode="1033" />
+        </names>
+        <Descriptions>
+          <Description description="Main form for Weekly Evaluation" languagecode="1033" />
+        </Descriptions>
+      </form>
+    </forms>
+  </FormXml>
+  <RibbonDiffXml />
+  <CustomControlDefaultConfigXml />
+  <SavedQueries>
+    <savedquery>
+      <savedqueryid>{2f6a9d0e-8a7f-9b0c-3f2a-4b5c6d7e8f9a}</savedqueryid>
+      <name>Recent Evaluations</name>
+      <description>Recent weekly evaluations</description>
+      <querytype>0</querytype>
+      <isdefault>1</isdefault>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <fetchxml>
+        <![CDATA[
+        <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false">
+          <entity name="mnit_weeklyevaluation">
+            <attribute name="mnit_name" />
+            <attribute name="mnit_staffmember" />
+            <attribute name="mnit_evaluator" />
+            <attribute name="mnit_question" />
+            <attribute name="mnit_rating" />
+            <attribute name="mnit_evaluationdate" />
+            <attribute name="mnit_evaluationtype" />
+            <order attribute="mnit_evaluationdate" descending="true" />
+          </entity>
+        </fetch>
+        ]]>
+      </fetchxml>
+    </savedquery>
+  </SavedQueries>
+</Entity>

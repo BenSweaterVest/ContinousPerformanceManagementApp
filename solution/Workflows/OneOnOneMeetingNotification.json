@@ -1,0 +1,134 @@
+{
+  "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "$connections": {
+      "defaultValue": {},
+      "type": "Object"
+    }
+  },
+  "triggers": {
+    "When_an_event_is_created_or_modified": {
+      "type": "OpenApiConnectionWebhook",
+      "inputs": {
+        "host": {
+          "connectionName": "shared_office365",
+          "operationId": "OnNewOrUpdatedEventV3",
+          "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+        },
+        "parameters": {
+          "calendarId": "Calendar"
+        }
+      }
+    }
+  },
+  "actions": {
+    "Check_if_one_on_one": {
+      "actions": {
+        "Parse_attendee_email": {
+          "runAfter": {},
+          "type": "Compose",
+          "inputs": "@triggerOutputs()?['body/requiredAttendees']",
+          "description": "Extract attendee email"
+        },
+        "Check_if_supervised_staff": {
+          "runAfter": {
+            "Parse_attendee_email": ["Succeeded"]
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "mnit_staffmembers",
+              "$filter": "mnit_status eq 1"
+            }
+          }
+        },
+        "Condition_is_supervised": {
+          "actions": {
+            "Get_recent_performance_data": {
+              "runAfter": {},
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "ListRecords",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "mnit_weeklyevaluations",
+                  "$filter": "Microsoft.Dynamics.CRM.Last30Days(PropertyName='mnit_evaluationdate')",
+                  "$orderby": "mnit_evaluationdate desc",
+                  "$top": 10
+                }
+              }
+            },
+            "Delay_until_15_mins_before": {
+              "runAfter": {
+                "Get_recent_performance_data": ["Succeeded"]
+              },
+              "type": "Wait",
+              "inputs": {
+                "until": {
+                  "timestamp": "@addMinutes(triggerOutputs()?['body/start'], -15)"
+                }
+              }
+            },
+            "Send_meeting_prep_notification": {
+              "runAfter": {
+                "Delay_until_15_mins_before": ["Succeeded"]
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_office365",
+                  "operationId": "SendEmailV2",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                },
+                "parameters": {
+                  "emailMessage/To": "@triggerOutputs()?['body/organizer']",
+                  "emailMessage/Subject": "One-on-One Meeting Reminder - Performance Data",
+                  "emailMessage/Body": "<html><body><h2>One-on-One Meeting in 15 Minutes</h2><p>Your meeting with a staff member is starting soon.</p><p>Recent performance data has been compiled.</p><p><a href='https://apps.powerapps.com'>Open Performance Management App</a></p></body></html>",
+                  "emailMessage/Importance": "Normal"
+                }
+              }
+            }
+          },
+          "runAfter": {
+            "Check_if_supervised_staff": ["Succeeded"]
+          },
+          "expression": {
+            "greater": [
+              "@length(outputs('Check_if_supervised_staff')?['body/value'])",
+              0
+            ]
+          },
+          "type": "If"
+        }
+      },
+      "runAfter": {},
+      "expression": {
+        "and": [
+          {
+            "equals": [
+              "@length(triggerOutputs()?['body/requiredAttendees'])",
+              1
+            ]
+          },
+          {
+            "lessOrEquals": [
+              "@triggerOutputs()?['body/start']",
+              "@addHours(utcNow(), 24)"
+            ]
+          }
+        ]
+      },
+      "type": "If"
+    }
+  },
+  "outputs": {}
+}

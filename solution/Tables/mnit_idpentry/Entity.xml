@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityInfo>
+    <entity Name="mnit_idpentry">
+      <LocalizedNames>
+        <LocalizedName description="IDP Entry" languagecode="1033" />
+      </LocalizedNames>
+      <LocalizedCollectionNames>
+        <LocalizedCollectionName description="IDP Entries" languagecode="1033" />
+      </LocalizedCollectionNames>
+      <Descriptions>
+        <Description description="Individual Development Plan entries" languagecode="1033" />
+      </Descriptions>
+      <attributes>
+        <attribute PhysicalName="mnit_idpentryid">
+          <Type>uniqueidentifier</Type>
+          <Name>mnit_idpentryid</Name>
+          <LogicalName>mnit_idpentryid</LogicalName>
+          <RequiredLevel>systemrequired</RequiredLevel>
+          <IsPrimaryId>1</IsPrimaryId>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <displaynames>
+            <displayname description="IDP Entry ID" languagecode="1033" />
+          </displaynames>
+        </attribute>
+        <attribute PhysicalName="mnit_goaldescription">
+          <Type>memo</Type>
+          <Name>mnit_goaldescription</Name>
+          <LogicalName>mnit_goaldescription</LogicalName>
+          <RequiredLevel>applicationrequired</RequiredLevel>
+          <IsPrimaryName>1</IsPrimaryName>
+          <MaxLength>500</MaxLength>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <displaynames>
+            <displayname description="Goal Description" languagecode="1033" />
+          </displaynames>
+        </attribute>
+        <attribute PhysicalName="mnit_staffmember">
+          <Type>lookup</Type>
+          <Name>mnit_staffmember</Name>
+          <LogicalName>mnit_staffmember</LogicalName>
+          <RequiredLevel>applicationrequired</RequiredLevel>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <Targets>
+            <Target>mnit_staffmember</Target>
+          </Targets>
+          <displaynames>
+            <displayname description="Staff Member" languagecode="1033" />
+          </displaynames>
+        </attribute>
+        <attribute PhysicalName="mnit_targetdate">
+          <Type>datetime</Type>
+          <Name>mnit_targetdate</Name>
+          <LogicalName>mnit_targetdate</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
+          <Format>DateOnly</Format>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <displaynames>
+            <displayname description="Target Date" languagecode="1033" />
+          </displaynames>
+        </attribute>
+        <attribute PhysicalName="mnit_status">
+          <Type>picklist</Type>
+          <Name>mnit_status</Name>
+          <LogicalName>mnit_status</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <displaynames>
+            <displayname description="Status" languagecode="1033" />
+          </displaynames>
+          <optionset Name="mnit_idpstatus">
+            <IsSorted>0</IsSorted>
+            <IsGlobal>0</IsGlobal>
+            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <options>
+              <option value="1"><labels><label description="Not Started" languagecode="1033" /></labels></option>
+              <option value="2"><labels><label description="In Progress" languagecode="1033" /></labels></option>
+              <option value="3"><labels><label description="Completed" languagecode="1033" /></labels></option>
+              <option value="4"><labels><label description="On Hold" languagecode="1033" /></labels></option>
+            </options>
+          </optionset>
+        </attribute>
+        <attribute PhysicalName="mnit_progressnotes">
+          <Type>memo</Type>
+          <Name>mnit_progressnotes</Name>
+          <LogicalName>mnit_progressnotes</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
+          <MaxLength>5000</MaxLength>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <displaynames>
+            <displayname description="Progress Notes" languagecode="1033" />
+          </displaynames>
+        </attribute>
+      </attributes>
+    </entity>
+  </EntityInfo>
+  <FormXml />
+  <SavedQueries />
+</Entity>

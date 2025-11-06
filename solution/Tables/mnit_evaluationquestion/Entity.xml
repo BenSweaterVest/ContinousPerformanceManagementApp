@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityInfo>
+    <entity Name="mnit_evaluationquestion">
+      <LocalizedNames>
+        <LocalizedName description="Evaluation Question" languagecode="1033" />
+      </LocalizedNames>
+      <LocalizedCollectionNames>
+        <LocalizedCollectionName description="Evaluation Questions" languagecode="1033" />
+      </LocalizedCollectionNames>
+      <Descriptions>
+        <Description description="Store standardized 12 annual review questions" languagecode="1033" />
+      </Descriptions>
+      <attributes>
+        <attribute PhysicalName="mnit_evaluationquestionid">
+          <Type>uniqueidentifier</Type>
+          <Name>mnit_evaluationquestionid</Name>
+          <LogicalName>mnit_evaluationquestionid</LogicalName>
+          <RequiredLevel>systemrequired</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind</DisplayMask>
+          <IsPrimaryId>1</IsPrimaryId>
+          <IsValidForCreate>0</IsValidForCreate>
+          <IsValidForRead>1</IsValidForRead>
+          <IsValidForUpdate>0</IsValidForUpdate>
+          <IsCustomField>0</IsCustomField>
+          <IsAuditEnabled>1</IsAuditEnabled>
+          <IsSecured>0</IsSecured>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>0</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>0</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <displaynames>
+            <displayname description="Evaluation Question ID" languagecode="1033" />
+          </displaynames>
+          <Descriptions>
+            <Description description="Unique identifier for Evaluation Question instances" languagecode="1033" />
+          </Descriptions>
+        </attribute>
+        <attribute PhysicalName="mnit_questiontext">
+          <Type>memo</Type>
+          <Name>mnit_questiontext</Name>
+          <LogicalName>mnit_questiontext</LogicalName>
+          <RequiredLevel>applicationrequired</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind</DisplayMask>
+          <IsPrimaryName>1</IsPrimaryName>
+          <MaxLength>2000</MaxLength>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>1</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <displaynames>
+            <displayname description="Question Text" languagecode="1033" />
+          </displaynames>
+          <Descriptions>
+            <Description description="The evaluation question text" languagecode="1033" />
+          </Descriptions>
+        </attribute>
+        <attribute PhysicalName="mnit_questionnumber">
+          <Type>int</Type>
+          <Name>mnit_questionnumber</Name>
+          <LogicalName>mnit_questionnumber</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind</DisplayMask>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>1</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <displaynames>
+            <displayname description="Question Number" languagecode="1033" />
+          </displaynames>
+          <Descriptions>
+            <Description description="Sequential question number (1-12)" languagecode="1033" />
+          </Descriptions>
+        </attribute>
+        <attribute PhysicalName="mnit_active">
+          <Type>bit</Type>
+          <Name>mnit_active</Name>
+          <LogicalName>mnit_active</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind</DisplayMask>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>1</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <DefaultValue>1</DefaultValue>
+          <displaynames>
+            <displayname description="Active" languagecode="1033" />
+          </displaynames>
+          <Descriptions>
+            <Description description="Is this question currently active?" languagecode="1033" />
+          </Descriptions>
+        </attribute>
+      </attributes>
+    </entity>
+  </EntityInfo>
+  <FormXml>
+    <forms type="main">
+      <form>
+        <formid>{9c3f6a7e-5d4e-6f7a-0c9d-1e2f3a4b5c6d}</formid>
+        <IntroducedVersion>1.0.0.0</IntroducedVersion>
+        <FormPresentation>0</FormPresentation>
+        <IsCustomizable>1</IsCustomizable>
+        <CanBeDeleted>1</CanBeDeleted>
+        <IsAIRMerged>0</IsAIRMerged>
+        <FormActivationState>1</FormActivationState>
+        <names>
+          <name description="Information" languagecode="1033" />
+        </names>
+        <Descriptions>
+          <Description description="Main form for Evaluation Question" languagecode="1033" />
+        </Descriptions>
+      </form>
+    </forms>
+  </FormXml>
+  <RibbonDiffXml />
+  <CustomControlDefaultConfigXml />
+  <SavedQueries>
+    <savedquery>
+      <savedqueryid>{0d4f7b8e-6e5f-7a8b-1d0e-2f3a4b5c6d7e}</savedqueryid>
+      <name>Active Evaluation Questions</name>
+      <description>All active evaluation questions</description>
+      <querytype>0</querytype>
+      <isdefault>1</isdefault>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <fetchxml>
+        <![CDATA[
+        <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false">
+          <entity name="mnit_evaluationquestion">
+            <attribute name="mnit_questionnumber" />
+            <attribute name="mnit_questiontext" />
+            <attribute name="mnit_active" />
+            <order attribute="mnit_questionnumber" descending="false" />
+            <filter type="and">
+              <condition attribute="mnit_active" operator="eq" value="1" />
+            </filter>
+          </entity>
+        </fetch>
+        ]]>
+      </fetchxml>
+    </savedquery>
+  </SavedQueries>
+</Entity>

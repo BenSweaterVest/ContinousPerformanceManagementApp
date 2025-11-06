@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityInfo>
+    <entity Name="mnit_staffmember">
+      <LocalizedNames>
+        <LocalizedName description="Staff Member" languagecode="1033" />
+      </LocalizedNames>
+      <LocalizedCollectionNames>
+        <LocalizedCollectionName description="Staff Members" languagecode="1033" />
+      </LocalizedCollectionNames>
+      <Descriptions>
+        <Description description="Store information about employees being evaluated" languagecode="1033" />
+      </Descriptions>
+      <attributes>
+        <attribute PhysicalName="mnit_staffmemberid">
+          <Type>uniqueidentifier</Type>
+          <Name>mnit_staffmemberid</Name>
+          <LogicalName>mnit_staffmemberid</LogicalName>
+          <RequiredLevel>systemrequired</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind</DisplayMask>
+          <IsPrimaryId>1</IsPrimaryId>
+          <IsValidForCreate>0</IsValidForCreate>
+          <IsValidForRead>1</IsValidForRead>
+          <IsValidForUpdate>0</IsValidForUpdate>
+          <IsCustomField>0</IsCustomField>
+          <IsAuditEnabled>1</IsAuditEnabled>
+          <IsSecured>0</IsSecured>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>0</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>0</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <displaynames>
+            <displayname description="Staff Member ID" languagecode="1033" />
+          </displaynames>
+          <Descriptions>
+            <Description description="Unique identifier for Staff Member instances" languagecode="1033" />
+          </Descriptions>
+        </attribute>
+        <attribute PhysicalName="mnit_name">
+          <Type>nvarchar</Type>
+          <Name>mnit_name</Name>
+          <LogicalName>mnit_name</LogicalName>
+          <RequiredLevel>applicationrequired</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind</DisplayMask>
+          <IsPrimaryName>1</IsPrimaryName>
+          <Length>100</Length>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>1</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <displaynames>
+            <displayname description="Name" languagecode="1033" />
+          </displaynames>
+          <Descriptions>
+            <Description description="Full name of the staff member" languagecode="1033" />
+          </Descriptions>
+        </attribute>
+        <attribute PhysicalName="mnit_employeeid">
+          <Type>nvarchar</Type>
+          <Name>mnit_employeeid</Name>
+          <LogicalName>mnit_employeeid</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind</DisplayMask>
+          <Length>50</Length>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>1</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <displaynames>
+            <displayname description="Employee ID" languagecode="1033" />
+          </displaynames>
+          <Descriptions>
+            <Description description="Unique employee identification number" languagecode="1033" />
+          </Descriptions>
+        </attribute>
+        <attribute PhysicalName="mnit_positiontitle">
+          <Type>nvarchar</Type>
+          <Name>mnit_positiontitle</Name>
+          <LogicalName>mnit_positiontitle</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind</DisplayMask>
+          <Length>200</Length>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>1</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <displaynames>
+            <displayname description="Position Title" languagecode="1033" />
+          </displaynames>
+          <Descriptions>
+            <Description description="Job title or position" languagecode="1033" />
+          </Descriptions>
+        </attribute>
+        <attribute PhysicalName="mnit_supervisor">
+          <Type>lookup</Type>
+          <Name>mnit_supervisor</Name>
+          <LogicalName>mnit_supervisor</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind</DisplayMask>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>1</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <Targets>
+            <Target>systemuser</Target>
+          </Targets>
+          <displaynames>
+            <displayname description="Supervisor" languagecode="1033" />
+          </displaynames>
+          <Descriptions>
+            <Description description="Supervisor or manager of this staff member" languagecode="1033" />
+          </Descriptions>
+        </attribute>
+        <attribute PhysicalName="mnit_startdate">
+          <Type>datetime</Type>
+          <Name>mnit_startdate</Name>
+          <LogicalName>mnit_startdate</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind</DisplayMask>
+          <Format>DateOnly</Format>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>1</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <displaynames>
+            <displayname description="Start Date" languagecode="1033" />
+          </displaynames>
+          <Descriptions>
+            <Description description="Date the staff member started in this position" languagecode="1033" />
+          </Descriptions>
+        </attribute>
+        <attribute PhysicalName="mnit_status">
+          <Type>picklist</Type>
+          <Name>mnit_status</Name>
+          <LogicalName>mnit_status</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
+          <DisplayMask>ValidForAdvancedFind</DisplayMask>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>1</IsRenameable>
+          <CanModifySearchSettings>1</CanModifySearchSettings>
+          <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <displaynames>
+            <displayname description="Status" languagecode="1033" />
+          </displaynames>
+          <Descriptions>
+            <Description description="Employment status" languagecode="1033" />
+          </Descriptions>
+          <optionset Name="mnit_status">
+            <IsSorted>0</IsSorted>
+            <IsGlobal>0</IsGlobal>
+            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <options>
+              <option value="1">
+                <labels>
+                  <label description="Active" languagecode="1033" />
+                </labels>
+              </option>
+              <option value="2">
+                <labels>
+                  <label description="Inactive" languagecode="1033" />
+                </labels>
+              </option>
+            </options>
+          </optionset>
+        </attribute>
+      </attributes>
+    </entity>
+  </EntityInfo>
+  <FormXml>
+    <forms type="main">
+      <form>
+        <formid>{7a1d4f5e-3b2c-4e5f-8a7b-9c1d2e3f4a5b}</formid>
+        <IntroducedVersion>1.0.0.0</IntroducedVersion>
+        <FormPresentation>0</FormPresentation>
+        <IsCustomizable>1</IsCustomizable>
+        <CanBeDeleted>1</CanBeDeleted>
+        <IsAIRMerged>0</IsAIRMerged>
+        <FormActivationState>1</FormActivationState>
+        <names>
+          <name description="Information" languagecode="1033" />
+        </names>
+        <Descriptions>
+          <Description description="Main form for Staff Member" languagecode="1033" />
+        </Descriptions>
+      </form>
+    </forms>
+  </FormXml>
+  <RibbonDiffXml />
+  <CustomControlDefaultConfigXml />
+  <SavedQueries>
+    <savedquery>
+      <savedqueryid>{8b2e5f6d-4c3d-5f6e-9b8c-0d1e2f3a4b5c}</savedqueryid>
+      <name>Active Staff Members</name>
+      <description>All active staff members</description>
+      <querytype>0</querytype>
+      <isdefault>1</isdefault>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <fetchxml>
+        <![CDATA[
+        <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false">
+          <entity name="mnit_staffmember">
+            <attribute name="mnit_name" />
+            <attribute name="mnit_employeeid" />
+            <attribute name="mnit_positiontitle" />
+            <attribute name="mnit_supervisor" />
+            <attribute name="mnit_startdate" />
+            <attribute name="mnit_status" />
+            <order attribute="mnit_name" descending="false" />
+            <filter type="and">
+              <condition attribute="mnit_status" operator="eq" value="1" />
+            </filter>
+          </entity>
+        </fetch>
+        ]]>
+      </fetchxml>
+    </savedquery>
+  </SavedQueries>
+</Entity>

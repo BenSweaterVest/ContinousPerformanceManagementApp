@@ -1,0 +1,127 @@
+{
+  "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "$connections": {
+      "defaultValue": {},
+      "type": "Object"
+    }
+  },
+  "triggers": {
+    "Recurrence": {
+      "recurrence": {
+        "frequency": "Week",
+        "interval": 1,
+        "schedule": {
+          "weekDays": ["Monday"],
+          "hours": ["8"],
+          "minutes": [0]
+        },
+        "timeZone": "Central Standard Time"
+      },
+      "type": "Recurrence"
+    }
+  },
+  "actions": {
+    "List_Active_Staff": {
+      "runAfter": {},
+      "type": "OpenApiConnection",
+      "inputs": {
+        "host": {
+          "connectionName": "shared_commondataserviceforapps",
+          "operationId": "ListRecords",
+          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+        },
+        "parameters": {
+          "entityName": "mnit_staffmembers",
+          "$filter": "mnit_status eq 1"
+        }
+      }
+    },
+    "Initialize_SupervisorList": {
+      "runAfter": {
+        "List_Active_Staff": ["Succeeded"]
+      },
+      "type": "InitializeVariable",
+      "inputs": {
+        "variables": [
+          {
+            "name": "SupervisorList",
+            "type": "array",
+            "value": []
+          }
+        ]
+      }
+    },
+    "Apply_to_each_staff": {
+      "foreach": "@outputs('List_Active_Staff')?['body/value']",
+      "actions": {
+        "Append_unique_supervisor": {
+          "type": "AppendToArrayVariable",
+          "inputs": {
+            "name": "SupervisorList",
+            "value": "@items('Apply_to_each_staff')?['_mnit_supervisor_value']"
+          },
+          "runAfter": {},
+          "description": "Append supervisor email if not already in list"
+        }
+      },
+      "runAfter": {
+        "Initialize_SupervisorList": ["Succeeded"]
+      },
+      "type": "Foreach"
+    },
+    "Apply_to_each_supervisor": {
+      "foreach": "@variables('SupervisorList')",
+      "actions": {
+        "Get_supervised_staff": {
+          "runAfter": {},
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "mnit_staffmembers",
+              "$filter": "_mnit_supervisor_value eq '@{items('Apply_to_each_supervisor')}' and mnit_status eq 1"
+            }
+          }
+        },
+        "Calculate_week_rotation": {
+          "runAfter": {
+            "Get_supervised_staff": ["Succeeded"]
+          },
+          "type": "Compose",
+          "inputs": "@div(sub(ticks(utcNow()), ticks('2025-01-01')), 6048000000000)",
+          "description": "Calculate current week number"
+        },
+        "Send_reminder_email": {
+          "runAfter": {
+            "Calculate_week_rotation": ["Succeeded"]
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_office365",
+              "operationId": "SendEmailV2",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+            },
+            "parameters": {
+              "emailMessage/To": "@items('Apply_to_each_supervisor')",
+              "emailMessage/Subject": "Weekly Performance Evaluation Reminder",
+              "emailMessage/Body": "<html><body><h2>Weekly Evaluation Reminder</h2><p>This week's suggested evaluations are ready.</p><p>Please complete evaluations in the Performance Management System app.</p><p><a href='https://apps.powerapps.com'>Open Performance Management App</a></p></body></html>",
+              "emailMessage/Importance": "Normal"
+            }
+          }
+        }
+      },
+      "runAfter": {
+        "Apply_to_each_staff": ["Succeeded"]
+      },
+      "type": "Foreach"
+    }
+  },
+  "outputs": {}
+}

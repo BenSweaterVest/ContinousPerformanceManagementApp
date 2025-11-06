@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityInfo>
+    <entity Name="mnit_recognition">
+      <LocalizedNames>
+        <LocalizedName description="Recognition Entry" languagecode="1033" />
+      </LocalizedNames>
+      <LocalizedCollectionNames>
+        <LocalizedCollectionName description="Recognition Entries" languagecode="1033" />
+      </LocalizedCollectionNames>
+      <Descriptions>
+        <Description description="Log positive recognition and achievements" languagecode="1033" />
+      </Descriptions>
+      <attributes>
+        <attribute PhysicalName="mnit_recognitionid">
+          <Type>uniqueidentifier</Type>
+          <Name>mnit_recognitionid</Name>
+          <LogicalName>mnit_recognitionid</LogicalName>
+          <RequiredLevel>systemrequired</RequiredLevel>
+          <IsPrimaryId>1</IsPrimaryId>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <displaynames>
+            <displayname description="Recognition ID" languagecode="1033" />
+          </displaynames>
+        </attribute>
+        <attribute PhysicalName="mnit_name">
+          <Type>nvarchar</Type>
+          <Name>mnit_name</Name>
+          <LogicalName>mnit_name</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
+          <IsPrimaryName>1</IsPrimaryName>
+          <Length>100</Length>
+          <AutoNumberFormat>REC-{SEQNUM:5}</AutoNumberFormat>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <displaynames>
+            <displayname description="Recognition ID" languagecode="1033" />
+          </displaynames>
+        </attribute>
+        <attribute PhysicalName="mnit_staffmember">
+          <Type>lookup</Type>
+          <Name>mnit_staffmember</Name>
+          <LogicalName>mnit_staffmember</LogicalName>
+          <RequiredLevel>applicationrequired</RequiredLevel>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <Targets>
+            <Target>mnit_staffmember</Target>
+          </Targets>
+          <displaynames>
+            <displayname description="Staff Member" languagecode="1033" />
+          </displaynames>
+        </attribute>
+        <attribute PhysicalName="mnit_supervisor">
+          <Type>lookup</Type>
+          <Name>mnit_supervisor</Name>
+          <LogicalName>mnit_supervisor</LogicalName>
+          <RequiredLevel>applicationrequired</RequiredLevel>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <Targets>
+            <Target>systemuser</Target>
+          </Targets>
+          <displaynames>
+            <displayname description="Supervisor" languagecode="1033" />
+          </displaynames>
+        </attribute>
+        <attribute PhysicalName="mnit_recognitiondate">
+          <Type>datetime</Type>
+          <Name>mnit_recognitiondate</Name>
+          <LogicalName>mnit_recognitiondate</LogicalName>
+          <RequiredLevel>applicationrequired</RequiredLevel>
+          <Format>DateOnly</Format>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <displaynames>
+            <displayname description="Recognition Date" languagecode="1033" />
+          </displaynames>
+        </attribute>
+        <attribute PhysicalName="mnit_description">
+          <Type>memo</Type>
+          <Name>mnit_description</Name>
+          <LogicalName>mnit_description</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
+          <MaxLength>5000</MaxLength>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <displaynames>
+            <displayname description="Description" languagecode="1033" />
+          </displaynames>
+        </attribute>
+      </attributes>
+    </entity>
+  </EntityInfo>
+  <FormXml />
+  <SavedQueries />
+</Entity>
