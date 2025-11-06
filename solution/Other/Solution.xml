@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml version="9.2.0.0" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="pac">
+  <SolutionManifest>
+    <UniqueName>PerformanceManagement</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="Performance Management System" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Continuous performance management system with weekly micro-evaluations and quarterly self-assessments" languagecode="1033" />
+    </Descriptions>
+    <Version>1.0.0.0</Version>
+    <Managed>0</Managed>
+    <Publisher>
+      <UniqueName>mnit</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="Minnesota IT Services" languagecode="1033" />
+      </LocalizedNames>
+      <Descriptions>
+        <Description description="Minnesota IT Services" languagecode="1033" />
+      </Descriptions>
+      <EMailAddress>admin@mnit.state.mn.us</EMailAddress>
+      <SupportingWebsiteUrl>https://mnit.state.mn.us</SupportingWebsiteUrl>
+      <CustomizationPrefix>mnit</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>10000</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City></City>
+          <Country></Country>
+          <Line1></Line1>
+          <PostalCode></PostalCode>
+          <StateOrProvince></StateOrProvince>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="1" schemaName="mnit_staffmember" behavior="0" />
+      <RootComponent type="1" schemaName="mnit_evaluationquestion" behavior="0" />
+      <RootComponent type="1" schemaName="mnit_weeklyevaluation" behavior="0" />
+      <RootComponent type="1" schemaName="mnit_selfevaluation" behavior="0" />
+      <RootComponent type="1" schemaName="mnit_idpentry" behavior="0" />
+      <RootComponent type="1" schemaName="mnit_meetingnote" behavior="0" />
+      <RootComponent type="1" schemaName="mnit_goal" behavior="0" />
+      <RootComponent type="1" schemaName="mnit_recognition" behavior="0" />
+      <RootComponent type="1" schemaName="mnit_actionitem" behavior="0" />
+    </RootComponents>
+    <MissingDependencies />
+  </SolutionManifest>
+</ImportExportXml>

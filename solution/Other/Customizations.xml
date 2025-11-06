@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Entities>
+    <Entity>
+      <Name>mnit_staffmember</Name>
+    </Entity>
+    <Entity>
+      <Name>mnit_evaluationquestion</Name>
+    </Entity>
+    <Entity>
+      <Name>mnit_weeklyevaluation</Name>
+    </Entity>
+    <Entity>
+      <Name>mnit_selfevaluation</Name>
+    </Entity>
+    <Entity>
+      <Name>mnit_idpentry</Name>
+    </Entity>
+    <Entity>
+      <Name>mnit_meetingnote</Name>
+    </Entity>
+    <Entity>
+      <Name>mnit_goal</Name>
+    </Entity>
+    <Entity>
+      <Name>mnit_recognition</Name>
+    </Entity>
+    <Entity>
+      <Name>mnit_actionitem</Name>
+    </Entity>
+  </Entities>
+  <Roles />
+  <Workflows />
+  <FieldSecurityProfiles />
+  <Templates />
+  <EntityMaps />
+  <EntityRelationships />
+  <OrganizationSettings />
+  <optionsets />
+  <CustomControls />
+  <SolutionPluginAssemblies />
+  <EntityDataProviders />
+  <Languages>
+    <Language>1033</Language>
+  </Languages>
+</ImportExportXml>

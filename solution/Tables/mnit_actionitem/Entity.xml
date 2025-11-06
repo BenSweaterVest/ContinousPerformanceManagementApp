@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityInfo>
+    <entity Name="mnit_actionitem">
+      <LocalizedNames>
+        <LocalizedName description="Action Item" languagecode="1033" />
+      </LocalizedNames>
+      <LocalizedCollectionNames>
+        <LocalizedCollectionName description="Action Items" languagecode="1033" />
+      </LocalizedCollectionNames>
+      <Descriptions>
+        <Description description="Track follow-up actions from meetings" languagecode="1033" />
+      </Descriptions>
+      <attributes>
+        <attribute PhysicalName="mnit_actionitemid">
+          <Type>uniqueidentifier</Type>
+          <Name>mnit_actionitemid</Name>
+          <LogicalName>mnit_actionitemid</LogicalName>
+          <RequiredLevel>systemrequired</RequiredLevel>
+          <IsPrimaryId>1</IsPrimaryId>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <displaynames>
+            <displayname description="Action Item ID" languagecode="1033" />
+          </displaynames>
+        </attribute>
+        <attribute PhysicalName="mnit_name">
+          <Type>nvarchar</Type>
+          <Name>mnit_name</Name>
+          <LogicalName>mnit_name</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
+          <IsPrimaryName>1</IsPrimaryName>
+          <Length>100</Length>
+          <AutoNumberFormat>ACT-{SEQNUM:5}</AutoNumberFormat>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <displaynames>
+            <displayname description="Action Item ID" languagecode="1033" />
+          </displaynames>
+        </attribute>
+        <attribute PhysicalName="mnit_description">
+          <Type>memo</Type>
+          <Name>mnit_description</Name>
+          <LogicalName>mnit_description</LogicalName>
+          <RequiredLevel>applicationrequired</RequiredLevel>
+          <MaxLength>2000</MaxLength>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <displaynames>
+            <displayname description="Description" languagecode="1033" />
+          </displaynames>
+        </attribute>
+        <attribute PhysicalName="mnit_owner">
+          <Type>lookup</Type>
+          <Name>mnit_owner</Name>
+          <LogicalName>mnit_owner</LogicalName>
+          <RequiredLevel>applicationrequired</RequiredLevel>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <Targets>
+            <Target>systemuser</Target>
+          </Targets>
+          <displaynames>
+            <displayname description="Owner" languagecode="1033" />
+          </displaynames>
+        </attribute>
+        <attribute PhysicalName="mnit_relatedstaffmember">
+          <Type>lookup</Type>
+          <Name>mnit_relatedstaffmember</Name>
+          <LogicalName>mnit_relatedstaffmember</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <Targets>
+            <Target>mnit_staffmember</Target>
+          </Targets>
+          <displaynames>
+            <displayname description="Related Staff Member" languagecode="1033" />
+          </displaynames>
+        </attribute>
+        <attribute PhysicalName="mnit_duedate">
+          <Type>datetime</Type>
+          <Name>mnit_duedate</Name>
+          <LogicalName>mnit_duedate</LogicalName>
+          <RequiredLevel>applicationrequired</RequiredLevel>
+          <Format>DateOnly</Format>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <displaynames>
+            <displayname description="Due Date" languagecode="1033" />
+          </displaynames>
+        </attribute>
+        <attribute PhysicalName="mnit_status">
+          <Type>picklist</Type>
+          <Name>mnit_status</Name>
+          <LogicalName>mnit_status</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <displaynames>
+            <displayname description="Status" languagecode="1033" />
+          </displaynames>
+          <optionset Name="mnit_actionitemstatus">
+            <IsSorted>0</IsSorted>
+            <IsGlobal>0</IsGlobal>
+            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <options>
+              <option value="1"><labels><label description="Pending" languagecode="1033" /></labels></option>
+              <option value="2"><labels><label description="In Progress" languagecode="1033" /></labels></option>
+              <option value="3"><labels><label description="Completed" languagecode="1033" /></labels></option>
+            </options>
+          </optionset>
+        </attribute>
+        <attribute PhysicalName="mnit_completeddate">
+          <Type>datetime</Type>
+          <Name>mnit_completeddate</Name>
+          <LogicalName>mnit_completeddate</LogicalName>
+          <RequiredLevel>none</RequiredLevel>
+          <Format>DateOnly</Format>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <displaynames>
+            <displayname description="Completed Date" languagecode="1033" />
+          </displaynames>
+        </attribute>
+      </attributes>
+    </entity>
+  </EntityInfo>
+  <FormXml />
+  <SavedQueries />
+</Entity>

@@ -1,0 +1,110 @@
+# Power Platform Solution artifacts
+*.zip
+*_managed.zip
+*_unmanaged.zip
+PerformanceManagement_*.zip
+
+# Temporary files
+*.tmp
+*.log
+*.bak
+*~
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.swp
+*.swo
+
+# Build outputs
+bin/
+obj/
+deploy/
+out/
+dist/
+
+# Environment-specific
+.env
+.env.local
+*.local.json
+appsettings.local.json
+
+# Node modules (if any tooling added)
+node_modules/
+package-lock.json
+yarn.lock
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Solution packed files (keep source only)
+solution/**/*.zip
+
+# Power Platform CLI artifacts
+.pac/
+*.msapp.bak
+
+# Canvas App extracted files (if unpacked)
+*.msapp/
+
+# Connection reference files (may contain secrets)
+connectionReferences.json
+
+# Test files
+*.test.js
+*.spec.js
+coverage/
+
+# OS specific
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor directories
+.vscode/
+.idea/
+*.sublime-*
+*.code-workspace
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Optional files
+.npm
+.eslintcache
+.node_repl_history
+.yarn-integrity
+
+# Mac
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Windows
+Desktop.ini
+ehthumbs.db
+$RECYCLE.BIN/
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
