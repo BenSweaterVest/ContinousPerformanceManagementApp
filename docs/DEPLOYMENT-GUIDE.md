@@ -1,147 +1,160 @@
 # Performance Management System - Deployment Guide
 
-Complete step-by-step instructions for deploying the Performance Management solution to Dataverse for Teams.
+Step-by-step guide to get this thing running in your environment.
 
-## Table of Contents
+## What You'll Need
 
-1. [Prerequisites](#prerequisites)
-2. [Environment Setup](#environment-setup)
-3. [Solution Installation](#solution-installation)
-4. [Post-Deployment Configuration](#post-deployment-configuration)
-5. [Testing](#testing)
-6. [Troubleshooting](#troubleshooting)
+**Software:**
+- .NET SDK 6.0 or higher
+- Power Platform CLI
+- Git (optional, for cloning)
 
----
+**Access:**
+- Microsoft 365 account (E3, E5, or similar)
+- Teams access
+- Admin rights in your target environment (or Environment Maker role)
 
-## Prerequisites
-
-### Required Software
-
-- **Power Platform CLI**: Latest version
-  - Windows: Install via `dotnet tool install --global Microsoft.PowerApps.CLI.Tool`
-  - Mac/Linux: Same command
-
-- **.NET SDK**: Version 6.0 or higher
-  - Download from https://dotnet.microsoft.com/download
-
-### Required Access
-
-- **Microsoft 365 License**: E3, E5, or equivalent
-- **Teams License**: Included with M365
-- **Power Apps for Teams**: Included with Teams
-- **System Administrator**: Or Environment Maker role in target environment
-
-### Environment Requirements
-
-- Dataverse for Teams environment (created automatically with Teams)
-- Minimum 1GB available database capacity
-- Network connectivity to Microsoft services
+**Time:** Plan for about 2-3 hours total:
+- Setup: 30 minutes
+- Solution import: 15 minutes
+- Configuration: 30 minutes
+- Canvas app build: 1-2 hours
+- Testing: 30 minutes
 
 ---
 
-## Environment Setup
+## Step 1: Get the Code
 
-### Step 1: Create Dataverse for Teams Environment
-
-1. **Open Microsoft Teams**
-   - Launch Teams desktop or web app
-   - Navigate to a team (or create one for testing)
-
-2. **Add Power Apps to Teams**
-   - Click the "+" tab in any channel
-   - Search for "Power Apps"
-   - Select "Power Apps" app
-   - Click "Save"
-
-3. **Create Dataverse for Teams Environment**
-   - This happens automatically when you create your first app
-   - Click "Create an app" in Power Apps
-   - Environment is provisioned in the background (2-5 minutes)
-
-4. **Get Environment Details**
-   - Go to https://admin.powerplatform.microsoft.com
-   - Click "Environments"
-   - Find your Teams environment (named after your team)
-   - Click the environment name
-   - Copy the "Environment ID" (you'll need this later)
-
-### Step 2: Install Power Platform CLI
-
-**Windows (PowerShell as Administrator):**
-
-```powershell
-# Check if .NET SDK is installed
-dotnet --version
-
-# If not installed, download from https://dotnet.microsoft.com/download
-
-# Install PAC CLI
-dotnet tool install --global Microsoft.PowerApps.CLI.Tool
-
-# Verify installation
-pac --version
-```
-
-**Mac/Linux:**
+**Option A: Clone from GitHub**
 
 ```bash
-# Check if .NET SDK is installed
-dotnet --version
-
-# If not installed, use package manager:
-# macOS: brew install dotnet
-# Ubuntu: apt install dotnet-sdk-6.0
-
-# Install PAC CLI
-dotnet tool install --global Microsoft.PowerApps.CLI.Tool
-
-# Add to PATH (if needed)
-export PATH="$PATH:$HOME/.dotnet/tools"
-
-# Verify installation
-pac --version
-```
-
----
-
-## Solution Installation
-
-### Step 1: Obtain Solution Files
-
-**Option A: Clone from Git**
-
-```bash
-git clone [repository-url]
+git clone https://github.com/BenSweaterVest/ContinousPerformanceManagementApp.git
 cd ContinousPerformanceManagementApp
 ```
 
 **Option B: Download ZIP**
 
-1. Download solution ZIP from repository
-2. Extract to local folder
-3. Navigate to extracted folder
+1. Go to the repository on GitHub
+2. Click "Code" → "Download ZIP"
+3. Extract somewhere you can find it
+4. Open terminal/PowerShell in that folder
 
-### Step 2: Pack the Solution
+---
 
-Navigate to the deployment folder and run the pack script:
+## Step 2: Install Prerequisites
+
+### Install .NET SDK
+
+**Check if you have it:**
+```bash
+dotnet --version
+```
+
+If you see a version number (6.0 or higher), you're good. Skip to Power Platform CLI.
+
+**If not installed:**
 
 **Windows:**
+1. Go to https://dotnet.microsoft.com/download
+2. Download ".NET 6.0 SDK" (or later)
+3. Run installer
+4. Restart terminal
+5. Verify: `dotnet --version`
 
+**Mac:**
+```bash
+brew install dotnet
+```
+
+**Linux (Ubuntu/Debian):**
+```bash
+sudo apt-get update
+sudo apt-get install -y dotnet-sdk-6.0
+```
+
+### Install Power Platform CLI
+
+```bash
+dotnet tool install --global Microsoft.PowerApps.CLI.Tool
+```
+
+**Add to PATH** (if needed):
+
+**Windows PowerShell:**
+```powershell
+$env:PATH += ";$env:USERPROFILE\.dotnet\tools"
+```
+
+**Mac/Linux:**
+```bash
+export PATH="$PATH:$HOME/.dotnet/tools"
+# Add to .bashrc or .zshrc to make permanent
+```
+
+**Verify:**
+```bash
+pac --version
+```
+
+Should show something like "Microsoft PowerApps CLI Version: 1.x.x"
+
+---
+
+## Step 3: Set Up Your Environment
+
+### Create Dataverse for Teams Environment
+
+You need a Dataverse environment to deploy to. If you already have one, skip to "Get Environment Details" below.
+
+**Create new environment:**
+
+1. Open Microsoft Teams
+2. Go to any team (or create a test team)
+3. Click the "+" to add a tab
+4. Search for "Power Apps"
+5. Add the Power Apps app
+6. Click "Create an app" (you don't have to actually build anything)
+7. Teams will create a Dataverse environment in the background (takes 2-5 mins)
+
+### Get Environment Details
+
+You'll need either the Environment ID or Environment URL.
+
+**To get Environment ID:**
+
+1. Go to https://admin.powerplatform.microsoft.com
+2. Click "Environments" in left nav
+3. Find your environment (usually named after your Team)
+4. Click the environment name
+5. Copy the "Environment ID" (GUID format)
+
+**To get Environment URL:**
+
+Same page, look for "Environment URL" - something like:
+`https://orgXXXXX.crm.dynamics.com`
+
+Save one of these - you'll need it in a minute.
+
+---
+
+## Step 4: Pack the Solution
+
+From the project root folder:
+
+**Windows:**
 ```powershell
 cd deployment
 .\pack-solution.ps1
 ```
 
 **Mac/Linux:**
-
 ```bash
 cd deployment
-chmod +x *.sh  # Make scripts executable
+chmod +x *.sh  # Make scripts executable (first time only)
 ./pack-solution.sh
 ```
 
-**Expected Output:**
-
+**What you should see:**
 ```
 ======================================
 Performance Management Solution Pack
@@ -150,8 +163,6 @@ Performance Management Solution Pack
 Checking for Power Platform CLI...
 Found PAC CLI: Microsoft PowerApps CLI Version: 1.x.x
 
-Project root: /path/to/ContinousPerformanceManagementApp
-
 Packing solution...
 
 ======================================
@@ -159,125 +170,126 @@ SUCCESS: Solution packed!
 ======================================
 
 Output file: PerformanceManagement_1_0_0_0.zip
-Location: /path/to/project
-File size: 0.25 MB
 ```
 
-### Step 3: Authenticate to Environment
+If you get errors about PAC not found, go back and check the PATH setup.
+
+The ZIP file is created in the project root folder.
+
+---
+
+## Step 5: Import the Solution
+
+### Authenticate to Your Environment
+
+Still in the `deployment` folder, run:
 
 ```bash
-# Using Environment ID
+# Use Environment ID
 pac auth create --environment YOUR-ENVIRONMENT-ID-HERE
 
-# OR using Environment URL
-pac auth create --url https://yourorg.crm.dynamics.com
+# OR use Environment URL
+pac auth create --url https://orgXXXXX.crm.dynamics.com
+```
 
-# Verify authentication
+This will open a browser. Sign in with your M365 account and approve permissions.
+
+**Verify you're authenticated:**
+```bash
 pac auth list
 ```
 
-**Authentication will open a browser window:**
-1. Sign in with your M365 account
-2. Consent to requested permissions
-3. Return to terminal
+Should show your environment with an asterisk (*) next to it.
 
-### Step 4: Import Solution
+### Run the Import
 
 **Windows:**
-
 ```powershell
 .\import-solution.ps1 -EnvironmentId "YOUR-ENVIRONMENT-ID"
 ```
 
 **Mac/Linux:**
-
 ```bash
 ./import-solution.sh --environment-id "YOUR-ENVIRONMENT-ID"
 ```
 
-**Expected Output:**
+**What happens:**
+- The script finds the ZIP file
+- Imports it to Dataverse
+- Returns pretty quickly (it's async)
 
-```
-========================================
-Performance Management Solution Import
-========================================
+**Don't close the terminal yet** - check the import status in the next step.
 
-Checking for Power Platform CLI...
-Found PAC CLI
-
-Found solution package: PerformanceManagement_1_0_0_0.zip
-
-Authenticated successfully
-
-Starting solution import...
-This may take several minutes...
-
-========================================
-SUCCESS: Import initiated!
-========================================
-
-The solution is being imported asynchronously.
-```
-
-### Step 5: Monitor Import Progress
+### Monitor the Import
 
 1. Go to https://admin.powerplatform.microsoft.com
-2. Select **Environments**
-3. Click your environment
-4. Go to **Solutions** (in left nav, under Resources)
-5. Look for "Performance Management System"
-6. Status will show:
-   - **Importing** (yellow) - In progress
-   - **Installed** (green) - Success
-   - **Failed** (red) - Error (check logs)
+2. Environments → Your environment
+3. Solutions (in left nav under "Resources")
+4. Look for "Performance Management System"
 
-**Import typically takes 5-15 minutes depending on:**
-- Network speed
-- Environment load
-- Number of components
+**Status indicators:**
+- **Importing** (yellow spinner) - Still working (wait)
+- **Installed** (green checkmark) - Success! Continue to next step
+- **Failed** (red X) - Something went wrong. Click it for error details
+
+Import usually takes 5-15 minutes. Grab coffee.
 
 ---
 
-## Post-Deployment Configuration
+## Step 6: Configure Connections
 
-### Step 1: Configure Connection References
+The flows won't work until you set up connections.
 
-Power Automate flows require connection references to be configured.
+### Option A: Configure in Solution
 
 1. Go to https://make.powerapps.com
-2. Select your environment (top right)
-3. Click **Solutions** in left navigation
-4. Click **Performance Management System**
-5. Click **Connection References** (filter view)
+2. Select your environment (top right dropdown)
+3. Click "Solutions" (left nav)
+4. Click "Performance Management System"
+5. In the solution, look for "Connection References"
 
-Configure each connection:
+**If you see connection references:**
+- Click each one
+- Click "+ New connection"
+- Sign in with your M365 account
+- Click "Create"
 
-**Office 365 Outlook:**
-1. Click the connection reference
-2. Click **+ New connection**
-3. Sign in with your account
-4. Click **Create**
+Do this for:
+- Office 365 Outlook
+- Office 365 Users
+- Dataverse (might auto-configure)
 
-**Office 365 Users:**
-1. Repeat process above
-2. Use same M365 account
+### Option B: Configure When Turning On Flows
 
-**Dataverse (Microsoft Dataverse):**
-- Usually auto-configured
-- If not, click and select "Dataverse (current environment)"
+If you don't see connection references (this is normal in Dataverse for Teams):
 
-### Step 2: Load Seed Data
+1. Go to https://make.powerautomate.com
+2. Select your environment
+3. Solutions → Performance Management System
+4. Click on a flow
+5. When you try to turn it on, it'll prompt you to add connections
+6. Click "Add connection" for each
+7. Sign in and authorize
 
-The solution requires 12 evaluation questions to be manually added.
+---
+
+## Step 7: Add the 12 Evaluation Questions
+
+These don't import automatically - you need to add them manually.
 
 1. Go to https://make.powerapps.com
 2. Select your environment
-3. Click **Tables** in left nav
+3. Click "Tables" (left nav)
 4. Search for "Evaluation Question"
 5. Click the table
-6. Click **+ New row** (12 times)
+6. Click "+ New row" (you'll do this 12 times)
 
-**Enter these 12 questions:**
+**For each row, enter:**
+- **Question Text**: [see list below]
+- **Question Number**: 1, 2, 3... through 12
+- **Active**: Yes (check the box)
+
+**The 12 Questions:**
 
 1. Demonstrates quality and accuracy in work products
 2. Completes assignments within agreed timeframes
@@ -292,291 +304,265 @@ The solution requires 12 evaluation questions to be manually added.
 11. Manages workload and priorities effectively
 12. Demonstrates dependability and reliability
 
-For each:
-- **Question Text**: [Copy from above]
-- **Question Number**: 1-12
-- **Active**: Yes (checked)
-
-### Step 3: Enable Power Automate Flows
-
-1. Go to https://make.powerautomate.com
-2. Select your environment
-3. Click **Solutions** in left nav
-4. Click **Performance Management System**
-5. Click **Cloud flows** (filter)
-
-Enable each flow:
-
-1. **Weekly Evaluation Reminder**
-   - Click the flow name
-   - Click **Turn on** (top right)
-   - Verify: "Your flow is on"
-
-2. **Quarterly Self-Eval Reminder**
-   - Repeat above steps
-
-3. **One-on-One Meeting Notification**
-   - Repeat above steps
-   - Note: Requires Outlook calendar access
-
-4. **Ad Hoc Self-Eval Request**
-   - This is an HTTP-triggered flow
-   - Leave off unless needed from app
-
-### Step 4: Build/Import Canvas App
-
-The Canvas App must be built in Power Apps Studio following the specifications.
-
-**Option A: Build from Specifications**
-
-1. Open https://make.powerapps.com
-2. Click **+ Create** > **Blank app** > **Tablet**
-3. Name: "Performance Management System"
-4. Follow specifications in `solution/CanvasApps/README.md`
-5. Add all data sources
-6. Create all 9 screens
-7. Implement formulas
-8. Test thoroughly
-9. Save and publish
-
-**Option B: Import Pre-built .msapp File**
-
-If a pre-built .msapp file is provided:
-
-1. Go to https://make.powerapps.com
-2. Click **Apps** in left nav
-3. Click **Import canvas app**
-4. Upload the .msapp file
-5. Complete import wizard
-6. Open app and verify data connections
-
-### Step 5: Share the App
-
-1. Go to https://make.powerapps.com
-2. Select your environment
-3. Click **Apps**
-4. Find "Performance Management System"
-5. Click **...** (more options)
-6. Click **Share**
-7. Add supervisors:
-   - Enter email addresses
-   - Select permission: **Can use**
-   - Include security group if available
-8. Click **Share**
-
-Supervisors will receive an email with app link.
-
-### Step 6: Add Staff Members
-
-Supervisors should add their staff:
-
-1. Open the app
-2. Navigate to **Staff List** screen
-3. Click **+ Add Staff**
-4. Enter:
-   - Name
-   - Employee ID
-   - Position Title
-   - Start Date
-   - Supervisor (auto-set to current user)
-   - Status: Active
-5. Click **Save**
+**Pro tip:** Copy/paste them. This takes about 10 minutes.
 
 ---
 
-## Testing
+## Step 8: Turn On the Flows
 
-### Functional Test Checklist
+1. Go to https://make.powerautomate.com
+2. Select your environment
+3. Solutions → Performance Management System
+4. Filter to "Cloud flows"
 
-Perform these tests to verify deployment:
+You should see 4 flows. Turn on the ones you want:
 
-#### ✅ Authentication & Access
-- [ ] Can log into app
-- [ ] Correct environment selected
-- [ ] No permission errors
+**Weekly Evaluation Reminder**
+- Click the flow name
+- Click "Turn on" (top right)
+- If prompted for connections, add them
+- Verify it says "Your flow is on"
 
-#### ✅ Data Operations
-- [ ] Can create staff member
-- [ ] Can view staff list
-- [ ] Can edit staff member
-- [ ] Can view evaluation questions
+**Quarterly Self-Eval Reminder**
+- Same process
 
-#### ✅ Weekly Evaluations
-- [ ] Dashboard displays
-- [ ] This week's suggestions shown
-- [ ] Can select staff member
-- [ ] Can select question
-- [ ] Can rate (1-5 + Insufficient Data)
-- [ ] Can save evaluation
-- [ ] Recent evaluations display
+**One-on-One Meeting Notification**
+- Same process
+- This one watches your Outlook calendar
 
-#### ✅ Rotation Algorithm
-- [ ] Suggestions change weekly
-- [ ] Different staff/questions rotate
-- [ ] No errors in calculations
+**Ad Hoc Self-Eval Request**
+- HTTP-triggered flow
+- Leave it off for now (the Canvas app will call it when needed)
 
-#### ✅ Quarterly Self-Evaluations
-- [ ] Can access self-eval screen
-- [ ] All 12 questions display
-- [ ] Can rate each question
-- [ ] Can add notes
-- [ ] Can save
+**Troubleshooting:** If a flow won't turn on, click into it and check the "Flow checker" in top right for errors. Usually it's missing connections.
 
-#### ✅ One-on-Ones
-- [ ] Can create meeting note
-- [ ] Can select staff member
-- [ ] Can enter agenda
-- [ ] Can save notes
-- [ ] Recent meetings display
+---
 
-#### ✅ Flows
-- [ ] Weekly reminder sent (test on Monday)
-- [ ] Quarterly reminder triggers (test date logic)
-- [ ] Meeting notification works
+## Step 9: Build the Canvas App
+
+The app specs are in `solution/CanvasApps/README.md` but here's the quick version:
+
+### Create the App
+
+1. Go to https://make.powerapps.com
+2. Click "+ Create" (left nav)
+3. Select "Blank app"
+4. Choose "Tablet" format
+5. Name it "Performance Management System"
+6. Format: 1366 x 768
+
+### Add Data Sources
+
+Click "Data" (left nav in Power Apps Studio) and add:
+- All 9 tables (Staff Member, Evaluation Question, Weekly Evaluation, etc.)
+- Office 365 Users (connector)
+- Office 365 Outlook (connector)
+
+### Build the Screens
+
+You need to create 9 screens. The detailed specs are in `solution/CanvasApps/README.md`.
+
+**Minimum viable product approach:**
+
+Start with these 3 screens to test:
+
+1. **HomeScreen** - Just put a label that says "Performance Management System"
+2. **WeeklyEvaluationsScreen** - Form with dropdowns for staff and questions
+3. **StaffListScreen** - Gallery showing staff members
+
+**Full build:** Follow the complete specs in `solution/CanvasApps/README.md`. Budget 2-4 hours if you're new to Power Apps, 1-2 hours if you've done this before.
+
+### Key Formulas
+
+**App.OnStart** (this calculates the weekly rotation):
+```powerappsfx
+Set(varCurrentUser, User());
+
+ClearCollect(
+    colMyStaff,
+    Filter('mnit_staffmember', 'mnit_supervisor'.'Primary Email' = varCurrentUser.Email && mnit_status = 1)
+);
+
+ClearCollect(
+    colQuestions,
+    SortByColumns(Filter('mnit_evaluationquestion', mnit_active = true), "mnit_questionnumber", Ascending)
+);
+
+Set(varWeekNumber, RoundDown(DateDiff(Date(2025,1,1), Today(), Days) / 7, 0));
+Set(varTotalQuestions, CountRows(colQuestions));
+Set(varTotalStaff, CountRows(colMyStaff));
+
+Set(varQuestionIndex1, Mod(varWeekNumber * 2, varTotalQuestions));
+Set(varQuestionIndex2, Mod(varWeekNumber * 2 + 1, varTotalQuestions));
+Set(varStaffIndex1, Mod(varWeekNumber * 2, varTotalStaff));
+Set(varStaffIndex2, Mod(varWeekNumber * 2 + 1, varTotalStaff));
+
+Set(varSuggestedStaff1, If(varTotalStaff > 0, Index(colMyStaff, varStaffIndex1 + 1), Blank()));
+Set(varSuggestedStaff2, If(varTotalStaff > 1, Index(colMyStaff, varStaffIndex2 + 1), Blank()));
+Set(varSuggestedQuestion1, If(varTotalQuestions > 0, Index(colQuestions, varQuestionIndex1 + 1), Blank()));
+Set(varSuggestedQuestion2, If(varTotalQuestions > 1, Index(colQuestions, varQuestionIndex2 + 1), Blank()));
+```
+
+This is the core rotation logic. Copy/paste it into App → OnStart.
+
+### Save and Publish
+
+1. Click "Save" (top right)
+2. Click "Publish"
+3. Click "Publish this version"
+
+---
+
+## Step 10: Share the App
+
+1. Back at https://make.powerapps.com
+2. Click "Apps" (left nav)
+3. Find "Performance Management System"
+4. Click the three dots (...)
+5. Click "Share"
+6. Add users:
+   - Type their email addresses
+   - Select "Can use" (not "Can edit")
+   - Click "Share"
+
+They'll get an email with a link to open the app.
+
+---
+
+## Step 11: Test It
+
+### Basic Smoke Test
+
+1. **Open the app** (from the email link or make.powerapps.com)
+2. **Add a test staff member:**
+   - Navigate to Staff List
+   - Click "+ Add Staff"
+   - Fill in the fields
+   - Save
+3. **Do a test evaluation:**
+   - Go to Weekly Evaluations screen
+   - Select the staff member you just created
+   - Select any question
+   - Give a rating
+   - Save
+4. **Check the data:**
+   - Go back to make.powerapps.com
+   - Tables → Weekly Evaluation
+   - You should see your test record
+
+### Flow Testing
+
+**Weekly Reminder (optional):**
+- The flow runs Monday mornings at 8 AM Central
+- To test without waiting: Click the flow → "Run" → "Run flow"
+- Check your email for the reminder
+
+**Quarterly Reminder:**
+- Only runs on 1st of Jan/Apr/Jul/Oct
+- Test same way (click "Run" manually)
 
 ---
 
 ## Troubleshooting
 
-### Common Issues
+### "pac command not found"
 
-#### Issue: "pac command not found"
-
-**Solution:**
-
+**Fix:**
 ```bash
+# Check .NET SDK is installed
+dotnet --version
+
 # Reinstall PAC CLI
 dotnet tool uninstall --global Microsoft.PowerApps.CLI.Tool
 dotnet tool install --global Microsoft.PowerApps.CLI.Tool
 
-# Add to PATH (Mac/Linux)
-export PATH="$PATH:$HOME/.dotnet/tools"
-
-# Add to PATH (Windows - permanently)
-$env:PATH += ";$env:USERPROFILE\.dotnet\tools"
+# Add to PATH
+# Windows: $env:PATH += ";$env:USERPROFILE\.dotnet\tools"
+# Mac/Linux: export PATH="$PATH:$HOME/.dotnet/tools"
 ```
 
-#### Issue: Solution pack fails with XML errors
+### Solution Import Fails
 
-**Solution:**
+**Check:**
+1. Do you have the right permissions in the environment?
+2. Is the environment a Dataverse for Teams environment?
+3. Check error logs in admin.powerplatform.microsoft.com
 
-1. Validate XML files:
-```bash
-xmllint solution/Other/Solution.xml
-xmllint solution/Tables/*/Entity.xml
-```
+**Common issues:**
+- Missing dependencies: Make sure all files are in the ZIP
+- Environment too old: Dataverse for Teams requires recent version
 
-2. Check for:
-   - Missing closing tags
-   - Invalid characters
-   - Incorrect schema
+### Flows Won't Turn On
 
-3. Review error messages for specific files
+**Usually connection issues:**
+1. Click into the flow
+2. Click "Edit"
+3. Check any action with a warning icon
+4. Click "Add new connection"
+5. Sign in
+6. Save the flow
+7. Try turning it on again
 
-#### Issue: Import fails - "Missing dependencies"
+### Canvas App Data Not Loading
 
-**Solution:**
+**Check data connections:**
+1. In Power Apps Studio, click "Data"
+2. Refresh each data source
+3. Make sure the table names match (should start with mnit_)
+4. Check you have permissions to the tables
 
-- Ensure target environment has required features enabled
-- Check connection references are available
-- Verify all table definitions are included
+### Rotation Algorithm Not Working
 
-#### Issue: App won't open - "Permission denied"
-
-**Solution:**
-
-1. Verify app is shared with your user
-2. Check security roles in Dataverse
-3. Ensure environment access
-
-#### Issue: Flows won't turn on
-
-**Solution:**
-
-1. Check connection references are configured
-2. Verify all required connections exist
-3. Check for flow checker errors
-4. Review flow run history for details
-
-#### Issue: Rotation algorithm not working
-
-**Solution:**
-
-1. Verify staff members exist
-2. Ensure questions are marked "Active"
-3. Check OnStart formula in app
-4. Test with debug output
-
-#### Issue: Data not showing in app
-
-**Solution:**
-
-1. Check data sources are connected
-2. Verify delegation warnings
-3. Check filters on galleries
-4. Reload data connections
-
-### Getting More Help
-
-If issues persist:
-
-1. **Check Power Platform Admin Center**
-   - View operation logs
-   - Check service health
-
-2. **Review Flow Run History**
-   - Identify failed steps
-   - View error messages
-
-3. **Use Monitor Tool in Power Apps**
-   - Debug formulas
-   - View API calls
-
-4. **Microsoft Documentation**
-   - https://docs.microsoft.com/power-platform/
-   - https://docs.microsoft.com/powerapps/
-   - https://docs.microsoft.com/power-automate/
-
-5. **Community Forums**
-   - https://powerusers.microsoft.com/
-   - Post detailed error messages
+**Debug:**
+1. In App.OnStart, add a Label to your screen
+2. Set its Text property to: `varSuggestedStaff1.mnit_name`
+3. If blank, check:
+   - Are there staff members in the table?
+   - Are they marked as Active?
+   - Are there questions in the Evaluation Question table?
 
 ---
 
-## Rollback Procedure
+## What's Next
 
-If you need to remove the solution:
+**Production deployment:**
+1. Test in dev environment first (you did this)
+2. Export as managed solution if going to production
+3. Import to production environment
+4. Repeat configuration steps
+5. Share with actual users
 
-1. Go to https://admin.powerplatform.microsoft.com
-2. Select your environment
-3. Go to **Solutions**
-4. Select **Performance Management System**
-5. Click **Delete**
-6. Confirm deletion
+**First supervisor setup:**
+1. Have them add their staff members
+2. Do a few test evaluations
+3. Check the weekly email reminder works
+4. Adjust anything that feels off
 
-**Warning:** This removes all:
-- Tables and data
-- Canvas app
-- Power Automate flows
-- Cannot be undone (backup data first)
-
----
-
-## Success Checklist
-
-Before considering deployment complete:
-
-- [x] Solution imported successfully
-- [x] All connection references configured
-- [x] 12 evaluation questions loaded
-- [x] Power Automate flows enabled
-- [x] Canvas app accessible
-- [x] App shared with supervisors
-- [x] At least one staff member created
-- [x] Test evaluation completed
-- [x] Dashboard displays correctly
-- [x] Documentation reviewed
+**Ongoing:**
+- Flows run automatically once configured
+- Supervisors get reminders every Monday
+- Staff get quarterly reminders
+- Just use the app
 
 ---
 
-**Deployment complete! Users can now access the Performance Management System.**
+## Quick Reference
+
+**Key URLs:**
+- Admin portal: https://admin.powerplatform.microsoft.com
+- Power Apps maker: https://make.powerapps.com
+- Power Automate: https://make.powerautomate.com
+
+**Important Files:**
+- Solution ZIP: `PerformanceManagement_1_0_0_0.zip`
+- Canvas app specs: `solution/CanvasApps/README.md`
+- This guide: You're reading it
+
+**Support:**
+- Check REVIEW-SUMMARY.md for known issues
+- Check USER-GUIDE.md for end-user questions
+- GitHub issues for bugs
+
+---
+
+That's it. If you followed all this, you should have a working performance management system. Test it thoroughly before rolling out to everyone.
