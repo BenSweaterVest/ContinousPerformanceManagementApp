@@ -33,7 +33,7 @@
           "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
         },
         "parameters": {
-          "entityName": "mnit_staffmembers",
+          "entityName": "mnit_staffmember",
           "$filter": "mnit_status eq 1"
         }
       }
@@ -84,7 +84,7 @@
               "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
             },
             "parameters": {
-              "entityName": "mnit_staffmembers",
+              "entityName": "mnit_staffmember",
               "$filter": "_mnit_supervisor_value eq '@{items('Apply_to_each_supervisor')}' and mnit_status eq 1"
             }
           }

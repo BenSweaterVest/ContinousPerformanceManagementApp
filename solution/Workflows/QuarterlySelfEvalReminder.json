@@ -38,7 +38,7 @@
           "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
         },
         "parameters": {
-          "entityName": "mnit_staffmembers",
+          "entityName": "mnit_staffmember",
           "$filter": "mnit_status eq 1"
         }
       }
