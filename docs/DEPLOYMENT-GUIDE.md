@@ -43,52 +43,139 @@ cd ContinousPerformanceManagementApp
 
 ## Step 2: Install Prerequisites
 
+You need two tools: .NET SDK (to install tools) and Power Platform CLI (to deploy the solution).
+
 ### Install .NET SDK
 
-**Check if you have it:**
+The Power Platform CLI is distributed as a .NET tool, so you need .NET SDK first.
+
+**Check if you already have it:**
 ```bash
 dotnet --version
 ```
 
-If you see a version number (6.0 or higher), you're good. Skip to Power Platform CLI.
+**If you see version 6.0 or higher** → You're good, skip ahead to "Install Power Platform CLI"
 
-**If not installed:**
+**If you see "command not found"** → Continue below:
 
-**Windows:**
+#### Windows
+
 1. Go to https://dotnet.microsoft.com/download
-2. Download ".NET 6.0 SDK" (or later)
-3. Run installer
-4. Restart terminal
-5. Verify: `dotnet --version`
+2. Download ".NET 6.0 SDK" (or any version 6.0+)
+3. Run the installer (follow the wizard)
+4. **Close and reopen your terminal** (important!)
+5. Verify it worked:
+   ```bash
+   dotnet --version
+   ```
+   Should show something like `6.0.XXX` or `7.0.XXX` or `8.0.XXX`
 
-**Mac:**
+#### Mac
+
+If you have Homebrew:
 ```bash
-brew install dotnet
+brew install dotnet-sdk
 ```
 
-**Linux (Ubuntu/Debian):**
+If you don't have Homebrew, download from https://dotnet.microsoft.com/download
+
+**Verify:**
+```bash
+dotnet --version
+```
+
+#### Linux
+
+**Ubuntu/Debian:**
 ```bash
 sudo apt-get update
 sudo apt-get install -y dotnet-sdk-6.0
 ```
 
+**Fedora:**
+```bash
+sudo dnf install dotnet-sdk-6.0
+```
+
+**Other distros:** Check https://learn.microsoft.com/en-us/dotnet/core/install/linux
+
+**Verify:**
+```bash
+dotnet --version
+```
+
+---
+
 ### Install Power Platform CLI
+
+Now install the Power Platform CLI using .NET:
 
 ```bash
 dotnet tool install --global Microsoft.PowerApps.CLI.Tool
 ```
 
-**Add to PATH** (if needed):
+**You should see:**
+```
+You can invoke the tool using the following command: pac
+Tool 'microsoft.powerapps.cli.tool' (version 'X.X.X') was successfully installed.
+```
 
-**Windows PowerShell:**
+**Now verify it works:**
+```bash
+pac --version
+```
+
+**If you get "pac: command not found"** → Continue to PATH setup below.
+
+**If you see version number** (like "Microsoft PowerApps CLI Version: 1.x.x") → You're done! Skip to Step 3.
+
+---
+
+### Fix PATH (if pac command not found)
+
+The `pac` command is installed to your .NET tools folder, but your terminal might not know where to find it.
+
+#### Windows PowerShell
+
+**For current session only:**
 ```powershell
 $env:PATH += ";$env:USERPROFILE\.dotnet\tools"
 ```
 
-**Mac/Linux:**
+**To make it permanent:** (recommended)
+1. Press Windows key, search "Environment Variables"
+2. Click "Edit the system environment variables"
+3. Click "Environment Variables" button
+4. Under "User variables", select "Path", click "Edit"
+5. Click "New"
+6. Add: `%USERPROFILE%\.dotnet\tools`
+7. Click OK on everything
+8. Close and reopen PowerShell
+
+**Verify:**
+```powershell
+pac --version
+```
+
+#### Mac/Linux
+
+**For current session only:**
 ```bash
 export PATH="$PATH:$HOME/.dotnet/tools"
-# Add to .bashrc or .zshrc to make permanent
+```
+
+**To make it permanent:** (recommended)
+
+Add to your shell profile. Which file depends on your shell:
+
+```bash
+# If you use bash (most common on Linux):
+echo 'export PATH="$PATH:$HOME/.dotnet/tools"' >> ~/.bashrc
+source ~/.bashrc
+
+# If you use zsh (default on macOS):
+echo 'export PATH="$PATH:$HOME/.dotnet/tools"' >> ~/.zshrc
+source ~/.zshrc
 ```
 
 **Verify:**
@@ -96,7 +183,41 @@ export PATH="$PATH:$HOME/.dotnet/tools"
 pac --version
 ```
 
-Should show something like "Microsoft PowerApps CLI Version: 1.x.x"
+Should show: "Microsoft PowerApps CLI Version: 1.x.x"
+
+---
+
+### Still not working?
+
+**Try these:**
+
+1. **Verify .NET tools location exists:**
+   ```bash
+   # Windows:
+   dir $env:USERPROFILE\.dotnet\tools
+
+   # Mac/Linux:
+   ls ~/.dotnet/tools
+   ```
+   You should see a `pac` file (or `pac.exe` on Windows)
+
+2. **Reinstall PAC CLI:**
+   ```bash
+   dotnet tool uninstall --global Microsoft.PowerApps.CLI.Tool
+   dotnet tool install --global Microsoft.PowerApps.CLI.Tool
+   ```
+
+3. **Try the full path:**
+   ```bash
+   # Windows:
+   $env:USERPROFILE\.dotnet\tools\pac.exe --version
+
+   # Mac/Linux:
+   ~/.dotnet/tools/pac --version
+   ```
+   If this works, it's definitely a PATH issue.
+
+If you're still stuck, check the troubleshooting section at the bottom of this guide
 
 ---
 
