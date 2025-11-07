@@ -43,7 +43,7 @@
               "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
             },
             "parameters": {
-              "entityName": "mnit_staffmembers",
+              "entityName": "mnit_staffmember",
               "$filter": "mnit_status eq 1"
             }
           }
@@ -60,7 +60,7 @@
                   "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
                 },
                 "parameters": {
-                  "entityName": "mnit_weeklyevaluations",
+                  "entityName": "mnit_weeklyevaluation",
                   "$filter": "Microsoft.Dynamics.CRM.Last30Days(PropertyName='mnit_evaluationdate')",
                   "$orderby": "mnit_evaluationdate desc",
                   "$top": 10

@@ -45,7 +45,7 @@
           "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
         },
         "parameters": {
-          "entityName": "mnit_staffmembers",
+          "entityName": "mnit_staffmember",
           "$filter": "mnit_name eq '@{triggerBody()?['StaffMemberName']}'"
         }
       }
@@ -62,9 +62,9 @@
           "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
         },
         "parameters": {
-          "entityName": "mnit_selfevaluations",
+          "entityName": "mnit_selfevaluation",
           "item": {
-            "mnit_staffmember@odata.bind": "/mnit_staffmembers(@{first(outputs('Get_Staff_Member_Record')?['body/value'])?['mnit_staffmemberid']})",
+            "mnit_staffmember@odata.bind": "/mnit_staffmember(@{first(outputs('Get_Staff_Member_Record')?['body/value'])?['mnit_staffmemberid']})",
             "mnit_evaluationtype": 2,
             "mnit_fiscalyear": "@if(greaterOrEquals(month(utcNow()), 7), add(year(utcNow()), 1), year(utcNow()))"
           }
