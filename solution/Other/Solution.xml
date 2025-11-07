@@ -11,15 +11,15 @@
     <Version>1.0.0.0</Version>
     <Managed>0</Managed>
     <Publisher>
-      <UniqueName>mnit</UniqueName>
+      <UniqueName>perfmgmt</UniqueName>
       <LocalizedNames>
-        <LocalizedName description="Minnesota IT Services" languagecode="1033" />
+        <LocalizedName description="Performance Management Publisher" languagecode="1033" />
       </LocalizedNames>
       <Descriptions>
-        <Description description="Minnesota IT Services" languagecode="1033" />
+        <Description description="Performance Management System Publisher" languagecode="1033" />
       </Descriptions>
-      <EMailAddress>admin@mnit.state.mn.us</EMailAddress>
-      <SupportingWebsiteUrl>https://mnit.state.mn.us</SupportingWebsiteUrl>
+      <EMailAddress>admin@example.com</EMailAddress>
+      <SupportingWebsiteUrl>https://github.com/yourusername/performance-management</SupportingWebsiteUrl>
       <CustomizationPrefix>mnit</CustomizationPrefix>
       <CustomizationOptionValuePrefix>10000</CustomizationOptionValuePrefix>
       <Addresses>
