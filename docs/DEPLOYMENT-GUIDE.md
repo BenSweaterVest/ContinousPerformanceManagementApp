@@ -5,9 +5,11 @@ Step-by-step guide to get this thing running in your environment.
 ## What You'll Need
 
 **Software:**
-- .NET SDK 6.0 or higher
-- Power Platform CLI
-- Git (optional, for cloning)
+- .NET SDK 6.0 or higher (to create the solution ZIP file)
+- Power Platform CLI (same - used to pack the solution)
+- Git (optional, for cloning the repo)
+
+**Note:** If you already have the ZIP file (`PerformanceManagement_1_0_0_0.zip`), you don't need any of the above - just use the UI import method in Step 5!
 
 **Access:**
 - Microsoft 365 account (E3, E5, or similar)
@@ -15,7 +17,7 @@ Step-by-step guide to get this thing running in your environment.
 - Admin rights in your target environment (or Environment Maker role)
 
 **Time:** Plan for about 2-3 hours total:
-- Setup: 30 minutes
+- Setup & packing: 30 minutes (or 0 if you have the ZIP already)
 - Solution import: 15 minutes
 - Configuration: 30 minutes
 - Canvas app build: 1-2 hours
@@ -301,9 +303,57 @@ The ZIP file is created in the project root folder.
 
 ## Step 5: Import the Solution
 
-### Authenticate to Your Environment
+You have two options: import through the UI (easier) or use CLI. Most people should use the UI method.
 
-Still in the `deployment` folder, run:
+### Option A: Import Through Teams UI (Recommended)
+
+This is the easiest way - no CLI needed!
+
+1. **Open Teams Power Apps**
+   - Open Microsoft Teams
+   - Go to the team where you want the app
+   - Click the "Power Apps" tab (if you added it earlier)
+   - OR go directly to https://make.powerapps.com
+
+2. **Make sure you're in the right environment**
+   - Look at the top right corner
+   - Click the environment dropdown
+   - Select your Dataverse for Teams environment
+
+3. **Navigate to Solutions**
+   - Click "Solutions" in the left navigation
+   - You should see any existing solutions (probably empty if new environment)
+
+4. **Import the solution**
+   - Click "Import solution" (or "Import" button at the top)
+   - Click "Browse"
+   - Navigate to your project folder
+   - Select `PerformanceManagement_1_0_0_0.zip` (the file created in Step 4)
+   - Click "Open"
+
+5. **Complete the import wizard**
+   - Click "Next"
+   - You might see connection references - ignore for now (we'll set up in Step 6)
+   - Click "Import"
+
+6. **Wait for import to complete**
+   - Status shows at the top (yellow banner)
+   - Takes 5-15 minutes usually
+   - You can close the window and come back - it keeps going
+   - When done, you'll see "Performance Management System" in your solutions list
+
+**If it fails:** Click the solution to see error details. Common issues:
+- Wrong environment type (needs Dataverse for Teams)
+- Missing permissions
+- Corrupted ZIP file (try re-packing)
+
+---
+
+### Option B: Import Using CLI (Alternative)
+
+Only use this if you prefer command line or need automation.
+
+**Authenticate to Your Environment:**
 
 ```bash
 # Use Environment ID
@@ -313,7 +363,7 @@ pac auth create --environment YOUR-ENVIRONMENT-ID-HERE
 pac auth create --url https://orgXXXXX.crm.dynamics.com
 ```
 
-This will open a browser. Sign in with your M365 account and approve permissions.
+This opens a browser. Sign in with your M365 account and approve permissions.
 
 **Verify you're authenticated:**
 ```bash
@@ -322,7 +372,9 @@ pac auth list
 
 Should show your environment with an asterisk (*) next to it.
 
-### Run the Import
+**Run the import script:**
+
+Still in the `deployment` folder:
 
 **Windows:**
 ```powershell
@@ -334,26 +386,14 @@ Should show your environment with an asterisk (*) next to it.
 ./import-solution.sh --environment-id "YOUR-ENVIRONMENT-ID"
 ```
 
-**What happens:**
-- The script finds the ZIP file
-- Imports it to Dataverse
-- Returns pretty quickly (it's async)
+The script imports the ZIP file. It returns quickly but the import continues in the background.
 
-**Don't close the terminal yet** - check the import status in the next step.
+**Monitor the import:**
 
-### Monitor the Import
-
-1. Go to https://admin.powerplatform.microsoft.com
-2. Environments → Your environment
-3. Solutions (in left nav under "Resources")
-4. Look for "Performance Management System"
-
-**Status indicators:**
-- **Importing** (yellow spinner) - Still working (wait)
-- **Installed** (green checkmark) - Success! Continue to next step
-- **Failed** (red X) - Something went wrong. Click it for error details
-
-Import usually takes 5-15 minutes. Grab coffee.
+1. Go to https://make.powerapps.com or https://admin.powerplatform.microsoft.com
+2. Select your environment
+3. Solutions → look for "Performance Management System"
+4. Wait for status to change from "Importing" to "Installed"
 
 ---
 
