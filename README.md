@@ -76,26 +76,26 @@ Also handles quarterly self-evals, one-on-one meeting notes, development plans, 
 
 **Installation:**
 
-1. **Install Power Platform CLI** if you don't have it:
+Two ways to install - UI method is easier:
 
-```bash
-dotnet tool install --global Microsoft.PowerApps.CLI.Tool
-```
+**Option A: UI Import (Recommended)**
+1. Pack the solution (creates a ZIP file):
+   ```bash
+   cd deployment
+   ./pack-solution.ps1    # Windows
+   ./pack-solution.sh     # Mac/Linux
+   ```
+2. Go to https://make.powerapps.com
+3. Solutions → Import solution
+4. Upload the `PerformanceManagement_1_0_0_0.zip` file
+5. Follow the wizard
 
-2. **Pack the solution:**
-
-```bash
-cd deployment
-./pack-solution.ps1    # Windows
-./pack-solution.sh     # Mac/Linux
-```
-
-3. **Import to your environment:**
-
-```bash
-./import-solution.ps1 -EnvironmentId "your-environment-id"    # Windows
-./import-solution.sh --environment-id "your-environment-id"   # Mac/Linux
-```
+**Option B: CLI Import**
+Same as Option A step 1, then:
+   ```bash
+   ./import-solution.ps1 -EnvironmentId "your-env-id"    # Windows
+   ./import-solution.sh --environment-id "your-env-id"   # Mac/Linux
+   ```
 
 4. **Post-import setup:**
    - Configure connection references (Office 365, Dataverse)
