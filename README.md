@@ -76,28 +76,23 @@ Also handles quarterly self-evals, one-on-one meeting notes, development plans, 
 
 **Installation:**
 
-Two ways to install - UI method is easier:
-
-**Option A: UI Import (Recommended)**
-1. Pack the solution (creates a ZIP file):
+**Quick Start (Teams-native):**
+1. Pack the solution:
    ```bash
    cd deployment
    ./pack-solution.ps1    # Windows
    ./pack-solution.sh     # Mac/Linux
    ```
-2. Go to https://make.powerapps.com
-3. Solutions → Import solution
-4. Upload the `PerformanceManagement_1_0_0_0.zip` file
-5. Follow the wizard
+2. Open Teams → Power Apps app → Build tab
+3. Select your team → Import your solution
+4. Browse to `PerformanceManagement_1_0_0_0.zip` → Import
+5. Wait 5-15 minutes
 
-**Option B: CLI Import**
-Same as Option A step 1, then:
-   ```bash
-   ./import-solution.ps1 -EnvironmentId "your-env-id"    # Windows
-   ./import-solution.sh --environment-id "your-env-id"   # Mac/Linux
-   ```
+**Alternative methods:**
+- Web: https://make.powerapps.com → Solutions → Import solution
+- CLI: Use `import-solution.ps1` or `.sh` scripts in deployment folder
 
-4. **Post-import setup:**
+**Post-import setup:**
    - Configure connection references (Office 365, Dataverse)
    - Turn on the flows
    - Add the 12 evaluation questions (they're in the deployment guide)
