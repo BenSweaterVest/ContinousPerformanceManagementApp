@@ -223,40 +223,39 @@ If you're still stuck, check the troubleshooting section at the bottom of this g
 
 ---
 
-## Step 3: Set Up Your Environment
+## Step 3: Set Up Your Dataverse for Teams Environment
 
-### Create Dataverse for Teams Environment
+You need a Dataverse environment to deploy to. The easiest way is to let Teams create one for you.
 
-You need a Dataverse environment to deploy to. If you already have one, skip to "Get Environment Details" below.
+### Create Environment Using Power Apps in Teams
 
-**Create new environment:**
+**If you already have a Dataverse for Teams environment**, skip to Step 4.
 
-1. Open Microsoft Teams
-2. Go to any team (or create a test team)
-3. Click the "+" to add a tab
-4. Search for "Power Apps"
-5. Add the Power Apps app
-6. Click "Create an app" (you don't have to actually build anything)
-7. Teams will create a Dataverse environment in the background (takes 2-5 mins)
+**To create a new environment:**
 
-### Get Environment Details
+1. **Open Microsoft Teams**
+2. **Install the Power Apps app:**
+   - Click "Apps" in the left sidebar
+   - Search for "Power Apps"
+   - Click "Add" to install it
+3. **Create your environment:**
+   - Open the Power Apps app
+   - Click the "Build" tab
+   - Select a team from the list (or create a new team first)
+   - Click "Create" when prompted
+   - Teams will create a Dataverse environment for that team (takes 2-5 minutes)
 
-You'll need either the Environment ID or Environment URL.
+That's it! Your environment is ready. You don't need the Environment ID unless you're using the CLI import method.
+
+### Get Environment Details (Optional - Only for CLI Import)
+
+Skip this if you're using Option A in Step 5 (Teams import).
 
 **To get Environment ID:**
-
 1. Go to https://admin.powerplatform.microsoft.com
 2. Click "Environments" in left nav
-3. Find your environment (usually named after your Team)
-4. Click the environment name
-5. Copy the "Environment ID" (GUID format)
-
-**To get Environment URL:**
-
-Same page, look for "Environment URL" - something like:
-`https://orgXXXXX.crm.dynamics.com`
-
-Save one of these - you'll need it in a minute.
+3. Find your environment (named after your Team)
+4. Copy the "Environment ID" (GUID format)
 
 ---
 
@@ -303,55 +302,74 @@ The ZIP file is created in the project root folder.
 
 ## Step 5: Import the Solution
 
-You have two options: import through the UI (easier) or use CLI. Most people should use the UI method.
+Three ways to import - choose what works best for you. The Teams app method is easiest for Dataverse for Teams environments.
 
-### Option A: Import Through Teams UI (Recommended)
+### Option A: Import Through Teams Power Apps App (Recommended)
 
-This is the easiest way - no CLI needed!
+This is the native way to import into Dataverse for Teams - no browser needed!
 
-1. **Open Teams Power Apps**
+1. **Open the Power Apps app in Teams**
    - Open Microsoft Teams
-   - Go to the team where you want the app
-   - Click the "Power Apps" tab (if you added it earlier)
-   - OR go directly to https://make.powerapps.com
+   - Click "Apps" in the left sidebar
+   - Search for "Power Apps"
+   - Click "Power Apps" and then "Add" (if not already installed)
+   - Once installed, click "Power Apps" to open it
 
-2. **Make sure you're in the right environment**
-   - Look at the top right corner
-   - Click the environment dropdown
-   - Select your Dataverse for Teams environment
+2. **Navigate to your environment**
+   - Click the "Build" tab at the top
+   - Select your team from the list (the one where you want the app)
+   - If you don't see your team, it doesn't have a Dataverse environment yet:
+     - Click "Create"
+     - Follow the prompts to create a Teams environment
+     - This takes 2-5 minutes
 
-3. **Navigate to Solutions**
-   - Click "Solutions" in the left navigation
-   - You should see any existing solutions (probably empty if new environment)
+3. **Start the import**
+   - If you already have apps: Click "See all" → Click "Import" button
+   - If this is your first app: Click "Import your solution"
 
-4. **Import the solution**
-   - Click "Import solution" (or "Import" button at the top)
+4. **Upload the solution file**
    - Click "Browse"
    - Navigate to your project folder
-   - Select `PerformanceManagement_1_0_0_0.zip` (the file created in Step 4)
-   - Click "Open"
-
-5. **Complete the import wizard**
+   - Select `PerformanceManagement_1_0_0_0.zip` (created in Step 4)
    - Click "Next"
-   - You might see connection references - ignore for now (we'll set up in Step 6)
+
+5. **Complete the import**
+   - You'll see a list of components to import
+   - Leave everything checked (import all components)
    - Click "Import"
 
-6. **Wait for import to complete**
-   - Status shows at the top (yellow banner)
+6. **Wait for completion**
+   - Import runs in the background
    - Takes 5-15 minutes usually
-   - You can close the window and come back - it keeps going
-   - When done, you'll see "Performance Management System" in your solutions list
+   - You'll see a notification when done
+   - Go to "Installed apps" → "See all" to view your imported solution
 
-**If it fails:** Click the solution to see error details. Common issues:
-- Wrong environment type (needs Dataverse for Teams)
-- Missing permissions
-- Corrupted ZIP file (try re-packing)
+**If it fails:** Check for:
+- Missing permissions (need Environment Maker role)
+- Wrong team selected
+- ZIP file corrupted (try re-packing in Step 4)
 
 ---
 
-### Option B: Import Using CLI (Alternative)
+### Option B: Import Through Web Portal (Alternative)
 
-Only use this if you prefer command line or need automation.
+Use this if you prefer working in a browser:
+
+1. Go to https://make.powerapps.com
+2. Select your environment (top right dropdown)
+3. Click "Solutions" in left navigation
+4. Click "Import solution" button
+5. Browse and select `PerformanceManagement_1_0_0_0.zip`
+6. Click "Next" → "Import"
+7. Wait 5-15 minutes for completion
+
+**Note:** Make sure you select a **Dataverse for Teams** environment, not a regular Dataverse environment.
+
+---
+
+### Option C: Import Using CLI (For Automation)
+
+Only use this if you prefer command line or need scriptable deployment.
 
 **Authenticate to Your Environment:**
 
