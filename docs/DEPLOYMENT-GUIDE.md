@@ -25,21 +25,22 @@ Step-by-step guide to get this thing running in your environment.
 
 ---
 
-## Step 1: Get the Code
+## Step 1: Get the Solution
 
-**Option A: Clone from GitHub**
+**Option A: Download from Releases (Recommended)**
 
-```bash
-git clone https://github.com/BenSweaterVest/ContinousPerformanceManagementApp.git
-cd ContinousPerformanceManagementApp
-```
+1. Go to the GitHub repository Releases page
+2. Download the latest `PerformanceManagement_1_0_0_0.zip` file
+3. Skip to Step 5 (Import the Solution) - you're done!
 
-**Option B: Download ZIP**
+**Option B: Build from Source**
 
-1. Go to the repository on GitHub
-2. Click "Code" → "Download ZIP"
-3. Extract somewhere you can find it
-4. Open terminal/PowerShell in that folder
+If you want to customize the solution before deploying:
+
+1. Clone or download the repository
+2. Extract somewhere you can find it
+3. Open terminal/PowerShell in that folder
+4. Continue to Step 2 to pack the solution
 
 ---
 
@@ -738,9 +739,9 @@ dotnet tool install --global Microsoft.PowerApps.CLI.Tool
 - This guide: You're reading it
 
 **Support:**
-- Check REVIEW-SUMMARY.md for known issues
+- Check VERIFICATION.md for validation details
 - Check USER-GUIDE.md for end-user questions
-- GitHub issues for bugs
+- Check repository Issues for known problems
 
 ---
 

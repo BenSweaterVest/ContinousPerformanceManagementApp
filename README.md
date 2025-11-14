@@ -66,37 +66,26 @@ Also handles quarterly self-evals, one-on-one meeting notes, development plans, 
 - One-on-one meeting prep (15 mins before meetings)
 - Ad-hoc self-eval request (when you need an off-cycle assessment)
 
-## Getting Started
+## Quick Start
 
-**What you need:**
+**Requirements:**
 - Microsoft 365 with Teams
-- Dataverse for Teams environment (comes with Teams)
-- Power Platform CLI
+- Dataverse for Teams environment (free with Teams)
 - Power Apps license (included with most M365 subscriptions)
 
-**Installation:**
+**Installation (2 steps):**
 
-**Quick Start (Teams-native):**
-1. Pack the solution:
-   ```bash
-   cd deployment
-   ./pack-solution.ps1    # Windows
-   ./pack-solution.sh     # Mac/Linux
-   ```
-2. Open Teams → Power Apps app → Build tab
-3. Select your team → Import your solution
-4. Browse to `PerformanceManagement_1_0_0_0.zip` → Import
-5. Wait 5-15 minutes
+1. **Get the solution:**
+   - **Option A:** Download pre-built `PerformanceManagement_1_0_0_0.zip` from [Releases](../../releases)
+   - **Option B:** Build from source (see [releases/README.md](releases/README.md))
 
-**Alternative methods:**
-- Web: https://make.powerapps.com → Solutions → Import solution
-- CLI: Use `import-solution.ps1` or `.sh` scripts in deployment folder
+2. **Import to Teams:**
+   - Open Teams → Power Apps app → Build tab
+   - Select your team → "Import your solution"
+   - Browse to ZIP file → Import → Wait 5-15 minutes
+   - Configure connections and turn on flows
 
-**Post-import setup:**
-   - Configure connection references (Office 365, Dataverse)
-   - Turn on the flows
-   - Add the 12 evaluation questions (they're in the deployment guide)
-   - Share the app with your supervisors
+**Complete guide:** [DEPLOYMENT-GUIDE.md](docs/DEPLOYMENT-GUIDE.md)
 
 **Docs:**
 - [Deployment Guide](docs/DEPLOYMENT-GUIDE.md) - step-by-step deployment

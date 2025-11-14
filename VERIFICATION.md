@@ -69,13 +69,7 @@ Scripts include:
 **Fixed:** All entity references changed to singular form
 **Verified:** ✓ All 4 flows checked and confirmed correct
 
-### 2. MNIT Branding Removal
-**Issue:** Documentation contained Minnesota IT Services branding
-**Impact:** Not applicable for general use
-**Fixed:** Publisher name updated, documentation rewritten
-**Note:** Table prefix `mnit_` retained to avoid breaking references
-
-### 3. Documentation Clarity
+### 2. Documentation Clarity
 **Issue:** Installation steps were unclear and missing key information
 **Impact:** Users would struggle to deploy
 **Fixed:** Complete rewrite with:
