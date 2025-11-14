@@ -1,8 +1,9 @@
 # Power Platform Solution artifacts
+# Note: The release ZIP in /releases folder is NOT ignored
 *.zip
+!releases/*.zip
 *_managed.zip
 *_unmanaged.zip
-PerformanceManagement_*.zip
 
 # Temporary files
 *.tmp

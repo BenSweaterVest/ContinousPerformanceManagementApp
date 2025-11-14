@@ -18,8 +18,8 @@
       <Descriptions>
         <Description description="Performance Management System Publisher" languagecode="1033" />
       </Descriptions>
-      <EMailAddress>admin@example.com</EMailAddress>
-      <SupportingWebsiteUrl>https://github.com/yourusername/performance-management</SupportingWebsiteUrl>
+      <EMailAddress>info@contoso.com</EMailAddress>
+      <SupportingWebsiteUrl>https://github.com/performance-management/teams-app</SupportingWebsiteUrl>
       <CustomizationPrefix>mnit</CustomizationPrefix>
       <CustomizationOptionValuePrefix>10000</CustomizationOptionValuePrefix>
       <Addresses>
