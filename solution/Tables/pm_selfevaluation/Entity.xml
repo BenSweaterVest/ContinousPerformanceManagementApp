@@ -55,7 +55,7 @@
           <Name>pm_selfevaluationid</Name>
           <LogicalName>pm_selfevaluationid</LogicalName>
           <RequiredLevel>systemrequired</RequiredLevel>
-          <DisplayMask>ValidForAdvancedFind</DisplayMask>
+          <DisplayMask>ValidForAdvancedFind|RequiredForGrid</DisplayMask>
           <IsPrimaryId>1</IsPrimaryId>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
           <displaynames>

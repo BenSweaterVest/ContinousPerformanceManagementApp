@@ -20,7 +20,7 @@
               <Name>pm_staffmemberid</Name>
               <LogicalName>pm_staffmemberid</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
-              <DisplayMask>ValidForAdvancedFind</DisplayMask>
+              <DisplayMask>ValidForAdvancedFind|RequiredForGrid</DisplayMask>
               <IsPrimaryId>1</IsPrimaryId>
               <IsValidForCreate>0</IsValidForCreate>
               <IsValidForRead>1</IsValidForRead>
@@ -46,7 +46,7 @@
               <Name>pm_name</Name>
               <LogicalName>pm_name</LogicalName>
               <RequiredLevel>applicationrequired</RequiredLevel>
-              <DisplayMask>ValidForAdvancedFind</DisplayMask>
+              <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
               <IsPrimaryName>1</IsPrimaryName>
               <Length>100</Length>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -743,7 +743,7 @@
               <Name>pm_evaluationquestionid</Name>
               <LogicalName>pm_evaluationquestionid</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
-              <DisplayMask>ValidForAdvancedFind</DisplayMask>
+              <DisplayMask>ValidForAdvancedFind|RequiredForGrid</DisplayMask>
               <IsPrimaryId>1</IsPrimaryId>
               <IsValidForCreate>0</IsValidForCreate>
               <IsValidForRead>1</IsValidForRead>
@@ -1384,7 +1384,7 @@
               <Name>pm_weeklyevaluationid</Name>
               <LogicalName>pm_weeklyevaluationid</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
-              <DisplayMask>ValidForAdvancedFind</DisplayMask>
+              <DisplayMask>ValidForAdvancedFind|RequiredForGrid</DisplayMask>
               <IsPrimaryId>1</IsPrimaryId>
               <IsValidForCreate>0</IsValidForCreate>
               <IsValidForRead>1</IsValidForRead>
@@ -1410,7 +1410,7 @@
               <Name>pm_name</Name>
               <LogicalName>pm_name</LogicalName>
               <RequiredLevel>none</RequiredLevel>
-              <DisplayMask>ValidForAdvancedFind</DisplayMask>
+              <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
               <IsPrimaryName>1</IsPrimaryName>
               <Length>100</Length>
               <AutoNumberFormat>EVAL-{SEQNUM:5}</AutoNumberFormat>
@@ -2186,7 +2186,7 @@
               <Name>pm_selfevaluationid</Name>
               <LogicalName>pm_selfevaluationid</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
-              <DisplayMask>ValidForAdvancedFind</DisplayMask>
+              <DisplayMask>ValidForAdvancedFind|RequiredForGrid</DisplayMask>
               <IsPrimaryId>1</IsPrimaryId>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
               <displaynames>
@@ -2907,6 +2907,7 @@
               <Name>pm_goaldescription</Name>
               <LogicalName>pm_goaldescription</LogicalName>
               <RequiredLevel>applicationrequired</RequiredLevel>
+              <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
               <IsPrimaryName>1</IsPrimaryName>
               <MaxLength>500</MaxLength>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -3513,6 +3514,7 @@
               <Name>pm_name</Name>
               <LogicalName>pm_name</LogicalName>
               <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
               <IsPrimaryName>1</IsPrimaryName>
               <Length>100</Length>
               <AutoNumberFormat>MTG-{SEQNUM:5}</AutoNumberFormat>
@@ -4118,6 +4120,7 @@
               <Name>pm_goaldescription</Name>
               <LogicalName>pm_goaldescription</LogicalName>
               <RequiredLevel>applicationrequired</RequiredLevel>
+              <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
               <IsPrimaryName>1</IsPrimaryName>
               <MaxLength>500</MaxLength>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -4725,6 +4728,7 @@
               <Name>pm_name</Name>
               <LogicalName>pm_name</LogicalName>
               <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
               <IsPrimaryName>1</IsPrimaryName>
               <Length>100</Length>
               <AutoNumberFormat>REC-{SEQNUM:5}</AutoNumberFormat>
@@ -5308,6 +5312,7 @@
               <Name>pm_name</Name>
               <LogicalName>pm_name</LogicalName>
               <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
               <IsPrimaryName>1</IsPrimaryName>
               <Length>100</Length>
               <AutoNumberFormat>ACT-{SEQNUM:5}</AutoNumberFormat>

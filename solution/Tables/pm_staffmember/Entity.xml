@@ -55,7 +55,7 @@
           <Name>pm_staffmemberid</Name>
           <LogicalName>pm_staffmemberid</LogicalName>
           <RequiredLevel>systemrequired</RequiredLevel>
-          <DisplayMask>ValidForAdvancedFind</DisplayMask>
+          <DisplayMask>ValidForAdvancedFind|RequiredForGrid</DisplayMask>
           <IsPrimaryId>1</IsPrimaryId>
           <IsValidForCreate>0</IsValidForCreate>
           <IsValidForRead>1</IsValidForRead>
@@ -81,7 +81,7 @@
           <Name>pm_name</Name>
           <LogicalName>pm_name</LogicalName>
           <RequiredLevel>applicationrequired</RequiredLevel>
-          <DisplayMask>ValidForAdvancedFind</DisplayMask>
+          <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
           <IsPrimaryName>1</IsPrimaryName>
           <Length>100</Length>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>

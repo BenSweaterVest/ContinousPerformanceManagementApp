@@ -66,6 +66,7 @@
           <Name>pm_goaldescription</Name>
           <LogicalName>pm_goaldescription</LogicalName>
           <RequiredLevel>applicationrequired</RequiredLevel>
+          <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
           <IsPrimaryName>1</IsPrimaryName>
           <MaxLength>500</MaxLength>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>

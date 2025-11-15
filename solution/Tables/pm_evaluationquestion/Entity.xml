@@ -55,7 +55,7 @@
           <Name>pm_evaluationquestionid</Name>
           <LogicalName>pm_evaluationquestionid</LogicalName>
           <RequiredLevel>systemrequired</RequiredLevel>
-          <DisplayMask>ValidForAdvancedFind</DisplayMask>
+          <DisplayMask>ValidForAdvancedFind|RequiredForGrid</DisplayMask>
           <IsPrimaryId>1</IsPrimaryId>
           <IsValidForCreate>0</IsValidForCreate>
           <IsValidForRead>1</IsValidForRead>
