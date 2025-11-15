@@ -2,31 +2,31 @@
 <ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Entities>
     <Entity>
-      <Name>pm_staffmember</Name>
+      <Name LocalizedName="Staff Member" OriginalName="Staff Member">pm_staffmember</Name>
     </Entity>
     <Entity>
-      <Name>pm_evaluationquestion</Name>
+      <Name LocalizedName="Evaluation Question" OriginalName="Evaluation Question">pm_evaluationquestion</Name>
     </Entity>
     <Entity>
-      <Name>pm_weeklyevaluation</Name>
+      <Name LocalizedName="Weekly Evaluation" OriginalName="Weekly Evaluation">pm_weeklyevaluation</Name>
     </Entity>
     <Entity>
-      <Name>pm_selfevaluation</Name>
+      <Name LocalizedName="Self Evaluation" OriginalName="Self Evaluation">pm_selfevaluation</Name>
     </Entity>
     <Entity>
-      <Name>pm_idpentry</Name>
+      <Name LocalizedName="IDP Entry" OriginalName="IDP Entry">pm_idpentry</Name>
     </Entity>
     <Entity>
-      <Name>pm_meetingnote</Name>
+      <Name LocalizedName="Meeting Note" OriginalName="Meeting Note">pm_meetingnote</Name>
     </Entity>
     <Entity>
-      <Name>pm_goal</Name>
+      <Name LocalizedName="Goal" OriginalName="Goal">pm_goal</Name>
     </Entity>
     <Entity>
-      <Name>pm_recognition</Name>
+      <Name LocalizedName="Recognition" OriginalName="Recognition">pm_recognition</Name>
     </Entity>
     <Entity>
-      <Name>pm_actionitem</Name>
+      <Name LocalizedName="Action Item" OriginalName="Action Item">pm_actionitem</Name>
     </Entity>
   </Entities>
   <Roles />
