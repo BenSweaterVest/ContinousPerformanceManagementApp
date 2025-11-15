@@ -44,8 +44,23 @@ jobs:
 
           echo "✅ Versions match"
 
-      - name: Install xmllint
-        run: sudo apt-get update && sudo apt-get install -y libxml2-utils
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libxml2-utils
+
+      - name: Install Power Platform CLI
+        run: |
+          # Install dotnet if not present
+          wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
+          chmod +x dotnet-install.sh
+          ./dotnet-install.sh --channel 8.0 --install-dir ~/.dotnet
+          export PATH="$HOME/.dotnet:$PATH"
+          echo "$HOME/.dotnet" >> $GITHUB_PATH
+
+          # Install pac CLI
+          dotnet tool install --global Microsoft.PowerApps.CLI.Tool
+          echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
 
       - name: Validate XML files
         run: |
@@ -54,16 +69,22 @@ jobs:
           xmllint --noout solution/Other/Solution.xml
           echo "✅ All XML files validated"
 
-      - name: Create solution package
+      - name: Create solution package with pac CLI
         run: |
           VERSION="${{ steps.get_version.outputs.version }}"
           ZIP_NAME="PerformanceManagement_${VERSION//./_}.zip"
 
           echo "Creating package: $ZIP_NAME"
 
-          cd solution
-          zip -r "../${ZIP_NAME}" . -q
-          cd ..
+          # Ensure pac is in PATH
+          export PATH="$HOME/.dotnet/tools:$PATH"
+
+          # Pack the solution using pac CLI
+          pac solution pack \
+            --zipfile "${ZIP_NAME}" \
+            --folder "./solution" \
+            --packagetype Unmanaged \
+            --errorlevel Verbose
 
           if [ -f "${ZIP_NAME}" ]; then
             SIZE=$(stat -f%z "${ZIP_NAME}" 2>/dev/null || stat -c%s "${ZIP_NAME}")
