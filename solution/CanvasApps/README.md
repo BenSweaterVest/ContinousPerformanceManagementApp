@@ -9,15 +9,15 @@ The Canvas App must be created within Power Apps Studio and then exported/added 
 - **Name**: Performance Management System
 - **Form Factor**: Tablet (1366x768)
 - **Data Sources**:
-  - mnit_staffmember
-  - mnit_evaluationquestion
-  - mnit_weeklyevaluation
-  - mnit_selfevaluation
-  - mnit_idpentry
-  - mnit_meetingnote
-  - mnit_goal
-  - mnit_recognition
-  - mnit_actionitem
+  - pm_staffmember
+  - pm_evaluationquestion
+  - pm_weeklyevaluation
+  - pm_selfevaluation
+  - pm_idpentry
+  - pm_meetingnote
+  - pm_goal
+  - pm_recognition
+  - pm_actionitem
   - Office 365 Users
   - Office 365 Outlook (for flows)
 

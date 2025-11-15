@@ -45,8 +45,8 @@
           "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
         },
         "parameters": {
-          "entityName": "mnit_staffmember",
-          "$filter": "mnit_name eq '@{triggerBody()?['StaffMemberName']}'"
+          "entityName": "pm_staffmember",
+          "$filter": "pm_name eq '@{triggerBody()?['StaffMemberName']}'"
         }
       }
     },
@@ -62,11 +62,11 @@
           "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
         },
         "parameters": {
-          "entityName": "mnit_selfevaluation",
+          "entityName": "pm_selfevaluation",
           "item": {
-            "mnit_staffmember@odata.bind": "/mnit_staffmember(@{first(outputs('Get_Staff_Member_Record')?['body/value'])?['mnit_staffmemberid']})",
-            "mnit_evaluationtype": 2,
-            "mnit_fiscalyear": "@if(greaterOrEquals(month(utcNow()), 7), add(year(utcNow()), 1), year(utcNow()))"
+            "pm_staffmember@odata.bind": "/pm_staffmember(@{first(outputs('Get_Staff_Member_Record')?['body/value'])?['pm_staffmemberid']})",
+            "pm_evaluationtype": 2,
+            "pm_fiscalyear": "@if(greaterOrEquals(month(utcNow()), 7), add(year(utcNow()), 1), year(utcNow()))"
           }
         }
       },

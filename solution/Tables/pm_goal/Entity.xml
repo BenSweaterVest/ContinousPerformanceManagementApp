@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <EntityInfo>
-    <entity Name="mnit_goal">
+    <entity Name="pm_goal">
       <LocalizedNames>
         <LocalizedName description="Goal" languagecode="1033" />
       </LocalizedNames>
@@ -12,10 +12,10 @@
         <Description description="Performance and development goals tracking" languagecode="1033" />
       </Descriptions>
       <attributes>
-        <attribute PhysicalName="mnit_goalid">
+        <attribute PhysicalName="pm_goalid">
           <Type>uniqueidentifier</Type>
-          <Name>mnit_goalid</Name>
-          <LogicalName>mnit_goalid</LogicalName>
+          <Name>pm_goalid</Name>
+          <LogicalName>pm_goalid</LogicalName>
           <RequiredLevel>systemrequired</RequiredLevel>
           <IsPrimaryId>1</IsPrimaryId>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -23,10 +23,10 @@
             <displayname description="Goal ID" languagecode="1033" />
           </displaynames>
         </attribute>
-        <attribute PhysicalName="mnit_goaldescription">
+        <attribute PhysicalName="pm_goaldescription">
           <Type>memo</Type>
-          <Name>mnit_goaldescription</Name>
-          <LogicalName>mnit_goaldescription</LogicalName>
+          <Name>pm_goaldescription</Name>
+          <LogicalName>pm_goaldescription</LogicalName>
           <RequiredLevel>applicationrequired</RequiredLevel>
           <IsPrimaryName>1</IsPrimaryName>
           <MaxLength>500</MaxLength>
@@ -35,29 +35,29 @@
             <displayname description="Goal Description" languagecode="1033" />
           </displaynames>
         </attribute>
-        <attribute PhysicalName="mnit_staffmember">
+        <attribute PhysicalName="pm_staffmember">
           <Type>lookup</Type>
-          <Name>mnit_staffmember</Name>
-          <LogicalName>mnit_staffmember</LogicalName>
+          <Name>pm_staffmember</Name>
+          <LogicalName>pm_staffmember</LogicalName>
           <RequiredLevel>applicationrequired</RequiredLevel>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
           <Targets>
-            <Target>mnit_staffmember</Target>
+            <Target>pm_staffmember</Target>
           </Targets>
           <displaynames>
             <displayname description="Staff Member" languagecode="1033" />
           </displaynames>
         </attribute>
-        <attribute PhysicalName="mnit_status">
+        <attribute PhysicalName="pm_status">
           <Type>picklist</Type>
-          <Name>mnit_status</Name>
-          <LogicalName>mnit_status</LogicalName>
+          <Name>pm_status</Name>
+          <LogicalName>pm_status</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
           <displaynames>
             <displayname description="Status" languagecode="1033" />
           </displaynames>
-          <optionset Name="mnit_goalstatus">
+          <optionset Name="pm_goalstatus">
             <IsSorted>0</IsSorted>
             <IsGlobal>0</IsGlobal>
             <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -69,10 +69,10 @@
             </options>
           </optionset>
         </attribute>
-        <attribute PhysicalName="mnit_completionpercentage">
+        <attribute PhysicalName="pm_completionpercentage">
           <Type>int</Type>
-          <Name>mnit_completionpercentage</Name>
-          <LogicalName>mnit_completionpercentage</LogicalName>
+          <Name>pm_completionpercentage</Name>
+          <LogicalName>pm_completionpercentage</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <MinValue>0</MinValue>
           <MaxValue>100</MaxValue>
@@ -81,10 +81,10 @@
             <displayname description="Completion Percentage" languagecode="1033" />
           </displaynames>
         </attribute>
-        <attribute PhysicalName="mnit_duedate">
+        <attribute PhysicalName="pm_duedate">
           <Type>datetime</Type>
-          <Name>mnit_duedate</Name>
-          <LogicalName>mnit_duedate</LogicalName>
+          <Name>pm_duedate</Name>
+          <LogicalName>pm_duedate</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <Format>DateOnly</Format>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>

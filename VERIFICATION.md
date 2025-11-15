@@ -14,18 +14,18 @@ This solution has been fully verified and is ready to be imported into Microsoft
 - [x] `solution/Other/Customizations.xml` - Entity definitions list
 - [x] Solution version: 1.0.0.0
 - [x] Package type: Unmanaged
-- [x] Publisher: Performance Management Publisher (prefix: mnit)
+- [x] Publisher: Performance Management Publisher (prefix: pm)
 
 ### Dataverse Tables (9/9) ✓
-- [x] `mnit_staffmember` - Employee records
-- [x] `mnit_evaluationquestion` - 12 standardized performance questions
-- [x] `mnit_weeklyevaluation` - Supervisor weekly ratings
-- [x] `mnit_selfevaluation` - Quarterly self-assessments
-- [x] `mnit_idpentry` - Individual Development Plan entries
-- [x] `mnit_meetingnote` - One-on-one meeting documentation
-- [x] `mnit_goal` - Performance objectives
-- [x] `mnit_recognition` - Positive feedback entries
-- [x] `mnit_actionitem` - Follow-up tasks
+- [x] `pm_staffmember` - Employee records
+- [x] `pm_evaluationquestion` - 12 standardized performance questions
+- [x] `pm_weeklyevaluation` - Supervisor weekly ratings
+- [x] `pm_selfevaluation` - Quarterly self-assessments
+- [x] `pm_idpentry` - Individual Development Plan entries
+- [x] `pm_meetingnote` - One-on-one meeting documentation
+- [x] `pm_goal` - Performance objectives
+- [x] `pm_recognition` - Positive feedback entries
+- [x] `pm_actionitem` - Follow-up tasks
 
 All entity XML files are properly formatted and include:
 - Correct schema definitions
@@ -40,7 +40,7 @@ All entity XML files are properly formatted and include:
 - [x] `OneOnOneMeetingNotification.json` - Pre-meeting notifications
 - [x] `AdHocSelfEvalRequest.json` - On-demand self-evaluation trigger
 
-**Critical Fix Applied:** All flows verified to use SINGULAR entity names (e.g., `mnit_staffmember` not `mnit_staffmembers`). This was a critical bug fixed in a previous session that would have caused runtime failures.
+**Critical Fix Applied:** All flows verified to use SINGULAR entity names (e.g., `pm_staffmember` not `pm_staffmembers`). This was a critical bug fixed in a previous session that would have caused runtime failures.
 
 ### Deployment Scripts (4/4) ✓
 - [x] `deployment/pack-solution.ps1` - Windows packing script
@@ -129,7 +129,7 @@ Scripts include:
 Users must complete these steps after import:
 
 1. **Add Evaluation Questions** (manual data entry)
-   - 12 questions must be added to `mnit_evaluationquestion` table
+   - 12 questions must be added to `pm_evaluationquestion` table
    - Questions provided in deployment guide
 
 2. **Configure Connection References**

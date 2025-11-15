@@ -2,31 +2,31 @@
 <ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Entities>
     <Entity>
-      <Name>mnit_staffmember</Name>
+      <Name>pm_staffmember</Name>
     </Entity>
     <Entity>
-      <Name>mnit_evaluationquestion</Name>
+      <Name>pm_evaluationquestion</Name>
     </Entity>
     <Entity>
-      <Name>mnit_weeklyevaluation</Name>
+      <Name>pm_weeklyevaluation</Name>
     </Entity>
     <Entity>
-      <Name>mnit_selfevaluation</Name>
+      <Name>pm_selfevaluation</Name>
     </Entity>
     <Entity>
-      <Name>mnit_idpentry</Name>
+      <Name>pm_idpentry</Name>
     </Entity>
     <Entity>
-      <Name>mnit_meetingnote</Name>
+      <Name>pm_meetingnote</Name>
     </Entity>
     <Entity>
-      <Name>mnit_goal</Name>
+      <Name>pm_goal</Name>
     </Entity>
     <Entity>
-      <Name>mnit_recognition</Name>
+      <Name>pm_recognition</Name>
     </Entity>
     <Entity>
-      <Name>mnit_actionitem</Name>
+      <Name>pm_actionitem</Name>
     </Entity>
   </Entities>
   <Roles />

@@ -26,9 +26,9 @@ All components have been verified and are ready for deployment testing.
 ### ✅ Critical Bug Fixes Verified
 
 - ✅ **Entity naming fix applied**: All flows use SINGULAR entity names
-  - `mnit_staffmember` ✓ (not mnit_staffmembers)
-  - `mnit_weeklyevaluation` ✓ (not mnit_weeklyevaluations)
-  - `mnit_selfevaluation` ✓ (not mnit_selfevaluations)
+  - `pm_staffmember` ✓ (not pm_staffmembers)
+  - `pm_weeklyevaluation` ✓ (not pm_weeklyevaluations)
+  - `pm_selfevaluation` ✓ (not pm_selfevaluations)
 - ✅ **Impact**: This fix prevents runtime failures when flows query Dataverse
 - ✅ **Verification**: All 4 flow files checked and confirmed correct
 
@@ -39,15 +39,15 @@ All components have been verified and are ready for deployment testing.
 - ✅ All entity names match between files
 
 **Entities:**
-1. mnit_staffmember
-2. mnit_evaluationquestion
-3. mnit_weeklyevaluation
-4. mnit_selfevaluation
-5. mnit_idpentry
-6. mnit_meetingnote
-7. mnit_goal
-8. mnit_recognition
-9. mnit_actionitem
+1. pm_staffmember
+2. pm_evaluationquestion
+3. pm_weeklyevaluation
+4. pm_selfevaluation
+5. pm_idpentry
+6. pm_meetingnote
+7. pm_goal
+8. pm_recognition
+9. pm_actionitem
 
 ### ✅ Flow Validation
 
@@ -58,9 +58,9 @@ All components have been verified and are ready for deployment testing.
 
 ### ✅ Relationship Validation
 
-- ✅ mnit_staffmember.mnit_supervisor → systemuser (lookup)
-- ✅ mnit_weeklyevaluation.mnit_staffmember → mnit_staffmember (lookup)
-- ✅ mnit_selfevaluation.mnit_staffmember → mnit_staffmember (lookup)
+- ✅ pm_staffmember.pm_supervisor → systemuser (lookup)
+- ✅ pm_weeklyevaluation.pm_staffmember → pm_staffmember (lookup)
+- ✅ pm_selfevaluation.pm_staffmember → pm_staffmember (lookup)
 - ✅ All required lookups properly defined
 
 ### ✅ Documentation

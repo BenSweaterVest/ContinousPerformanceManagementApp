@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <EntityInfo>
-    <entity Name="mnit_actionitem">
+    <entity Name="pm_actionitem">
       <LocalizedNames>
         <LocalizedName description="Action Item" languagecode="1033" />
       </LocalizedNames>
@@ -12,10 +12,10 @@
         <Description description="Track follow-up actions from meetings" languagecode="1033" />
       </Descriptions>
       <attributes>
-        <attribute PhysicalName="mnit_actionitemid">
+        <attribute PhysicalName="pm_actionitemid">
           <Type>uniqueidentifier</Type>
-          <Name>mnit_actionitemid</Name>
-          <LogicalName>mnit_actionitemid</LogicalName>
+          <Name>pm_actionitemid</Name>
+          <LogicalName>pm_actionitemid</LogicalName>
           <RequiredLevel>systemrequired</RequiredLevel>
           <IsPrimaryId>1</IsPrimaryId>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -23,10 +23,10 @@
             <displayname description="Action Item ID" languagecode="1033" />
           </displaynames>
         </attribute>
-        <attribute PhysicalName="mnit_name">
+        <attribute PhysicalName="pm_name">
           <Type>nvarchar</Type>
-          <Name>mnit_name</Name>
-          <LogicalName>mnit_name</LogicalName>
+          <Name>pm_name</Name>
+          <LogicalName>pm_name</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <IsPrimaryName>1</IsPrimaryName>
           <Length>100</Length>
@@ -36,10 +36,10 @@
             <displayname description="Action Item ID" languagecode="1033" />
           </displaynames>
         </attribute>
-        <attribute PhysicalName="mnit_description">
+        <attribute PhysicalName="pm_description">
           <Type>memo</Type>
-          <Name>mnit_description</Name>
-          <LogicalName>mnit_description</LogicalName>
+          <Name>pm_description</Name>
+          <LogicalName>pm_description</LogicalName>
           <RequiredLevel>applicationrequired</RequiredLevel>
           <MaxLength>2000</MaxLength>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -47,10 +47,10 @@
             <displayname description="Description" languagecode="1033" />
           </displaynames>
         </attribute>
-        <attribute PhysicalName="mnit_owner">
+        <attribute PhysicalName="pm_owner">
           <Type>lookup</Type>
-          <Name>mnit_owner</Name>
-          <LogicalName>mnit_owner</LogicalName>
+          <Name>pm_owner</Name>
+          <LogicalName>pm_owner</LogicalName>
           <RequiredLevel>applicationrequired</RequiredLevel>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
           <Targets>
@@ -60,23 +60,23 @@
             <displayname description="Owner" languagecode="1033" />
           </displaynames>
         </attribute>
-        <attribute PhysicalName="mnit_relatedstaffmember">
+        <attribute PhysicalName="pm_relatedstaffmember">
           <Type>lookup</Type>
-          <Name>mnit_relatedstaffmember</Name>
-          <LogicalName>mnit_relatedstaffmember</LogicalName>
+          <Name>pm_relatedstaffmember</Name>
+          <LogicalName>pm_relatedstaffmember</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
           <Targets>
-            <Target>mnit_staffmember</Target>
+            <Target>pm_staffmember</Target>
           </Targets>
           <displaynames>
             <displayname description="Related Staff Member" languagecode="1033" />
           </displaynames>
         </attribute>
-        <attribute PhysicalName="mnit_duedate">
+        <attribute PhysicalName="pm_duedate">
           <Type>datetime</Type>
-          <Name>mnit_duedate</Name>
-          <LogicalName>mnit_duedate</LogicalName>
+          <Name>pm_duedate</Name>
+          <LogicalName>pm_duedate</LogicalName>
           <RequiredLevel>applicationrequired</RequiredLevel>
           <Format>DateOnly</Format>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -84,16 +84,16 @@
             <displayname description="Due Date" languagecode="1033" />
           </displaynames>
         </attribute>
-        <attribute PhysicalName="mnit_status">
+        <attribute PhysicalName="pm_status">
           <Type>picklist</Type>
-          <Name>mnit_status</Name>
-          <LogicalName>mnit_status</LogicalName>
+          <Name>pm_status</Name>
+          <LogicalName>pm_status</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
           <displaynames>
             <displayname description="Status" languagecode="1033" />
           </displaynames>
-          <optionset Name="mnit_actionitemstatus">
+          <optionset Name="pm_actionitemstatus">
             <IsSorted>0</IsSorted>
             <IsGlobal>0</IsGlobal>
             <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -104,10 +104,10 @@
             </options>
           </optionset>
         </attribute>
-        <attribute PhysicalName="mnit_completeddate">
+        <attribute PhysicalName="pm_completeddate">
           <Type>datetime</Type>
-          <Name>mnit_completeddate</Name>
-          <LogicalName>mnit_completeddate</LogicalName>
+          <Name>pm_completeddate</Name>
+          <LogicalName>pm_completeddate</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <Format>DateOnly</Format>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>

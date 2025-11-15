@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <EntityInfo>
-    <entity Name="mnit_meetingnote">
+    <entity Name="pm_meetingnote">
       <LocalizedNames>
         <LocalizedName description="Meeting Note" languagecode="1033" />
       </LocalizedNames>
@@ -12,10 +12,10 @@
         <Description description="One-on-one meeting documentation" languagecode="1033" />
       </Descriptions>
       <attributes>
-        <attribute PhysicalName="mnit_meetingnoteid">
+        <attribute PhysicalName="pm_meetingnoteid">
           <Type>uniqueidentifier</Type>
-          <Name>mnit_meetingnoteid</Name>
-          <LogicalName>mnit_meetingnoteid</LogicalName>
+          <Name>pm_meetingnoteid</Name>
+          <LogicalName>pm_meetingnoteid</LogicalName>
           <RequiredLevel>systemrequired</RequiredLevel>
           <IsPrimaryId>1</IsPrimaryId>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -23,10 +23,10 @@
             <displayname description="Meeting Note ID" languagecode="1033" />
           </displaynames>
         </attribute>
-        <attribute PhysicalName="mnit_name">
+        <attribute PhysicalName="pm_name">
           <Type>nvarchar</Type>
-          <Name>mnit_name</Name>
-          <LogicalName>mnit_name</LogicalName>
+          <Name>pm_name</Name>
+          <LogicalName>pm_name</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <IsPrimaryName>1</IsPrimaryName>
           <Length>100</Length>
@@ -36,23 +36,23 @@
             <displayname description="Meeting ID" languagecode="1033" />
           </displaynames>
         </attribute>
-        <attribute PhysicalName="mnit_staffmember">
+        <attribute PhysicalName="pm_staffmember">
           <Type>lookup</Type>
-          <Name>mnit_staffmember</Name>
-          <LogicalName>mnit_staffmember</LogicalName>
+          <Name>pm_staffmember</Name>
+          <LogicalName>pm_staffmember</LogicalName>
           <RequiredLevel>applicationrequired</RequiredLevel>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
           <Targets>
-            <Target>mnit_staffmember</Target>
+            <Target>pm_staffmember</Target>
           </Targets>
           <displaynames>
             <displayname description="Staff Member" languagecode="1033" />
           </displaynames>
         </attribute>
-        <attribute PhysicalName="mnit_supervisor">
+        <attribute PhysicalName="pm_supervisor">
           <Type>lookup</Type>
-          <Name>mnit_supervisor</Name>
-          <LogicalName>mnit_supervisor</LogicalName>
+          <Name>pm_supervisor</Name>
+          <LogicalName>pm_supervisor</LogicalName>
           <RequiredLevel>applicationrequired</RequiredLevel>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
           <Targets>
@@ -62,10 +62,10 @@
             <displayname description="Supervisor" languagecode="1033" />
           </displaynames>
         </attribute>
-        <attribute PhysicalName="mnit_meetingdate">
+        <attribute PhysicalName="pm_meetingdate">
           <Type>datetime</Type>
-          <Name>mnit_meetingdate</Name>
-          <LogicalName>mnit_meetingdate</LogicalName>
+          <Name>pm_meetingdate</Name>
+          <LogicalName>pm_meetingdate</LogicalName>
           <RequiredLevel>applicationrequired</RequiredLevel>
           <Format>DateOnly</Format>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -73,10 +73,10 @@
             <displayname description="Meeting Date" languagecode="1033" />
           </displaynames>
         </attribute>
-        <attribute PhysicalName="mnit_agenda">
+        <attribute PhysicalName="pm_agenda">
           <Type>memo</Type>
-          <Name>mnit_agenda</Name>
-          <LogicalName>mnit_agenda</LogicalName>
+          <Name>pm_agenda</Name>
+          <LogicalName>pm_agenda</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <MaxLength>5000</MaxLength>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -84,10 +84,10 @@
             <displayname description="Agenda" languagecode="1033" />
           </displaynames>
         </attribute>
-        <attribute PhysicalName="mnit_discussionnotes">
+        <attribute PhysicalName="pm_discussionnotes">
           <Type>memo</Type>
-          <Name>mnit_discussionnotes</Name>
-          <LogicalName>mnit_discussionnotes</LogicalName>
+          <Name>pm_discussionnotes</Name>
+          <LogicalName>pm_discussionnotes</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <MaxLength>10000</MaxLength>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -95,10 +95,10 @@
             <displayname description="Discussion Notes" languagecode="1033" />
           </displaynames>
         </attribute>
-        <attribute PhysicalName="mnit_actionitems">
+        <attribute PhysicalName="pm_actionitems">
           <Type>memo</Type>
-          <Name>mnit_actionitems</Name>
-          <LogicalName>mnit_actionitems</LogicalName>
+          <Name>pm_actionitems</Name>
+          <LogicalName>pm_actionitems</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <MaxLength>5000</MaxLength>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>

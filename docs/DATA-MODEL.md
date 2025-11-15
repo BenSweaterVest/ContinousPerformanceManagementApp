@@ -15,21 +15,21 @@ Complete documentation of the Dataverse data model including tables, relationshi
 
 ## Overview
 
-The Performance Management System uses 9 custom Dataverse tables with the `mnit_` prefix. All tables follow standard Dataverse patterns with system fields (Created On, Modified On, Owner, etc.).
+The Performance Management System uses 9 custom Dataverse tables with the `pm_` prefix. All tables follow standard Dataverse patterns with system fields (Created On, Modified On, Owner, etc.).
 
 ### Table Summary
 
 | Table | Logical Name | Primary Purpose | Key Relationships |
 |-------|-------------|-----------------|-------------------|
-| Staff Member | mnit_staffmember | Employee records | → systemuser (Supervisor) |
-| Evaluation Question | mnit_evaluationquestion | Standard questions | ← Weekly Evaluation, Self Evaluation |
-| Weekly Evaluation | mnit_weeklyevaluation | Supervisor evaluations | → Staff Member, → Question, → systemuser |
-| Self Evaluation | mnit_selfevaluation | Employee self-assessments | → Staff Member, → Question |
-| IDP Entry | mnit_idpentry | Development plans | → Staff Member |
-| Meeting Note | mnit_meetingnote | 1-on-1 documentation | → Staff Member, → systemuser |
-| Goal | mnit_goal | Performance objectives | → Staff Member |
-| Recognition Entry | mnit_recognition | Positive feedback | → Staff Member, → systemuser |
-| Action Item | mnit_actionitem | Follow-up tasks | → systemuser, → Staff Member (optional) |
+| Staff Member | pm_staffmember | Employee records | → systemuser (Supervisor) |
+| Evaluation Question | pm_evaluationquestion | Standard questions | ← Weekly Evaluation, Self Evaluation |
+| Weekly Evaluation | pm_weeklyevaluation | Supervisor evaluations | → Staff Member, → Question, → systemuser |
+| Self Evaluation | pm_selfevaluation | Employee self-assessments | → Staff Member, → Question |
+| IDP Entry | pm_idpentry | Development plans | → Staff Member |
+| Meeting Note | pm_meetingnote | 1-on-1 documentation | → Staff Member, → systemuser |
+| Goal | pm_goal | Performance objectives | → Staff Member |
+| Recognition Entry | pm_recognition | Positive feedback | → Staff Member, → systemuser |
+| Action Item | pm_actionitem | Follow-up tasks | → systemuser, → Staff Member (optional) |
 
 ---
 
@@ -45,7 +45,7 @@ The Performance Management System uses 9 custom Dataverse tables with the `mnit_
          ↓
 ┌─────────────────────┐          ┌──────────────────────┐
 │   Staff Member      │          │ Evaluation Question   │
-│   mnit_staffmember  │          │ mnit_evaluationquestion│
+│   pm_staffmember  │          │ pm_evaluationquestion│
 │                     │          │                       │
 │ - Name              │          │ - Question Text       │
 │ - Employee ID       │          │ - Question Number     │
@@ -61,7 +61,7 @@ The Performance Management System uses 9 custom Dataverse tables with the `mnit_
        ↓                                            ↓
 ┌─────────────────────┐                   ┌────────────────────┐
 │  Weekly Evaluation  │                   │  Self Evaluation   │
-│ mnit_weeklyevaluation│                  │ mnit_selfevaluation│
+│ pm_weeklyevaluation│                  │ pm_selfevaluation│
 │                      │                  │                    │
 │ - Staff Member   ────┘                  │ - Staff Member ────┘
 │ - Question       ────────────────────── │ - Question ────────┘
@@ -100,23 +100,23 @@ The Performance Management System uses 9 custom Dataverse tables with the `mnit_
 
 ## Table Specifications
 
-### 1. Staff Member (mnit_staffmember)
+### 1. Staff Member (pm_staffmember)
 
 **Purpose**: Store employee information for staff being evaluated.
 
-**Primary Key**: mnit_staffmemberid (GUID)
-**Primary Name**: mnit_name (Text, 100)
+**Primary Key**: pm_staffmemberid (GUID)
+**Primary Name**: pm_name (Text, 100)
 
 #### Columns
 
 | Column | Type | Length | Required | Description |
 |--------|------|--------|----------|-------------|
-| mnit_name | Text | 100 | Yes | Full name of staff member |
-| mnit_employeeid | Text | 50 | No | Unique employee identifier |
-| mnit_positiontitle | Text | 200 | No | Job title |
-| mnit_supervisor | Lookup | - | No | Lookup to systemuser |
-| mnit_startdate | Date | - | No | Position start date |
-| mnit_status | Choice | - | No | 1=Active, 2=Inactive |
+| pm_name | Text | 100 | Yes | Full name of staff member |
+| pm_employeeid | Text | 50 | No | Unique employee identifier |
+| pm_positiontitle | Text | 200 | No | Job title |
+| pm_supervisor | Lookup | - | No | Lookup to systemuser |
+| pm_startdate | Date | - | No | Position start date |
+| pm_status | Choice | - | No | 1=Active, 2=Inactive |
 
 #### Views
 
@@ -130,20 +130,20 @@ The Performance Management System uses 9 custom Dataverse tables with the `mnit_
 
 ---
 
-### 2. Evaluation Question (mnit_evaluationquestion)
+### 2. Evaluation Question (pm_evaluationquestion)
 
 **Purpose**: Store the 12 standardized performance evaluation questions.
 
-**Primary Key**: mnit_evaluationquestionid (GUID)
-**Primary Name**: mnit_questiontext (Multiline Text)
+**Primary Key**: pm_evaluationquestionid (GUID)
+**Primary Name**: pm_questiontext (Multiline Text)
 
 #### Columns
 
 | Column | Type | Length | Required | Description |
 |--------|------|--------|----------|-------------|
-| mnit_questiontext | Multiline Text | 2000 | Yes | The question text |
-| mnit_questionnumber | Whole Number | - | No | Sequential number (1-12) |
-| mnit_active | Yes/No | - | No | Is question active? (default: Yes) |
+| pm_questiontext | Multiline Text | 2000 | Yes | The question text |
+| pm_questionnumber | Whole Number | - | No | Sequential number (1-12) |
+| pm_active | Yes/No | - | No | Is question active? (default: Yes) |
 
 #### Seed Data Required
 
@@ -157,25 +157,25 @@ See DEPLOYMENT-GUIDE.md for the 12 standard questions that must be loaded manual
 
 ---
 
-### 3. Weekly Evaluation (mnit_weeklyevaluation)
+### 3. Weekly Evaluation (pm_weeklyevaluation)
 
 **Purpose**: Store supervisor's weekly micro-evaluations of staff performance.
 
-**Primary Key**: mnit_weeklyevaluationid (GUID)
-**Primary Name**: mnit_name (Auto-number: EVAL-{SEQNUM:5})
+**Primary Key**: pm_weeklyevaluationid (GUID)
+**Primary Name**: pm_name (Auto-number: EVAL-{SEQNUM:5})
 
 #### Columns
 
 | Column | Type | Length | Required | Description |
 |--------|------|--------|----------|-------------|
-| mnit_name | Text | 100 | No | Auto-generated ID |
-| mnit_staffmember | Lookup | - | Yes | → mnit_staffmember |
-| mnit_evaluator | Lookup | - | Yes | → systemuser |
-| mnit_question | Lookup | - | Yes | → mnit_evaluationquestion |
-| mnit_rating | Choice | - | Yes | 1-5 scale + "Insufficient Data" |
-| mnit_notes | Multiline Text | 5000 | No | Optional observations |
-| mnit_evaluationdate | Date | - | Yes | Date of evaluation |
-| mnit_evaluationtype | Choice | - | No | 1=Weekly Suggested, 2=Ad Hoc |
+| pm_name | Text | 100 | No | Auto-generated ID |
+| pm_staffmember | Lookup | - | Yes | → pm_staffmember |
+| pm_evaluator | Lookup | - | Yes | → systemuser |
+| pm_question | Lookup | - | Yes | → pm_evaluationquestion |
+| pm_rating | Choice | - | Yes | 1-5 scale + "Insufficient Data" |
+| pm_notes | Multiline Text | 5000 | No | Optional observations |
+| pm_evaluationdate | Date | - | Yes | Date of evaluation |
+| pm_evaluationtype | Choice | - | No | 1=Weekly Suggested, 2=Ad Hoc |
 
 #### Rating Scale
 
@@ -201,26 +201,26 @@ See DEPLOYMENT-GUIDE.md for the 12 standard questions that must be loaded manual
 
 ---
 
-### 4. Self Evaluation (mnit_selfevaluation)
+### 4. Self Evaluation (pm_selfevaluation)
 
 **Purpose**: Store employee quarterly self-assessments.
 
-**Primary Key**: mnit_selfevaluationid (GUID)
-**Primary Name**: mnit_name (Auto-number: SELF-{SEQNUM:5})
+**Primary Key**: pm_selfevaluationid (GUID)
+**Primary Name**: pm_name (Auto-number: SELF-{SEQNUM:5})
 
 #### Columns
 
 | Column | Type | Length | Required | Description |
 |--------|------|--------|----------|-------------|
-| mnit_name | Text | 100 | No | Auto-generated ID |
-| mnit_staffmember | Lookup | - | Yes | → mnit_staffmember |
-| mnit_question | Lookup | - | Yes | → mnit_evaluationquestion |
-| mnit_rating | Choice | - | No | 1-5 scale |
-| mnit_notes | Multiline Text | 5000 | No | Self-reflection notes |
-| mnit_quarter | Choice | - | Yes | Q1-Q4 (fiscal year) |
-| mnit_fiscalyear | Whole Number | - | Yes | 4-digit year |
-| mnit_evaluationtype | Choice | - | No | 1=Quarterly, 2=Ad Hoc |
-| mnit_completeddate | Date | - | No | When completed |
+| pm_name | Text | 100 | No | Auto-generated ID |
+| pm_staffmember | Lookup | - | Yes | → pm_staffmember |
+| pm_question | Lookup | - | Yes | → pm_evaluationquestion |
+| pm_rating | Choice | - | No | 1-5 scale |
+| pm_notes | Multiline Text | 5000 | No | Self-reflection notes |
+| pm_quarter | Choice | - | Yes | Q1-Q4 (fiscal year) |
+| pm_fiscalyear | Whole Number | - | Yes | 4-digit year |
+| pm_evaluationtype | Choice | - | No | 1=Quarterly, 2=Ad Hoc |
+| pm_completeddate | Date | - | No | When completed |
 
 #### Quarter Options
 
@@ -239,22 +239,22 @@ See DEPLOYMENT-GUIDE.md for the 12 standard questions that must be loaded manual
 
 ---
 
-### 5. IDP Entry (mnit_idpentry)
+### 5. IDP Entry (pm_idpentry)
 
 **Purpose**: Individual Development Plan goals (employee-owned).
 
-**Primary Key**: mnit_idpentryid (GUID)
-**Primary Name**: mnit_goaldescription (Multiline Text, 500)
+**Primary Key**: pm_idpentryid (GUID)
+**Primary Name**: pm_goaldescription (Multiline Text, 500)
 
 #### Columns
 
 | Column | Type | Length | Required | Description |
 |--------|------|--------|----------|-------------|
-| mnit_goaldescription | Multiline Text | 500 | Yes | Development goal |
-| mnit_staffmember | Lookup | - | Yes | → mnit_staffmember |
-| mnit_targetdate | Date | - | No | Target completion date |
-| mnit_status | Choice | - | No | Progress status |
-| mnit_progressnotes | Multiline Text | 5000 | No | Progress updates |
+| pm_goaldescription | Multiline Text | 500 | Yes | Development goal |
+| pm_staffmember | Lookup | - | Yes | → pm_staffmember |
+| pm_targetdate | Date | - | No | Target completion date |
+| pm_status | Choice | - | No | Progress status |
+| pm_progressnotes | Multiline Text | 5000 | No | Progress updates |
 
 #### Status Options
 
@@ -267,24 +267,24 @@ See DEPLOYMENT-GUIDE.md for the 12 standard questions that must be loaded manual
 
 ---
 
-### 6. Meeting Note (mnit_meetingnote)
+### 6. Meeting Note (pm_meetingnote)
 
 **Purpose**: Document one-on-one meeting discussions and outcomes.
 
-**Primary Key**: mnit_meetingnoteid (GUID)
-**Primary Name**: mnit_name (Auto-number: MTG-{SEQNUM:5})
+**Primary Key**: pm_meetingnoteid (GUID)
+**Primary Name**: pm_name (Auto-number: MTG-{SEQNUM:5})
 
 #### Columns
 
 | Column | Type | Length | Required | Description |
 |--------|------|--------|----------|-------------|
-| mnit_name | Text | 100 | No | Auto-generated ID |
-| mnit_staffmember | Lookup | - | Yes | → mnit_staffmember |
-| mnit_supervisor | Lookup | - | Yes | → systemuser |
-| mnit_meetingdate | Date | - | Yes | Meeting date |
-| mnit_agenda | Multiline Text | 5000 | No | Meeting agenda |
-| mnit_discussionnotes | Multiline Text | 10000 | No | Discussion summary |
-| mnit_actionitems | Multiline Text | 5000 | No | Follow-up actions |
+| pm_name | Text | 100 | No | Auto-generated ID |
+| pm_staffmember | Lookup | - | Yes | → pm_staffmember |
+| pm_supervisor | Lookup | - | Yes | → systemuser |
+| pm_meetingdate | Date | - | Yes | Meeting date |
+| pm_agenda | Multiline Text | 5000 | No | Meeting agenda |
+| pm_discussionnotes | Multiline Text | 10000 | No | Discussion summary |
+| pm_actionitems | Multiline Text | 5000 | No | Follow-up actions |
 
 #### Business Rules
 
@@ -294,22 +294,22 @@ See DEPLOYMENT-GUIDE.md for the 12 standard questions that must be loaded manual
 
 ---
 
-### 7. Goal (mnit_goal)
+### 7. Goal (pm_goal)
 
 **Purpose**: Track performance and development goals.
 
-**Primary Key**: mnit_goalid (GUID)
-**Primary Name**: mnit_goaldescription (Multiline Text, 500)
+**Primary Key**: pm_goalid (GUID)
+**Primary Name**: pm_goaldescription (Multiline Text, 500)
 
 #### Columns
 
 | Column | Type | Length | Required | Description |
 |--------|------|--------|----------|-------------|
-| mnit_goaldescription | Multiline Text | 500 | Yes | Goal description |
-| mnit_staffmember | Lookup | - | Yes | → mnit_staffmember |
-| mnit_status | Choice | - | No | Goal status |
-| mnit_completionpercentage | Whole Number | - | No | 0-100% |
-| mnit_duedate | Date | - | No | Target date |
+| pm_goaldescription | Multiline Text | 500 | Yes | Goal description |
+| pm_staffmember | Lookup | - | Yes | → pm_staffmember |
+| pm_status | Choice | - | No | Goal status |
+| pm_completionpercentage | Whole Number | - | No | 0-100% |
+| pm_duedate | Date | - | No | Target date |
 
 #### Status Options
 
@@ -322,43 +322,43 @@ See DEPLOYMENT-GUIDE.md for the 12 standard questions that must be loaded manual
 
 ---
 
-### 8. Recognition Entry (mnit_recognition)
+### 8. Recognition Entry (pm_recognition)
 
 **Purpose**: Log positive recognition and achievements.
 
-**Primary Key**: mnit_recognitionid (GUID)
-**Primary Name**: mnit_name (Auto-number: REC-{SEQNUM:5})
+**Primary Key**: pm_recognitionid (GUID)
+**Primary Name**: pm_name (Auto-number: REC-{SEQNUM:5})
 
 #### Columns
 
 | Column | Type | Length | Required | Description |
 |--------|------|--------|----------|-------------|
-| mnit_name | Text | 100 | No | Auto-generated ID |
-| mnit_staffmember | Lookup | - | Yes | → mnit_staffmember |
-| mnit_supervisor | Lookup | - | Yes | → systemuser |
-| mnit_recognitiondate | Date | - | Yes | Recognition date |
-| mnit_description | Multiline Text | 5000 | No | What was recognized |
+| pm_name | Text | 100 | No | Auto-generated ID |
+| pm_staffmember | Lookup | - | Yes | → pm_staffmember |
+| pm_supervisor | Lookup | - | Yes | → systemuser |
+| pm_recognitiondate | Date | - | Yes | Recognition date |
+| pm_description | Multiline Text | 5000 | No | What was recognized |
 
 ---
 
-### 9. Action Item (mnit_actionitem)
+### 9. Action Item (pm_actionitem)
 
 **Purpose**: Track follow-up actions from meetings and evaluations.
 
-**Primary Key**: mnit_actionitemid (GUID)
-**Primary Name**: mnit_name (Auto-number: ACT-{SEQNUM:5})
+**Primary Key**: pm_actionitemid (GUID)
+**Primary Name**: pm_name (Auto-number: ACT-{SEQNUM:5})
 
 #### Columns
 
 | Column | Type | Length | Required | Description |
 |--------|------|--------|----------|-------------|
-| mnit_name | Text | 100 | No | Auto-generated ID |
-| mnit_description | Multiline Text | 2000 | Yes | Action description |
-| mnit_owner | Lookup | - | Yes | → systemuser |
-| mnit_relatedstaffmember | Lookup | - | No | → mnit_staffmember |
-| mnit_duedate | Date | - | Yes | Due date |
-| mnit_status | Choice | - | No | Action status |
-| mnit_completeddate | Date | - | No | When completed |
+| pm_name | Text | 100 | No | Auto-generated ID |
+| pm_description | Multiline Text | 2000 | Yes | Action description |
+| pm_owner | Lookup | - | Yes | → systemuser |
+| pm_relatedstaffmember | Lookup | - | No | → pm_staffmember |
+| pm_duedate | Date | - | Yes | Due date |
+| pm_status | Choice | - | No | Action status |
+| pm_completeddate | Date | - | No | When completed |
 
 #### Status Options
 
@@ -376,20 +376,20 @@ See DEPLOYMENT-GUIDE.md for the 12 standard questions that must be loaded manual
 
 | From Table | To Table | Relationship Name | Cascade Delete |
 |------------|----------|-------------------|----------------|
-| mnit_staffmember | systemuser | mnit_supervisor | Restrict |
-| mnit_weeklyevaluation | mnit_staffmember | mnit_staffmember_evaluations | Restrict |
-| mnit_weeklyevaluation | systemuser | mnit_evaluator | Restrict |
-| mnit_weeklyevaluation | mnit_evaluationquestion | mnit_question | Restrict |
-| mnit_selfevaluation | mnit_staffmember | mnit_staffmember_selfevals | Restrict |
-| mnit_selfevaluation | mnit_evaluationquestion | mnit_question | Restrict |
-| mnit_idpentry | mnit_staffmember | mnit_staffmember_idp | Restrict |
-| mnit_meetingnote | mnit_staffmember | mnit_staffmember_meetings | Restrict |
-| mnit_meetingnote | systemuser | mnit_supervisor | Restrict |
-| mnit_goal | mnit_staffmember | mnit_staffmember_goals | Restrict |
-| mnit_recognition | mnit_staffmember | mnit_staffmember_recognition | Restrict |
-| mnit_recognition | systemuser | mnit_supervisor | Restrict |
-| mnit_actionitem | systemuser | mnit_owner | Restrict |
-| mnit_actionitem | mnit_staffmember | mnit_relatedstaff | Restrict |
+| pm_staffmember | systemuser | pm_supervisor | Restrict |
+| pm_weeklyevaluation | pm_staffmember | pm_staffmember_evaluations | Restrict |
+| pm_weeklyevaluation | systemuser | pm_evaluator | Restrict |
+| pm_weeklyevaluation | pm_evaluationquestion | pm_question | Restrict |
+| pm_selfevaluation | pm_staffmember | pm_staffmember_selfevals | Restrict |
+| pm_selfevaluation | pm_evaluationquestion | pm_question | Restrict |
+| pm_idpentry | pm_staffmember | pm_staffmember_idp | Restrict |
+| pm_meetingnote | pm_staffmember | pm_staffmember_meetings | Restrict |
+| pm_meetingnote | systemuser | pm_supervisor | Restrict |
+| pm_goal | pm_staffmember | pm_staffmember_goals | Restrict |
+| pm_recognition | pm_staffmember | pm_staffmember_recognition | Restrict |
+| pm_recognition | systemuser | pm_supervisor | Restrict |
+| pm_actionitem | systemuser | pm_owner | Restrict |
+| pm_actionitem | pm_staffmember | pm_relatedstaff | Restrict |
 
 ### Cascade Behavior
 

@@ -560,12 +560,12 @@ Set(varCurrentUser, User());
 
 ClearCollect(
     colMyStaff,
-    Filter('mnit_staffmember', 'mnit_supervisor'.'Primary Email' = varCurrentUser.Email && mnit_status = 1)
+    Filter('pm_staffmember', 'pm_supervisor'.'Primary Email' = varCurrentUser.Email && pm_status = 1)
 );
 
 ClearCollect(
     colQuestions,
-    SortByColumns(Filter('mnit_evaluationquestion', mnit_active = true), "mnit_questionnumber", Ascending)
+    SortByColumns(Filter('pm_evaluationquestion', pm_active = true), "pm_questionnumber", Ascending)
 );
 
 Set(varWeekNumber, RoundDown(DateDiff(Date(2025,1,1), Today(), Days) / 7, 0));
@@ -688,14 +688,14 @@ dotnet tool install --global Microsoft.PowerApps.CLI.Tool
 **Check data connections:**
 1. In Power Apps Studio, click "Data"
 2. Refresh each data source
-3. Make sure the table names match (should start with mnit_)
+3. Make sure the table names match (should start with pm_)
 4. Check you have permissions to the tables
 
 ### Rotation Algorithm Not Working
 
 **Debug:**
 1. In App.OnStart, add a Label to your screen
-2. Set its Text property to: `varSuggestedStaff1.mnit_name`
+2. Set its Text property to: `varSuggestedStaff1.pm_name`
 3. If blank, check:
    - Are there staff members in the table?
    - Are they marked as Active?

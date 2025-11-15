@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <EntityInfo>
-    <entity Name="mnit_evaluationquestion">
+    <entity Name="pm_evaluationquestion">
       <LocalizedNames>
         <LocalizedName description="Evaluation Question" languagecode="1033" />
       </LocalizedNames>
@@ -12,10 +12,10 @@
         <Description description="Store standardized 12 annual review questions" languagecode="1033" />
       </Descriptions>
       <attributes>
-        <attribute PhysicalName="mnit_evaluationquestionid">
+        <attribute PhysicalName="pm_evaluationquestionid">
           <Type>uniqueidentifier</Type>
-          <Name>mnit_evaluationquestionid</Name>
-          <LogicalName>mnit_evaluationquestionid</LogicalName>
+          <Name>pm_evaluationquestionid</Name>
+          <LogicalName>pm_evaluationquestionid</LogicalName>
           <RequiredLevel>systemrequired</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind</DisplayMask>
           <IsPrimaryId>1</IsPrimaryId>
@@ -38,10 +38,10 @@
             <Description description="Unique identifier for Evaluation Question instances" languagecode="1033" />
           </Descriptions>
         </attribute>
-        <attribute PhysicalName="mnit_questiontext">
+        <attribute PhysicalName="pm_questiontext">
           <Type>memo</Type>
-          <Name>mnit_questiontext</Name>
-          <LogicalName>mnit_questiontext</LogicalName>
+          <Name>pm_questiontext</Name>
+          <LogicalName>pm_questiontext</LogicalName>
           <RequiredLevel>applicationrequired</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind</DisplayMask>
           <IsPrimaryName>1</IsPrimaryName>
@@ -59,10 +59,10 @@
             <Description description="The evaluation question text" languagecode="1033" />
           </Descriptions>
         </attribute>
-        <attribute PhysicalName="mnit_questionnumber">
+        <attribute PhysicalName="pm_questionnumber">
           <Type>int</Type>
-          <Name>mnit_questionnumber</Name>
-          <LogicalName>mnit_questionnumber</LogicalName>
+          <Name>pm_questionnumber</Name>
+          <LogicalName>pm_questionnumber</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind</DisplayMask>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -78,10 +78,10 @@
             <Description description="Sequential question number (1-12)" languagecode="1033" />
           </Descriptions>
         </attribute>
-        <attribute PhysicalName="mnit_active">
+        <attribute PhysicalName="pm_active">
           <Type>bit</Type>
-          <Name>mnit_active</Name>
-          <LogicalName>mnit_active</LogicalName>
+          <Name>pm_active</Name>
+          <LogicalName>pm_active</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind</DisplayMask>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -133,13 +133,13 @@
       <fetchxml>
         <![CDATA[
         <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false">
-          <entity name="mnit_evaluationquestion">
-            <attribute name="mnit_questionnumber" />
-            <attribute name="mnit_questiontext" />
-            <attribute name="mnit_active" />
-            <order attribute="mnit_questionnumber" descending="false" />
+          <entity name="pm_evaluationquestion">
+            <attribute name="pm_questionnumber" />
+            <attribute name="pm_questiontext" />
+            <attribute name="pm_active" />
+            <order attribute="pm_questionnumber" descending="false" />
             <filter type="and">
-              <condition attribute="mnit_active" operator="eq" value="1" />
+              <condition attribute="pm_active" operator="eq" value="1" />
             </filter>
           </entity>
         </fetch>
