@@ -49,14 +49,14 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libxml2-utils
 
-      - name: Install Power Platform CLI via npm
+      - name: Setup Power Platform CLI
+        uses: microsoft/powerplatform-actions/setup-pac@v1
+        with:
+          version: 'latest'
+
+      - name: Verify pac installation
         run: |
-          echo "Installing pac CLI via npm..."
-          npm install -g @microsoft/powerplatform-cli
-
-          # Verify installation
           pac --version
-
           echo "✅ pac CLI installed successfully"
 
       - name: Validate XML files
