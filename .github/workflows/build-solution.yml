@@ -33,6 +33,9 @@ jobs:
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "Solution version: $VERSION"
 
+      - name: Install xmllint
+        run: sudo apt-get update && sudo apt-get install -y libxml2-utils
+
       - name: Validate Customizations.xml structure
         run: |
           echo "Validating Customizations.xml..."

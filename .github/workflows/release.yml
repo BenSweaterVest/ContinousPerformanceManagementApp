@@ -44,6 +44,9 @@ jobs:
 
           echo "✅ Versions match"
 
+      - name: Install xmllint
+        run: sudo apt-get update && sudo apt-get install -y libxml2-utils
+
       - name: Validate XML files
         run: |
           echo "Validating XML files..."
