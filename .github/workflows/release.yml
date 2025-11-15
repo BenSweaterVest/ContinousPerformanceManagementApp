@@ -120,6 +120,39 @@ jobs:
             SIZE=$(stat -f%z "${ZIP_NAME}" 2>/dev/null || stat -c%s "${ZIP_NAME}")
             SIZE_KB=$((SIZE / 1024))
             echo "✅ Package created: ${ZIP_NAME} (${SIZE_KB} KB)"
+
+            # Verify ZIP contents (should have solution.xml, customizations.xml at root)
+            echo "Verifying ZIP structure..."
+            unzip -l "${ZIP_NAME}" | head -20
+
+            # Check for required files at root
+            if unzip -l "${ZIP_NAME}" | grep -q "^ *[0-9]* *[0-9-]* [0-9:]* solution.xml$"; then
+              echo "✅ solution.xml found at root"
+            else
+              echo "❌ ERROR: solution.xml not at root"
+              echo "Full ZIP contents:"
+              unzip -l "${ZIP_NAME}"
+              exit 1
+            fi
+
+            if unzip -l "${ZIP_NAME}" | grep -q "^ *[0-9]* *[0-9-]* [0-9:]* customizations.xml$"; then
+              echo "✅ customizations.xml found at root"
+            else
+              echo "❌ ERROR: customizations.xml not at root"
+              echo "Full ZIP contents:"
+              unzip -l "${ZIP_NAME}"
+              exit 1
+            fi
+
+            if unzip -l "${ZIP_NAME}" | grep -q "^ *[0-9]* *[0-9-]* [0-9:]* \[Content_Types\].xml$"; then
+              echo "✅ [Content_Types].xml found at root"
+            else
+              echo "❌ ERROR: [Content_Types].xml not at root"
+              echo "Full ZIP contents:"
+              unzip -l "${ZIP_NAME}"
+              exit 1
+            fi
+
             echo "zip_name=${ZIP_NAME}" >> $GITHUB_ENV
           else
             echo "❌ ERROR: Failed to create package"
