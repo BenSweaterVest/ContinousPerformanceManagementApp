@@ -8,7 +8,7 @@
     <Descriptions>
       <Description description="Continuous performance management system with weekly micro-evaluations and quarterly self-assessments" languagecode="1033" />
     </Descriptions>
-    <Version>1.0.0.1</Version>
+    <Version>1.0.1.0</Version>
     <Managed>0</Managed>
     <Publisher>
       <UniqueName>perfmgmt</UniqueName>
