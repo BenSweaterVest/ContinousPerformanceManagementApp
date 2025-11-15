@@ -21,10 +21,7 @@
               <LogicalName>pm_staffmemberid</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|RequiredForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <ImeMode>auto</ImeMode>
@@ -44,7 +41,7 @@
               <IsLocalizable>0</IsLocalizable>
               <IntroducedVersion>1.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
-              <IsRenameable>0</IsRenameable>
+              <IsRenameable>1</IsRenameable>
               <CanModifySearchSettings>1</CanModifySearchSettings>
               <CanModifyRequirementLevelSettings>0</CanModifyRequirementLevelSettings>
               <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
@@ -59,10 +56,10 @@
               <Type>nvarchar</Type>
               <Name>pm_name</Name>
               <LogicalName>pm_name</LogicalName>
-              <RequiredLevel>applicationrequired</RequiredLevel>
+              <RequiredLevel>required</RequiredLevel>
               <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
+  <MaxLength>100</MaxLength>
               <Length>100</Length>
-              <MaxLength>100</MaxLength>
               <ImeMode>auto</ImeMode>
               <ValidForUpdateApi>1</ValidForUpdateApi>
               <ValidForReadApi>1</ValidForReadApi>
@@ -82,7 +79,7 @@
               <IsRetrievable>1</IsRetrievable>
               <IsLocalizable>0</IsLocalizable>
               <Format>text</Format>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
               <IsRenameable>1</IsRenameable>
               <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -102,7 +99,6 @@
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
               <Length>50</Length>
-              <MaxLength>50</MaxLength>
               <ImeMode>auto</ImeMode>
               <ValidForUpdateApi>1</ValidForUpdateApi>
               <ValidForReadApi>1</ValidForReadApi>
@@ -122,7 +118,7 @@
               <IsRetrievable>1</IsRetrievable>
               <IsLocalizable>0</IsLocalizable>
               <Format>text</Format>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
               <IsRenameable>1</IsRenameable>
               <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -142,7 +138,6 @@
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
               <Length>200</Length>
-              <MaxLength>200</MaxLength>
               <ImeMode>auto</ImeMode>
               <ValidForUpdateApi>1</ValidForUpdateApi>
               <ValidForReadApi>1</ValidForReadApi>
@@ -162,7 +157,7 @@
               <IsRetrievable>1</IsRetrievable>
               <IsLocalizable>0</IsLocalizable>
               <Format>text</Format>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
               <IsRenameable>1</IsRenameable>
               <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -181,7 +176,7 @@
               <LogicalName>pm_supervisor</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
               <IsRenameable>1</IsRenameable>
               <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -215,7 +210,7 @@
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
               <Format>DateOnly</Format>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
               <IsRenameable>1</IsRenameable>
               <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -245,7 +240,7 @@
               <LogicalName>pm_status</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
               <IsRenameable>1</IsRenameable>
               <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -271,7 +266,7 @@
               <optionset Name="pm_status">
                 <IsSorted>0</IsSorted>
                 <IsGlobal>0</IsGlobal>
-                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IntroducedVersion>1.0</IntroducedVersion>
                 <options>
                   <option value="1">
                     <labels>
@@ -292,10 +287,7 @@
               <LogicalName>createdby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -330,10 +322,7 @@
               <LogicalName>createdon</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -368,10 +357,7 @@
               <LogicalName>createdonbehalfby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -406,10 +392,7 @@
               <LogicalName>importsequencenumber</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -444,10 +427,7 @@
               <LogicalName>modifiedby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -482,10 +462,7 @@
               <LogicalName>modifiedon</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -520,10 +497,7 @@
               <LogicalName>modifiedonbehalfby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -558,10 +532,7 @@
               <LogicalName>overriddencreatedon</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -596,10 +567,7 @@
               <LogicalName>ownerid</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -634,10 +602,7 @@
               <LogicalName>owningbusinessunit</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -672,10 +637,7 @@
               <LogicalName>owningteam</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -710,10 +672,7 @@
               <LogicalName>owninguser</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -748,10 +707,7 @@
               <LogicalName>statecode</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -779,7 +735,7 @@
               </Descriptions>
               <optionset Name="pm_staffmember_statecode">
                 <OptionSetType>state</OptionSetType>
-                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IntroducedVersion>1.0</IntroducedVersion>
                 <IsCustomizable>1</IsCustomizable>
                 <IsGlobal>0</IsGlobal>
                 <options>
@@ -802,10 +758,7 @@
               <LogicalName>statuscode</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -833,7 +786,7 @@
               </Descriptions>
               <optionset Name="pm_staffmember_statuscode">
                 <OptionSetType>status</OptionSetType>
-                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IntroducedVersion>1.0</IntroducedVersion>
                 <IsCustomizable>1</IsCustomizable>
                 <IsGlobal>0</IsGlobal>
                 <options>
@@ -856,10 +809,7 @@
               <LogicalName>timezoneruleversionnumber</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -894,10 +844,7 @@
               <LogicalName>utcconversiontimezonecode</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -932,10 +879,7 @@
               <LogicalName>versionnumber</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -971,7 +915,7 @@
         <forms type="main">
           <form>
             <formid>{7a1d4f5e-3b2c-4e5f-8a7b-9c1d2e3f4a5b}</formid>
-            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <IntroducedVersion>1.0</IntroducedVersion>
             <FormPresentation>0</FormPresentation>
             <IsCustomizable>1</IsCustomizable>
             <CanBeDeleted>1</CanBeDeleted>
@@ -995,7 +939,7 @@
           <description>All active staff members</description>
           <querytype>0</querytype>
           <isdefault>1</isdefault>
-          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <IntroducedVersion>1.0</IntroducedVersion>
           <fetchxml>
         
         &lt;fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false"&gt;
@@ -1037,10 +981,7 @@
               <LogicalName>pm_evaluationquestionid</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|RequiredForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <ImeMode>auto</ImeMode>
@@ -1060,7 +1001,7 @@
               <IsLocalizable>0</IsLocalizable>
               <IntroducedVersion>1.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
-              <IsRenameable>0</IsRenameable>
+              <IsRenameable>1</IsRenameable>
               <CanModifySearchSettings>1</CanModifySearchSettings>
               <CanModifyRequirementLevelSettings>0</CanModifyRequirementLevelSettings>
               <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
@@ -1077,7 +1018,6 @@
               <LogicalName>pm_questiontext</LogicalName>
               <RequiredLevel>applicationrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <MaxLength>2000</MaxLength>
               <ImeMode>auto</ImeMode>
               <ValidForUpdateApi>1</ValidForUpdateApi>
               <ValidForReadApi>1</ValidForReadApi>
@@ -1096,7 +1036,7 @@
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
               <IsLocalizable>0</IsLocalizable>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
               <IsRenameable>1</IsRenameable>
               <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -1115,7 +1055,7 @@
               <LogicalName>pm_questionnumber</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
               <IsRenameable>1</IsRenameable>
               <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -1145,7 +1085,7 @@
               <LogicalName>pm_active</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
               <IsRenameable>1</IsRenameable>
               <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -1176,10 +1116,7 @@
               <LogicalName>createdby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -1214,10 +1151,7 @@
               <LogicalName>createdon</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -1252,10 +1186,7 @@
               <LogicalName>createdonbehalfby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -1290,10 +1221,7 @@
               <LogicalName>importsequencenumber</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -1328,10 +1256,7 @@
               <LogicalName>modifiedby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -1366,10 +1291,7 @@
               <LogicalName>modifiedon</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -1404,10 +1326,7 @@
               <LogicalName>modifiedonbehalfby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -1442,10 +1361,7 @@
               <LogicalName>overriddencreatedon</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -1480,10 +1396,7 @@
               <LogicalName>ownerid</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -1518,10 +1431,7 @@
               <LogicalName>owningbusinessunit</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -1556,10 +1466,7 @@
               <LogicalName>owningteam</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -1594,10 +1501,7 @@
               <LogicalName>owninguser</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -1632,10 +1536,7 @@
               <LogicalName>statecode</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -1663,7 +1564,7 @@
               </Descriptions>
               <optionset Name="pm_evaluationquestion_statecode">
                 <OptionSetType>state</OptionSetType>
-                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IntroducedVersion>1.0</IntroducedVersion>
                 <IsCustomizable>1</IsCustomizable>
                 <IsGlobal>0</IsGlobal>
                 <options>
@@ -1686,10 +1587,7 @@
               <LogicalName>statuscode</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -1717,7 +1615,7 @@
               </Descriptions>
               <optionset Name="pm_evaluationquestion_statuscode">
                 <OptionSetType>status</OptionSetType>
-                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IntroducedVersion>1.0</IntroducedVersion>
                 <IsCustomizable>1</IsCustomizable>
                 <IsGlobal>0</IsGlobal>
                 <options>
@@ -1740,10 +1638,7 @@
               <LogicalName>timezoneruleversionnumber</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -1778,10 +1673,7 @@
               <LogicalName>utcconversiontimezonecode</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -1816,10 +1708,7 @@
               <LogicalName>versionnumber</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -1855,7 +1744,7 @@
         <forms type="main">
           <form>
             <formid>{9c3f6a7e-5d4e-6f7a-0c9d-1e2f3a4b5c6d}</formid>
-            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <IntroducedVersion>1.0</IntroducedVersion>
             <FormPresentation>0</FormPresentation>
             <IsCustomizable>1</IsCustomizable>
             <CanBeDeleted>1</CanBeDeleted>
@@ -1879,7 +1768,7 @@
           <description>All active evaluation questions</description>
           <querytype>0</querytype>
           <isdefault>1</isdefault>
-          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <IntroducedVersion>1.0</IntroducedVersion>
           <fetchxml>
         
         &lt;fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false"&gt;
@@ -1918,10 +1807,7 @@
               <LogicalName>pm_weeklyevaluationid</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|RequiredForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <ImeMode>auto</ImeMode>
@@ -1941,7 +1827,7 @@
               <IsLocalizable>0</IsLocalizable>
               <IntroducedVersion>1.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
-              <IsRenameable>0</IsRenameable>
+              <IsRenameable>1</IsRenameable>
               <CanModifySearchSettings>1</CanModifySearchSettings>
               <CanModifyRequirementLevelSettings>0</CanModifyRequirementLevelSettings>
               <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
@@ -1958,9 +1844,9 @@
               <LogicalName>pm_name</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
+  <MaxLength>50</MaxLength>
               <Length>100</Length>
               <AutoNumberFormat>EVAL-{SEQNUM:5}</AutoNumberFormat>
-              <MaxLength>100</MaxLength>
               <ImeMode>auto</ImeMode>
               <ValidForUpdateApi>1</ValidForUpdateApi>
               <ValidForReadApi>1</ValidForReadApi>
@@ -1980,7 +1866,7 @@
               <IsRetrievable>1</IsRetrievable>
               <IsLocalizable>0</IsLocalizable>
               <Format>text</Format>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
               <IsRenameable>1</IsRenameable>
               <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -1999,7 +1885,7 @@
               <LogicalName>pm_staffmember</LogicalName>
               <RequiredLevel>applicationrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
               <IsRenameable>1</IsRenameable>
               <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -2032,7 +1918,7 @@
               <LogicalName>pm_evaluator</LogicalName>
               <RequiredLevel>applicationrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
               <IsRenameable>1</IsRenameable>
               <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -2065,7 +1951,7 @@
               <LogicalName>pm_question</LogicalName>
               <RequiredLevel>applicationrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
               <IsRenameable>1</IsRenameable>
               <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -2098,7 +1984,7 @@
               <LogicalName>pm_rating</LogicalName>
               <RequiredLevel>applicationrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
               <IsRenameable>1</IsRenameable>
               <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -2124,7 +2010,7 @@
               <optionset Name="pm_rating">
                 <IsSorted>0</IsSorted>
                 <IsGlobal>0</IsGlobal>
-                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IntroducedVersion>1.0</IntroducedVersion>
                 <options>
                   <option value="1">
                     <labels>
@@ -2165,7 +2051,6 @@
               <LogicalName>pm_notes</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <MaxLength>5000</MaxLength>
               <ImeMode>auto</ImeMode>
               <ValidForUpdateApi>1</ValidForUpdateApi>
               <ValidForReadApi>1</ValidForReadApi>
@@ -2184,7 +2069,7 @@
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
               <IsLocalizable>0</IsLocalizable>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
               <IsRenameable>1</IsRenameable>
               <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -2204,7 +2089,7 @@
               <RequiredLevel>applicationrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
               <Format>DateOnly</Format>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
               <IsRenameable>1</IsRenameable>
               <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -2234,7 +2119,7 @@
               <LogicalName>pm_evaluationtype</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
               <IsRenameable>1</IsRenameable>
               <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -2260,7 +2145,7 @@
               <optionset Name="pm_evaluationtype">
                 <IsSorted>0</IsSorted>
                 <IsGlobal>0</IsGlobal>
-                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IntroducedVersion>1.0</IntroducedVersion>
                 <options>
                   <option value="1">
                     <labels>
@@ -2281,10 +2166,7 @@
               <LogicalName>createdby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -2319,10 +2201,7 @@
               <LogicalName>createdon</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -2357,10 +2236,7 @@
               <LogicalName>createdonbehalfby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -2395,10 +2271,7 @@
               <LogicalName>importsequencenumber</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -2433,10 +2306,7 @@
               <LogicalName>modifiedby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -2471,10 +2341,7 @@
               <LogicalName>modifiedon</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -2509,10 +2376,7 @@
               <LogicalName>modifiedonbehalfby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -2547,10 +2411,7 @@
               <LogicalName>overriddencreatedon</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -2585,10 +2446,7 @@
               <LogicalName>ownerid</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -2623,10 +2481,7 @@
               <LogicalName>owningbusinessunit</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -2661,10 +2516,7 @@
               <LogicalName>owningteam</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -2699,10 +2551,7 @@
               <LogicalName>owninguser</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -2737,10 +2586,7 @@
               <LogicalName>statecode</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -2768,7 +2614,7 @@
               </Descriptions>
               <optionset Name="pm_weeklyevaluation_statecode">
                 <OptionSetType>state</OptionSetType>
-                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IntroducedVersion>1.0</IntroducedVersion>
                 <IsCustomizable>1</IsCustomizable>
                 <IsGlobal>0</IsGlobal>
                 <options>
@@ -2791,10 +2637,7 @@
               <LogicalName>statuscode</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -2822,7 +2665,7 @@
               </Descriptions>
               <optionset Name="pm_weeklyevaluation_statuscode">
                 <OptionSetType>status</OptionSetType>
-                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IntroducedVersion>1.0</IntroducedVersion>
                 <IsCustomizable>1</IsCustomizable>
                 <IsGlobal>0</IsGlobal>
                 <options>
@@ -2845,10 +2688,7 @@
               <LogicalName>timezoneruleversionnumber</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -2883,10 +2723,7 @@
               <LogicalName>utcconversiontimezonecode</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -2921,10 +2758,7 @@
               <LogicalName>versionnumber</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -2960,7 +2794,7 @@
         <forms type="main">
           <form>
             <formid>{1e5f8c9d-7f6e-8a9b-2e1f-3a4b5c6d7e8f}</formid>
-            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <IntroducedVersion>1.0</IntroducedVersion>
             <FormPresentation>0</FormPresentation>
             <IsCustomizable>1</IsCustomizable>
             <CanBeDeleted>1</CanBeDeleted>
@@ -2984,7 +2818,7 @@
           <description>Recent weekly evaluations</description>
           <querytype>0</querytype>
           <isdefault>1</isdefault>
-          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <IntroducedVersion>1.0</IntroducedVersion>
           <fetchxml>
         
         &lt;fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false"&gt;
@@ -3024,10 +2858,7 @@
               <LogicalName>pm_selfevaluationid</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|RequiredForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <ImeMode>auto</ImeMode>
@@ -3058,6 +2889,7 @@
               <Length>100</Length>
               <AutoNumberFormat>SELF-{SEQNUM:5}</AutoNumberFormat>
               <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
+  <MaxLength>100</MaxLength>
               <ImeMode>auto</ImeMode>
               <ValidForUpdateApi>1</ValidForUpdateApi>
               <ValidForReadApi>1</ValidForReadApi>
@@ -3076,8 +2908,7 @@
               <IsRetrievable>1</IsRetrievable>
               <IsLocalizable>0</IsLocalizable>
               <Format>text</Format>
-              <MaxLength>100</MaxLength>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Self Evaluation ID" languagecode="1033" />
               </displaynames>
@@ -3087,7 +2918,7 @@
               <Name>pm_staffmember</Name>
               <LogicalName>pm_staffmember</LogicalName>
               <RequiredLevel>applicationrequired</RequiredLevel>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <Targets>
                 <Target>pm_staffmember</Target>
               </Targets>
@@ -3111,7 +2942,7 @@
               <Name>pm_question</Name>
               <LogicalName>pm_question</LogicalName>
               <RequiredLevel>applicationrequired</RequiredLevel>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <Targets>
                 <Target>pm_evaluationquestion</Target>
               </Targets>
@@ -3135,7 +2966,7 @@
               <Name>pm_rating</Name>
               <LogicalName>pm_rating</LogicalName>
               <RequiredLevel>none</RequiredLevel>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
                     <SourceType>0</SourceType>
       <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
       <IsSortableEnabled>0</IsSortableEnabled>
@@ -3153,7 +2984,7 @@
               <optionset Name="pm_selfrating">
                 <IsSorted>0</IsSorted>
                 <IsGlobal>0</IsGlobal>
-                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IntroducedVersion>1.0</IntroducedVersion>
                 <options>
                   <option value="1">
                     <labels>
@@ -3188,7 +3019,6 @@
               <Name>pm_notes</Name>
               <LogicalName>pm_notes</LogicalName>
               <RequiredLevel>none</RequiredLevel>
-              <MaxLength>5000</MaxLength>
               <ImeMode>auto</ImeMode>
               <ValidForUpdateApi>1</ValidForUpdateApi>
               <ValidForReadApi>1</ValidForReadApi>
@@ -3207,7 +3037,7 @@
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
               <IsLocalizable>0</IsLocalizable>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Notes" languagecode="1033" />
               </displaynames>
@@ -3217,7 +3047,7 @@
               <Name>pm_quarter</Name>
               <LogicalName>pm_quarter</LogicalName>
               <RequiredLevel>applicationrequired</RequiredLevel>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
                     <SourceType>0</SourceType>
       <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
       <IsSortableEnabled>0</IsSortableEnabled>
@@ -3235,7 +3065,7 @@
               <optionset Name="pm_quarter">
                 <IsSorted>0</IsSorted>
                 <IsGlobal>0</IsGlobal>
-                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IntroducedVersion>1.0</IntroducedVersion>
                 <options>
                   <option value="1">
                     <labels>
@@ -3265,7 +3095,7 @@
               <Name>pm_fiscalyear</Name>
               <LogicalName>pm_fiscalyear</LogicalName>
               <RequiredLevel>applicationrequired</RequiredLevel>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
                     <SourceType>0</SourceType>
       <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
       <IsSortableEnabled>0</IsSortableEnabled>
@@ -3286,7 +3116,7 @@
               <Name>pm_evaluationtype</Name>
               <LogicalName>pm_evaluationtype</LogicalName>
               <RequiredLevel>none</RequiredLevel>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
                     <SourceType>0</SourceType>
       <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
       <IsSortableEnabled>0</IsSortableEnabled>
@@ -3304,7 +3134,7 @@
               <optionset Name="pm_selfevaluationtype">
                 <IsSorted>0</IsSorted>
                 <IsGlobal>0</IsGlobal>
-                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IntroducedVersion>1.0</IntroducedVersion>
                 <options>
                   <option value="1">
                     <labels>
@@ -3325,7 +3155,7 @@
               <LogicalName>pm_completeddate</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <Format>DateOnly</Format>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
                     <SourceType>0</SourceType>
       <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
       <IsSortableEnabled>0</IsSortableEnabled>
@@ -3386,10 +3216,7 @@
               <LogicalName>createdon</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -3424,10 +3251,7 @@
               <LogicalName>createdonbehalfby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -3462,10 +3286,7 @@
               <LogicalName>importsequencenumber</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -3500,10 +3321,7 @@
               <LogicalName>modifiedby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -3538,10 +3356,7 @@
               <LogicalName>modifiedon</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -3576,10 +3391,7 @@
               <LogicalName>modifiedonbehalfby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -3614,10 +3426,7 @@
               <LogicalName>overriddencreatedon</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -3652,10 +3461,7 @@
               <LogicalName>ownerid</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -3690,10 +3496,7 @@
               <LogicalName>owningbusinessunit</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -3728,10 +3531,7 @@
               <LogicalName>owningteam</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -3766,10 +3566,7 @@
               <LogicalName>owninguser</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -3804,10 +3601,7 @@
               <LogicalName>statecode</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -3835,7 +3629,7 @@
               </Descriptions>
               <optionset Name="pm_selfevaluation_statecode">
                 <OptionSetType>state</OptionSetType>
-                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IntroducedVersion>1.0</IntroducedVersion>
                 <IsCustomizable>1</IsCustomizable>
                 <IsGlobal>0</IsGlobal>
                 <options>
@@ -3858,10 +3652,7 @@
               <LogicalName>statuscode</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -3889,7 +3680,7 @@
               </Descriptions>
               <optionset Name="pm_selfevaluation_statuscode">
                 <OptionSetType>status</OptionSetType>
-                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IntroducedVersion>1.0</IntroducedVersion>
                 <IsCustomizable>1</IsCustomizable>
                 <IsGlobal>0</IsGlobal>
                 <options>
@@ -3912,10 +3703,7 @@
               <LogicalName>timezoneruleversionnumber</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -3950,10 +3738,7 @@
               <LogicalName>utcconversiontimezonecode</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -3988,10 +3773,7 @@
               <LogicalName>versionnumber</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -4027,7 +3809,7 @@
         <forms type="main">
           <form>
             <formid>{3a7b0e1f-9c8d-0a1b-4a3b-5c6d7e8f9a0b}</formid>
-            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <IntroducedVersion>1.0</IntroducedVersion>
             <names>
               <name description="Information" languagecode="1033" />
             </names>
@@ -4055,10 +3837,7 @@
               <Name>pm_idpentryid</Name>
               <LogicalName>pm_idpentryid</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <ImeMode>auto</ImeMode>
@@ -4085,9 +3864,8 @@
               <Type>memo</Type>
               <Name>pm_goaldescription</Name>
               <LogicalName>pm_goaldescription</LogicalName>
-              <RequiredLevel>applicationrequired</RequiredLevel>
+              <RequiredLevel>required</RequiredLevel>
               <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
-              <MaxLength>500</MaxLength>
               <ImeMode>auto</ImeMode>
               <ValidForUpdateApi>1</ValidForUpdateApi>
               <ValidForReadApi>1</ValidForReadApi>
@@ -4106,7 +3884,7 @@
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
               <IsLocalizable>0</IsLocalizable>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Goal Description" languagecode="1033" />
               </displaynames>
@@ -4116,7 +3894,7 @@
               <Name>pm_staffmember</Name>
               <LogicalName>pm_staffmember</LogicalName>
               <RequiredLevel>applicationrequired</RequiredLevel>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <Targets>
                 <Target>pm_staffmember</Target>
               </Targets>
@@ -4141,7 +3919,7 @@
               <LogicalName>pm_targetdate</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <Format>DateOnly</Format>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
                     <SourceType>0</SourceType>
       <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
       <IsSortableEnabled>0</IsSortableEnabled>
@@ -4162,7 +3940,7 @@
               <Name>pm_status</Name>
               <LogicalName>pm_status</LogicalName>
               <RequiredLevel>none</RequiredLevel>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
                     <SourceType>0</SourceType>
       <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
       <IsSortableEnabled>0</IsSortableEnabled>
@@ -4180,7 +3958,7 @@
               <optionset Name="pm_idpstatus">
                 <IsSorted>0</IsSorted>
                 <IsGlobal>0</IsGlobal>
-                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IntroducedVersion>1.0</IntroducedVersion>
                 <options>
                   <option value="1">
                     <labels>
@@ -4210,7 +3988,6 @@
               <Name>pm_progressnotes</Name>
               <LogicalName>pm_progressnotes</LogicalName>
               <RequiredLevel>none</RequiredLevel>
-              <MaxLength>5000</MaxLength>
               <ImeMode>auto</ImeMode>
               <ValidForUpdateApi>1</ValidForUpdateApi>
               <ValidForReadApi>1</ValidForReadApi>
@@ -4229,7 +4006,7 @@
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
               <IsLocalizable>0</IsLocalizable>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Progress Notes" languagecode="1033" />
               </displaynames>
@@ -4279,10 +4056,7 @@
               <LogicalName>createdon</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -4317,10 +4091,7 @@
               <LogicalName>createdonbehalfby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -4355,10 +4126,7 @@
               <LogicalName>importsequencenumber</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -4393,10 +4161,7 @@
               <LogicalName>modifiedby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -4431,10 +4196,7 @@
               <LogicalName>modifiedon</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -4469,10 +4231,7 @@
               <LogicalName>modifiedonbehalfby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -4507,10 +4266,7 @@
               <LogicalName>overriddencreatedon</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -4545,10 +4301,7 @@
               <LogicalName>ownerid</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -4583,10 +4336,7 @@
               <LogicalName>owningbusinessunit</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -4621,10 +4371,7 @@
               <LogicalName>owningteam</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -4659,10 +4406,7 @@
               <LogicalName>owninguser</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -4697,10 +4441,7 @@
               <LogicalName>statecode</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -4728,7 +4469,7 @@
               </Descriptions>
               <optionset Name="pm_idpentry_statecode">
                 <OptionSetType>state</OptionSetType>
-                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IntroducedVersion>1.0</IntroducedVersion>
                 <IsCustomizable>1</IsCustomizable>
                 <IsGlobal>0</IsGlobal>
                 <options>
@@ -4751,10 +4492,7 @@
               <LogicalName>statuscode</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -4782,7 +4520,7 @@
               </Descriptions>
               <optionset Name="pm_idpentry_statuscode">
                 <OptionSetType>status</OptionSetType>
-                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IntroducedVersion>1.0</IntroducedVersion>
                 <IsCustomizable>1</IsCustomizable>
                 <IsGlobal>0</IsGlobal>
                 <options>
@@ -4805,10 +4543,7 @@
               <LogicalName>timezoneruleversionnumber</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -4843,10 +4578,7 @@
               <LogicalName>utcconversiontimezonecode</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -4881,10 +4613,7 @@
               <LogicalName>versionnumber</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -4938,10 +4667,7 @@
               <Name>pm_meetingnoteid</Name>
               <LogicalName>pm_meetingnoteid</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <ImeMode>auto</ImeMode>
@@ -4970,6 +4696,7 @@
               <LogicalName>pm_name</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
+  <MaxLength>100</MaxLength>
               <Length>100</Length>
               <AutoNumberFormat>MTG-{SEQNUM:5}</AutoNumberFormat>
               <ImeMode>auto</ImeMode>
@@ -4990,8 +4717,7 @@
               <IsRetrievable>1</IsRetrievable>
               <IsLocalizable>0</IsLocalizable>
               <Format>text</Format>
-              <MaxLength>100</MaxLength>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Meeting ID" languagecode="1033" />
               </displaynames>
@@ -5001,7 +4727,7 @@
               <Name>pm_staffmember</Name>
               <LogicalName>pm_staffmember</LogicalName>
               <RequiredLevel>applicationrequired</RequiredLevel>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <Targets>
                 <Target>pm_staffmember</Target>
               </Targets>
@@ -5025,7 +4751,7 @@
               <Name>pm_supervisor</Name>
               <LogicalName>pm_supervisor</LogicalName>
               <RequiredLevel>applicationrequired</RequiredLevel>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <Targets>
                 <Target>systemuser</Target>
               </Targets>
@@ -5050,7 +4776,7 @@
               <LogicalName>pm_meetingdate</LogicalName>
               <RequiredLevel>applicationrequired</RequiredLevel>
               <Format>DateOnly</Format>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
                     <SourceType>0</SourceType>
       <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
       <IsSortableEnabled>0</IsSortableEnabled>
@@ -5071,7 +4797,6 @@
               <Name>pm_agenda</Name>
               <LogicalName>pm_agenda</LogicalName>
               <RequiredLevel>none</RequiredLevel>
-              <MaxLength>5000</MaxLength>
               <ImeMode>auto</ImeMode>
               <ValidForUpdateApi>1</ValidForUpdateApi>
               <ValidForReadApi>1</ValidForReadApi>
@@ -5090,7 +4815,7 @@
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
               <IsLocalizable>0</IsLocalizable>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Agenda" languagecode="1033" />
               </displaynames>
@@ -5100,7 +4825,6 @@
               <Name>pm_discussionnotes</Name>
               <LogicalName>pm_discussionnotes</LogicalName>
               <RequiredLevel>none</RequiredLevel>
-              <MaxLength>10000</MaxLength>
               <ImeMode>auto</ImeMode>
               <ValidForUpdateApi>1</ValidForUpdateApi>
               <ValidForReadApi>1</ValidForReadApi>
@@ -5119,7 +4843,7 @@
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
               <IsLocalizable>0</IsLocalizable>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Discussion Notes" languagecode="1033" />
               </displaynames>
@@ -5129,7 +4853,6 @@
               <Name>pm_actionitems</Name>
               <LogicalName>pm_actionitems</LogicalName>
               <RequiredLevel>none</RequiredLevel>
-              <MaxLength>5000</MaxLength>
               <ImeMode>auto</ImeMode>
               <ValidForUpdateApi>1</ValidForUpdateApi>
               <ValidForReadApi>1</ValidForReadApi>
@@ -5148,7 +4871,7 @@
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
               <IsLocalizable>0</IsLocalizable>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Action Items" languagecode="1033" />
               </displaynames>
@@ -5198,10 +4921,7 @@
               <LogicalName>createdon</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -5236,10 +4956,7 @@
               <LogicalName>createdonbehalfby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -5274,10 +4991,7 @@
               <LogicalName>importsequencenumber</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -5312,10 +5026,7 @@
               <LogicalName>modifiedby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -5350,10 +5061,7 @@
               <LogicalName>modifiedon</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -5388,10 +5096,7 @@
               <LogicalName>modifiedonbehalfby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -5426,10 +5131,7 @@
               <LogicalName>overriddencreatedon</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -5464,10 +5166,7 @@
               <LogicalName>ownerid</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -5502,10 +5201,7 @@
               <LogicalName>owningbusinessunit</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -5540,10 +5236,7 @@
               <LogicalName>owningteam</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -5578,10 +5271,7 @@
               <LogicalName>owninguser</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -5616,10 +5306,7 @@
               <LogicalName>statecode</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -5647,7 +5334,7 @@
               </Descriptions>
               <optionset Name="pm_meetingnote_statecode">
                 <OptionSetType>state</OptionSetType>
-                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IntroducedVersion>1.0</IntroducedVersion>
                 <IsCustomizable>1</IsCustomizable>
                 <IsGlobal>0</IsGlobal>
                 <options>
@@ -5670,10 +5357,7 @@
               <LogicalName>statuscode</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -5701,7 +5385,7 @@
               </Descriptions>
               <optionset Name="pm_meetingnote_statuscode">
                 <OptionSetType>status</OptionSetType>
-                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IntroducedVersion>1.0</IntroducedVersion>
                 <IsCustomizable>1</IsCustomizable>
                 <IsGlobal>0</IsGlobal>
                 <options>
@@ -5724,10 +5408,7 @@
               <LogicalName>timezoneruleversionnumber</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -5762,10 +5443,7 @@
               <LogicalName>utcconversiontimezonecode</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -5800,10 +5478,7 @@
               <LogicalName>versionnumber</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -5857,10 +5532,7 @@
               <Name>pm_goalid</Name>
               <LogicalName>pm_goalid</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <ImeMode>auto</ImeMode>
@@ -5887,9 +5559,8 @@
               <Type>memo</Type>
               <Name>pm_goaldescription</Name>
               <LogicalName>pm_goaldescription</LogicalName>
-              <RequiredLevel>applicationrequired</RequiredLevel>
+              <RequiredLevel>required</RequiredLevel>
               <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
-              <MaxLength>500</MaxLength>
               <ImeMode>auto</ImeMode>
               <ValidForUpdateApi>1</ValidForUpdateApi>
               <ValidForReadApi>1</ValidForReadApi>
@@ -5908,7 +5579,7 @@
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
               <IsLocalizable>0</IsLocalizable>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Goal Description" languagecode="1033" />
               </displaynames>
@@ -5918,7 +5589,7 @@
               <Name>pm_staffmember</Name>
               <LogicalName>pm_staffmember</LogicalName>
               <RequiredLevel>applicationrequired</RequiredLevel>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <Targets>
                 <Target>pm_staffmember</Target>
               </Targets>
@@ -5942,7 +5613,7 @@
               <Name>pm_status</Name>
               <LogicalName>pm_status</LogicalName>
               <RequiredLevel>none</RequiredLevel>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
                     <SourceType>0</SourceType>
       <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
       <IsSortableEnabled>0</IsSortableEnabled>
@@ -5960,7 +5631,7 @@
               <optionset Name="pm_goalstatus">
                 <IsSorted>0</IsSorted>
                 <IsGlobal>0</IsGlobal>
-                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IntroducedVersion>1.0</IntroducedVersion>
                 <options>
                   <option value="1">
                     <labels>
@@ -5992,7 +5663,7 @@
               <RequiredLevel>none</RequiredLevel>
               <MinValue>0</MinValue>
               <MaxValue>100</MaxValue>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
                     <SourceType>0</SourceType>
       <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
       <IsSortableEnabled>0</IsSortableEnabled>
@@ -6014,7 +5685,7 @@
               <LogicalName>pm_duedate</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <Format>DateOnly</Format>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
                     <SourceType>0</SourceType>
       <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
       <IsSortableEnabled>0</IsSortableEnabled>
@@ -6075,10 +5746,7 @@
               <LogicalName>createdon</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -6113,10 +5781,7 @@
               <LogicalName>createdonbehalfby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -6151,10 +5816,7 @@
               <LogicalName>importsequencenumber</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -6189,10 +5851,7 @@
               <LogicalName>modifiedby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -6227,10 +5886,7 @@
               <LogicalName>modifiedon</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -6265,10 +5921,7 @@
               <LogicalName>modifiedonbehalfby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -6303,10 +5956,7 @@
               <LogicalName>overriddencreatedon</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -6341,10 +5991,7 @@
               <LogicalName>ownerid</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -6379,10 +6026,7 @@
               <LogicalName>owningbusinessunit</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -6417,10 +6061,7 @@
               <LogicalName>owningteam</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -6455,10 +6096,7 @@
               <LogicalName>owninguser</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -6493,10 +6131,7 @@
               <LogicalName>statecode</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -6524,7 +6159,7 @@
               </Descriptions>
               <optionset Name="pm_goal_statecode">
                 <OptionSetType>state</OptionSetType>
-                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IntroducedVersion>1.0</IntroducedVersion>
                 <IsCustomizable>1</IsCustomizable>
                 <IsGlobal>0</IsGlobal>
                 <options>
@@ -6547,10 +6182,7 @@
               <LogicalName>statuscode</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -6578,7 +6210,7 @@
               </Descriptions>
               <optionset Name="pm_goal_statuscode">
                 <OptionSetType>status</OptionSetType>
-                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IntroducedVersion>1.0</IntroducedVersion>
                 <IsCustomizable>1</IsCustomizable>
                 <IsGlobal>0</IsGlobal>
                 <options>
@@ -6601,10 +6233,7 @@
               <LogicalName>timezoneruleversionnumber</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -6639,10 +6268,7 @@
               <LogicalName>utcconversiontimezonecode</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -6677,10 +6303,7 @@
               <LogicalName>versionnumber</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -6734,10 +6357,7 @@
               <Name>pm_recognitionid</Name>
               <LogicalName>pm_recognitionid</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <ImeMode>auto</ImeMode>
@@ -6766,6 +6386,7 @@
               <LogicalName>pm_name</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
+  <MaxLength>100</MaxLength>
               <Length>100</Length>
               <AutoNumberFormat>REC-{SEQNUM:5}</AutoNumberFormat>
               <ImeMode>auto</ImeMode>
@@ -6786,8 +6407,7 @@
               <IsRetrievable>1</IsRetrievable>
               <IsLocalizable>0</IsLocalizable>
               <Format>text</Format>
-              <MaxLength>100</MaxLength>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Recognition ID" languagecode="1033" />
               </displaynames>
@@ -6797,7 +6417,7 @@
               <Name>pm_staffmember</Name>
               <LogicalName>pm_staffmember</LogicalName>
               <RequiredLevel>applicationrequired</RequiredLevel>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <Targets>
                 <Target>pm_staffmember</Target>
               </Targets>
@@ -6821,7 +6441,7 @@
               <Name>pm_supervisor</Name>
               <LogicalName>pm_supervisor</LogicalName>
               <RequiredLevel>applicationrequired</RequiredLevel>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <Targets>
                 <Target>systemuser</Target>
               </Targets>
@@ -6846,7 +6466,7 @@
               <LogicalName>pm_recognitiondate</LogicalName>
               <RequiredLevel>applicationrequired</RequiredLevel>
               <Format>DateOnly</Format>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
                     <SourceType>0</SourceType>
       <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
       <IsSortableEnabled>0</IsSortableEnabled>
@@ -6867,7 +6487,6 @@
               <Name>pm_description</Name>
               <LogicalName>pm_description</LogicalName>
               <RequiredLevel>none</RequiredLevel>
-              <MaxLength>5000</MaxLength>
               <ImeMode>auto</ImeMode>
               <ValidForUpdateApi>1</ValidForUpdateApi>
               <ValidForReadApi>1</ValidForReadApi>
@@ -6886,7 +6505,7 @@
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
               <IsLocalizable>0</IsLocalizable>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Description" languagecode="1033" />
               </displaynames>
@@ -6936,10 +6555,7 @@
               <LogicalName>createdon</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -6974,10 +6590,7 @@
               <LogicalName>createdonbehalfby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -7012,10 +6625,7 @@
               <LogicalName>importsequencenumber</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -7050,10 +6660,7 @@
               <LogicalName>modifiedby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -7088,10 +6695,7 @@
               <LogicalName>modifiedon</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -7126,10 +6730,7 @@
               <LogicalName>modifiedonbehalfby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -7164,10 +6765,7 @@
               <LogicalName>overriddencreatedon</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -7202,10 +6800,7 @@
               <LogicalName>ownerid</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -7240,10 +6835,7 @@
               <LogicalName>owningbusinessunit</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -7278,10 +6870,7 @@
               <LogicalName>owningteam</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -7316,10 +6905,7 @@
               <LogicalName>owninguser</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -7354,10 +6940,7 @@
               <LogicalName>statecode</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -7385,7 +6968,7 @@
               </Descriptions>
               <optionset Name="pm_recognition_statecode">
                 <OptionSetType>state</OptionSetType>
-                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IntroducedVersion>1.0</IntroducedVersion>
                 <IsCustomizable>1</IsCustomizable>
                 <IsGlobal>0</IsGlobal>
                 <options>
@@ -7408,10 +6991,7 @@
               <LogicalName>statuscode</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -7439,7 +7019,7 @@
               </Descriptions>
               <optionset Name="pm_recognition_statuscode">
                 <OptionSetType>status</OptionSetType>
-                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IntroducedVersion>1.0</IntroducedVersion>
                 <IsCustomizable>1</IsCustomizable>
                 <IsGlobal>0</IsGlobal>
                 <options>
@@ -7462,10 +7042,7 @@
               <LogicalName>timezoneruleversionnumber</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -7500,10 +7077,7 @@
               <LogicalName>utcconversiontimezonecode</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -7538,10 +7112,7 @@
               <LogicalName>versionnumber</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -7595,10 +7166,7 @@
               <Name>pm_actionitemid</Name>
               <LogicalName>pm_actionitemid</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <ImeMode>auto</ImeMode>
@@ -7627,6 +7195,7 @@
               <LogicalName>pm_name</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
+  <MaxLength>100</MaxLength>
               <Length>100</Length>
               <AutoNumberFormat>ACT-{SEQNUM:5}</AutoNumberFormat>
               <ImeMode>auto</ImeMode>
@@ -7647,8 +7216,7 @@
               <IsRetrievable>1</IsRetrievable>
               <IsLocalizable>0</IsLocalizable>
               <Format>text</Format>
-              <MaxLength>100</MaxLength>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Action Item ID" languagecode="1033" />
               </displaynames>
@@ -7677,7 +7245,7 @@
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
               <IsLocalizable>0</IsLocalizable>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Description" languagecode="1033" />
               </displaynames>
@@ -7687,7 +7255,7 @@
               <Name>pm_owner</Name>
               <LogicalName>pm_owner</LogicalName>
               <RequiredLevel>applicationrequired</RequiredLevel>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <Targets>
                 <Target>systemuser</Target>
               </Targets>
@@ -7711,7 +7279,7 @@
               <Name>pm_relatedstaffmember</Name>
               <LogicalName>pm_relatedstaffmember</LogicalName>
               <RequiredLevel>none</RequiredLevel>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
               <Targets>
                 <Target>pm_staffmember</Target>
               </Targets>
@@ -7736,7 +7304,7 @@
               <LogicalName>pm_duedate</LogicalName>
               <RequiredLevel>applicationrequired</RequiredLevel>
               <Format>DateOnly</Format>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
                     <SourceType>0</SourceType>
       <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
       <IsSortableEnabled>0</IsSortableEnabled>
@@ -7757,7 +7325,7 @@
               <Name>pm_status</Name>
               <LogicalName>pm_status</LogicalName>
               <RequiredLevel>none</RequiredLevel>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
                     <SourceType>0</SourceType>
       <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
       <IsSortableEnabled>0</IsSortableEnabled>
@@ -7775,7 +7343,7 @@
               <optionset Name="pm_actionitemstatus">
                 <IsSorted>0</IsSorted>
                 <IsGlobal>0</IsGlobal>
-                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IntroducedVersion>1.0</IntroducedVersion>
                 <options>
                   <option value="1">
                     <labels>
@@ -7801,7 +7369,7 @@
               <LogicalName>pm_completeddate</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <Format>DateOnly</Format>
-              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IntroducedVersion>1.0</IntroducedVersion>
                     <SourceType>0</SourceType>
       <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
       <IsSortableEnabled>0</IsSortableEnabled>
@@ -7862,10 +7430,7 @@
               <LogicalName>createdon</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -7900,10 +7465,7 @@
               <LogicalName>createdonbehalfby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -7938,10 +7500,7 @@
               <LogicalName>importsequencenumber</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -7976,10 +7535,7 @@
               <LogicalName>modifiedby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -8014,10 +7570,7 @@
               <LogicalName>modifiedon</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -8052,10 +7605,7 @@
               <LogicalName>modifiedonbehalfby</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -8090,10 +7640,7 @@
               <LogicalName>overriddencreatedon</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -8128,10 +7675,7 @@
               <LogicalName>ownerid</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -8166,10 +7710,7 @@
               <LogicalName>owningbusinessunit</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -8204,10 +7745,7 @@
               <LogicalName>owningteam</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -8242,10 +7780,7 @@
               <LogicalName>owninguser</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -8280,10 +7815,7 @@
               <LogicalName>statecode</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -8311,7 +7843,7 @@
               </Descriptions>
               <optionset Name="pm_actionitem_statecode">
                 <OptionSetType>state</OptionSetType>
-                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IntroducedVersion>1.0</IntroducedVersion>
                 <IsCustomizable>1</IsCustomizable>
                 <IsGlobal>0</IsGlobal>
                 <options>
@@ -8334,10 +7866,7 @@
               <LogicalName>statuscode</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -8365,7 +7894,7 @@
               </Descriptions>
               <optionset Name="pm_actionitem_statuscode">
                 <OptionSetType>status</OptionSetType>
-                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IntroducedVersion>1.0</IntroducedVersion>
                 <IsCustomizable>1</IsCustomizable>
                 <IsGlobal>0</IsGlobal>
                 <options>
@@ -8388,10 +7917,7 @@
               <LogicalName>timezoneruleversionnumber</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -8426,10 +7952,7 @@
               <LogicalName>utcconversiontimezonecode</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>1</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>1</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -8464,10 +7987,7 @@
               <LogicalName>versionnumber</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IsValidForCreate>0</IsValidForCreate>
-              <IsValidForRead>1</IsValidForRead>
-              <IsValidForUpdate>0</IsValidForUpdate>
-              <IsCustomField>0</IsCustomField>
+<IsCustomField>0</IsCustomField>
               <IsAuditEnabled>0</IsAuditEnabled>
               <IsSecured>0</IsSecured>
               <IntroducedVersion>1.0</IntroducedVersion>
@@ -8533,66 +8053,34 @@
 
 
   <CanvasApps>
-    <CanvasApp Name="pm_performancemanagement_12345">
+    <CanvasApp>
+      <Name>pm_performancemanagement_12345</Name>
+      <AppVersion>2025-11-15T00:00:00Z</AppVersion>
+      <Status>Ready</Status>
+      <CreatedByClientVersion>3.24</CreatedByClientVersion>
+      <MinClientVersion>3.24</MinClientVersion>
+      <Tags>{"primaryDeviceWidth": "1366", "primaryDeviceHeight": "768", "supportsPortrait": "true", "supportsLandscape": "true", "primaryFormFactor": "Tablet", "hasComponent": "false", "isUnifiedRootApp": "false"}</Tags>
+      <IsCdsUpgraded>0</IsCdsUpgraded>
+      <GalleryItemId xsi:nil="true"></GalleryItemId>
+      <BackgroundColor>rgba(0, 120, 212, 1)</BackgroundColor>
       <DisplayName>Performance Management System</DisplayName>
-      <Description>Performance Management System for tracking staff evaluations, goals, and development</Description>
-      <Status>Published</Status>
-      <IntroducedVersion>1.0.1.0</IntroducedVersion>
-      <IsCustomizable>1</IsCustomizable>
+      <Description>Continuous performance management with weekly evaluations and quarterly self-assessments</Description>
+      <CommitMessage xsi:nil="true"></CommitMessage>
+      <Publisher xsi:nil="true"></Publisher>
+      <AuthorizationReferences>[]</AuthorizationReferences>
+      <ConnectionReferences>{"cr_commondataserviceforapps": {"id": "/providers/microsoft.powerapps/apis/shared_commondataserviceforapps", "displayName": "Microsoft Dataverse", "dataSources": ["pm_staffmembers", "pm_evaluationquestions", "pm_weeklyevaluations", "pm_selfevaluations", "pm_idpentries", "pm_meetingnotes", "pm_goals", "pm_recognitions", "pm_actionitems"], "apiTier": "Standard"}, "cr_office365users": {"id": "/providers/microsoft.powerapps/apis/shared_office365users", "displayName": "Office 365 Users", "apiTier": "Standard"}, "cr_office365": {"id": "/providers/microsoft.powerapps/apis/shared_office365", "displayName": "Office 365 Outlook", "apiTier": "Standard"}}</ConnectionReferences>
+      <DatabaseReferences>{"default.cds": {"databaseDetails": {"referenceType": "Environmental", "environmentName": "default.cds"}, "dataSources": {"Staff Members": {"entitySetName": "pm_staffmembers", "logicalName": "pm_staffmember"}, "Evaluation Questions": {"entitySetName": "pm_evaluationquestions", "logicalName": "pm_evaluationquestion"}, "Weekly Evaluations": {"entitySetName": "pm_weeklyevaluations", "logicalName": "pm_weeklyevaluation"}, "Self Evaluations": {"entitySetName": "pm_selfevaluations", "logicalName": "pm_selfevaluation"}, "IDP Entries": {"entitySetName": "pm_idpentries", "logicalName": "pm_idpentry"}, "Meeting Notes": {"entitySetName": "pm_meetingnotes", "logicalName": "pm_meetingnote"}, "Goals": {"entitySetName": "pm_goals", "logicalName": "pm_goal"}, "Recognitions": {"entitySetName": "pm_recognitions", "logicalName": "pm_recognition"}, "Action Items": {"entitySetName": "pm_actionitems", "logicalName": "pm_actionitem"}}}}</DatabaseReferences>
+      <AppComponents>[]</AppComponents>
+      <AppComponentDependencies>[]</AppComponentDependencies>
+      <CanConsumeAppPass>1</CanConsumeAppPass>
       <CanvasAppType>0</CanvasAppType>
-      <BypassConsent>false</BypassConsent>
-      <Publisher>Default</Publisher>
-      <AuthorizationReferences>
-        <AuthorizationReference>
-          <Resource>shared_commondataserviceforapps</Resource>
-        </AuthorizationReference>
-        <AuthorizationReference>
-          <Resource>shared_office365users</Resource>
-        </AuthorizationReference>
-        <AuthorizationReference>
-          <Resource>shared_office365</Resource>
-        </AuthorizationReference>
-      </AuthorizationReferences>
-      <ConnectionReferences>
-        <ConnectionReference>
-          <LogicalName>cr_commondataserviceforapps</LogicalName>
-        </ConnectionReference>
-        <ConnectionReference>
-          <LogicalName>cr_office365users</LogicalName>
-        </ConnectionReference>
-        <ConnectionReference>
-          <LogicalName>cr_office365</LogicalName>
-        </ConnectionReference>
-      </ConnectionReferences>
-      <DatabaseReferences>
-        <DatabaseReference>
-          <EntityName>pm_staffmember</EntityName>
-        </DatabaseReference>
-        <DatabaseReference>
-          <EntityName>pm_evaluationquestion</EntityName>
-        </DatabaseReference>
-        <DatabaseReference>
-          <EntityName>pm_weeklyevaluation</EntityName>
-        </DatabaseReference>
-        <DatabaseReference>
-          <EntityName>pm_selfevaluation</EntityName>
-        </DatabaseReference>
-        <DatabaseReference>
-          <EntityName>pm_idpentry</EntityName>
-        </DatabaseReference>
-        <DatabaseReference>
-          <EntityName>pm_meetingnote</EntityName>
-        </DatabaseReference>
-        <DatabaseReference>
-          <EntityName>pm_goal</EntityName>
-        </DatabaseReference>
-        <DatabaseReference>
-          <EntityName>pm_recognition</EntityName>
-        </DatabaseReference>
-        <DatabaseReference>
-          <EntityName>pm_actionitem</EntityName>
-        </DatabaseReference>
-      </DatabaseReferences>
+      <BypassConsent>0</BypassConsent>
+      <AdminControlBypassConsent>0</AdminControlBypassConsent>
+      <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+      <IntroducedVersion>1.0</IntroducedVersion>
+      <CdsDependencies>{"cdsdependencies": [{"logicalname": "pm_staffmember", "componenttype": 1}, {"logicalname": "pm_evaluationquestion", "componenttype": 1}, {"logicalname": "pm_weeklyevaluation", "componenttype": 1}, {"logicalname": "pm_selfevaluation", "componenttype": 1}, {"logicalname": "pm_idpentry", "componenttype": 1}, {"logicalname": "pm_meetingnote", "componenttype": 1}, {"logicalname": "pm_goal", "componenttype": 1}, {"logicalname": "pm_recognition", "componenttype": 1}, {"logicalname": "pm_actionitem", "componenttype": 1}]}</CdsDependencies>
+      <IsCustomizable>1</IsCustomizable>
+      <DocumentUri>/CanvasApps/pm_performancemanagement_12345.msapp</DocumentUri>
     </CanvasApp>
   </CanvasApps>
 
@@ -8610,7 +8098,7 @@
       <StateCode>1</StateCode>
       <StatusCode>2</StatusCode>
       <IsTransacted>1</IsTransacted>
-      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsCustomizable>1</IsCustomizable>
       <TriggerOnCreate>0</TriggerOnCreate>
       <TriggerOnDelete>0</TriggerOnDelete>
@@ -8635,7 +8123,7 @@
       <StateCode>1</StateCode>
       <StatusCode>2</StatusCode>
       <IsTransacted>1</IsTransacted>
-      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsCustomizable>1</IsCustomizable>
       <TriggerOnCreate>0</TriggerOnCreate>
       <TriggerOnDelete>0</TriggerOnDelete>
@@ -8660,7 +8148,7 @@
       <StateCode>1</StateCode>
       <StatusCode>2</StatusCode>
       <IsTransacted>1</IsTransacted>
-      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsCustomizable>1</IsCustomizable>
       <TriggerOnCreate>0</TriggerOnCreate>
       <TriggerOnDelete>0</TriggerOnDelete>
@@ -8685,7 +8173,7 @@
       <StateCode>1</StateCode>
       <StatusCode>2</StatusCode>
       <IsTransacted>1</IsTransacted>
-      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsCustomizable>1</IsCustomizable>
       <TriggerOnCreate>0</TriggerOnCreate>
       <TriggerOnDelete>0</TriggerOnDelete>
@@ -9734,7 +9222,7 @@
 <EntityRelationship Name="systemuser_pm_supervisor_pm_staffmember">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
       <IsCustomizable>1</IsCustomizable>
-      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_StaffMember</ReferencingEntityName>
       <ReferencedEntityName>systemuser</ReferencedEntityName>
@@ -9768,7 +9256,7 @@
     <EntityRelationship Name="pm_staffmember_pm_staffmember_pm_weeklyevaluation">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
       <IsCustomizable>1</IsCustomizable>
-      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_WeeklyEvaluation</ReferencingEntityName>
       <ReferencedEntityName>pm_StaffMember</ReferencedEntityName>
@@ -9802,7 +9290,7 @@
     <EntityRelationship Name="systemuser_pm_evaluator_pm_weeklyevaluation">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
       <IsCustomizable>1</IsCustomizable>
-      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_WeeklyEvaluation</ReferencingEntityName>
       <ReferencedEntityName>systemuser</ReferencedEntityName>
@@ -9836,7 +9324,7 @@
     <EntityRelationship Name="pm_evaluationquestion_pm_question_pm_weeklyevaluation">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
       <IsCustomizable>1</IsCustomizable>
-      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_WeeklyEvaluation</ReferencingEntityName>
       <ReferencedEntityName>pm_EvaluationQuestion</ReferencedEntityName>
@@ -9870,7 +9358,7 @@
     <EntityRelationship Name="pm_staffmember_pm_staffmember_pm_selfevaluation">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
       <IsCustomizable>1</IsCustomizable>
-      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_SelfEvaluation</ReferencingEntityName>
       <ReferencedEntityName>pm_StaffMember</ReferencedEntityName>
@@ -9904,7 +9392,7 @@
     <EntityRelationship Name="pm_evaluationquestion_pm_question_pm_selfevaluation">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
       <IsCustomizable>1</IsCustomizable>
-      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_SelfEvaluation</ReferencingEntityName>
       <ReferencedEntityName>pm_EvaluationQuestion</ReferencedEntityName>
@@ -9938,7 +9426,7 @@
     <EntityRelationship Name="pm_staffmember_pm_staffmember_pm_idpentry">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
       <IsCustomizable>1</IsCustomizable>
-      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_IDPEntry</ReferencingEntityName>
       <ReferencedEntityName>pm_StaffMember</ReferencedEntityName>
@@ -9972,7 +9460,7 @@
     <EntityRelationship Name="pm_staffmember_pm_staffmember_pm_meetingnote">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
       <IsCustomizable>1</IsCustomizable>
-      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_MeetingNote</ReferencingEntityName>
       <ReferencedEntityName>pm_StaffMember</ReferencedEntityName>
@@ -10006,7 +9494,7 @@
     <EntityRelationship Name="systemuser_pm_supervisor_pm_meetingnote">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
       <IsCustomizable>1</IsCustomizable>
-      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_MeetingNote</ReferencingEntityName>
       <ReferencedEntityName>systemuser</ReferencedEntityName>
@@ -10040,7 +9528,7 @@
     <EntityRelationship Name="pm_staffmember_pm_staffmember_pm_goal">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
       <IsCustomizable>1</IsCustomizable>
-      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_Goal</ReferencingEntityName>
       <ReferencedEntityName>pm_StaffMember</ReferencedEntityName>
@@ -10074,7 +9562,7 @@
     <EntityRelationship Name="pm_staffmember_pm_staffmember_pm_recognition">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
       <IsCustomizable>1</IsCustomizable>
-      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_Recognition</ReferencingEntityName>
       <ReferencedEntityName>pm_StaffMember</ReferencedEntityName>
@@ -10108,7 +9596,7 @@
     <EntityRelationship Name="systemuser_pm_supervisor_pm_recognition">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
       <IsCustomizable>1</IsCustomizable>
-      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_Recognition</ReferencingEntityName>
       <ReferencedEntityName>systemuser</ReferencedEntityName>
@@ -10142,7 +9630,7 @@
     <EntityRelationship Name="systemuser_pm_owner_pm_actionitem">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
       <IsCustomizable>1</IsCustomizable>
-      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_ActionItem</ReferencingEntityName>
       <ReferencedEntityName>systemuser</ReferencedEntityName>
@@ -10176,7 +9664,7 @@
     <EntityRelationship Name="pm_staffmember_pm_relatedstaffmember_pm_actionitem">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
       <IsCustomizable>1</IsCustomizable>
-      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_ActionItem</ReferencingEntityName>
       <ReferencedEntityName>pm_StaffMember</ReferencedEntityName>
