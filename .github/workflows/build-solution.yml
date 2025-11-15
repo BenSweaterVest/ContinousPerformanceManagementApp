@@ -47,9 +47,20 @@ jobs:
           export PATH="$HOME/.dotnet:$PATH"
           echo "$HOME/.dotnet" >> $GITHUB_PATH
 
-          # Clear NuGet cache and install pac CLI to tool-path
+          # Clear NuGet cache and install pac CLI with fallback
           dotnet nuget locals all --clear
-          dotnet tool install microsoft.powerapps.cli.tool --tool-path $HOME/.dotnet/tools --version 1.50.1
+
+          # Try latest version with explicit NuGet source
+          dotnet tool install microsoft.powerapps.cli.tool \
+            --tool-path $HOME/.dotnet/tools \
+            --add-source https://api.nuget.org/v3/index.json \
+            --version 1.50.4 || \
+          # Fallback to version 1.50.1 if latest fails
+          dotnet tool install microsoft.powerapps.cli.tool \
+            --tool-path $HOME/.dotnet/tools \
+            --add-source https://api.nuget.org/v3/index.json \
+            --version 1.50.1
+
           export PATH="$HOME/.dotnet/tools:$PATH"
           echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
 
