@@ -34,7 +34,7 @@ $projectRoot = Split-Path -Parent $scriptPath
 Set-Location $projectRoot
 
 # Check for solution package
-$packageFile = "PerformanceManagement_1_0_0_1.zip"
+$packageFile = "PerformanceManagement_1_0_1_0.zip"
 if (!(Test-Path $packageFile)) {
     Write-Host "ERROR: Solution package not found: $packageFile" -ForegroundColor Red
     Write-Host ""

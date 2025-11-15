@@ -70,7 +70,7 @@ if ($sizeKB -lt 450) {
 Write-Host ""
 
 # Create the ZIP file
-$outputFile = "PerformanceManagement_1_0_0_1.zip"
+$outputFile = "PerformanceManagement_1_0_1_0.zip"
 $outputPath = Join-Path $projectRoot $outputFile
 
 # Remove existing zip if present

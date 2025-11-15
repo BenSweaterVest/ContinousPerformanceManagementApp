@@ -40,7 +40,7 @@ if (!(Test-Path "solution")) {
 Write-Host "Packing solution..." -ForegroundColor Yellow
 Write-Host ""
 
-$outputFile = "PerformanceManagement_1_0_0_1.zip"
+$outputFile = "PerformanceManagement_1_0_1_0.zip"
 $outputPath = Join-Path $projectRoot $outputFile
 
 # Remove existing zip if present
