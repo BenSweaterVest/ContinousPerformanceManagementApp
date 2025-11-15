@@ -198,7 +198,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Targets>
                 <Target>systemuser</Target>
               </Targets>
@@ -233,7 +232,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <displaynames>
                 <displayname description="Start Date" languagecode="1033" />
               </displaynames>
@@ -264,7 +262,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <displaynames>
                 <displayname description="Status" languagecode="1033" />
               </displaynames>
@@ -318,7 +315,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -357,7 +353,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Format>datetime</Format>
               <Behavior>1</Behavior>
               <displaynames>
@@ -396,7 +391,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -435,7 +429,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-2147483648</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
@@ -474,7 +467,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -513,7 +505,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Format>datetime</Format>
               <Behavior>1</Behavior>
               <displaynames>
@@ -552,7 +543,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -591,7 +581,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Format>datetime</Format>
               <Behavior>1</Behavior>
               <displaynames>
@@ -630,7 +619,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -669,7 +657,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -708,7 +695,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -747,7 +733,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -786,7 +771,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <displaynames>
                 <displayname description="Status" languagecode="1033" />
               </displaynames>
@@ -841,7 +825,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <displaynames>
                 <displayname description="Status Reason" languagecode="1033" />
               </displaynames>
@@ -896,7 +879,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-1</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
@@ -935,7 +917,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-1</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
@@ -974,7 +955,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-9223372036854775808</MinValue>
               <MaxValue>9223372036854775807</MaxValue>
               <displaynames>
@@ -1152,7 +1132,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <displaynames>
                 <displayname description="Question Number" languagecode="1033" />
               </displaynames>
@@ -1183,7 +1162,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <DefaultValue>1</DefaultValue>
               <displaynames>
                 <displayname description="Active" languagecode="1033" />
@@ -1221,7 +1199,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -1260,7 +1237,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Format>datetime</Format>
               <Behavior>1</Behavior>
               <displaynames>
@@ -1299,7 +1275,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -1338,7 +1313,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-2147483648</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
@@ -1377,7 +1351,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -1416,7 +1389,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Format>datetime</Format>
               <Behavior>1</Behavior>
               <displaynames>
@@ -1455,7 +1427,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -1494,7 +1465,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Format>datetime</Format>
               <Behavior>1</Behavior>
               <displaynames>
@@ -1533,7 +1503,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -1572,7 +1541,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -1611,7 +1579,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -1650,7 +1617,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -1689,7 +1655,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <displaynames>
                 <displayname description="Status" languagecode="1033" />
               </displaynames>
@@ -1744,7 +1709,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <displaynames>
                 <displayname description="Status Reason" languagecode="1033" />
               </displaynames>
@@ -1799,7 +1763,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-1</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
@@ -1838,7 +1801,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-1</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
@@ -1877,7 +1839,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-9223372036854775808</MinValue>
               <MaxValue>9223372036854775807</MaxValue>
               <displaynames>
@@ -2055,7 +2016,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Targets>
                 <Target>pm_staffmember</Target>
               </Targets>
@@ -2089,7 +2049,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Targets>
                 <Target>systemuser</Target>
               </Targets>
@@ -2123,7 +2082,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Targets>
                 <Target>pm_evaluationquestion</Target>
               </Targets>
@@ -2157,7 +2115,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <displaynames>
                 <displayname description="Rating" languagecode="1033" />
               </displaynames>
@@ -2264,7 +2221,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <displaynames>
                 <displayname description="Evaluation Date" languagecode="1033" />
               </displaynames>
@@ -2295,7 +2251,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <displaynames>
                 <displayname description="Evaluation Type" languagecode="1033" />
               </displaynames>
@@ -2349,7 +2304,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -2388,7 +2342,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Format>datetime</Format>
               <Behavior>1</Behavior>
               <displaynames>
@@ -2427,7 +2380,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -2466,7 +2418,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-2147483648</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
@@ -2505,7 +2456,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -2544,7 +2494,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Format>datetime</Format>
               <Behavior>1</Behavior>
               <displaynames>
@@ -2583,7 +2532,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -2622,7 +2570,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Format>datetime</Format>
               <Behavior>1</Behavior>
               <displaynames>
@@ -2661,7 +2608,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -2700,7 +2646,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -2739,7 +2684,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -2778,7 +2722,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -2817,7 +2760,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <displaynames>
                 <displayname description="Status" languagecode="1033" />
               </displaynames>
@@ -2872,7 +2814,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <displaynames>
                 <displayname description="Status Reason" languagecode="1033" />
               </displaynames>
@@ -2927,7 +2868,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-1</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
@@ -2966,7 +2906,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-1</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
@@ -3005,7 +2944,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-9223372036854775808</MinValue>
               <MaxValue>9223372036854775807</MaxValue>
               <displaynames>
@@ -3471,7 +3409,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Format>datetime</Format>
               <Behavior>1</Behavior>
               <displaynames>
@@ -3510,7 +3447,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -3549,7 +3485,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-2147483648</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
@@ -3588,7 +3523,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -3627,7 +3561,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Format>datetime</Format>
               <Behavior>1</Behavior>
               <displaynames>
@@ -3666,7 +3599,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -3705,7 +3637,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Format>datetime</Format>
               <Behavior>1</Behavior>
               <displaynames>
@@ -3744,7 +3675,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -3783,7 +3713,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -3822,7 +3751,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -3861,7 +3789,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -3900,7 +3827,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <displaynames>
                 <displayname description="Status" languagecode="1033" />
               </displaynames>
@@ -3955,7 +3881,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <displaynames>
                 <displayname description="Status Reason" languagecode="1033" />
               </displaynames>
@@ -4010,7 +3935,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-1</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
@@ -4049,7 +3973,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-1</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
@@ -4088,7 +4011,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-9223372036854775808</MinValue>
               <MaxValue>9223372036854775807</MaxValue>
               <displaynames>
@@ -4380,7 +4302,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Format>datetime</Format>
               <Behavior>1</Behavior>
               <displaynames>
@@ -4419,7 +4340,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -4458,7 +4378,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-2147483648</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
@@ -4497,7 +4416,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -4536,7 +4454,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Format>datetime</Format>
               <Behavior>1</Behavior>
               <displaynames>
@@ -4575,7 +4492,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -4614,7 +4530,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Format>datetime</Format>
               <Behavior>1</Behavior>
               <displaynames>
@@ -4653,7 +4568,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -4692,7 +4606,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -4731,7 +4644,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -4770,7 +4682,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -4809,7 +4720,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <displaynames>
                 <displayname description="Status" languagecode="1033" />
               </displaynames>
@@ -4864,7 +4774,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <displaynames>
                 <displayname description="Status Reason" languagecode="1033" />
               </displaynames>
@@ -4919,7 +4828,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-1</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
@@ -4958,7 +4866,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-1</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
@@ -4997,7 +4904,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-9223372036854775808</MinValue>
               <MaxValue>9223372036854775807</MaxValue>
               <displaynames>
@@ -5315,7 +5221,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Format>datetime</Format>
               <Behavior>1</Behavior>
               <displaynames>
@@ -5354,7 +5259,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -5393,7 +5297,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-2147483648</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
@@ -5432,7 +5335,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -5471,7 +5373,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Format>datetime</Format>
               <Behavior>1</Behavior>
               <displaynames>
@@ -5510,7 +5411,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -5549,7 +5449,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Format>datetime</Format>
               <Behavior>1</Behavior>
               <displaynames>
@@ -5588,7 +5487,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -5627,7 +5525,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -5666,7 +5563,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -5705,7 +5601,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -5744,7 +5639,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <displaynames>
                 <displayname description="Status" languagecode="1033" />
               </displaynames>
@@ -5799,7 +5693,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <displaynames>
                 <displayname description="Status Reason" languagecode="1033" />
               </displaynames>
@@ -5854,7 +5747,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-1</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
@@ -5893,7 +5785,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-1</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
@@ -5932,7 +5823,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-9223372036854775808</MinValue>
               <MaxValue>9223372036854775807</MaxValue>
               <displaynames>
@@ -6208,7 +6098,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Format>datetime</Format>
               <Behavior>1</Behavior>
               <displaynames>
@@ -6247,7 +6136,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -6286,7 +6174,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-2147483648</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
@@ -6325,7 +6212,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -6364,7 +6250,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Format>datetime</Format>
               <Behavior>1</Behavior>
               <displaynames>
@@ -6403,7 +6288,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -6442,7 +6326,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Format>datetime</Format>
               <Behavior>1</Behavior>
               <displaynames>
@@ -6481,7 +6364,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -6520,7 +6402,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -6559,7 +6440,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -6598,7 +6478,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -6637,7 +6516,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <displaynames>
                 <displayname description="Status" languagecode="1033" />
               </displaynames>
@@ -6692,7 +6570,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <displaynames>
                 <displayname description="Status Reason" languagecode="1033" />
               </displaynames>
@@ -6747,7 +6624,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-1</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
@@ -6786,7 +6662,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-1</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
@@ -6825,7 +6700,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-9223372036854775808</MinValue>
               <MaxValue>9223372036854775807</MaxValue>
               <displaynames>
@@ -7085,7 +6959,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Format>datetime</Format>
               <Behavior>1</Behavior>
               <displaynames>
@@ -7124,7 +6997,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -7163,7 +7035,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-2147483648</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
@@ -7202,7 +7073,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -7241,7 +7111,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Format>datetime</Format>
               <Behavior>1</Behavior>
               <displaynames>
@@ -7280,7 +7149,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -7319,7 +7187,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Format>datetime</Format>
               <Behavior>1</Behavior>
               <displaynames>
@@ -7358,7 +7225,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -7397,7 +7263,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -7436,7 +7301,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -7475,7 +7339,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -7514,7 +7377,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <displaynames>
                 <displayname description="Status" languagecode="1033" />
               </displaynames>
@@ -7569,7 +7431,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <displaynames>
                 <displayname description="Status Reason" languagecode="1033" />
               </displaynames>
@@ -7624,7 +7485,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-1</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
@@ -7663,7 +7523,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-1</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
@@ -7702,7 +7561,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-9223372036854775808</MinValue>
               <MaxValue>9223372036854775807</MaxValue>
               <displaynames>
@@ -8027,7 +7885,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Format>datetime</Format>
               <Behavior>1</Behavior>
               <displaynames>
@@ -8066,7 +7923,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -8105,7 +7961,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-2147483648</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
@@ -8144,7 +7999,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -8183,7 +8037,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Format>datetime</Format>
               <Behavior>1</Behavior>
               <displaynames>
@@ -8222,7 +8075,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -8261,7 +8113,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <Format>datetime</Format>
               <Behavior>1</Behavior>
               <displaynames>
@@ -8300,7 +8151,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -8339,7 +8189,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -8378,7 +8227,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -8417,7 +8265,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <LookupStyle>single</LookupStyle>
               <LookupTypes />
               <displaynames>
@@ -8456,7 +8303,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <displaynames>
                 <displayname description="Status" languagecode="1033" />
               </displaynames>
@@ -8511,7 +8357,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <displaynames>
                 <displayname description="Status Reason" languagecode="1033" />
               </displaynames>
@@ -8566,7 +8411,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-1</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
@@ -8605,7 +8449,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-1</MinValue>
               <MaxValue>2147483647</MaxValue>
               <displaynames>
@@ -8644,7 +8487,6 @@
       <IsFilterable>0</IsFilterable>
       <IsRetrievable>1</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
-      </CanModifyAdditionalSettings>
               <MinValue>-9223372036854775808</MinValue>
               <MaxValue>9223372036854775807</MaxValue>
               <displaynames>
