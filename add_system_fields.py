@@ -1,136 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <EntityInfo>
-    <entity Name="pm_goal"
-            OwnershipType="UserOwned"
-            EntitySetName="pm_goals"
-            IsCustomEntity="1"
-            IsActivity="0"
-            IsActivityParty="0"
-            IsAuditEnabled="1"
-            IsBPFEntity="0"
-            IsChildEntity="0"
-            IsConnectionsEnabled="0"
-            IsCustomizable="1"
-            IsDocumentManagementEnabled="0"
-            IsDocumentRecommendationsEnabled="0"
-            IsDuplicateDetectionEnabled="0"
-            IsEnabledForCharts="0"
-            IsEnabledForExternalChannels="0"
-            IsEnabledForTrace="0"
-            IsImportable="1"
-            IsInteractionCentricEnabled="0"
-            IsIntersect="0"
-            IsKnowledgeManagementEnabled="0"
-            IsMailMergeEnabled="0"
-            IsMappable="1"
-            IsOfflineInMobileClient="0"
-            IsOneNoteIntegrationEnabled="0"
-            IsOptimisticConcurrencyEnabled="1"
-            IsPrivate="0"
-            IsQuickCreateEnabled="0"
-            IsReadingPaneEnabled="1"
-            IsReadOnlyInMobileClient="0"
-            IsRenameable="1"
-            IsSLAEnabled="0"
-            IsStateModelAware="1"
-            IsValidForAdvancedFind="1"
-            IsValidForQueue="0"
-            IsVisibleInMobile="0"
-            IsVisibleInMobileClient="1"
-            ReportViewName="Filteredpm_goal"
-            IntroducedVersion="1.0.0.0">
-      <LocalizedNames>
-        <LocalizedName description="Goal" languagecode="1033" />
-      </LocalizedNames>
-      <LocalizedCollectionNames>
-        <LocalizedCollectionName description="Goals" languagecode="1033" />
-      </LocalizedCollectionNames>
-      <Descriptions>
-        <Description description="Performance and development goals tracking" languagecode="1033" />
-      </Descriptions>
-      <attributes>
-        <attribute PhysicalName="pm_goalid">
-          <Type>primarykey</Type>
-          <Name>pm_goalid</Name>
-          <LogicalName>pm_goalid</LogicalName>
-          <RequiredLevel>systemrequired</RequiredLevel>
-          <IsPrimaryId>1</IsPrimaryId>
-          <IntroducedVersion>1.0.0.0</IntroducedVersion>
-          <displaynames>
-            <displayname description="Goal ID" languagecode="1033" />
-          </displaynames>
-        </attribute>
-        <attribute PhysicalName="pm_goaldescription">
-          <Type>memo</Type>
-          <Name>pm_goaldescription</Name>
-          <LogicalName>pm_goaldescription</LogicalName>
-          <RequiredLevel>applicationrequired</RequiredLevel>
-          <IsPrimaryName>1</IsPrimaryName>
-          <MaxLength>500</MaxLength>
-          <IntroducedVersion>1.0.0.0</IntroducedVersion>
-          <displaynames>
-            <displayname description="Goal Description" languagecode="1033" />
-          </displaynames>
-        </attribute>
-        <attribute PhysicalName="pm_staffmember">
-          <Type>lookup</Type>
-          <Name>pm_staffmember</Name>
-          <LogicalName>pm_staffmember</LogicalName>
-          <RequiredLevel>applicationrequired</RequiredLevel>
-          <IntroducedVersion>1.0.0.0</IntroducedVersion>
-          <Targets>
-            <Target>pm_staffmember</Target>
-          </Targets>
-          <displaynames>
-            <displayname description="Staff Member" languagecode="1033" />
-          </displaynames>
-        </attribute>
-        <attribute PhysicalName="pm_status">
-          <Type>picklist</Type>
-          <Name>pm_status</Name>
-          <LogicalName>pm_status</LogicalName>
-          <RequiredLevel>none</RequiredLevel>
-          <IntroducedVersion>1.0.0.0</IntroducedVersion>
-          <displaynames>
-            <displayname description="Status" languagecode="1033" />
-          </displaynames>
-          <optionset Name="pm_goalstatus">
-            <IsSorted>0</IsSorted>
-            <IsGlobal>0</IsGlobal>
-            <IntroducedVersion>1.0.0.0</IntroducedVersion>
-            <options>
-              <option value="1"><labels><label description="Not Started" languagecode="1033" /></labels></option>
-              <option value="2"><labels><label description="In Progress" languagecode="1033" /></labels></option>
-              <option value="3"><labels><label description="Completed" languagecode="1033" /></labels></option>
-              <option value="4"><labels><label description="Blocked" languagecode="1033" /></labels></option>
-            </options>
-          </optionset>
-        </attribute>
-        <attribute PhysicalName="pm_completionpercentage">
-          <Type>int</Type>
-          <Name>pm_completionpercentage</Name>
-          <LogicalName>pm_completionpercentage</LogicalName>
-          <RequiredLevel>none</RequiredLevel>
-          <MinValue>0</MinValue>
-          <MaxValue>100</MaxValue>
-          <IntroducedVersion>1.0.0.0</IntroducedVersion>
-          <displaynames>
-            <displayname description="Completion Percentage" languagecode="1033" />
-          </displaynames>
-        </attribute>
-        <attribute PhysicalName="pm_duedate">
-          <Type>datetime</Type>
-          <Name>pm_duedate</Name>
-          <LogicalName>pm_duedate</LogicalName>
-          <RequiredLevel>none</RequiredLevel>
-          <Format>DateOnly</Format>
-          <IntroducedVersion>1.0.0.0</IntroducedVersion>
-          <displaynames>
-            <displayname description="Due Date" languagecode="1033" />
-          </displaynames>
-        </attribute>
+#!/usr/bin/env python3
+"""
+Add required Dataverse system fields to all Entity.xml files.
+These fields are present in all Microsoft-exported solutions.
+"""
 
+import os
+import xml.etree.ElementTree as ET
+from pathlib import Path
+
+# Define the system fields template based on Microsoft's Boards solution
+SYSTEM_FIELDS_TEMPLATE = '''
         <!-- Standard Dataverse System Fields -->
         <attribute PhysicalName="CreatedBy">
           <Type>lookup</Type>
@@ -480,7 +359,7 @@
           <Descriptions>
             <Description description="Status of the record" languagecode="1033" />
           </Descriptions>
-          <optionset Name="pm_goal_statecode">
+          <optionset Name="ENTITY_NAME_statecode">
             <OptionSetType>state</OptionSetType>
             <IntroducedVersion>1.0.0.0</IntroducedVersion>
             <IsCustomizable>1</IsCustomizable>
@@ -523,7 +402,7 @@
           <Descriptions>
             <Description description="Reason for the status of the record" languagecode="1033" />
           </Descriptions>
-          <optionset Name="pm_goal_statuscode">
+          <optionset Name="ENTITY_NAME_statuscode">
             <OptionSetType>status</OptionSetType>
             <IntroducedVersion>1.0.0.0</IntroducedVersion>
             <IsCustomizable>1</IsCustomizable>
@@ -623,10 +502,70 @@
             <Description description="Version Number" languagecode="1033" />
           </Descriptions>
         </attribute>
+'''
 
-      </attributes>
-    </entity>
-  </EntityInfo>
-  <FormXml />
-  <SavedQueries />
-</Entity>
+def process_entity_file(filepath, entity_name):
+    """Add system fields to an Entity.xml file"""
+
+    print(f"Processing {entity_name}...")
+
+    with open(filepath, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    # Check if system fields are already added
+    if 'PhysicalName="CreatedBy"' in content:
+        print(f"  ✓ System fields already present in {entity_name}")
+        return
+
+    # Fix primary key type from uniqueidentifier to primarykey
+    content = content.replace(
+        f'<Type>uniqueidentifier</Type>\n          <Name>{entity_name}id</Name>',
+        f'<Type>primarykey</Type>\n          <Name>{entity_name}id</Name>'
+    )
+
+    # Add system fields before the closing </attributes> tag
+    # Replace ENTITY_NAME placeholder with actual entity name in optionsets
+    system_fields = SYSTEM_FIELDS_TEMPLATE.replace('ENTITY_NAME', entity_name)
+
+    content = content.replace(
+        '      </attributes>',
+        f'{system_fields}\n      </attributes>'
+    )
+
+    # Write back the modified content
+    with open(filepath, 'w', encoding='utf-8') as f:
+        f.write(content)
+
+    print(f"  ✓ Added system fields to {entity_name}")
+
+def main():
+    """Process all Entity.xml files"""
+
+    solution_path = Path('/home/user/ContinousPerformanceManagementApp/solution/Tables')
+
+    entities = [
+        'pm_staffmember',
+        'pm_evaluationquestion',
+        'pm_weeklyevaluation',
+        'pm_selfevaluation',
+        'pm_idpentry',
+        'pm_meetingnote',
+        'pm_goal',
+        'pm_recognition',
+        'pm_actionitem'
+    ]
+
+    for entity in entities:
+        entity_file = solution_path / entity / 'Entity.xml'
+        if entity_file.exists():
+            process_entity_file(entity_file, entity)
+        else:
+            print(f"  ✗ File not found: {entity_file}")
+
+    print("\n✓ All Entity.xml files have been updated with required system fields!")
+    print("\nNext steps:")
+    print("1. Run the pack-solution.ps1 script to create a new solution ZIP")
+    print("2. Import the new solution into Dataverse for Teams")
+
+if __name__ == '__main__':
+    main()
