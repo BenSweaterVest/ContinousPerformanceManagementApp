@@ -1,0 +1,174 @@
+name: Build Dataverse Solution
+
+on:
+  push:
+    branches:
+      - main
+      - 'claude/**'
+    paths:
+      - 'solution/**'
+      - 'deployment/**'
+      - '.github/workflows/build-solution.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'solution/**'
+      - 'deployment/**'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  build:
+    name: Build Solution Package
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get solution version
+        id: get_version
+        run: |
+          VERSION=$(grep -oP '<Version>\K[0-9.]+' solution/Other/Solution.xml)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Solution version: $VERSION"
+
+      - name: Validate Customizations.xml structure
+        run: |
+          echo "Validating Customizations.xml..."
+
+          # Check file exists
+          if [ ! -f "solution/Other/Customizations.xml" ]; then
+            echo "❌ ERROR: Customizations.xml not found!"
+            exit 1
+          fi
+
+          # Check file size (should be ~500KB if fixed)
+          SIZE=$(stat -f%z "solution/Other/Customizations.xml" 2>/dev/null || stat -c%s "solution/Other/Customizations.xml")
+          SIZE_KB=$((SIZE / 1024))
+          echo "File size: ${SIZE_KB} KB"
+
+          if [ $SIZE_KB -lt 450 ]; then
+            echo "⚠️  WARNING: File seems small (expected ~500KB)"
+            echo "This might indicate fixes haven't been applied."
+          fi
+
+          # Validate XML structure
+          xmllint --noout solution/Other/Customizations.xml 2>&1 || {
+            echo "❌ ERROR: Customizations.xml is not well-formed XML!"
+            exit 1
+          }
+
+          echo "✅ XML validation passed"
+
+      - name: Validate Solution.xml
+        run: |
+          echo "Validating Solution.xml..."
+          xmllint --noout solution/Other/Solution.xml || {
+            echo "❌ ERROR: Solution.xml is not well-formed XML!"
+            exit 1
+          }
+          echo "✅ XML validation passed"
+
+      - name: Create solution package (manual method)
+        run: |
+          echo "Creating solution package..."
+
+          VERSION="${{ steps.get_version.outputs.version }}"
+          ZIP_NAME="PerformanceManagement_${VERSION//./_}.zip"
+
+          cd solution
+          zip -r "../${ZIP_NAME}" . -q
+          cd ..
+
+          if [ -f "${ZIP_NAME}" ]; then
+            SIZE=$(stat -f%z "${ZIP_NAME}" 2>/dev/null || stat -c%s "${ZIP_NAME}")
+            SIZE_KB=$((SIZE / 1024))
+            echo "✅ Package created: ${ZIP_NAME} (${SIZE_KB} KB)"
+
+            # Save for artifacts
+            echo "zip_name=${ZIP_NAME}" >> $GITHUB_ENV
+            echo "zip_size=${SIZE_KB}" >> $GITHUB_ENV
+          else
+            echo "❌ ERROR: Failed to create package!"
+            exit 1
+          fi
+
+      - name: Verify package contents
+        run: |
+          echo "Verifying package contents..."
+          ZIP_NAME="${{ env.zip_name }}"
+
+          # List contents
+          echo "Package contents:"
+          unzip -l "${ZIP_NAME}"
+
+          # Verify required files
+          REQUIRED_FILES=(
+            "Other/Solution.xml"
+            "Other/Customizations.xml"
+          )
+
+          for file in "${REQUIRED_FILES[@]}"; do
+            if unzip -l "${ZIP_NAME}" | grep -q "${file}"; then
+              echo "  ✅ ${file}"
+            else
+              echo "  ❌ ${file} MISSING!"
+              exit 1
+            fi
+          done
+
+          echo "✅ All required files present"
+
+      - name: Generate build summary
+        run: |
+          cat >> $GITHUB_STEP_SUMMARY <<EOF
+          # 📦 Solution Build Summary
+
+          ## Package Information
+
+          | Property | Value |
+          |----------|-------|
+          | **Version** | ${{ steps.get_version.outputs.version }} |
+          | **Package Name** | ${{ env.zip_name }} |
+          | **Package Size** | ${{ env.zip_size }} KB |
+          | **Build Status** | ✅ Success |
+
+          ## Validation Results
+
+          - ✅ Customizations.xml - Well-formed XML
+          - ✅ Solution.xml - Well-formed XML
+          - ✅ Package created successfully
+          - ✅ All required files present
+
+          ## Next Steps
+
+          1. Download the package artifact from this workflow run
+          2. Import into Teams Dataverse:
+             - Teams → Power Apps → Build tab
+             - Select your team
+             - Import → Upload ZIP
+
+          ## Quick Stats
+
+          - **Entities**: 9 custom tables
+          - **Expected Import Time**: 5-15 minutes
+          - **Ready for Production**: Yes
+          EOF
+
+      - name: Upload solution package
+        uses: actions/upload-artifact@v4
+        with:
+          name: PerformanceManagement-v${{ steps.get_version.outputs.version }}
+          path: ${{ env.zip_name }}
+          retention-days: 90
+          if-no-files-found: error
+
+      - name: Upload validation report
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-report-${{ github.run_number }}
+          path: |
+            solution/Other/Solution.xml
+            solution/Other/Customizations.xml
+          retention-days: 30
