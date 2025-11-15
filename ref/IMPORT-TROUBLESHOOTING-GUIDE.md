@@ -2,7 +2,7 @@
 
 This document chronicles all the issues encountered while creating a hand-written Dataverse for Teams solution and their solutions. This is invaluable for anyone attempting to create custom Power Platform solutions from scratch.
 
-**Total Errors Solved: 8**
+**Total Errors Solved: 9**
 
 ## Table of Contents
 1. [Overview](#overview)
@@ -256,6 +256,66 @@ Without these relationships defined in EntityRelationships section, Dataverse ca
 
 **Lesson**: When hand-writing Dataverse solutions, you must include ALL relationships that Microsoft's exported solutions have, including system entity relationships. These aren't just optional metadata - they're required infrastructure for Dataverse to properly create and manage entities.
 
+**Status**: ✅ **SOLVED** - But another error appeared!
+
+---
+
+### Error 9: Entity Name Casing - PascalCase Required
+**Error Message**: Same AsyncOperation error persisted even after adding all system relationships!
+```
+Failed to create entity with logical name pm_staffmember and object type code 10330.
+Exception: Microsoft.Crm.BusinessEntities.CrmObjectNotFoundException:
+No rows could be found for Entity with id 4fd0276d-930a-4a0b-bcd2-0e45eb312f7e
+```
+
+Note: Entity GUID changed (was `db9a4e5f...`, now `4fd0276d...`), suggesting fresh import attempts but same failure point.
+
+**Investigation**: Despite having all system relationships, import still failed. Compared entity name formatting between Microsoft and our solution.
+
+**Root Cause**: **Entity names must use PascalCase** in Customizations.xml!
+
+Dataverse has TWO different naming conventions for the same entity:
+
+| Location | Format | Example (Microsoft) | Our Error |
+|----------|--------|---------------------|-----------|
+| Solution.xml schemaName | lowercase | `msft_board` | ✅ Correct |
+| Customizations.xml &lt;Name&gt; | **PascalCase** | `msft_Board` | ❌ Used `pm_staffmember` |
+| Customizations.xml &lt;entity Name&gt; | **PascalCase** | `msft_Board` | ❌ Used `pm_staffmember` |
+| ReferencingEntityName | **PascalCase** | `msft_Board` | ❌ Used `pm_staffmember` |
+
+Microsoft's pattern: Use PascalCase based on the display name:
+- "Board" → `msft_Board`
+- "Board App Setting" → `msft_BoardAppSetting`
+- "Board Category Preference" → `msft_BoardCategoryPreference`
+
+Our entities should have been:
+- "Staff Member" → `pm_StaffMember` (not `pm_staffmember`)
+- "Evaluation Question" → `pm_EvaluationQuestion`
+- "Weekly Evaluation" → `pm_WeeklyEvaluation`
+- etc.
+
+The `ReferencingEntityName` and `ReferencedEntityName` in relationships must match the exact PascalCase entity Name attribute.
+
+**Solution**: Created `fix_entity_name_casing.py` to update all entity names to PascalCase:
+
+Updated all 9 entities in 4 places each:
+1. `<Name LocalizedName="..." OriginalName="...">pm_StaffMember</Name>`
+2. `<entity Name="pm_StaffMember">`
+3. `<ReferencingEntityName>pm_StaffMember</ReferencingEntityName>` (68 relationships)
+4. `<ReferencedEntityName>pm_StaffMember</ReferencedEntityName>` (custom relationships)
+
+**Script Created**: `fix_entity_name_casing.py`
+
+**Result**: 95 replacements across Customizations.xml
+
+**Files Modified**:
+- `solution/Other/Customizations.xml` - Updated all entity names to PascalCase
+- Solution.xml unchanged (correctly uses lowercase schemaName)
+
+**Important**: Field names (PhysicalName, LogicalName, Name, etc.) remain lowercase. Only the entity-level Name attribute uses PascalCase.
+
+**Lesson**: Dataverse entity names follow C# naming conventions - Schema names (entity types) use PascalCase, while instances and properties (logical names, field names) use camelCase/lowercase. When hand-writing solutions, match Microsoft's exact casing pattern.
+
 **Status**: ✅ **SOLVED** - This was the final fix needed!
 
 ---
@@ -337,6 +397,18 @@ Without these relationships defined in EntityRelationships section, Dataverse ca
 **Reality**: Every UserOwned entity must have 6 system relationships connecting it to Dataverse infrastructure (BusinessUnit, SystemUser, Team, Owner). Without these, Dataverse can't properly initialize the entity.
 
 **Lesson**: When creating hand-written solutions, count relationships! If Microsoft has 6+ per entity and you have 1-2, you're missing critical system relationships.
+
+---
+
+### 9. Entity Name Casing Matters
+**Problem**: Used lowercase for entity names throughout (pm_staffmember).
+
+**Reality**: Dataverse uses DIFFERENT casing in different places:
+- Solution.xml: lowercase (pm_staffmember)
+- Customizations.xml: PascalCase (pm_StaffMember)
+- Relationships: PascalCase (pm_StaffMember)
+
+**Lesson**: Follow C# naming conventions. Entity type names (schema names) use PascalCase based on the display name. Field names and logical names use lowercase.
 
 ---
 
