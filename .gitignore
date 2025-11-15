@@ -9,6 +9,8 @@
 *.tmp
 *.log
 *.bak
+*.backup
+*.backup*
 *~
 .DS_Store
 Thumbs.db
