@@ -39,7 +39,6 @@
               <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
               <IsDataSourceSecret>0</IsDataSourceSecret>
               <AutoNumberFormat />
-              <MaxLength>100</MaxLength>
               <IsSearchable>0</IsSearchable>
               <IsFilterable>1</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
@@ -65,6 +64,26 @@
               <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
               <IsPrimaryName>1</IsPrimaryName>
               <Length>100</Length>
+              <MaxLength>100</MaxLength>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat />
+              <IsSearchable>1</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>1</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
+              <Format>text</Format>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
               <IsRenameable>1</IsRenameable>
@@ -85,6 +104,26 @@
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
               <Length>50</Length>
+              <MaxLength>50</MaxLength>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat />
+              <IsSearchable>1</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>1</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
+              <Format>text</Format>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
               <IsRenameable>1</IsRenameable>
@@ -105,6 +144,26 @@
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
               <Length>200</Length>
+              <MaxLength>200</MaxLength>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat />
+              <IsSearchable>1</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>1</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
+              <Format>text</Format>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
               <IsRenameable>1</IsRenameable>
@@ -778,7 +837,6 @@
               <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
               <IsDataSourceSecret>0</IsDataSourceSecret>
               <AutoNumberFormat />
-              <MaxLength>100</MaxLength>
               <IsSearchable>0</IsSearchable>
               <IsFilterable>1</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
@@ -804,6 +862,24 @@
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
               <IsPrimaryName>1</IsPrimaryName>
               <MaxLength>2000</MaxLength>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat />
+              <IsSearchable>1</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>1</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
               <IsRenameable>1</IsRenameable>
@@ -1435,7 +1511,6 @@
               <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
               <IsDataSourceSecret>0</IsDataSourceSecret>
               <AutoNumberFormat />
-              <MaxLength>100</MaxLength>
               <IsSearchable>0</IsSearchable>
               <IsFilterable>1</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
@@ -1462,6 +1537,26 @@
               <IsPrimaryName>1</IsPrimaryName>
               <Length>100</Length>
               <AutoNumberFormat>EVAL-{SEQNUM:5}</AutoNumberFormat>
+              <MaxLength>100</MaxLength>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat />
+              <IsSearchable>1</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>1</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
+              <Format>text</Format>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
               <IsRenameable>1</IsRenameable>
@@ -1604,6 +1699,24 @@
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
               <MaxLength>5000</MaxLength>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat />
+              <IsSearchable>1</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>1</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
               <IsRenameable>1</IsRenameable>
@@ -2253,7 +2366,6 @@
               <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
               <IsDataSourceSecret>0</IsDataSourceSecret>
               <AutoNumberFormat />
-              <MaxLength>100</MaxLength>
               <IsSearchable>0</IsSearchable>
               <IsFilterable>1</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
@@ -2271,6 +2383,26 @@
               <IsPrimaryName>1</IsPrimaryName>
               <Length>100</Length>
               <AutoNumberFormat>SELF-{SEQNUM:5}</AutoNumberFormat>
+              <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <IsSearchable>1</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>1</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
+              <Format>text</Format>
+              <MaxLength>100</MaxLength>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Self Evaluation ID" languagecode="1033" />
@@ -2350,6 +2482,24 @@
               <LogicalName>pm_notes</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <MaxLength>5000</MaxLength>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat />
+              <IsSearchable>1</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>1</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Notes" languagecode="1033" />
@@ -2999,7 +3149,6 @@
               <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
               <IsDataSourceSecret>0</IsDataSourceSecret>
               <AutoNumberFormat />
-              <MaxLength>100</MaxLength>
               <IsSearchable>0</IsSearchable>
               <IsFilterable>1</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
@@ -3017,6 +3166,24 @@
               <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
               <IsPrimaryName>1</IsPrimaryName>
               <MaxLength>500</MaxLength>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat />
+              <IsSearchable>1</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>1</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Goal Description" languagecode="1033" />
@@ -3089,6 +3256,24 @@
               <LogicalName>pm_progressnotes</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <MaxLength>5000</MaxLength>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat />
+              <IsSearchable>1</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>1</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Progress Notes" languagecode="1033" />
@@ -3643,7 +3828,6 @@
               <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
               <IsDataSourceSecret>0</IsDataSourceSecret>
               <AutoNumberFormat />
-              <MaxLength>100</MaxLength>
               <IsSearchable>0</IsSearchable>
               <IsFilterable>1</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
@@ -3662,6 +3846,25 @@
               <IsPrimaryName>1</IsPrimaryName>
               <Length>100</Length>
               <AutoNumberFormat>MTG-{SEQNUM:5}</AutoNumberFormat>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <IsSearchable>1</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>1</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
+              <Format>text</Format>
+              <MaxLength>100</MaxLength>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Meeting ID" languagecode="1033" />
@@ -3710,6 +3913,24 @@
               <LogicalName>pm_agenda</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <MaxLength>5000</MaxLength>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat />
+              <IsSearchable>1</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>1</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Agenda" languagecode="1033" />
@@ -3721,6 +3942,24 @@
               <LogicalName>pm_discussionnotes</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <MaxLength>10000</MaxLength>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat />
+              <IsSearchable>1</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>1</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Discussion Notes" languagecode="1033" />
@@ -3732,6 +3971,24 @@
               <LogicalName>pm_actionitems</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <MaxLength>5000</MaxLength>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat />
+              <IsSearchable>1</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>1</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Action Items" languagecode="1033" />
@@ -4286,7 +4543,6 @@
               <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
               <IsDataSourceSecret>0</IsDataSourceSecret>
               <AutoNumberFormat />
-              <MaxLength>100</MaxLength>
               <IsSearchable>0</IsSearchable>
               <IsFilterable>1</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
@@ -4304,6 +4560,24 @@
               <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
               <IsPrimaryName>1</IsPrimaryName>
               <MaxLength>500</MaxLength>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat />
+              <IsSearchable>1</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>1</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Goal Description" languagecode="1033" />
@@ -4931,7 +5205,6 @@
               <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
               <IsDataSourceSecret>0</IsDataSourceSecret>
               <AutoNumberFormat />
-              <MaxLength>100</MaxLength>
               <IsSearchable>0</IsSearchable>
               <IsFilterable>1</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
@@ -4950,6 +5223,25 @@
               <IsPrimaryName>1</IsPrimaryName>
               <Length>100</Length>
               <AutoNumberFormat>REC-{SEQNUM:5}</AutoNumberFormat>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <IsSearchable>1</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>1</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
+              <Format>text</Format>
+              <MaxLength>100</MaxLength>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Recognition ID" languagecode="1033" />
@@ -4998,6 +5290,24 @@
               <LogicalName>pm_description</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <MaxLength>5000</MaxLength>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat />
+              <IsSearchable>1</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>1</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Description" languagecode="1033" />
@@ -5552,7 +5862,6 @@
               <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
               <IsDataSourceSecret>0</IsDataSourceSecret>
               <AutoNumberFormat />
-              <MaxLength>100</MaxLength>
               <IsSearchable>0</IsSearchable>
               <IsFilterable>1</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
@@ -5571,6 +5880,25 @@
               <IsPrimaryName>1</IsPrimaryName>
               <Length>100</Length>
               <AutoNumberFormat>ACT-{SEQNUM:5}</AutoNumberFormat>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <IsSearchable>1</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>1</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
+              <Format>text</Format>
+              <MaxLength>100</MaxLength>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Action Item ID" languagecode="1033" />
@@ -5582,6 +5910,24 @@
               <LogicalName>pm_description</LogicalName>
               <RequiredLevel>applicationrequired</RequiredLevel>
               <MaxLength>2000</MaxLength>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat />
+              <IsSearchable>1</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>1</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Description" languagecode="1033" />
