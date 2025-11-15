@@ -170,41 +170,7 @@
                 <Description description="Job title or position" languagecode="1033" />
               </Descriptions>
             </attribute>
-            <attribute PhysicalName="pm_supervisor">
-              <Type>lookup</Type>
-              <Name>pm_supervisor</Name>
-              <LogicalName>pm_supervisor</LogicalName>
-              <RequiredLevel>none</RequiredLevel>
-              <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <IntroducedVersion>1.0</IntroducedVersion>
-              <IsCustomizable>1</IsCustomizable>
-      <IsAuditEnabled>0</IsAuditEnabled>
-              <IsRenameable>1</IsRenameable>
-              <CanModifySearchSettings>1</CanModifySearchSettings>
-              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
-              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
-      <SourceType>0</SourceType>
-      <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
-      <IsSortableEnabled>0</IsSortableEnabled>
-      <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
-      <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
-      <IsDataSourceSecret>0</IsDataSourceSecret>
-      <AutoNumberFormat></AutoNumberFormat>
-      <IsSearchable>0</IsSearchable>
-      <IsFilterable>0</IsFilterable>
-      <IsRetrievable>0</IsRetrievable>
-      <IsLocalizable>0</IsLocalizable>
-              <Targets>
-                <Target>systemuser</Target>
-              </Targets>
-              <displaynames>
-                <displayname description="Supervisor" languagecode="1033" />
-              </displaynames>
-              <Descriptions>
-                <Description description="Supervisor or manager of this staff member" languagecode="1033" />
-              </Descriptions>
-            </attribute>
-            <attribute PhysicalName="pm_startdate">
+                        <attribute PhysicalName="pm_startdate">
               <Type>datetime</Type>
               <Name>pm_startdate</Name>
               <LogicalName>pm_startdate</LogicalName>
@@ -949,9 +915,7 @@
           &lt;entity name="pm_staffmember"&gt;
             &lt;attribute name="pm_name" /&gt;
             &lt;attribute name="pm_employeeid" /&gt;
-            &lt;attribute name="pm_positiontitle" /&gt;
-            &lt;attribute name="pm_supervisor" /&gt;
-            &lt;attribute name="pm_startdate" /&gt;
+            &lt;attribute name="pm_positiontitle" /&gt;            &lt;attribute name="pm_startdate" /&gt;
             &lt;attribute name="pm_status" /&gt;
             &lt;order attribute="pm_name" descending="false" /&gt;
             &lt;filter type="and"&gt;
@@ -4768,32 +4732,7 @@
                 <displayname description="Staff Member" languagecode="1033" />
               </displaynames>
             </attribute>
-            <attribute PhysicalName="pm_supervisor">
-              <Type>lookup</Type>
-              <Name>pm_supervisor</Name>
-              <LogicalName>pm_supervisor</LogicalName>
-              <RequiredLevel>applicationrequired</RequiredLevel>
-              <IntroducedVersion>1.0</IntroducedVersion>
-      <IsAuditEnabled>0</IsAuditEnabled>
-              <Targets>
-                <Target>systemuser</Target>
-              </Targets>
-                    <SourceType>0</SourceType>
-      <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
-      <IsSortableEnabled>0</IsSortableEnabled>
-      <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
-      <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
-      <IsDataSourceSecret>0</IsDataSourceSecret>
-      <AutoNumberFormat></AutoNumberFormat>
-      <IsSearchable>0</IsSearchable>
-      <IsFilterable>0</IsFilterable>
-      <IsRetrievable>0</IsRetrievable>
-      <IsLocalizable>0</IsLocalizable>
-      <displaynames>
-                <displayname description="Supervisor" languagecode="1033" />
-              </displaynames>
-            </attribute>
-            <attribute PhysicalName="pm_meetingdate">
+                        <attribute PhysicalName="pm_meetingdate">
               <Type>datetime</Type>
               <Name>pm_meetingdate</Name>
               <LogicalName>pm_meetingdate</LogicalName>
@@ -6465,32 +6404,7 @@
                 <displayname description="Staff Member" languagecode="1033" />
               </displaynames>
             </attribute>
-            <attribute PhysicalName="pm_supervisor">
-              <Type>lookup</Type>
-              <Name>pm_supervisor</Name>
-              <LogicalName>pm_supervisor</LogicalName>
-              <RequiredLevel>applicationrequired</RequiredLevel>
-              <IntroducedVersion>1.0</IntroducedVersion>
-      <IsAuditEnabled>0</IsAuditEnabled>
-              <Targets>
-                <Target>systemuser</Target>
-              </Targets>
-                    <SourceType>0</SourceType>
-      <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
-      <IsSortableEnabled>0</IsSortableEnabled>
-      <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
-      <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
-      <IsDataSourceSecret>0</IsDataSourceSecret>
-      <AutoNumberFormat></AutoNumberFormat>
-      <IsSearchable>0</IsSearchable>
-      <IsFilterable>0</IsFilterable>
-      <IsRetrievable>0</IsRetrievable>
-      <IsLocalizable>0</IsLocalizable>
-      <displaynames>
-                <displayname description="Supervisor" languagecode="1033" />
-              </displaynames>
-            </attribute>
-            <attribute PhysicalName="pm_recognitiondate">
+                        <attribute PhysicalName="pm_recognitiondate">
               <Type>datetime</Type>
               <Name>pm_recognitiondate</Name>
               <LogicalName>pm_recognitiondate</LogicalName>
