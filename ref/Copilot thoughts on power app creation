@@ -1,0 +1,553 @@
+Coding Agent Guide for Building an Importable Teams Dataverse Power App Solution
+
+This document tells a coding agent exactly what to produce so the final deliverable is a self-contained, importable Power Platform Solution and data package that can be dropped into a target tenant, reconfigured by an admin, and run with no runtime connections to external LLMs or third-party APIs.
+
+Use this file as the authoritative REFs entry in the repository. All artifacts produced by the agent must follow the names, tokens, placeholders, and conventions in this guide.
+
+Overview and intent
+
+Goal Produce a Teams-hosted Canvas Power App that uses Dataverse for storage, with all automation implemented as solution-aware Power Automate cloud flows and all LLM outputs precomputed and embedded in Dataverse before import.
+
+Constraint No runtime external API calls from flows or the app. All content that would otherwise come from an LLM must be precomputed and imported as Dataverse data and attachments.
+
+Deliverables A Solution ZIP (or equivalent solution structure), a data package (CSV or JSON per table), an attachments ZIP with manifest, connectionReferences.json, environmentVariables.json, flow definition JSON files, and an import-runbook.md with deterministic import steps and smoke tests.
+
+Required output formats and repository layout
+
+Agent must produce the following structure under the solution artifact root:
+
+solution/
+
+Solution.zip OR solution-export/ (solution folder structure if CI builds the zip)
+
+flows/
+
+Flow_AppCreateRecord/
+
+definition.json
+
+metadata.json
+
+Flow_OnRecordCreateUpdate/
+
+definition.json
+
+metadata.json
+
+Flow_ScheduledSummaries/
+
+definition.json
+
+metadata.json
+
+connectionReferences.json
+
+environmentVariables.json
+
+dataverse/
+
+schema.json
+
+tables-metadata.json
+
+pcfs/ (optional compiled PCF bundles)
+
+data/
+
+ResponseLibrary-v1.csv
+
+PromptTemplate-v1.csv
+
+MainRecord-v1.csv
+
+ImportLog-v1.csv
+
+FlowErrorLog-v1.csv
+
+attachments/
+
+attachment1.pdf
+
+attachment2.html
+
+attachments/manifest.csv
+
+mapping.csv
+
+docs/
+
+import-runbook.md
+
+smoke-tests.md
+
+README.md (top-level describing artifacts and versions)
+
+All JSON files must be UTF-8 encoded. All CSV files must be UTF-8 with BOM not required but acceptable. Dates must use ISO 8601 UTC format.
+
+Naming conventions and stable tokens
+
+Follow these exact token patterns in all flows, metadata, mapping files, and references.
+
+Connection Reference keys Use the prefix ConnRef_ and a short logical name. Examples:
+
+ConnRef_Dataverse_Main
+
+ConnRef_Teams_Notify
+
+Environment Variable keys Use the prefix Env_ and descriptive name. Examples:
+
+Env_Teams_ChannelId
+
+Env_AdminEmail
+
+Env_App_BaseUrl
+
+Placeholder for connection id Use CONN_PLACEHOLDER in the connectionReferences.json value for the connection id. The importer will replace it.
+
+Environment variable placeholder values Use empty strings or "TODO_REPLACE" as defaults in environmentVariables.json. Do not include secrets or keys.
+
+Data file naming <env>-<table>-v<major>.csv is acceptable but the agent should also provide canonical simple names like MainRecord-v1.csv.
+
+Flow folder naming Use Flow_<DisplayName> where <DisplayName> is PascalCase and matches the flow displayName inside definition.json.
+
+Dataverse schema expectations
+
+Produce a schema.json describing the following tables and their logical field names. Agent must include field types and whether the field is required, plus sample sample values in an example dataset.
+
+MainRecord
+
+id Guid primary key
+
+title Text
+
+input_payload Multiline text
+
+precomputed_response Multiline text
+
+response_summary Text
+
+recommended_action_code Choice (string code)
+
+confidence_score Decimal (0.0 to 1.0)
+
+status Choice (New, MissingResponse, Ready, Error)
+
+assigned_to Lookup (systemuser or team)
+
+created_on DateTime UTC
+
+ResponseLibrary
+
+id Guid
+
+code Text
+
+label Text
+
+body Multiline text
+
+category Text
+
+language Text
+
+PromptTemplate
+
+id Guid
+
+name Text
+
+template_text Multiline text
+
+placeholder_list Text (comma-separated)
+
+ImportLog
+
+id Guid
+
+source_filename Text
+
+row_count Integer
+
+status Choice
+
+imported_by Text (email)
+
+imported_on DateTime UTC
+
+FlowErrorLog
+
+id Guid
+
+flow_name Text
+
+row_id Guid or Text
+
+error_message Multiline text
+
+retry_count Integer
+
+timestamp DateTime UTC
+
+Files/Attachments table or file column
+
+id Guid
+
+parent_record_id Guid
+
+filename Text
+
+file blob column or file reference column
+
+Agent must produce dataverse/schema.json describing these tables and the exact logical names used so the importer can create mapping rules or ensure the solution includes them.
+
+Data package rules and examples
+
+One CSV file per table.
+
+First row must be column headers using Dataverse logical names exactly as in schema.json.
+
+Dates use ISO 8601 UTC: 2025-11-15T12:00:00Z.
+
+GUIDs should be stable and unique in the dataset when provided.
+
+Attachments are delivered in data/attachments/ and described in data/attachments/manifest.csv.
+
+Example MainRecord row:
+
+id,title,input_payload,precomputed_response,response_summary,recommended_action_code,confidence_score,status,assigned_to,created_on
+00000000-0000-0000-0000-000000000001,"Benefits question","What are my PTO options?","Full LLM response text here","PTO options: accrual, carryover, unpaid leave","A1",0.92,"New","user@example.com","2025-11-15T12:00:00Z"
+
+Example attachments manifest:
+
+parent_external_id,filename
+00000000-0000-0000-0000-000000000001,benefits-guide.pdf
+
+Provide a small sample dataset (5–10 records across MainRecord and ResponseLibrary) to allow CI smoke tests to run locally.
+
+Flow design rules and JSON conventions
+
+All flows must be authored as solution-aware cloud flows and output a definition.json matching Power Automate schema. When writing flow JSON by hand follow these rules:
+
+Use OpenApiConnection actions for Dataverse and Teams actions.
+
+Use connection tokens of the form: @connections['ConnRef_Dataverse_Main'] and @connections['ConnRef_Teams_Notify'].
+
+Include a connectionReferences top-level section with mapping entries for each ConnRef key. Use "id": "/providers/Microsoft.PowerApps/apis/shared_dataverse/connections/CONN_PLACEHOLDER" for Dataverse and equivalent for Teams with CONN_PLACEHOLDER.
+
+Avoid embedding connection GUIDs, tenant IDs, or secrets anywhere in the flow JSON.
+
+Use environment variables for any tenant-specific values. Implement in flow JSON as a variable initialized from an environment variable token or a documented placeholder token. Document the token pattern in connectionReferences.json.
+
+Provide three flows using the naming and behavior below. Each flow must include error handling that writes to FlowErrorLog and sets the MainRecord.status = "Error" when necessary.
+
+Flow 1 Flow_AppCreateRecord definition.json
+
+Trigger: PowerApps (PowerApps trigger)
+
+Actions:
+
+Create row in MainRecord with input_payload from trigger and set status = "New"
+
+Return created row id to the calling Canvas app
+
+Flow 2 Flow_OnRecordCreateUpdate definition.json
+
+Trigger: When a MainRecord row is created or updated (OpenApiConnectionWebhook)
+
+Actions:
+
+Get row (Dataverse) using the trigger id
+
+If precomputed_response is not null
+
+Update row: set response_summary = value from precomputed_response or response_summary, set status = "Ready"
+
+If recommended_action_code equals an escalation code value then call Teams post to channel id from Env_Teams_ChannelId
+
+Else
+
+Create ImportLog row with status "MissingResponse"
+
+Always: write success log to ImportLog with source_filename and row_count
+
+Error handling
+
+Any action failure should trigger write to FlowErrorLog with flow_name, row id, and error_message and set MainRecord.status = "Error"
+
+Flow 3 Flow_ScheduledSummaries definition.json
+
+Trigger: Recurrence (daily or configurable via Env_Summary_Cron)
+
+Actions:
+
+Query MainRecord rows by date and status
+
+Aggregate response_summary into an aggregate record or create dashboard summary rows in Dataverse
+
+Post a summary message to Teams channel using Env_Teams_ChannelId
+
+Error handling
+
+Log exceptions to FlowErrorLog and update a Monitoring table or ImportLog
+
+Important snippet for connectionReferences (include exactly in each flow JSON):
+
+"connectionReferences": {
+  "ConnRef_Dataverse_Main": {
+    "connectionName": "shared_dataverse",
+    "id": "/providers/Microsoft.PowerApps/apis/shared_dataverse/connections/CONN_PLACEHOLDER"
+  },
+  "ConnRef_Teams_Notify": {
+    "connectionName": "shared_teams",
+    "id": "/providers/Microsoft.PowerApps/apis/shared_teams/connections/CONN_PLACEHOLDER"
+  }
+}
+
+When referencing the Teams channel id in action bodies, use environment variable token or a variable set from the environment variable. Example in pseudo-JSON body for Teams post:
+
+"body": {
+  "type": "message",
+  "text": "A new precomputed response is ready for record @{triggerBody()?['id']}."
+}
+
+Where the channel or conversation path should be built from Env_Teams_ChannelId.
+
+connectionReferences.json and environmentVariables.json templates
+
+Agent must produce these two top-level JSON manifests. Example templates are below and must be included verbatim with only names updated to match flows and connectors produced.
+
+connectionReferences.json example
+
+{
+  "connectionReferences": {
+    "ConnRef_Dataverse_Main": {
+      "connectorId": "shared_dataverse",
+      "displayName": "Dataverse",
+      "connectionParameters": {},
+      "id": "/providers/Microsoft.PowerApps/apis/shared_dataverse/connections/CONN_PLACEHOLDER"
+    },
+    "ConnRef_Teams_Notify": {
+      "connectorId": "shared_teams",
+      "displayName": "Teams",
+      "connectionParameters": {},
+      "id": "/providers/Microsoft.PowerApps/apis/shared_teams/connections/CONN_PLACEHOLDER"
+    }
+  }
+}
+
+environmentVariables.json example
+
+{
+  "environmentVariables": [
+    {
+      "key": "Env_Teams_ChannelId",
+      "displayName": "Teams Channel Id",
+      "value": ""
+    },
+    {
+      "key": "Env_AdminEmail",
+      "displayName": "Admin Email",
+      "value": ""
+    },
+    {
+      "key": "Env_Summary_Cron",
+      "displayName": "Summary Cron",
+      "value": "0 0 8 * * *"
+    }
+  ]
+}
+
+Do not put secrets in these files.
+
+mapping.csv and deterministic import order
+
+Provide a data/mapping.csv that guides the importer and any automated import script. Example mapping.csv columns:
+
+table,file,primaryKeyField,importOrder,notes
+
+Example rows:
+
+ResponseLibrary,ResponseLibrary-v1.csv,id,1,"Load response templates first"
+PromptTemplate,PromptTemplate-v1.csv,id,2,"Load prompt templates"
+Attachments,attachments/manifest.csv,filename,3,"Upload attachment files and link to parent record by id"
+MainRecord,MainRecord-v1.csv,id,4,"Main dataset"
+ImportLog,ImportLog-v1.csv,id,5,"Import logs and templates"
+FlowErrorLog,FlowErrorLog-v1.csv,id,6,"Error log table"
+
+The importer MUST follow importOrder to avoid flows firing on partial data.
+
+Import-runbook.md content and exact importer commands
+
+Provide a docs/import-runbook.md with step-by-step commands and screenshots where appropriate. The agent must include Power Platform CLI and PowerShell examples for each step. The runbook must contain:
+
+Pre-import checks
+
+Confirm Dataverse is enabled in target environment.
+
+Confirm target admin has permission to create connectors and import solutions.
+
+Confirm capacity and licensing for Dataverse and Power Automate.
+
+Import Solution
+
+If delivering Solution.zip: Power Platform Admin Console import instructions and Power Platform CLI command example:
+
+pac solution import --path Solution.zip --environment <env-id>
+
+Create connections
+
+Create a Dataverse connection instance and a Teams connection instance using the tenant admin account (UI steps and CLI pointers).
+
+Document exact names for the connections to use when rebinding.
+
+Rebind connection references
+
+Using Power Platform UI: Open imported solution -> select each Flow -> Edit Connection References -> choose new connection instance for each ConnRef_* key.
+
+Using Power Platform CLI example:
+
+pac solution update-connectionreference --solution-name "<SolutionPublisher>_<SolutionName>" --connection-reference "ConnRef_Dataverse_Main" --connection-id "/providers/Microsoft.PowerApps/apis/shared_dataverse/connections/<new-connection-id>" --environment <env-id>
+
+Set environment variables
+
+Open the imported solution -> Environment Variables -> set values for Env_Teams_ChannelId, Env_AdminEmail, etc.
+
+CLI example for updating environment variable value.
+
+Import data files in mapping order
+
+Use PowerShell script using Microsoft.PowerPlatform.Cds.Client or use Power Platform CLI data import commands.
+
+Example PowerShell pseudocode snippet to import CSV to table:
+
+# connect
+$service = Connect-CdsService -Url "https://<org>.api.crm.dynamics.com" -ClientId $clientId
+# import CSV using import entity or Data Import API
+Import-CdsData -Service $service -File "data/MainRecord-v1.csv" -EntityLogicalName "new_mainrecord"
+
+Or provide a small Node/Python script example that reads CSV and uses Web API to create rows.
+
+Upload attachments
+
+Use attachments/manifest.csv mapping file. Upload files and attach to records by parent id using Web API or PowerShell helper functions.
+
+Publish customizations and enable flows
+
+Publish all customizations and turn flows on.
+
+Run smoke tests.
+
+Smoke tests
+
+Test 1 Create record with precomputed response:
+
+Insert MainRecord with precomputed_response populated. Expect Flow_OnRecordCreateUpdate to set status to Ready and post to Teams channel in Env_Teams_ChannelId.
+
+Test 2 Missing response:
+
+Insert MainRecord without precomputed_response. Expect ImportLog entry with MissingResponse status.
+
+Test 3 Attachment open:
+
+Verify that one attached file opens from the app for its parent record.
+
+Test 4 Error path:
+
+Insert malformed row to cause an exception in the flow and confirm a FlowErrorLog entry is created.
+
+Acceptance checklist
+
+All sample records show expected statuses and logs.
+
+No external connections exist in flows other than Dataverse and Teams.
+
+Flows are enabled and have run successfully at least once.
+
+The runbook must include copy-pasteable CLI and PowerShell snippets and an explanation of any platform UI steps.
+
+CI and validation rules for the coding agent
+
+When the agent commits artifacts, CI should run the following checks and fail the commit on violations:
+
+Validate that every flow JSON contains a connectionReferences section and uses @connections['ConnRef_...'] tokens for OpenApiConnection actions.
+
+Validate that connectionReferences.json lists each ConnRef key used in flows.
+
+Validate that environmentVariables.json includes the keys referenced by flows and that no secret-looking values are present.
+
+Validate that mapping.csv includes every table listed in dataverse/schema.json and that import order is complete and consistent.
+
+Validate that no flow JSON includes an HTTP action that points to an external host other than Microsoft-owned endpoints for Dataverse or Teams; fail if any external host is detected.
+
+Validate that data CSVs have headers matching the schema.json logical names.
+
+Validate that attachments listed in attachments/manifest.csv exist in attachments/.
+
+Example flow definition fragment and best practices
+
+Include these patterns exactly when constructing flow actions:
+
+Use GET and PATCH paths following this pattern for Dataverse actions:
+
+GET: /datasets/default/tables/MainRecord/items/@{triggerOutputs()?['body/id']}
+
+PATCH: /datasets/default/tables/MainRecord/items/@{triggerBody()?['id']}
+
+Use Configure run after semantics for error handling:
+
+After actions may fail, include a Configure run after block that on failure writes to FlowErrorLog.
+
+Example condition to check precomputed_response existence:
+
+"expression": {
+  "and": [
+    {
+      "not": [
+        { "equals": [ "@body('Get_row')?['precomputed_response']", null ] }
+      ]
+    }
+  ]
+}
+
+Additional guidance for the coding agent
+
+Keep flow definitions minimal and explicit. Prefer simple action names and small bodies to make rebinding easier.
+
+Add metadata.json in each flow folder containing displayName, description, publisher, version, and a linking field that matches connectionReferences.json.
+
+Provide a small local test harness (PowerShell script or Node script) that can import the solution into a developer tenant and rebind connections via CLI for local validation.
+
+Include a concise top-level changelog section in README.md summarizing what changed in each solution version and which data files correspond to that version.
+
+Deliverables checklist for a single commit
+
+Agent must include the following files in a single commit to be considered complete:
+
+solution/Solution.zip OR solution-export/ with artifacts
+
+solution/flows/Flow_AppCreateRecord/definition.json and metadata.json
+
+solution/flows/Flow_OnRecordCreateUpdate/definition.json and metadata.json
+
+solution/flows/Flow_ScheduledSummaries/definition.json and metadata.json
+
+solution/connectionReferences.json
+
+solution/environmentVariables.json
+
+dataverse/schema.json
+
+data/.csv and data/attachments/
+
+data/attachments/manifest.csv
+
+data/mapping.csv
+
+docs/import-runbook.md
+
+docs/smoke-tests.md
+
+README.md top-level explaining what to do next
+
+If any required file is missing, CI must reject the commit and list which files are absent.
+
