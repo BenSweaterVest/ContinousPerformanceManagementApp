@@ -66,6 +66,7 @@
           <Name>pm_name</Name>
           <LogicalName>pm_name</LogicalName>
           <RequiredLevel>none</RequiredLevel>
+          <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
           <IsPrimaryName>1</IsPrimaryName>
           <Length>100</Length>
           <AutoNumberFormat>MTG-{SEQNUM:5}</AutoNumberFormat>
