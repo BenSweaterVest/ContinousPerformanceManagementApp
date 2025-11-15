@@ -8053,66 +8053,34 @@
 
 
   <CanvasApps>
-    <CanvasApp Name="pm_performancemanagement_12345">
+    <CanvasApp>
+      <Name>pm_performancemanagement_12345</Name>
+      <AppVersion>2025-11-15T00:00:00Z</AppVersion>
+      <Status>Ready</Status>
+      <CreatedByClientVersion>3.24</CreatedByClientVersion>
+      <MinClientVersion>3.24</MinClientVersion>
+      <Tags>{"primaryDeviceWidth": "1366", "primaryDeviceHeight": "768", "supportsPortrait": "true", "supportsLandscape": "true", "primaryFormFactor": "Tablet", "hasComponent": "false", "isUnifiedRootApp": "false"}</Tags>
+      <IsCdsUpgraded>0</IsCdsUpgraded>
+      <GalleryItemId xsi:nil="true"></GalleryItemId>
+      <BackgroundColor>rgba(0, 120, 212, 1)</BackgroundColor>
       <DisplayName>Performance Management System</DisplayName>
-      <Description>Performance Management System for tracking staff evaluations, goals, and development</Description>
-      <Status>Published</Status>
-      <IntroducedVersion>1.0.1.0</IntroducedVersion>
-      <IsCustomizable>1</IsCustomizable>
+      <Description>Continuous performance management with weekly evaluations and quarterly self-assessments</Description>
+      <CommitMessage xsi:nil="true"></CommitMessage>
+      <Publisher xsi:nil="true"></Publisher>
+      <AuthorizationReferences>[]</AuthorizationReferences>
+      <ConnectionReferences>{"cr_commondataserviceforapps": {"id": "/providers/microsoft.powerapps/apis/shared_commondataserviceforapps", "displayName": "Microsoft Dataverse", "dataSources": ["pm_staffmembers", "pm_evaluationquestions", "pm_weeklyevaluations", "pm_selfevaluations", "pm_idpentries", "pm_meetingnotes", "pm_goals", "pm_recognitions", "pm_actionitems"], "apiTier": "Standard"}, "cr_office365users": {"id": "/providers/microsoft.powerapps/apis/shared_office365users", "displayName": "Office 365 Users", "apiTier": "Standard"}, "cr_office365": {"id": "/providers/microsoft.powerapps/apis/shared_office365", "displayName": "Office 365 Outlook", "apiTier": "Standard"}}</ConnectionReferences>
+      <DatabaseReferences>{"default.cds": {"databaseDetails": {"referenceType": "Environmental", "environmentName": "default.cds"}, "dataSources": {"Staff Members": {"entitySetName": "pm_staffmembers", "logicalName": "pm_staffmember"}, "Evaluation Questions": {"entitySetName": "pm_evaluationquestions", "logicalName": "pm_evaluationquestion"}, "Weekly Evaluations": {"entitySetName": "pm_weeklyevaluations", "logicalName": "pm_weeklyevaluation"}, "Self Evaluations": {"entitySetName": "pm_selfevaluations", "logicalName": "pm_selfevaluation"}, "IDP Entries": {"entitySetName": "pm_idpentries", "logicalName": "pm_idpentry"}, "Meeting Notes": {"entitySetName": "pm_meetingnotes", "logicalName": "pm_meetingnote"}, "Goals": {"entitySetName": "pm_goals", "logicalName": "pm_goal"}, "Recognitions": {"entitySetName": "pm_recognitions", "logicalName": "pm_recognition"}, "Action Items": {"entitySetName": "pm_actionitems", "logicalName": "pm_actionitem"}}}}</DatabaseReferences>
+      <AppComponents>[]</AppComponents>
+      <AppComponentDependencies>[]</AppComponentDependencies>
+      <CanConsumeAppPass>1</CanConsumeAppPass>
       <CanvasAppType>0</CanvasAppType>
-      <BypassConsent>false</BypassConsent>
-      <Publisher>Default</Publisher>
-      <AuthorizationReferences>
-        <AuthorizationReference>
-          <Resource>shared_commondataserviceforapps</Resource>
-        </AuthorizationReference>
-        <AuthorizationReference>
-          <Resource>shared_office365users</Resource>
-        </AuthorizationReference>
-        <AuthorizationReference>
-          <Resource>shared_office365</Resource>
-        </AuthorizationReference>
-      </AuthorizationReferences>
-      <ConnectionReferences>
-        <ConnectionReference>
-          <LogicalName>cr_commondataserviceforapps</LogicalName>
-        </ConnectionReference>
-        <ConnectionReference>
-          <LogicalName>cr_office365users</LogicalName>
-        </ConnectionReference>
-        <ConnectionReference>
-          <LogicalName>cr_office365</LogicalName>
-        </ConnectionReference>
-      </ConnectionReferences>
-      <DatabaseReferences>
-        <DatabaseReference>
-          <EntityName>pm_staffmember</EntityName>
-        </DatabaseReference>
-        <DatabaseReference>
-          <EntityName>pm_evaluationquestion</EntityName>
-        </DatabaseReference>
-        <DatabaseReference>
-          <EntityName>pm_weeklyevaluation</EntityName>
-        </DatabaseReference>
-        <DatabaseReference>
-          <EntityName>pm_selfevaluation</EntityName>
-        </DatabaseReference>
-        <DatabaseReference>
-          <EntityName>pm_idpentry</EntityName>
-        </DatabaseReference>
-        <DatabaseReference>
-          <EntityName>pm_meetingnote</EntityName>
-        </DatabaseReference>
-        <DatabaseReference>
-          <EntityName>pm_goal</EntityName>
-        </DatabaseReference>
-        <DatabaseReference>
-          <EntityName>pm_recognition</EntityName>
-        </DatabaseReference>
-        <DatabaseReference>
-          <EntityName>pm_actionitem</EntityName>
-        </DatabaseReference>
-      </DatabaseReferences>
+      <BypassConsent>0</BypassConsent>
+      <AdminControlBypassConsent>0</AdminControlBypassConsent>
+      <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+      <IntroducedVersion>1.0</IntroducedVersion>
+      <CdsDependencies>{"cdsdependencies": [{"logicalname": "pm_staffmember", "componenttype": 1}, {"logicalname": "pm_evaluationquestion", "componenttype": 1}, {"logicalname": "pm_weeklyevaluation", "componenttype": 1}, {"logicalname": "pm_selfevaluation", "componenttype": 1}, {"logicalname": "pm_idpentry", "componenttype": 1}, {"logicalname": "pm_meetingnote", "componenttype": 1}, {"logicalname": "pm_goal", "componenttype": 1}, {"logicalname": "pm_recognition", "componenttype": 1}, {"logicalname": "pm_actionitem", "componenttype": 1}]}</CdsDependencies>
+      <IsCustomizable>1</IsCustomizable>
+      <DocumentUri>/CanvasApps/pm_performancemanagement_12345.msapp</DocumentUri>
     </CanvasApp>
   </CanvasApps>
 
