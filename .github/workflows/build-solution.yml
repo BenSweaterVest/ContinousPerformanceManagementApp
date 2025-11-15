@@ -51,13 +51,30 @@ jobs:
           # NuGet packages are ZIP files
           unzip -q pac.nupkg -d pac-temp
 
-          # Find and extract the pac binary
-          find pac-temp -name "pac" -type f -executable -exec cp {} /usr/local/bin/ \;
+          # Find the tools directory containing pac executable and all dependencies
+          PAC_DIR=$(find pac-temp -type d -name "linux-x64" | head -1)
 
-          # If not found as executable, look for it and make it executable
-          if [ ! -f "/usr/local/bin/pac" ]; then
-            find pac-temp -name "pac" -type f -exec sudo cp {} /usr/local/bin/ \;
-            sudo chmod +x /usr/local/bin/pac
+          if [ -z "$PAC_DIR" ]; then
+            # Try alternative directory structure
+            PAC_DIR=$(find pac-temp -type f -name "pac.dll" -exec dirname {} \; | head -1)
+          fi
+
+          if [ -n "$PAC_DIR" ]; then
+            echo "Found pac files in: $PAC_DIR"
+
+            # Copy all files to /usr/local/share/pac
+            sudo mkdir -p /usr/local/share/pac
+            sudo cp -r "$PAC_DIR"/* /usr/local/share/pac/
+
+            # Make pac executable
+            sudo chmod +x /usr/local/share/pac/pac
+
+            # Create symlink in /usr/local/bin
+            sudo ln -sf /usr/local/share/pac/pac /usr/local/bin/pac
+          else
+            echo "ERROR: Could not find pac directory in NuGet package"
+            ls -R pac-temp
+            exit 1
           fi
 
           # Cleanup
