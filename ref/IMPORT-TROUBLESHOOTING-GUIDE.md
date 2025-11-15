@@ -2,6 +2,8 @@
 
 This document chronicles all the issues encountered while creating a hand-written Dataverse for Teams solution and their solutions. This is invaluable for anyone attempting to create custom Power Platform solutions from scratch.
 
+**Total Errors Solved: 8**
+
 ## Table of Contents
 1. [Overview](#overview)
 2. [All Errors Encountered (In Order)](#all-errors-encountered-in-order)
@@ -206,6 +208,54 @@ Our primarykey fields only had basic attributes. Microsoft's primarykey fields h
 
 **Lesson**: Dataverse for Teams import validation is STRICTER than standard Dataverse. Requirements may differ between environments.
 
+**Status**: ✅ **SOLVED** - But another error appeared!
+
+---
+
+### Error 8: Entity Not Found During AsyncOperation Relationship Creation
+**Error Message**:
+```
+Failed to create entity with logical name pm_staffmember and object type code 10329.
+Exception: Microsoft.Crm.BusinessEntities.CrmObjectNotFoundException:
+No rows could be found for Entity with id db9a4e5f-63d3-4e11-bfb9-a2c92cb2ea28
+if Entity were published
+at Microsoft.Crm.Metadata.RelationshipService.CreateAsyncOperationRelationship
+```
+
+**Investigation**: Error occurred when Dataverse tried to automatically create the AsyncOperation relationship for pm_staffmember. Compared relationship counts:
+- **Microsoft Boards**: 39 relationships for 6 entities = 6.5 per entity
+- **Our solution**: 13 relationships for 9 entities = 1.4 per entity
+
+**Root Cause**: We were **missing 54 system entity relationships**. We only defined custom entity-to-entity relationships, but Microsoft's solutions include system relationships that connect custom entities to Dataverse system entities (BusinessUnit, SystemUser, Team, Owner).
+
+Every UserOwned entity requires 6 system relationships for standard fields:
+1. `business_unit_<entity>` → OwningBusinessUnit field
+2. `lk_<entity>_createdby` → CreatedBy field
+3. `lk_<entity>_modifiedby` → ModifiedBy field
+4. `owner_<entity>` → OwnerId field
+5. `team_<entity>` → OwningTeam field
+6. `user_<entity>` → OwningUser field
+
+Without these relationships defined in EntityRelationships section, Dataverse cannot properly set up the entity infrastructure when creating AsyncOperation and other automatic system relationships.
+
+**Solution**: Created script to generate 54 system relationships (6 for each of our 9 entities). System relationships have:
+- `IntroducedVersion="1.0"` (NOT "1.0.0.0")
+- All cascades set to `NoCascade`
+- NO `EntityRelationshipRoles` section
+- NO `CascadeRollupView` attribute
+- NO `IsValidForAdvancedFind` attribute
+
+**Script Created**: `add_system_relationships.py`
+
+**Result**:
+- **Before**: 7,020 lines, 13 relationships
+- **After**: 8,046 lines, 68 relationships (54 system + 13 custom + 1 duplicate)
+
+**Files Modified**:
+- `solution/Other/Customizations.xml` - Added 54 system relationships
+
+**Lesson**: When hand-writing Dataverse solutions, you must include ALL relationships that Microsoft's exported solutions have, including system entity relationships. These aren't just optional metadata - they're required infrastructure for Dataverse to properly create and manage entities.
+
 **Status**: ✅ **SOLVED** - This was the final fix needed!
 
 ---
@@ -278,6 +328,15 @@ Our primarykey fields only had basic attributes. Microsoft's primarykey fields h
 **Reality**: It was actually about primarykey fields (which are strings internally) missing API metadata and MaxLength.
 
 **Lesson**: When troubleshooting, examine the ENTIRE entity definition, not just the obvious suspects. Compare against working examples.
+
+---
+
+### 8. System Entity Relationships Are Required
+**Problem**: We only defined relationships between our custom entities.
+
+**Reality**: Every UserOwned entity must have 6 system relationships connecting it to Dataverse infrastructure (BusinessUnit, SystemUser, Team, Owner). Without these, Dataverse can't properly initialize the entity.
+
+**Lesson**: When creating hand-written solutions, count relationships! If Microsoft has 6+ per entity and you have 1-2, you're missing critical system relationships.
 
 ---
 
@@ -512,6 +571,7 @@ Creating a hand-written Dataverse solution is **significantly more complex** tha
 | New string attributes must have max length | Missing MaxLength on primarykey OR missing API attributes | Add MaxLength=100 to primarykey fields for Teams |
 | Invalid primarykey | Missing primarykey metadata attributes | Add all ImeMode, ValidFor*Api, Source Type, etc. attributes |
 | Solution import fails at Root Components | Entities not properly registered | Check that Customizations.xml has complete embedded definitions |
+| No rows could be found for Entity (AsyncOperation error) | Missing system entity relationships | Add 6 system relationships per entity: business_unit, lk_createdby, lk_modifiedby, owner, team, user |
 
 ---
 
