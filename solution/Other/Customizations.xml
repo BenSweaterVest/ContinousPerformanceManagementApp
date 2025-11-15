@@ -8060,34 +8060,6 @@
     </Entity>
   </Entities>
 
-  <connectionreferences>
-    <connectionreference connectionreferencelogicalname="cr_commondataserviceforapps">
-      <connectionreferenceid>bec6cff0-0d89-13b9-528a-dbe088ebd39a</connectionreferenceid>
-      <connectionreferencedisplayname>commondataserviceforapps Connection</connectionreferencedisplayname>
-      <connectorid>/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps</connectorid>
-      <iscustomizable>1</iscustomizable>
-      <statecode>0</statecode>
-      <statuscode>1</statuscode>
-    </connectionreference>
-    <connectionreference connectionreferencelogicalname="cr_office365">
-      <connectionreferenceid>49faf37b-adf9-d03a-ad0d-dce4a410ef35</connectionreferenceid>
-      <connectionreferencedisplayname>office365 Connection</connectionreferencedisplayname>
-      <connectorid>/providers/Microsoft.PowerApps/apis/shared_office365</connectorid>
-      <iscustomizable>1</iscustomizable>
-      <statecode>0</statecode>
-      <statuscode>1</statuscode>
-    </connectionreference>
-    <connectionreference connectionreferencelogicalname="cr_office365users">
-      <connectionreferenceid>a795261b-c76c-e48c-b83f-926e2c1e2299</connectionreferenceid>
-      <connectionreferencedisplayname>office365users Connection</connectionreferencedisplayname>
-      <connectorid>/providers/Microsoft.PowerApps/apis/shared_office365users</connectorid>
-      <iscustomizable>1</iscustomizable>
-      <statecode>0</statecode>
-      <statuscode>1</statuscode>
-    </connectionreference>
-  </connectionreferences>
-
-
   <CanvasApps>
     <CanvasApp>
       <Name>pm_performancemanagement_12345</Name>

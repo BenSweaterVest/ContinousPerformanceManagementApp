@@ -45,6 +45,11 @@
       <RootComponent type="1" schemaName="pm_goal" behavior="0" />
       <RootComponent type="1" schemaName="pm_recognition" behavior="0" />
       <RootComponent type="1" schemaName="pm_actionitem" behavior="0" />
+      <RootComponent type="300" schemaName="pm_performancemanagement_12345" behavior="0" />
+      <RootComponent type="29" schemaName="WeeklyEvaluationReminder" behavior="0" />
+      <RootComponent type="29" schemaName="QuarterlySelfEvalReminder" behavior="0" />
+      <RootComponent type="29" schemaName="OneOnOneMeetingNotification" behavior="0" />
+      <RootComponent type="29" schemaName="AdHocSelfEvalRequest" behavior="0" />
     </RootComponents>
     <MissingDependencies />
   </SolutionManifest>
