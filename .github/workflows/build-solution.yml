@@ -47,8 +47,9 @@ jobs:
           export PATH="$HOME/.dotnet:$PATH"
           echo "$HOME/.dotnet" >> $GITHUB_PATH
 
-          # Install pac CLI (lowercase package name, pinned version)
-          dotnet tool install --global microsoft.powerapps.cli.tool --version 1.50.1
+          # Clear NuGet cache and install pac CLI to tool-path
+          dotnet nuget locals all --clear
+          dotnet tool install microsoft.powerapps.cli.tool --tool-path $HOME/.dotnet/tools --version 1.50.1
           export PATH="$HOME/.dotnet/tools:$PATH"
           echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
 
