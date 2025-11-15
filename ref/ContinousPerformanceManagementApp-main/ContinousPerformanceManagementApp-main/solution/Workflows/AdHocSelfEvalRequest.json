@@ -1,0 +1,124 @@
+{
+  "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "$connections": {
+      "defaultValue": {},
+      "type": "Object"
+    }
+  },
+  "triggers": {
+    "manual": {
+      "type": "Request",
+      "kind": "Http",
+      "inputs": {
+        "schema": {
+          "type": "object",
+          "properties": {
+            "StaffMemberEmail": {
+              "type": "string"
+            },
+            "StaffMemberName": {
+              "type": "string"
+            },
+            "RequestedBy": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "StaffMemberEmail",
+            "StaffMemberName",
+            "RequestedBy"
+          ]
+        }
+      }
+    }
+  },
+  "actions": {
+    "Get_Staff_Member_Record": {
+      "runAfter": {},
+      "type": "OpenApiConnection",
+      "inputs": {
+        "host": {
+          "connectionName": "shared_commondataserviceforapps",
+          "operationId": "ListRecords",
+          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+        },
+        "parameters": {
+          "entityName": "pm_staffmember",
+          "$filter": "pm_name eq '@{triggerBody()?['StaffMemberName']}'"
+        }
+      }
+    },
+    "Create_pending_self_evaluation_records": {
+      "runAfter": {
+        "Get_Staff_Member_Record": ["Succeeded"]
+      },
+      "type": "OpenApiConnection",
+      "inputs": {
+        "host": {
+          "connectionName": "shared_commondataserviceforapps",
+          "operationId": "CreateRecord",
+          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+        },
+        "parameters": {
+          "entityName": "pm_selfevaluation",
+          "item": {
+            "pm_staffmember@odata.bind": "/pm_staffmember(@{first(outputs('Get_Staff_Member_Record')?['body/value'])?['pm_staffmemberid']})",
+            "pm_evaluationtype": 2,
+            "pm_fiscalyear": "@if(greaterOrEquals(month(utcNow()), 7), add(year(utcNow()), 1), year(utcNow()))"
+          }
+        }
+      },
+      "description": "Create placeholder self-evaluation record"
+    },
+    "Send_request_email": {
+      "runAfter": {
+        "Create_pending_self_evaluation_records": ["Succeeded"]
+      },
+      "type": "OpenApiConnection",
+      "inputs": {
+        "host": {
+          "connectionName": "shared_office365",
+          "operationId": "SendEmailV2",
+          "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+        },
+        "parameters": {
+          "emailMessage/To": "@triggerBody()?['StaffMemberEmail']",
+          "emailMessage/Subject": "Ad Hoc Self-Evaluation Request",
+          "emailMessage/Body": "<html><body><h2>Self-Evaluation Request</h2><p>Hi @{triggerBody()?['StaffMemberName']},</p><p>@{triggerBody()?['RequestedBy']} has requested that you complete an ad hoc self-evaluation.</p><p>Please complete your self-assessment in the Performance Management System app at your earliest convenience.</p><p><a href='https://apps.powerapps.com'>Open Performance Management App</a></p><p>Thank you!</p></body></html>",
+          "emailMessage/Importance": "Normal"
+        }
+      }
+    },
+    "Response": {
+      "runAfter": {
+        "Send_request_email": ["Succeeded"]
+      },
+      "type": "Response",
+      "kind": "Http",
+      "inputs": {
+        "statusCode": 200,
+        "body": {
+          "status": "success",
+          "message": "Ad hoc self-evaluation request sent successfully"
+        }
+      }
+    },
+    "Response_on_error": {
+      "runAfter": {
+        "Send_request_email": ["Failed"]
+      },
+      "type": "Response",
+      "kind": "Http",
+      "inputs": {
+        "statusCode": 500,
+        "body": {
+          "status": "error",
+          "message": "Failed to send self-evaluation request"
+        }
+      }
+    }
+  },
+  "outputs": {}
+}
