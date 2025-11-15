@@ -2236,6 +2236,28 @@
               <RequiredLevel>systemrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind|RequiredForGrid</DisplayMask>
               <IsPrimaryId>1</IsPrimaryId>
+              <IsValidForCreate>0</IsValidForCreate>
+              <IsValidForRead>1</IsValidForRead>
+              <IsValidForUpdate>0</IsValidForUpdate>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>0</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat />
+              <MaxLength>100</MaxLength>
+              <IsSearchable>0</IsSearchable>
+              <IsFilterable>1</IsFilterable>
+              <IsRetrievable>1</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Self Evaluation ID" languagecode="1033" />
@@ -2960,6 +2982,28 @@
               <LogicalName>pm_idpentryid</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
               <IsPrimaryId>1</IsPrimaryId>
+              <IsValidForCreate>0</IsValidForCreate>
+              <IsValidForRead>1</IsValidForRead>
+              <IsValidForUpdate>0</IsValidForUpdate>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>0</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat />
+              <MaxLength>100</MaxLength>
+              <IsSearchable>0</IsSearchable>
+              <IsFilterable>1</IsFilterable>
+              <IsRetrievable>1</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
               <displaynames>
                 <displayname description="IDP Entry ID" languagecode="1033" />
@@ -3582,6 +3626,28 @@
               <LogicalName>pm_meetingnoteid</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
               <IsPrimaryId>1</IsPrimaryId>
+              <IsValidForCreate>0</IsValidForCreate>
+              <IsValidForRead>1</IsValidForRead>
+              <IsValidForUpdate>0</IsValidForUpdate>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>0</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat />
+              <MaxLength>100</MaxLength>
+              <IsSearchable>0</IsSearchable>
+              <IsFilterable>1</IsFilterable>
+              <IsRetrievable>1</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Meeting Note ID" languagecode="1033" />
@@ -4203,6 +4269,28 @@
               <LogicalName>pm_goalid</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
               <IsPrimaryId>1</IsPrimaryId>
+              <IsValidForCreate>0</IsValidForCreate>
+              <IsValidForRead>1</IsValidForRead>
+              <IsValidForUpdate>0</IsValidForUpdate>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>0</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat />
+              <MaxLength>100</MaxLength>
+              <IsSearchable>0</IsSearchable>
+              <IsFilterable>1</IsFilterable>
+              <IsRetrievable>1</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Goal ID" languagecode="1033" />
@@ -4826,6 +4914,28 @@
               <LogicalName>pm_recognitionid</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
               <IsPrimaryId>1</IsPrimaryId>
+              <IsValidForCreate>0</IsValidForCreate>
+              <IsValidForRead>1</IsValidForRead>
+              <IsValidForUpdate>0</IsValidForUpdate>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>0</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat />
+              <MaxLength>100</MaxLength>
+              <IsSearchable>0</IsSearchable>
+              <IsFilterable>1</IsFilterable>
+              <IsRetrievable>1</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Recognition ID" languagecode="1033" />
@@ -5425,6 +5535,28 @@
               <LogicalName>pm_actionitemid</LogicalName>
               <RequiredLevel>systemrequired</RequiredLevel>
               <IsPrimaryId>1</IsPrimaryId>
+              <IsValidForCreate>0</IsValidForCreate>
+              <IsValidForRead>1</IsValidForRead>
+              <IsValidForUpdate>0</IsValidForUpdate>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>0</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat />
+              <MaxLength>100</MaxLength>
+              <IsSearchable>0</IsSearchable>
+              <IsFilterable>1</IsFilterable>
+              <IsRetrievable>1</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
               <IntroducedVersion>1.0.0.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Action Item ID" languagecode="1033" />
