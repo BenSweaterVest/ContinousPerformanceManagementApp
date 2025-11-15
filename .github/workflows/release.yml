@@ -58,8 +58,9 @@ jobs:
           export PATH="$HOME/.dotnet:$PATH"
           echo "$HOME/.dotnet" >> $GITHUB_PATH
 
-          # Install pac CLI
-          dotnet tool install --global Microsoft.PowerApps.CLI.Tool
+          # Install pac CLI (lowercase package name, pinned version)
+          dotnet tool install --global microsoft.powerapps.cli.tool --version 1.50.1
+          export PATH="$HOME/.dotnet/tools:$PATH"
           echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
 
       - name: Validate XML files
