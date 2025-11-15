@@ -43,6 +43,14 @@ def fix_malformed_xml(content):
     fixes_applied += count
     print(f"   ✓ Fixed {count} malformed <CanModifyAdditionalSettings> elements")
 
+    # Fix 1b: Remove orphaned closing tags created by Fix 1
+    # The previous fix adds closing tags but original orphaned ones remain
+    pattern = r'\n      </CanModifyAdditionalSettings>\n'
+    content, count = re.subn(pattern, '\n', content)
+    if count > 0:
+        fixes_applied += count
+        print(f"   ✓ Removed {count} orphaned </CanModifyAdditionalSettings> tags")
+
     # Fix 2: XML declaration (single quotes -> double quotes)
     if "<?xml version='1.0' encoding='utf-8'?>" in content:
         content = content.replace(
