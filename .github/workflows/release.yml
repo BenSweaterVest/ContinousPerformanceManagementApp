@@ -49,28 +49,15 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libxml2-utils
 
-      - name: Install Power Platform CLI
-        uses: microsoft/powerplatform-actions/actions-install@v1
-
-      - name: Verify pac CLI installation
+      - name: Install Power Platform CLI via npm
         run: |
-          echo "Checking for pac CLI..."
-          which pac || echo "pac not in PATH"
+          echo "Installing pac CLI via npm..."
+          npm install -g @microsoft/powerplatform-cli
 
-          # Check common installation locations
-          if [ -f "$HOME/.local/bin/pac" ]; then
-            echo "Found pac at $HOME/.local/bin/pac"
-            echo "$HOME/.local/bin" >> $GITHUB_PATH
-          elif [ -f "/usr/local/bin/pac" ]; then
-            echo "Found pac at /usr/local/bin/pac"
-          fi
+          # Verify installation
+          pac --version
 
-          # Verify pac is now available
-          export PATH="$HOME/.local/bin:$PATH"
-          pac --version || {
-            echo "❌ ERROR: pac CLI not available after installation"
-            exit 1
-          }
+          echo "✅ pac CLI installed successfully"
 
       - name: Validate XML files
         run: |
@@ -81,9 +68,6 @@ jobs:
 
       - name: Create solution package with pac CLI
         run: |
-          # Ensure pac is in PATH
-          export PATH="$HOME/.local/bin:$PATH"
-
           VERSION="${{ steps.get_version.outputs.version }}"
           ZIP_NAME="PerformanceManagement_${VERSION//./_}.zip"
 
