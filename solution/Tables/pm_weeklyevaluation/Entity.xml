@@ -74,6 +74,7 @@
           <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
           <IsDataSourceSecret>0</IsDataSourceSecret>
           <AutoNumberFormat></AutoNumberFormat>
+          <MaxLength>100</MaxLength>
           <IsSearchable>0</IsSearchable>
           <IsFilterable>1</IsFilterable>
           <IsRetrievable>1</IsRetrievable>
