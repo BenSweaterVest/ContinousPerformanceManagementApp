@@ -20,7 +20,7 @@
       </Descriptions>
       <EMailAddress>info@contoso.com</EMailAddress>
       <SupportingWebsiteUrl>https://github.com/performance-management/teams-app</SupportingWebsiteUrl>
-      <CustomizationPrefix>mnit</CustomizationPrefix>
+      <CustomizationPrefix>pm</CustomizationPrefix>
       <CustomizationOptionValuePrefix>10000</CustomizationOptionValuePrefix>
       <Addresses>
         <Address>
@@ -35,15 +35,15 @@
       </Addresses>
     </Publisher>
     <RootComponents>
-      <RootComponent type="1" schemaName="mnit_staffmember" behavior="0" />
-      <RootComponent type="1" schemaName="mnit_evaluationquestion" behavior="0" />
-      <RootComponent type="1" schemaName="mnit_weeklyevaluation" behavior="0" />
-      <RootComponent type="1" schemaName="mnit_selfevaluation" behavior="0" />
-      <RootComponent type="1" schemaName="mnit_idpentry" behavior="0" />
-      <RootComponent type="1" schemaName="mnit_meetingnote" behavior="0" />
-      <RootComponent type="1" schemaName="mnit_goal" behavior="0" />
-      <RootComponent type="1" schemaName="mnit_recognition" behavior="0" />
-      <RootComponent type="1" schemaName="mnit_actionitem" behavior="0" />
+      <RootComponent type="1" schemaName="pm_staffmember" behavior="0" />
+      <RootComponent type="1" schemaName="pm_evaluationquestion" behavior="0" />
+      <RootComponent type="1" schemaName="pm_weeklyevaluation" behavior="0" />
+      <RootComponent type="1" schemaName="pm_selfevaluation" behavior="0" />
+      <RootComponent type="1" schemaName="pm_idpentry" behavior="0" />
+      <RootComponent type="1" schemaName="pm_meetingnote" behavior="0" />
+      <RootComponent type="1" schemaName="pm_goal" behavior="0" />
+      <RootComponent type="1" schemaName="pm_recognition" behavior="0" />
+      <RootComponent type="1" schemaName="pm_actionitem" behavior="0" />
     </RootComponents>
     <MissingDependencies />
   </SolutionManifest>

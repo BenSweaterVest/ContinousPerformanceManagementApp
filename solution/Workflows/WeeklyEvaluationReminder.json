@@ -33,8 +33,8 @@
           "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
         },
         "parameters": {
-          "entityName": "mnit_staffmember",
-          "$filter": "mnit_status eq 1"
+          "entityName": "pm_staffmember",
+          "$filter": "pm_status eq 1"
         }
       }
     },
@@ -60,7 +60,7 @@
           "type": "AppendToArrayVariable",
           "inputs": {
             "name": "SupervisorList",
-            "value": "@items('Apply_to_each_staff')?['_mnit_supervisor_value']"
+            "value": "@items('Apply_to_each_staff')?['_pm_supervisor_value']"
           },
           "runAfter": {},
           "description": "Append supervisor email if not already in list"
@@ -84,8 +84,8 @@
               "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
             },
             "parameters": {
-              "entityName": "mnit_staffmember",
-              "$filter": "_mnit_supervisor_value eq '@{items('Apply_to_each_supervisor')}' and mnit_status eq 1"
+              "entityName": "pm_staffmember",
+              "$filter": "_pm_supervisor_value eq '@{items('Apply_to_each_supervisor')}' and pm_status eq 1"
             }
           }
         },

@@ -38,8 +38,8 @@
           "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
         },
         "parameters": {
-          "entityName": "mnit_staffmember",
-          "$filter": "mnit_status eq 1"
+          "entityName": "pm_staffmember",
+          "$filter": "pm_status eq 1"
         }
       }
     },
@@ -70,7 +70,7 @@
               "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365users"
             },
             "parameters": {
-              "userId": "@items('Apply_to_each_staff_member')?['_mnit_staffmember_value']"
+              "userId": "@items('Apply_to_each_staff_member')?['_pm_staffmember_value']"
             }
           }
         },

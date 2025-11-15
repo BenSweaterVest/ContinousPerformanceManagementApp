@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <EntityInfo>
-    <entity Name="mnit_selfevaluation">
+    <entity Name="pm_selfevaluation">
       <LocalizedNames>
         <LocalizedName description="Self Evaluation" languagecode="1033" />
       </LocalizedNames>
@@ -12,10 +12,10 @@
         <Description description="Store employee quarterly self-assessments" languagecode="1033" />
       </Descriptions>
       <attributes>
-        <attribute PhysicalName="mnit_selfevaluationid">
+        <attribute PhysicalName="pm_selfevaluationid">
           <Type>uniqueidentifier</Type>
-          <Name>mnit_selfevaluationid</Name>
-          <LogicalName>mnit_selfevaluationid</LogicalName>
+          <Name>pm_selfevaluationid</Name>
+          <LogicalName>pm_selfevaluationid</LogicalName>
           <RequiredLevel>systemrequired</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind</DisplayMask>
           <IsPrimaryId>1</IsPrimaryId>
@@ -24,10 +24,10 @@
             <displayname description="Self Evaluation ID" languagecode="1033" />
           </displaynames>
         </attribute>
-        <attribute PhysicalName="mnit_name">
+        <attribute PhysicalName="pm_name">
           <Type>nvarchar</Type>
-          <Name>mnit_name</Name>
-          <LogicalName>mnit_name</LogicalName>
+          <Name>pm_name</Name>
+          <LogicalName>pm_name</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <IsPrimaryName>1</IsPrimaryName>
           <Length>100</Length>
@@ -37,42 +37,42 @@
             <displayname description="Self Evaluation ID" languagecode="1033" />
           </displaynames>
         </attribute>
-        <attribute PhysicalName="mnit_staffmember">
+        <attribute PhysicalName="pm_staffmember">
           <Type>lookup</Type>
-          <Name>mnit_staffmember</Name>
-          <LogicalName>mnit_staffmember</LogicalName>
+          <Name>pm_staffmember</Name>
+          <LogicalName>pm_staffmember</LogicalName>
           <RequiredLevel>applicationrequired</RequiredLevel>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
           <Targets>
-            <Target>mnit_staffmember</Target>
+            <Target>pm_staffmember</Target>
           </Targets>
           <displaynames>
             <displayname description="Staff Member" languagecode="1033" />
           </displaynames>
         </attribute>
-        <attribute PhysicalName="mnit_question">
+        <attribute PhysicalName="pm_question">
           <Type>lookup</Type>
-          <Name>mnit_question</Name>
-          <LogicalName>mnit_question</LogicalName>
+          <Name>pm_question</Name>
+          <LogicalName>pm_question</LogicalName>
           <RequiredLevel>applicationrequired</RequiredLevel>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
           <Targets>
-            <Target>mnit_evaluationquestion</Target>
+            <Target>pm_evaluationquestion</Target>
           </Targets>
           <displaynames>
             <displayname description="Question" languagecode="1033" />
           </displaynames>
         </attribute>
-        <attribute PhysicalName="mnit_rating">
+        <attribute PhysicalName="pm_rating">
           <Type>picklist</Type>
-          <Name>mnit_rating</Name>
-          <LogicalName>mnit_rating</LogicalName>
+          <Name>pm_rating</Name>
+          <LogicalName>pm_rating</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
           <displaynames>
             <displayname description="Rating" languagecode="1033" />
           </displaynames>
-          <optionset Name="mnit_selfrating">
+          <optionset Name="pm_selfrating">
             <IsSorted>0</IsSorted>
             <IsGlobal>0</IsGlobal>
             <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -85,10 +85,10 @@
             </options>
           </optionset>
         </attribute>
-        <attribute PhysicalName="mnit_notes">
+        <attribute PhysicalName="pm_notes">
           <Type>memo</Type>
-          <Name>mnit_notes</Name>
-          <LogicalName>mnit_notes</LogicalName>
+          <Name>pm_notes</Name>
+          <LogicalName>pm_notes</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <MaxLength>5000</MaxLength>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -96,16 +96,16 @@
             <displayname description="Notes" languagecode="1033" />
           </displaynames>
         </attribute>
-        <attribute PhysicalName="mnit_quarter">
+        <attribute PhysicalName="pm_quarter">
           <Type>picklist</Type>
-          <Name>mnit_quarter</Name>
-          <LogicalName>mnit_quarter</LogicalName>
+          <Name>pm_quarter</Name>
+          <LogicalName>pm_quarter</LogicalName>
           <RequiredLevel>applicationrequired</RequiredLevel>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
           <displaynames>
             <displayname description="Quarter" languagecode="1033" />
           </displaynames>
-          <optionset Name="mnit_quarter">
+          <optionset Name="pm_quarter">
             <IsSorted>0</IsSorted>
             <IsGlobal>0</IsGlobal>
             <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -117,26 +117,26 @@
             </options>
           </optionset>
         </attribute>
-        <attribute PhysicalName="mnit_fiscalyear">
+        <attribute PhysicalName="pm_fiscalyear">
           <Type>int</Type>
-          <Name>mnit_fiscalyear</Name>
-          <LogicalName>mnit_fiscalyear</LogicalName>
+          <Name>pm_fiscalyear</Name>
+          <LogicalName>pm_fiscalyear</LogicalName>
           <RequiredLevel>applicationrequired</RequiredLevel>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
           <displaynames>
             <displayname description="Fiscal Year" languagecode="1033" />
           </displaynames>
         </attribute>
-        <attribute PhysicalName="mnit_evaluationtype">
+        <attribute PhysicalName="pm_evaluationtype">
           <Type>picklist</Type>
-          <Name>mnit_evaluationtype</Name>
-          <LogicalName>mnit_evaluationtype</LogicalName>
+          <Name>pm_evaluationtype</Name>
+          <LogicalName>pm_evaluationtype</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
           <displaynames>
             <displayname description="Evaluation Type" languagecode="1033" />
           </displaynames>
-          <optionset Name="mnit_selfevaluationtype">
+          <optionset Name="pm_selfevaluationtype">
             <IsSorted>0</IsSorted>
             <IsGlobal>0</IsGlobal>
             <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -146,10 +146,10 @@
             </options>
           </optionset>
         </attribute>
-        <attribute PhysicalName="mnit_completeddate">
+        <attribute PhysicalName="pm_completeddate">
           <Type>datetime</Type>
-          <Name>mnit_completeddate</Name>
-          <LogicalName>mnit_completeddate</LogicalName>
+          <Name>pm_completeddate</Name>
+          <LogicalName>pm_completeddate</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <Format>DateOnly</Format>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>

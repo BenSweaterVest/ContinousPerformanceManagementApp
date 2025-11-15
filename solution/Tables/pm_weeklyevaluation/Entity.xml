@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <EntityInfo>
-    <entity Name="mnit_weeklyevaluation">
+    <entity Name="pm_weeklyevaluation">
       <LocalizedNames>
         <LocalizedName description="Weekly Evaluation" languagecode="1033" />
       </LocalizedNames>
@@ -12,10 +12,10 @@
         <Description description="Store supervisor's weekly performance evaluations" languagecode="1033" />
       </Descriptions>
       <attributes>
-        <attribute PhysicalName="mnit_weeklyevaluationid">
+        <attribute PhysicalName="pm_weeklyevaluationid">
           <Type>uniqueidentifier</Type>
-          <Name>mnit_weeklyevaluationid</Name>
-          <LogicalName>mnit_weeklyevaluationid</LogicalName>
+          <Name>pm_weeklyevaluationid</Name>
+          <LogicalName>pm_weeklyevaluationid</LogicalName>
           <RequiredLevel>systemrequired</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind</DisplayMask>
           <IsPrimaryId>1</IsPrimaryId>
@@ -38,10 +38,10 @@
             <Description description="Unique identifier for Weekly Evaluation instances" languagecode="1033" />
           </Descriptions>
         </attribute>
-        <attribute PhysicalName="mnit_name">
+        <attribute PhysicalName="pm_name">
           <Type>nvarchar</Type>
-          <Name>mnit_name</Name>
-          <LogicalName>mnit_name</LogicalName>
+          <Name>pm_name</Name>
+          <LogicalName>pm_name</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind</DisplayMask>
           <IsPrimaryName>1</IsPrimaryName>
@@ -60,10 +60,10 @@
             <Description description="Auto-generated evaluation identifier" languagecode="1033" />
           </Descriptions>
         </attribute>
-        <attribute PhysicalName="mnit_staffmember">
+        <attribute PhysicalName="pm_staffmember">
           <Type>lookup</Type>
-          <Name>mnit_staffmember</Name>
-          <LogicalName>mnit_staffmember</LogicalName>
+          <Name>pm_staffmember</Name>
+          <LogicalName>pm_staffmember</LogicalName>
           <RequiredLevel>applicationrequired</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind</DisplayMask>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -73,7 +73,7 @@
           <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
           <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
           <Targets>
-            <Target>mnit_staffmember</Target>
+            <Target>pm_staffmember</Target>
           </Targets>
           <displaynames>
             <displayname description="Staff Member" languagecode="1033" />
@@ -82,10 +82,10 @@
             <Description description="The staff member being evaluated" languagecode="1033" />
           </Descriptions>
         </attribute>
-        <attribute PhysicalName="mnit_evaluator">
+        <attribute PhysicalName="pm_evaluator">
           <Type>lookup</Type>
-          <Name>mnit_evaluator</Name>
-          <LogicalName>mnit_evaluator</LogicalName>
+          <Name>pm_evaluator</Name>
+          <LogicalName>pm_evaluator</LogicalName>
           <RequiredLevel>applicationrequired</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind</DisplayMask>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -104,10 +104,10 @@
             <Description description="The supervisor performing the evaluation" languagecode="1033" />
           </Descriptions>
         </attribute>
-        <attribute PhysicalName="mnit_question">
+        <attribute PhysicalName="pm_question">
           <Type>lookup</Type>
-          <Name>mnit_question</Name>
-          <LogicalName>mnit_question</LogicalName>
+          <Name>pm_question</Name>
+          <LogicalName>pm_question</LogicalName>
           <RequiredLevel>applicationrequired</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind</DisplayMask>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -117,7 +117,7 @@
           <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
           <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
           <Targets>
-            <Target>mnit_evaluationquestion</Target>
+            <Target>pm_evaluationquestion</Target>
           </Targets>
           <displaynames>
             <displayname description="Question" languagecode="1033" />
@@ -126,10 +126,10 @@
             <Description description="The evaluation question being answered" languagecode="1033" />
           </Descriptions>
         </attribute>
-        <attribute PhysicalName="mnit_rating">
+        <attribute PhysicalName="pm_rating">
           <Type>picklist</Type>
-          <Name>mnit_rating</Name>
-          <LogicalName>mnit_rating</LogicalName>
+          <Name>pm_rating</Name>
+          <LogicalName>pm_rating</LogicalName>
           <RequiredLevel>applicationrequired</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind</DisplayMask>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -144,7 +144,7 @@
           <Descriptions>
             <Description description="Performance rating (1-5 scale)" languagecode="1033" />
           </Descriptions>
-          <optionset Name="mnit_rating">
+          <optionset Name="pm_rating">
             <IsSorted>0</IsSorted>
             <IsGlobal>0</IsGlobal>
             <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -182,10 +182,10 @@
             </options>
           </optionset>
         </attribute>
-        <attribute PhysicalName="mnit_notes">
+        <attribute PhysicalName="pm_notes">
           <Type>memo</Type>
-          <Name>mnit_notes</Name>
-          <LogicalName>mnit_notes</LogicalName>
+          <Name>pm_notes</Name>
+          <LogicalName>pm_notes</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind</DisplayMask>
           <MaxLength>5000</MaxLength>
@@ -202,10 +202,10 @@
             <Description description="Additional notes and observations" languagecode="1033" />
           </Descriptions>
         </attribute>
-        <attribute PhysicalName="mnit_evaluationdate">
+        <attribute PhysicalName="pm_evaluationdate">
           <Type>datetime</Type>
-          <Name>mnit_evaluationdate</Name>
-          <LogicalName>mnit_evaluationdate</LogicalName>
+          <Name>pm_evaluationdate</Name>
+          <LogicalName>pm_evaluationdate</LogicalName>
           <RequiredLevel>applicationrequired</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind</DisplayMask>
           <Format>DateOnly</Format>
@@ -222,10 +222,10 @@
             <Description description="Date of the evaluation" languagecode="1033" />
           </Descriptions>
         </attribute>
-        <attribute PhysicalName="mnit_evaluationtype">
+        <attribute PhysicalName="pm_evaluationtype">
           <Type>picklist</Type>
-          <Name>mnit_evaluationtype</Name>
-          <LogicalName>mnit_evaluationtype</LogicalName>
+          <Name>pm_evaluationtype</Name>
+          <LogicalName>pm_evaluationtype</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind</DisplayMask>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -240,7 +240,7 @@
           <Descriptions>
             <Description description="Type of evaluation" languagecode="1033" />
           </Descriptions>
-          <optionset Name="mnit_evaluationtype">
+          <optionset Name="pm_evaluationtype">
             <IsSorted>0</IsSorted>
             <IsGlobal>0</IsGlobal>
             <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -293,15 +293,15 @@
       <fetchxml>
         <![CDATA[
         <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false">
-          <entity name="mnit_weeklyevaluation">
-            <attribute name="mnit_name" />
-            <attribute name="mnit_staffmember" />
-            <attribute name="mnit_evaluator" />
-            <attribute name="mnit_question" />
-            <attribute name="mnit_rating" />
-            <attribute name="mnit_evaluationdate" />
-            <attribute name="mnit_evaluationtype" />
-            <order attribute="mnit_evaluationdate" descending="true" />
+          <entity name="pm_weeklyevaluation">
+            <attribute name="pm_name" />
+            <attribute name="pm_staffmember" />
+            <attribute name="pm_evaluator" />
+            <attribute name="pm_question" />
+            <attribute name="pm_rating" />
+            <attribute name="pm_evaluationdate" />
+            <attribute name="pm_evaluationtype" />
+            <order attribute="pm_evaluationdate" descending="true" />
           </entity>
         </fetch>
         ]]>

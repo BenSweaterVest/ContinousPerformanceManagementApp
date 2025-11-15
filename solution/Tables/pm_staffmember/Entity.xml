@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <EntityInfo>
-    <entity Name="mnit_staffmember">
+    <entity Name="pm_staffmember">
       <LocalizedNames>
         <LocalizedName description="Staff Member" languagecode="1033" />
       </LocalizedNames>
@@ -12,10 +12,10 @@
         <Description description="Store information about employees being evaluated" languagecode="1033" />
       </Descriptions>
       <attributes>
-        <attribute PhysicalName="mnit_staffmemberid">
+        <attribute PhysicalName="pm_staffmemberid">
           <Type>uniqueidentifier</Type>
-          <Name>mnit_staffmemberid</Name>
-          <LogicalName>mnit_staffmemberid</LogicalName>
+          <Name>pm_staffmemberid</Name>
+          <LogicalName>pm_staffmemberid</LogicalName>
           <RequiredLevel>systemrequired</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind</DisplayMask>
           <IsPrimaryId>1</IsPrimaryId>
@@ -38,10 +38,10 @@
             <Description description="Unique identifier for Staff Member instances" languagecode="1033" />
           </Descriptions>
         </attribute>
-        <attribute PhysicalName="mnit_name">
+        <attribute PhysicalName="pm_name">
           <Type>nvarchar</Type>
-          <Name>mnit_name</Name>
-          <LogicalName>mnit_name</LogicalName>
+          <Name>pm_name</Name>
+          <LogicalName>pm_name</LogicalName>
           <RequiredLevel>applicationrequired</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind</DisplayMask>
           <IsPrimaryName>1</IsPrimaryName>
@@ -59,10 +59,10 @@
             <Description description="Full name of the staff member" languagecode="1033" />
           </Descriptions>
         </attribute>
-        <attribute PhysicalName="mnit_employeeid">
+        <attribute PhysicalName="pm_employeeid">
           <Type>nvarchar</Type>
-          <Name>mnit_employeeid</Name>
-          <LogicalName>mnit_employeeid</LogicalName>
+          <Name>pm_employeeid</Name>
+          <LogicalName>pm_employeeid</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind</DisplayMask>
           <Length>50</Length>
@@ -79,10 +79,10 @@
             <Description description="Unique employee identification number" languagecode="1033" />
           </Descriptions>
         </attribute>
-        <attribute PhysicalName="mnit_positiontitle">
+        <attribute PhysicalName="pm_positiontitle">
           <Type>nvarchar</Type>
-          <Name>mnit_positiontitle</Name>
-          <LogicalName>mnit_positiontitle</LogicalName>
+          <Name>pm_positiontitle</Name>
+          <LogicalName>pm_positiontitle</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind</DisplayMask>
           <Length>200</Length>
@@ -99,10 +99,10 @@
             <Description description="Job title or position" languagecode="1033" />
           </Descriptions>
         </attribute>
-        <attribute PhysicalName="mnit_supervisor">
+        <attribute PhysicalName="pm_supervisor">
           <Type>lookup</Type>
-          <Name>mnit_supervisor</Name>
-          <LogicalName>mnit_supervisor</LogicalName>
+          <Name>pm_supervisor</Name>
+          <LogicalName>pm_supervisor</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind</DisplayMask>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -121,10 +121,10 @@
             <Description description="Supervisor or manager of this staff member" languagecode="1033" />
           </Descriptions>
         </attribute>
-        <attribute PhysicalName="mnit_startdate">
+        <attribute PhysicalName="pm_startdate">
           <Type>datetime</Type>
-          <Name>mnit_startdate</Name>
-          <LogicalName>mnit_startdate</LogicalName>
+          <Name>pm_startdate</Name>
+          <LogicalName>pm_startdate</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind</DisplayMask>
           <Format>DateOnly</Format>
@@ -141,10 +141,10 @@
             <Description description="Date the staff member started in this position" languagecode="1033" />
           </Descriptions>
         </attribute>
-        <attribute PhysicalName="mnit_status">
+        <attribute PhysicalName="pm_status">
           <Type>picklist</Type>
-          <Name>mnit_status</Name>
-          <LogicalName>mnit_status</LogicalName>
+          <Name>pm_status</Name>
+          <LogicalName>pm_status</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind</DisplayMask>
           <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -159,7 +159,7 @@
           <Descriptions>
             <Description description="Employment status" languagecode="1033" />
           </Descriptions>
-          <optionset Name="mnit_status">
+          <optionset Name="pm_status">
             <IsSorted>0</IsSorted>
             <IsGlobal>0</IsGlobal>
             <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -212,16 +212,16 @@
       <fetchxml>
         <![CDATA[
         <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false">
-          <entity name="mnit_staffmember">
-            <attribute name="mnit_name" />
-            <attribute name="mnit_employeeid" />
-            <attribute name="mnit_positiontitle" />
-            <attribute name="mnit_supervisor" />
-            <attribute name="mnit_startdate" />
-            <attribute name="mnit_status" />
-            <order attribute="mnit_name" descending="false" />
+          <entity name="pm_staffmember">
+            <attribute name="pm_name" />
+            <attribute name="pm_employeeid" />
+            <attribute name="pm_positiontitle" />
+            <attribute name="pm_supervisor" />
+            <attribute name="pm_startdate" />
+            <attribute name="pm_status" />
+            <order attribute="pm_name" descending="false" />
             <filter type="and">
-              <condition attribute="mnit_status" operator="eq" value="1" />
+              <condition attribute="pm_status" operator="eq" value="1" />
             </filter>
           </entity>
         </fetch>
