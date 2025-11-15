@@ -57,8 +57,8 @@ Installing the Power Platform CLI (`pac`) in GitHub Actions proved challenging. 
     # Create symlink in /usr/local/bin
     sudo ln -sf /usr/local/share/pac/pac /usr/local/bin/pac
 
-    # Verify
-    pac --version
+    # Verify (pac doesn't support --version)
+    pac help > /dev/null
 ```
 
 **Why This Works:**
@@ -153,6 +153,19 @@ The release workflow will:
     ls -R pac-temp
 ```
 
+### pac --version Not Supported
+
+**Symptom:** `Error: Not a valid command. Try running 'pac [command] help'`
+
+**Cause:** The `pac` CLI doesn't support the `--version` flag
+
+**Solution:** Use `pac help` to verify installation instead:
+```bash
+pac help > /dev/null  # Suppress output, just check if command works
+```
+
+**Note:** Unlike most CLI tools, pac doesn't have a `--version` or `-v` flag. Use `pac` with no arguments to see available commands.
+
 ### Version Mismatch (Release Workflow)
 
 **Symptom:** Release workflow fails with "Version mismatch"
@@ -236,7 +249,7 @@ The workflows use `PAC_VERSION="1.49.4"` (pinned).
 3. Test locally first:
    ```bash
    dotnet tool install --global Microsoft.PowerApps.CLI.Tool --version 1.50.1
-   pac --version
+   pac help  # Verify installation (pac doesn't support --version)
    ```
 
 ## Artifact Downloads
