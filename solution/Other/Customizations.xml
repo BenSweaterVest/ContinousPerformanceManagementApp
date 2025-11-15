@@ -4,7 +4,7 @@
     <Entity>
       <Name LocalizedName="Staff Member" OriginalName="Staff Member">pm_StaffMember</Name>
       <EntityInfo>
-        <entity Name="pm_StaffMember" OwnershipType="UserOwned" EntitySetName="pm_staffmembers" IsCustomEntity="1" IsActivity="0" IsActivityParty="0" IsAuditEnabled="0" IsBPFEntity="0" IsChildEntity="0" IsConnectionsEnabled="0" IsCustomizable="1" IsDocumentManagementEnabled="0" IsDocumentRecommendationsEnabled="0" IsDuplicateDetectionEnabled="0" IsEnabledForCharts="0" IsEnabledForExternalChannels="0" IsEnabledForTrace="0" IsImportable="1" IsInteractionCentricEnabled="0" IsIntersect="0" IsKnowledgeManagementEnabled="0" IsMailMergeEnabled="0" IsMappable="1" IsOfflineInMobileClient="0" IsOneNoteIntegrationEnabled="0" IsOptimisticConcurrencyEnabled="1" IsPrivate="0" IsQuickCreateEnabled="0" IsReadingPaneEnabled="1" IsReadOnlyInMobileClient="0" IsRenameable="1" IsSLAEnabled="0" IsStateModelAware="1" IsValidForAdvancedFind="1" IsValidForQueue="0" IsVisibleInMobile="0" IsVisibleInMobileClient="1" ReportViewName="Filteredpm_staffmember" IntroducedVersion="1.0">
+        <entity Name="pm_StaffMember">
           <LocalizedNames>
             <LocalizedName description="Staff Member" languagecode="1033" />
           </LocalizedNames>
@@ -967,7 +967,7 @@
     <Entity>
       <Name LocalizedName="Evaluation Question" OriginalName="Evaluation Question">pm_EvaluationQuestion</Name>
       <EntityInfo>
-        <entity Name="pm_EvaluationQuestion" OwnershipType="UserOwned" EntitySetName="pm_evaluationquestions" IsCustomEntity="1" IsActivity="0" IsActivityParty="0" IsAuditEnabled="0" IsBPFEntity="0" IsChildEntity="0" IsConnectionsEnabled="0" IsCustomizable="1" IsDocumentManagementEnabled="0" IsDocumentRecommendationsEnabled="0" IsDuplicateDetectionEnabled="0" IsEnabledForCharts="0" IsEnabledForExternalChannels="0" IsEnabledForTrace="0" IsImportable="1" IsInteractionCentricEnabled="0" IsIntersect="0" IsKnowledgeManagementEnabled="0" IsMailMergeEnabled="0" IsMappable="1" IsOfflineInMobileClient="0" IsOneNoteIntegrationEnabled="0" IsOptimisticConcurrencyEnabled="1" IsPrivate="0" IsQuickCreateEnabled="0" IsReadingPaneEnabled="1" IsReadOnlyInMobileClient="0" IsRenameable="1" IsSLAEnabled="0" IsStateModelAware="1" IsValidForAdvancedFind="1" IsValidForQueue="0" IsVisibleInMobile="0" IsVisibleInMobileClient="1" ReportViewName="Filteredpm_evaluationquestion" IntroducedVersion="1.0">
+        <entity Name="pm_EvaluationQuestion">
           <LocalizedNames>
             <LocalizedName description="Evaluation Question" languagecode="1033" />
           </LocalizedNames>
@@ -1795,7 +1795,7 @@
     <Entity>
       <Name LocalizedName="Weekly Evaluation" OriginalName="Weekly Evaluation">pm_WeeklyEvaluation</Name>
       <EntityInfo>
-        <entity Name="pm_WeeklyEvaluation" OwnershipType="UserOwned" EntitySetName="pm_weeklyevaluations" IsCustomEntity="1" IsActivity="0" IsActivityParty="0" IsAuditEnabled="0" IsBPFEntity="0" IsChildEntity="0" IsConnectionsEnabled="0" IsCustomizable="1" IsDocumentManagementEnabled="0" IsDocumentRecommendationsEnabled="0" IsDuplicateDetectionEnabled="0" IsEnabledForCharts="0" IsEnabledForExternalChannels="0" IsEnabledForTrace="0" IsImportable="1" IsInteractionCentricEnabled="0" IsIntersect="0" IsKnowledgeManagementEnabled="0" IsMailMergeEnabled="0" IsMappable="1" IsOfflineInMobileClient="0" IsOneNoteIntegrationEnabled="0" IsOptimisticConcurrencyEnabled="1" IsPrivate="0" IsQuickCreateEnabled="0" IsReadingPaneEnabled="1" IsReadOnlyInMobileClient="0" IsRenameable="1" IsSLAEnabled="0" IsStateModelAware="1" IsValidForAdvancedFind="1" IsValidForQueue="0" IsVisibleInMobile="0" IsVisibleInMobileClient="1" ReportViewName="Filteredpm_weeklyevaluation" IntroducedVersion="1.0">
+        <entity Name="pm_WeeklyEvaluation">
           <LocalizedNames>
             <LocalizedName description="Weekly Evaluation" languagecode="1033" />
           </LocalizedNames>
@@ -2852,7 +2852,7 @@
     <Entity>
       <Name LocalizedName="Self Evaluation" OriginalName="Self Evaluation">pm_SelfEvaluation</Name>
       <EntityInfo>
-        <entity Name="pm_SelfEvaluation" OwnershipType="UserOwned" EntitySetName="pm_selfevaluations" IsCustomEntity="1" IsActivity="0" IsActivityParty="0" IsAuditEnabled="0" IsBPFEntity="0" IsChildEntity="0" IsConnectionsEnabled="0" IsCustomizable="1" IsDocumentManagementEnabled="0" IsDocumentRecommendationsEnabled="0" IsDuplicateDetectionEnabled="0" IsEnabledForCharts="0" IsEnabledForExternalChannels="0" IsEnabledForTrace="0" IsImportable="1" IsInteractionCentricEnabled="0" IsIntersect="0" IsKnowledgeManagementEnabled="0" IsMailMergeEnabled="0" IsMappable="1" IsOfflineInMobileClient="0" IsOneNoteIntegrationEnabled="0" IsOptimisticConcurrencyEnabled="1" IsPrivate="0" IsQuickCreateEnabled="0" IsReadingPaneEnabled="1" IsReadOnlyInMobileClient="0" IsRenameable="1" IsSLAEnabled="0" IsStateModelAware="1" IsValidForAdvancedFind="1" IsValidForQueue="0" IsVisibleInMobile="0" IsVisibleInMobileClient="1" ReportViewName="Filteredpm_selfevaluation" IntroducedVersion="1.0">
+        <entity Name="pm_SelfEvaluation">
           <LocalizedNames>
             <LocalizedName description="Self Evaluation" languagecode="1033" />
           </LocalizedNames>
@@ -3839,7 +3839,7 @@
     <Entity>
       <Name LocalizedName="IDP Entry" OriginalName="IDP Entry">pm_IDPEntry</Name>
       <EntityInfo>
-        <entity Name="pm_IDPEntry" OwnershipType="UserOwned" EntitySetName="pm_idpentries" IsCustomEntity="1" IsActivity="0" IsActivityParty="0" IsAuditEnabled="0" IsBPFEntity="0" IsChildEntity="0" IsConnectionsEnabled="0" IsCustomizable="1" IsDocumentManagementEnabled="0" IsDocumentRecommendationsEnabled="0" IsDuplicateDetectionEnabled="0" IsEnabledForCharts="0" IsEnabledForExternalChannels="0" IsEnabledForTrace="0" IsImportable="1" IsInteractionCentricEnabled="0" IsIntersect="0" IsKnowledgeManagementEnabled="0" IsMailMergeEnabled="0" IsMappable="1" IsOfflineInMobileClient="0" IsOneNoteIntegrationEnabled="0" IsOptimisticConcurrencyEnabled="1" IsPrivate="0" IsQuickCreateEnabled="0" IsReadingPaneEnabled="1" IsReadOnlyInMobileClient="0" IsRenameable="1" IsSLAEnabled="0" IsStateModelAware="1" IsValidForAdvancedFind="1" IsValidForQueue="0" IsVisibleInMobile="0" IsVisibleInMobileClient="1" ReportViewName="Filteredpm_idpentry" IntroducedVersion="1.0">
+        <entity Name="pm_IDPEntry">
           <LocalizedNames>
             <LocalizedName description="IDP Entry" languagecode="1033" />
           </LocalizedNames>
@@ -4672,7 +4672,7 @@
     <Entity>
       <Name LocalizedName="Meeting Note" OriginalName="Meeting Note">pm_MeetingNote</Name>
       <EntityInfo>
-        <entity Name="pm_MeetingNote" OwnershipType="UserOwned" EntitySetName="pm_meetingnotes" IsCustomEntity="1" IsActivity="0" IsActivityParty="0" IsAuditEnabled="0" IsBPFEntity="0" IsChildEntity="0" IsConnectionsEnabled="0" IsCustomizable="1" IsDocumentManagementEnabled="0" IsDocumentRecommendationsEnabled="0" IsDuplicateDetectionEnabled="0" IsEnabledForCharts="0" IsEnabledForExternalChannels="0" IsEnabledForTrace="0" IsImportable="1" IsInteractionCentricEnabled="0" IsIntersect="0" IsKnowledgeManagementEnabled="0" IsMailMergeEnabled="0" IsMappable="1" IsOfflineInMobileClient="0" IsOneNoteIntegrationEnabled="0" IsOptimisticConcurrencyEnabled="1" IsPrivate="0" IsQuickCreateEnabled="0" IsReadingPaneEnabled="1" IsReadOnlyInMobileClient="0" IsRenameable="1" IsSLAEnabled="0" IsStateModelAware="1" IsValidForAdvancedFind="1" IsValidForQueue="0" IsVisibleInMobile="0" IsVisibleInMobileClient="1" ReportViewName="Filteredpm_meetingnote" IntroducedVersion="1.0">
+        <entity Name="pm_MeetingNote">
           <LocalizedNames>
             <LocalizedName description="Meeting Note" languagecode="1033" />
           </LocalizedNames>
@@ -5540,7 +5540,7 @@
     <Entity>
       <Name LocalizedName="Goal" OriginalName="Goal">pm_Goal</Name>
       <EntityInfo>
-        <entity Name="pm_Goal" OwnershipType="UserOwned" EntitySetName="pm_goals" IsCustomEntity="1" IsActivity="0" IsActivityParty="0" IsAuditEnabled="0" IsBPFEntity="0" IsChildEntity="0" IsConnectionsEnabled="0" IsCustomizable="1" IsDocumentManagementEnabled="0" IsDocumentRecommendationsEnabled="0" IsDuplicateDetectionEnabled="0" IsEnabledForCharts="0" IsEnabledForExternalChannels="0" IsEnabledForTrace="0" IsImportable="1" IsInteractionCentricEnabled="0" IsIntersect="0" IsKnowledgeManagementEnabled="0" IsMailMergeEnabled="0" IsMappable="1" IsOfflineInMobileClient="0" IsOneNoteIntegrationEnabled="0" IsOptimisticConcurrencyEnabled="1" IsPrivate="0" IsQuickCreateEnabled="0" IsReadingPaneEnabled="1" IsReadOnlyInMobileClient="0" IsRenameable="1" IsSLAEnabled="0" IsStateModelAware="1" IsValidForAdvancedFind="1" IsValidForQueue="0" IsVisibleInMobile="0" IsVisibleInMobileClient="1" ReportViewName="Filteredpm_goal" IntroducedVersion="1.0">
+        <entity Name="pm_Goal">
           <LocalizedNames>
             <LocalizedName description="Goal" languagecode="1033" />
           </LocalizedNames>
@@ -6369,7 +6369,7 @@
     <Entity>
       <Name LocalizedName="Recognition" OriginalName="Recognition">pm_Recognition</Name>
       <EntityInfo>
-        <entity Name="pm_Recognition" OwnershipType="UserOwned" EntitySetName="pm_recognitions" IsCustomEntity="1" IsActivity="0" IsActivityParty="0" IsAuditEnabled="0" IsBPFEntity="0" IsChildEntity="0" IsConnectionsEnabled="0" IsCustomizable="1" IsDocumentManagementEnabled="0" IsDocumentRecommendationsEnabled="0" IsDuplicateDetectionEnabled="0" IsEnabledForCharts="0" IsEnabledForExternalChannels="0" IsEnabledForTrace="0" IsImportable="1" IsInteractionCentricEnabled="0" IsIntersect="0" IsKnowledgeManagementEnabled="0" IsMailMergeEnabled="0" IsMappable="1" IsOfflineInMobileClient="0" IsOneNoteIntegrationEnabled="0" IsOptimisticConcurrencyEnabled="1" IsPrivate="0" IsQuickCreateEnabled="0" IsReadingPaneEnabled="1" IsReadOnlyInMobileClient="0" IsRenameable="1" IsSLAEnabled="0" IsStateModelAware="1" IsValidForAdvancedFind="1" IsValidForQueue="0" IsVisibleInMobile="0" IsVisibleInMobileClient="1" ReportViewName="Filteredpm_recognition" IntroducedVersion="1.0">
+        <entity Name="pm_Recognition">
           <LocalizedNames>
             <LocalizedName description="Recognition Entry" languagecode="1033" />
           </LocalizedNames>
@@ -7181,7 +7181,7 @@
     <Entity>
       <Name LocalizedName="Action Item" OriginalName="Action Item">pm_ActionItem</Name>
       <EntityInfo>
-        <entity Name="pm_ActionItem" OwnershipType="UserOwned" EntitySetName="pm_actionitems" IsCustomEntity="1" IsActivity="0" IsActivityParty="0" IsAuditEnabled="0" IsBPFEntity="0" IsChildEntity="0" IsConnectionsEnabled="0" IsCustomizable="1" IsDocumentManagementEnabled="0" IsDocumentRecommendationsEnabled="0" IsDuplicateDetectionEnabled="0" IsEnabledForCharts="0" IsEnabledForExternalChannels="0" IsEnabledForTrace="0" IsImportable="1" IsInteractionCentricEnabled="0" IsIntersect="0" IsKnowledgeManagementEnabled="0" IsMailMergeEnabled="0" IsMappable="1" IsOfflineInMobileClient="0" IsOneNoteIntegrationEnabled="0" IsOptimisticConcurrencyEnabled="1" IsPrivate="0" IsQuickCreateEnabled="0" IsReadingPaneEnabled="1" IsReadOnlyInMobileClient="0" IsRenameable="1" IsSLAEnabled="0" IsStateModelAware="1" IsValidForAdvancedFind="1" IsValidForQueue="0" IsVisibleInMobile="0" IsVisibleInMobileClient="1" ReportViewName="Filteredpm_actionitem" IntroducedVersion="1.0">
+        <entity Name="pm_ActionItem">
           <LocalizedNames>
             <LocalizedName description="Action Item" languagecode="1033" />
           </LocalizedNames>
