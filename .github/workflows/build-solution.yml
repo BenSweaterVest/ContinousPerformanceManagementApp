@@ -40,29 +40,47 @@ jobs:
 
       - name: Install Power Platform CLI
         run: |
-          # Install dotnet if not present
-          wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
-          chmod +x dotnet-install.sh
-          ./dotnet-install.sh --channel 8.0 --install-dir ~/.dotnet
-          export PATH="$HOME/.dotnet:$PATH"
-          echo "$HOME/.dotnet" >> $GITHUB_PATH
+          set -euo pipefail
 
-          # Clear NuGet cache and install pac CLI with fallback
-          dotnet nuget locals all --clear
+          PAC_VERSION="1.50.1"
+          INSTALL_DIR="$HOME/.local/bin"
+          mkdir -p "$INSTALL_DIR"
 
-          # Try latest version with explicit NuGet source
-          dotnet tool install microsoft.powerapps.cli.tool \
-            --tool-path $HOME/.dotnet/tools \
-            --add-source https://api.nuget.org/v3/index.json \
-            --version 1.50.4 || \
-          # Fallback to version 1.50.1 if latest fails
-          dotnet tool install microsoft.powerapps.cli.tool \
-            --tool-path $HOME/.dotnet/tools \
-            --add-source https://api.nuget.org/v3/index.json \
-            --version 1.50.1
+          # Download official pac tarball from GitHub releases (fallback to dotnet if download fails)
+          TAR_URL="https://github.com/microsoft/PowerApps-Cli/releases/download/v${PAC_VERSION}/pac-x64.tar.gz"
 
-          export PATH="$HOME/.dotnet/tools:$PATH"
-          echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
+          echo "Attempting to download pac from ${TAR_URL}..."
+          if curl -fsSL -o /tmp/pac.tar.gz "${TAR_URL}"; then
+            tar -xzf /tmp/pac.tar.gz -C "$INSTALL_DIR"
+            chmod +x "$INSTALL_DIR/pac" || true
+            echo "$INSTALL_DIR" >> $GITHUB_PATH
+            echo "✅ pac installed to $INSTALL_DIR"
+          else
+            echo "Download failed; falling back to dotnet tool install"
+            # Fallback: try dotnet tool install with retries
+            wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
+            chmod +x dotnet-install.sh
+            ./dotnet-install.sh --channel 8.0 --install-dir ~/.dotnet
+            export PATH="$HOME/.dotnet:$PATH"
+            dotnet nuget locals all --clear
+
+            for i in 1 2 3; do
+              if dotnet tool install microsoft.powerapps.cli.tool --tool-path $HOME/.dotnet/tools --version $PAC_VERSION; then
+                echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
+                break
+              fi
+              echo "Retrying dotnet tool install ($i/3)..."
+              sleep 5
+            done
+          fi
+
+          # Verify
+          if command -v pac >/dev/null 2>&1; then
+            pac --version
+          else
+            echo "❌ ERROR: pac not found in PATH after install"
+            exit 1
+          fi
 
       - name: Validate Customizations.xml structure
         run: |
