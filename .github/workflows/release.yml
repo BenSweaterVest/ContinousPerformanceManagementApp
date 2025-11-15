@@ -91,8 +91,8 @@ jobs:
           # Cleanup
           rm -rf pac-temp pac.nupkg
 
-          # Verify installation
-          pac --version
+          # Verify installation (pac doesn't support --version, use help command)
+          pac help > /dev/null
           echo "✅ pac CLI installed successfully"
 
       - name: Validate XML files
