@@ -15,6 +15,16 @@
 .DS_Store
 Thumbs.db
 
+# Script output files
+lookup_fields.txt
+relationships.xml
+*_output.txt
+*_report.txt
+
+# Temporary work directories
+/temp_unpack/
+/verify_packed/
+
 # IDE files
 .vscode/
 .idea/
