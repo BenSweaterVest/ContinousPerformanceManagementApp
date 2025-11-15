@@ -47,15 +47,34 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libxml2-utils
+          sudo apt-get install -y libxml2-utils unzip
 
-      - name: Setup Power Platform CLI
-        uses: microsoft/powerplatform-actions/setup-pac@v1
-        with:
-          version: 'latest'
-
-      - name: Verify pac installation
+      - name: Install Power Platform CLI (Linux)
         run: |
+          echo "Downloading pac CLI for Linux..."
+
+          # Download the NuGet package for Linux
+          PAC_VERSION="1.49.4"
+          PACKAGE_URL="https://www.nuget.org/api/v2/package/Microsoft.PowerApps.CLI.Core.linux-x64/${PAC_VERSION}"
+
+          curl -L -o pac.nupkg "${PACKAGE_URL}"
+
+          # NuGet packages are ZIP files
+          unzip -q pac.nupkg -d pac-temp
+
+          # Find and extract the pac binary
+          find pac-temp -name "pac" -type f -executable -exec cp {} /usr/local/bin/ \;
+
+          # If not found as executable, look for it and make it executable
+          if [ ! -f "/usr/local/bin/pac" ]; then
+            find pac-temp -name "pac" -type f -exec sudo cp {} /usr/local/bin/ \;
+            sudo chmod +x /usr/local/bin/pac
+          fi
+
+          # Cleanup
+          rm -rf pac-temp pac.nupkg
+
+          # Verify installation
           pac --version
           echo "✅ pac CLI installed successfully"
 
