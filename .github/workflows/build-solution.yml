@@ -154,9 +154,10 @@ jobs:
 
           # Create ZIP from packed format (zip all files at root level)
           cd packed_solution
-          zip -r "../${ZIP_NAME}" *
-          # Also include [Content_Types].xml (starts with bracket, not matched by *)
-          zip -u "../${ZIP_NAME}" "[Content_Types].xml"
+          # The * glob matches all files including [Content_Types].xml
+          zip -r "../${ZIP_NAME}" * || true
+          # Explicitly add [Content_Types].xml if it wasn't included by * (shouldn't happen but ensures it's there)
+          zip -u "../${ZIP_NAME}" "[Content_Types].xml" 2>/dev/null || true
           cd ..
 
           # Cleanup
