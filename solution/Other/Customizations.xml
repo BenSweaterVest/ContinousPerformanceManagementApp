@@ -177,7 +177,6 @@
               <LogicalName>pm_startdate</LogicalName>
               <RequiredLevel>none</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <Format>DateAndTime</Format>
               <IntroducedVersion>2.0.0.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
       <IsAuditEnabled>0</IsAuditEnabled>
@@ -2186,7 +2185,6 @@
               <LogicalName>pm_evaluationdate</LogicalName>
               <RequiredLevel>applicationrequired</RequiredLevel>
               <DisplayMask>ValidForAdvancedFind</DisplayMask>
-              <Format>DateAndTime</Format>
               <IntroducedVersion>2.0.0.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
       <IsAuditEnabled>0</IsAuditEnabled>
@@ -3322,7 +3320,6 @@
               <Name>pm_completeddate</Name>
               <LogicalName>pm_completeddate</LogicalName>
               <RequiredLevel>none</RequiredLevel>
-              <Format>DateAndTime</Format>
               <IntroducedVersion>2.0.0.0</IntroducedVersion>
       <IsAuditEnabled>0</IsAuditEnabled>
                     <SourceType>0</SourceType>
@@ -4150,7 +4147,6 @@
               <Name>pm_targetdate</Name>
               <LogicalName>pm_targetdate</LogicalName>
               <RequiredLevel>none</RequiredLevel>
-              <Format>DateAndTime</Format>
               <IntroducedVersion>2.0.0.0</IntroducedVersion>
       <IsAuditEnabled>0</IsAuditEnabled>
                     <SourceType>0</SourceType>
@@ -5048,7 +5044,6 @@
               <Name>pm_meetingdate</Name>
               <LogicalName>pm_meetingdate</LogicalName>
               <RequiredLevel>applicationrequired</RequiredLevel>
-              <Format>DateAndTime</Format>
               <IntroducedVersion>2.0.0.0</IntroducedVersion>
       <IsAuditEnabled>0</IsAuditEnabled>
                     <SourceType>0</SourceType>
@@ -6023,7 +6018,6 @@
               <Name>pm_duedate</Name>
               <LogicalName>pm_duedate</LogicalName>
               <RequiredLevel>none</RequiredLevel>
-              <Format>DateAndTime</Format>
               <IntroducedVersion>2.0.0.0</IntroducedVersion>
       <IsAuditEnabled>0</IsAuditEnabled>
                     <SourceType>0</SourceType>
@@ -6844,7 +6838,6 @@
               <Name>pm_recognitiondate</Name>
               <LogicalName>pm_recognitiondate</LogicalName>
               <RequiredLevel>applicationrequired</RequiredLevel>
-              <Format>DateAndTime</Format>
               <IntroducedVersion>2.0.0.0</IntroducedVersion>
       <IsAuditEnabled>0</IsAuditEnabled>
                     <SourceType>0</SourceType>
@@ -7747,7 +7740,6 @@
               <Name>pm_duedate</Name>
               <LogicalName>pm_duedate</LogicalName>
               <RequiredLevel>applicationrequired</RequiredLevel>
-              <Format>DateAndTime</Format>
               <IntroducedVersion>2.0.0.0</IntroducedVersion>
       <IsAuditEnabled>0</IsAuditEnabled>
                     <SourceType>0</SourceType>
@@ -7814,7 +7806,6 @@
               <Name>pm_completeddate</Name>
               <LogicalName>pm_completeddate</LogicalName>
               <RequiredLevel>none</RequiredLevel>
-              <Format>DateAndTime</Format>
               <IntroducedVersion>2.0.0.0</IntroducedVersion>
       <IsAuditEnabled>0</IsAuditEnabled>
                     <SourceType>0</SourceType>
