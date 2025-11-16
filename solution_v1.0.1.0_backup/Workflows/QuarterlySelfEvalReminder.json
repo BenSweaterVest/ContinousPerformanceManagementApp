@@ -1,0 +1,104 @@
+{
+  "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "$connections": {
+      "defaultValue": {},
+      "type": "Object"
+    }
+  },
+  "triggers": {
+    "Recurrence": {
+      "recurrence": {
+        "frequency": "Month",
+        "interval": 1,
+        "schedule": {
+          "monthDays": [1],
+          "hours": ["8"],
+          "minutes": [0]
+        },
+        "timeZone": "Central Standard Time"
+      },
+      "type": "Recurrence",
+      "conditions": [
+        {
+          "expression": "@or(or(equals(month(utcNow()), 1), equals(month(utcNow()), 4)), or(equals(month(utcNow()), 7), equals(month(utcNow()), 10)))"
+        }
+      ]
+    }
+  },
+  "actions": {
+    "List_Active_Staff": {
+      "runAfter": {},
+      "type": "OpenApiConnection",
+      "inputs": {
+        "host": {
+          "connectionName": "shared_commondataserviceforapps",
+          "operationId": "ListRecords",
+          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+        },
+        "parameters": {
+          "entityName": "pm_staffmember",
+          "$filter": "pm_status eq 1"
+        }
+      }
+    },
+    "Determine_Current_Quarter": {
+      "runAfter": {
+        "List_Active_Staff": ["Succeeded"]
+      },
+      "type": "Compose",
+      "inputs": "@switch(month(utcNow()), 1, 'Q3', 2, 'Q3', 3, 'Q3', 4, 'Q4', 5, 'Q4', 6, 'Q4', 7, 'Q1', 8, 'Q1', 9, 'Q1', 10, 'Q2', 11, 'Q2', 12, 'Q2', 'Q1')"
+    },
+    "Determine_Fiscal_Year": {
+      "runAfter": {
+        "Determine_Current_Quarter": ["Succeeded"]
+      },
+      "type": "Compose",
+      "inputs": "@if(greaterOrEquals(month(utcNow()), 7), add(year(utcNow()), 1), year(utcNow()))"
+    },
+    "Apply_to_each_staff_member": {
+      "foreach": "@outputs('List_Active_Staff')?['body/value']",
+      "actions": {
+        "Get_Staff_User_Info": {
+          "runAfter": {},
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_office365users",
+              "operationId": "UserProfile_V2",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365users"
+            },
+            "parameters": {
+              "userId": "@items('Apply_to_each_staff_member')?['_pm_staffmember_value']"
+            }
+          }
+        },
+        "Send_self_eval_reminder": {
+          "runAfter": {
+            "Get_Staff_User_Info": ["Succeeded"]
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_office365",
+              "operationId": "SendEmailV2",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+            },
+            "parameters": {
+              "emailMessage/To": "@outputs('Get_Staff_User_Info')?['body/mail']",
+              "emailMessage/Subject": "Quarterly Self-Evaluation Due - @{outputs('Determine_Current_Quarter')} FY@{outputs('Determine_Fiscal_Year')}",
+              "emailMessage/Body": "<html><body><h2>Quarterly Self-Evaluation</h2><p>Hi @{outputs('Get_Staff_User_Info')?['body/givenName']},</p><p>It's time to complete your quarterly self-evaluation for <strong>@{outputs('Determine_Current_Quarter')}</strong> of Fiscal Year <strong>@{outputs('Determine_Fiscal_Year')}</strong>.</p><p>Please complete your self-assessment in the Performance Management System app by answering all 12 evaluation questions.</p><p><a href='https://apps.powerapps.com'>Open Performance Management App</a></p><p>Thank you!</p></body></html>",
+              "emailMessage/Importance": "High"
+            }
+          }
+        }
+      },
+      "runAfter": {
+        "Determine_Fiscal_Year": ["Succeeded"]
+      },
+      "type": "Foreach"
+    }
+  },
+  "outputs": {}
+}

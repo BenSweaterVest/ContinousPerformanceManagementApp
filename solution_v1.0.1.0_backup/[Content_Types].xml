@@ -2,6 +2,5 @@
 <Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
   <Default Extension="xml" ContentType="application/octet-stream" />
   <Default Extension="json" ContentType="application/octet-stream" />
-  <Default Extension="msapp" ContentType="application/octet-stream" />
-  <Override PartName="/CanvasApps/pm_performancemanagement_12345_BackgroundImageUri" ContentType="application/octet-stream" />
+  <Default Extension="md" ContentType="text/plain" />
 </Types>
