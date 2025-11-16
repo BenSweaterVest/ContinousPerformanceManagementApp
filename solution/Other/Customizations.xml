@@ -78,9 +78,7 @@
               <IsSearchable>1</IsSearchable>
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
-              <IsLocalizable>0</IsLocalizable>
-              <Format>text</Format>
-              <IntroducedVersion>2.0.0.0</IntroducedVersion>
+              <IsLocalizable>0</IsLocalizable>              <IntroducedVersion>2.0.0.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
               <IsRenameable>1</IsRenameable>
               <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -117,9 +115,7 @@
               <IsSearchable>1</IsSearchable>
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
-              <IsLocalizable>0</IsLocalizable>
-              <Format>text</Format>
-              <IntroducedVersion>2.0.0.0</IntroducedVersion>
+              <IsLocalizable>0</IsLocalizable>              <IntroducedVersion>2.0.0.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
               <IsRenameable>1</IsRenameable>
               <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -156,9 +152,7 @@
               <IsSearchable>1</IsSearchable>
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
-              <IsLocalizable>0</IsLocalizable>
-              <Format>text</Format>
-              <IntroducedVersion>2.0.0.0</IntroducedVersion>
+              <IsLocalizable>0</IsLocalizable>              <IntroducedVersion>2.0.0.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
               <IsRenameable>1</IsRenameable>
               <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -1041,6 +1035,45 @@
                 <Description description="Unique identifier for Evaluation Question instances" languagecode="1033" />
               </Descriptions>
             <MaxLength>100</MaxLength>
+            </attribute>
+            <attribute PhysicalName="pm_name">
+              <Type>nvarchar</Type>
+              <Name>pm_name</Name>
+              <LogicalName>pm_name</LogicalName>
+              <RequiredLevel>required</RequiredLevel>
+              <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
+              <MaxLength>100</MaxLength>
+              <Length>100</Length>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>0</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat></AutoNumberFormat>
+              <IsSearchable>1</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>1</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
+              <IntroducedVersion>2.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <displaynames>
+                <displayname description="Name" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Primary name field" languagecode="1033" />
+              </Descriptions>
             </attribute>
             <attribute PhysicalName="pm_questiontext">
               <Type>memo</Type>
@@ -1958,9 +1991,7 @@
               <IsSearchable>1</IsSearchable>
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
-              <IsLocalizable>0</IsLocalizable>
-              <Format>text</Format>
-              <IntroducedVersion>2.0.0.0</IntroducedVersion>
+              <IsLocalizable>0</IsLocalizable>              <IntroducedVersion>2.0.0.0</IntroducedVersion>
               <IsCustomizable>1</IsCustomizable>
               <IsRenameable>1</IsRenameable>
               <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -3068,9 +3099,7 @@
               <IsSearchable>1</IsSearchable>
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
-              <IsLocalizable>0</IsLocalizable>
-              <Format>text</Format>
-              <IntroducedVersion>2.0.0.0</IntroducedVersion>
+              <IsLocalizable>0</IsLocalizable>              <IntroducedVersion>2.0.0.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Self Evaluation ID" languagecode="1033" />
               </displaynames>
@@ -4091,6 +4120,45 @@
               </displaynames>
             <MaxLength>100</MaxLength>
             </attribute>
+            <attribute PhysicalName="pm_name">
+              <Type>nvarchar</Type>
+              <Name>pm_name</Name>
+              <LogicalName>pm_name</LogicalName>
+              <RequiredLevel>required</RequiredLevel>
+              <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
+              <MaxLength>100</MaxLength>
+              <Length>100</Length>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>0</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat></AutoNumberFormat>
+              <IsSearchable>1</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>1</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
+              <IntroducedVersion>2.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <displaynames>
+                <displayname description="Name" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Primary name field" languagecode="1033" />
+              </Descriptions>
+            </attribute>
             <attribute PhysicalName="pm_goaldescription">
               <Type>memo</Type>
               <Name>pm_goaldescription</Name>
@@ -5011,9 +5079,7 @@
               <IsSearchable>1</IsSearchable>
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
-              <IsLocalizable>0</IsLocalizable>
-              <Format>text</Format>
-              <IntroducedVersion>2.0.0.0</IntroducedVersion>
+              <IsLocalizable>0</IsLocalizable>              <IntroducedVersion>2.0.0.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Meeting ID" languagecode="1033" />
               </displaynames>
@@ -5890,6 +5956,45 @@
                 <displayname description="Goal ID" languagecode="1033" />
               </displaynames>
             <MaxLength>100</MaxLength>
+            </attribute>
+            <attribute PhysicalName="pm_name">
+              <Type>nvarchar</Type>
+              <Name>pm_name</Name>
+              <LogicalName>pm_name</LogicalName>
+              <RequiredLevel>required</RequiredLevel>
+              <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
+              <MaxLength>100</MaxLength>
+              <Length>100</Length>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>0</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat></AutoNumberFormat>
+              <IsSearchable>1</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>1</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
+              <IntroducedVersion>2.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <displaynames>
+                <displayname description="Name" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Primary name field" languagecode="1033" />
+              </Descriptions>
             </attribute>
             <attribute PhysicalName="pm_goaldescription">
               <Type>memo</Type>
@@ -6807,9 +6912,7 @@
               <IsSearchable>1</IsSearchable>
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
-              <IsLocalizable>0</IsLocalizable>
-              <Format>text</Format>
-              <IntroducedVersion>2.0.0.0</IntroducedVersion>
+              <IsLocalizable>0</IsLocalizable>              <IntroducedVersion>2.0.0.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Recognition ID" languagecode="1033" />
               </displaynames>
@@ -7656,9 +7759,7 @@
               <IsSearchable>1</IsSearchable>
               <IsFilterable>0</IsFilterable>
               <IsRetrievable>1</IsRetrievable>
-              <IsLocalizable>0</IsLocalizable>
-              <Format>text</Format>
-              <IntroducedVersion>2.0.0.0</IntroducedVersion>
+              <IsLocalizable>0</IsLocalizable>              <IntroducedVersion>2.0.0.0</IntroducedVersion>
               <displaynames>
                 <displayname description="Action Item ID" languagecode="1033" />
               </displaynames>
