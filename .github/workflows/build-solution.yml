@@ -154,9 +154,10 @@ jobs:
 
           # Create ZIP from packed format (zip all files at root level)
           cd packed_solution
-          zip -r "../${ZIP_NAME}" *
-          # Also include [Content_Types].xml (starts with bracket, not matched by *)
-          zip -u "../${ZIP_NAME}" "[Content_Types].xml"
+          # The * glob matches all files including [Content_Types].xml
+          zip -r "../${ZIP_NAME}" * || true
+          # Explicitly add [Content_Types].xml if it wasn't included by * (shouldn't happen but ensures it's there)
+          zip -u "../${ZIP_NAME}" "[Content_Types].xml" 2>/dev/null || true
           cd ..
 
           # Cleanup
@@ -173,7 +174,7 @@ jobs:
             unzip -l "${ZIP_NAME}" | head -20
 
             # Check for required files at root
-            if unzip -l "${ZIP_NAME}" | grep -q "^ *[0-9]* *[0-9-]* [0-9:]* solution.xml$"; then
+            if unzip -l "${ZIP_NAME}" | grep -q "^ *[0-9]* *[0-9-]* [0-9:]* *solution.xml$"; then
               echo "✅ solution.xml found at root"
             else
               echo "❌ ERROR: solution.xml not at root"
@@ -182,7 +183,7 @@ jobs:
               exit 1
             fi
 
-            if unzip -l "${ZIP_NAME}" | grep -q "^ *[0-9]* *[0-9-]* [0-9:]* customizations.xml$"; then
+            if unzip -l "${ZIP_NAME}" | grep -q "^ *[0-9]* *[0-9-]* [0-9:]* *customizations.xml$"; then
               echo "✅ customizations.xml found at root"
             else
               echo "❌ ERROR: customizations.xml not at root"
@@ -191,7 +192,7 @@ jobs:
               exit 1
             fi
 
-            if unzip -l "${ZIP_NAME}" | grep -q "^ *[0-9]* *[0-9-]* [0-9:]* \[Content_Types\].xml$"; then
+            if unzip -l "${ZIP_NAME}" | grep -q "^ *[0-9]* *[0-9-]* [0-9:]* *\[Content_Types\].xml$"; then
               echo "✅ [Content_Types].xml found at root"
             else
               echo "❌ ERROR: [Content_Types].xml not at root"
