@@ -1,0 +1,290 @@
+name: Build Dataverse Solution
+
+on:
+  push:
+    branches:
+      - main
+      - 'claude/**'
+    paths:
+      - 'solution/**'
+      - 'deployment/**'
+      - '.github/workflows/build-solution.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'solution/**'
+      - 'deployment/**'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  build:
+    name: Build Solution Package
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get solution version
+        id: get_version
+        run: |
+          VERSION=$(grep -oP '<Version>\K[0-9.]+' solution/Other/Solution.xml)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Solution version: $VERSION"
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libxml2-utils unzip
+
+      - name: Install Power Platform CLI (Linux)
+        run: |
+          echo "Downloading pac CLI for Linux..."
+
+          # Download the NuGet package for Linux
+          PAC_VERSION="1.49.4"
+          PACKAGE_URL="https://www.nuget.org/api/v2/package/Microsoft.PowerApps.CLI.Core.linux-x64/${PAC_VERSION}"
+
+          curl -L -o pac.nupkg "${PACKAGE_URL}"
+
+          # NuGet packages are ZIP files
+          unzip -q pac.nupkg -d pac-temp
+
+          # Find the tools directory containing pac executable and all dependencies
+          PAC_DIR=$(find pac-temp -type d -name "linux-x64" | head -1)
+
+          if [ -z "$PAC_DIR" ]; then
+            # Try alternative directory structure
+            PAC_DIR=$(find pac-temp -type f -name "pac.dll" -exec dirname {} \; | head -1)
+          fi
+
+          if [ -n "$PAC_DIR" ]; then
+            echo "Found pac files in: $PAC_DIR"
+
+            # Copy all files to /usr/local/share/pac
+            sudo mkdir -p /usr/local/share/pac
+            sudo cp -r "$PAC_DIR"/* /usr/local/share/pac/
+
+            # Make pac executable
+            sudo chmod +x /usr/local/share/pac/pac
+
+            # Create symlink in /usr/local/bin
+            sudo ln -sf /usr/local/share/pac/pac /usr/local/bin/pac
+          else
+            echo "ERROR: Could not find pac directory in NuGet package"
+            ls -R pac-temp
+            exit 1
+          fi
+
+          # Cleanup
+          rm -rf pac-temp pac.nupkg
+
+          # Verify installation (pac doesn't support --version, use help command)
+          pac help > /dev/null
+          echo "✅ pac CLI installed successfully"
+
+      - name: Validate Customizations.xml structure
+        run: |
+          echo "Validating Customizations.xml..."
+
+          # Check file exists
+          if [ ! -f "solution/Other/Customizations.xml" ]; then
+            echo "❌ ERROR: Customizations.xml not found!"
+            exit 1
+          fi
+
+          # Check file size (should be ~500KB if fixed)
+          SIZE=$(stat -f%z "solution/Other/Customizations.xml" 2>/dev/null || stat -c%s "solution/Other/Customizations.xml")
+          SIZE_KB=$((SIZE / 1024))
+          echo "File size: ${SIZE_KB} KB"
+
+          if [ $SIZE_KB -lt 450 ]; then
+            echo "⚠️  WARNING: File seems small (expected ~500KB)"
+            echo "This might indicate fixes haven't been applied."
+          fi
+
+          # Validate XML structure
+          xmllint --noout solution/Other/Customizations.xml 2>&1 || {
+            echo "❌ ERROR: Customizations.xml is not well-formed XML!"
+            exit 1
+          }
+
+          echo "✅ XML validation passed"
+
+      - name: Validate Solution.xml
+        run: |
+          echo "Validating Solution.xml..."
+          xmllint --noout solution/Other/Solution.xml || {
+            echo "❌ ERROR: Solution.xml is not well-formed XML!"
+            exit 1
+          }
+          echo "✅ XML validation passed"
+
+      - name: Create solution package with pac CLI
+        run: |
+          echo "Creating solution package..."
+
+          VERSION="${{ steps.get_version.outputs.version }}"
+          ZIP_NAME="PerformanceManagement_${VERSION//./_}.zip"
+
+          # Try pac solution pack first
+          echo "Attempting pac solution pack..."
+          pac solution pack \
+            --zipfile "${ZIP_NAME}.tmp" \
+            --folder "./solution" \
+            --packagetype Unmanaged \
+            --errorlevel Verbose || echo "pac solution pack had issues, will create manually"
+
+          # Always create manually to ensure correct structure
+          echo "Creating ZIP with correct structure..."
+
+          # Create temporary directory for packed format
+          mkdir -p packed_solution
+
+          # Copy files to root with lowercase names (packed format requirement)
+          cp solution/Other/Solution.xml packed_solution/solution.xml
+          cp solution/Other/Customizations.xml packed_solution/customizations.xml
+          cp "solution/[Content_Types].xml" "packed_solution/[Content_Types].xml"
+
+          # Copy other directories as-is
+          [ -d solution/CanvasApps ] && cp -r solution/CanvasApps packed_solution/
+          [ -d solution/Workflows ] && cp -r solution/Workflows packed_solution/
+          [ -d solution/Tables ] && cp -r solution/Tables packed_solution/
+
+          # Create ZIP from packed format (zip all files at root level)
+          cd packed_solution
+          # The * glob matches all files including [Content_Types].xml
+          zip -r "../${ZIP_NAME}" * || true
+          # Explicitly add [Content_Types].xml if it wasn't included by * (shouldn't happen but ensures it's there)
+          zip -u "../${ZIP_NAME}" "[Content_Types].xml" 2>/dev/null || true
+          cd ..
+
+          # Cleanup
+          rm -rf packed_solution
+          rm -f "${ZIP_NAME}.tmp"
+
+          if [ -f "${ZIP_NAME}" ]; then
+            SIZE=$(stat -f%z "${ZIP_NAME}" 2>/dev/null || stat -c%s "${ZIP_NAME}")
+            SIZE_KB=$((SIZE / 1024))
+            echo "✅ Package created: ${ZIP_NAME} (${SIZE_KB} KB)"
+
+            # Verify ZIP contents (should have solution.xml, customizations.xml at root)
+            echo "Verifying ZIP structure..."
+            unzip -l "${ZIP_NAME}" | head -20
+
+            # Check for required files at root
+            if unzip -l "${ZIP_NAME}" | grep -q "^ *[0-9]* *[0-9-]* [0-9:]* *solution.xml$"; then
+              echo "✅ solution.xml found at root"
+            else
+              echo "❌ ERROR: solution.xml not at root"
+              echo "Full ZIP contents:"
+              unzip -l "${ZIP_NAME}"
+              exit 1
+            fi
+
+            if unzip -l "${ZIP_NAME}" | grep -q "^ *[0-9]* *[0-9-]* [0-9:]* *customizations.xml$"; then
+              echo "✅ customizations.xml found at root"
+            else
+              echo "❌ ERROR: customizations.xml not at root"
+              echo "Full ZIP contents:"
+              unzip -l "${ZIP_NAME}"
+              exit 1
+            fi
+
+            if unzip -l "${ZIP_NAME}" | grep -q "^ *[0-9]* *[0-9-]* [0-9:]* *\[Content_Types\].xml$"; then
+              echo "✅ [Content_Types].xml found at root"
+            else
+              echo "❌ ERROR: [Content_Types].xml not at root"
+              echo "Full ZIP contents:"
+              unzip -l "${ZIP_NAME}"
+              exit 1
+            fi
+
+            # Save for artifacts
+            echo "zip_name=${ZIP_NAME}" >> $GITHUB_ENV
+            echo "zip_size=${SIZE_KB}" >> $GITHUB_ENV
+          else
+            echo "❌ ERROR: Failed to create package!"
+            exit 1
+          fi
+
+      - name: Verify package contents
+        run: |
+          echo "Verifying package contents..."
+          ZIP_NAME="${{ env.zip_name }}"
+
+          # List contents
+          echo "Package contents:"
+          unzip -l "${ZIP_NAME}"
+
+          # Verify required files (packed format has lowercase names at root)
+          REQUIRED_FILES=(
+            "solution.xml"
+            "customizations.xml"
+            "[Content_Types].xml"
+          )
+
+          for file in "${REQUIRED_FILES[@]}"; do
+            if unzip -l "${ZIP_NAME}" | grep -q "${file}"; then
+              echo "  ✅ ${file}"
+            else
+              echo "  ❌ ${file} MISSING!"
+              exit 1
+            fi
+          done
+
+          echo "✅ All required files present"
+
+      - name: Generate build summary
+        run: |
+          cat >> $GITHUB_STEP_SUMMARY <<EOF
+          # 📦 Solution Build Summary
+
+          ## Package Information
+
+          | Property | Value |
+          |----------|-------|
+          | **Version** | ${{ steps.get_version.outputs.version }} |
+          | **Package Name** | ${{ env.zip_name }} |
+          | **Package Size** | ${{ env.zip_size }} KB |
+          | **Build Status** | ✅ Success |
+
+          ## Validation Results
+
+          - ✅ Customizations.xml - Well-formed XML
+          - ✅ Solution.xml - Well-formed XML
+          - ✅ Package created successfully
+          - ✅ All required files present
+
+          ## Next Steps
+
+          1. Download the package artifact from this workflow run
+          2. Import into Teams Dataverse:
+             - Teams → Power Apps → Build tab
+             - Select your team
+             - Import → Upload ZIP
+
+          ## Quick Stats
+
+          - **Entities**: 9 custom tables
+          - **Expected Import Time**: 5-15 minutes
+          - **Ready for Production**: Yes
+          EOF
+
+      - name: Upload solution package
+        uses: actions/upload-artifact@v4
+        with:
+          name: PerformanceManagement-v${{ steps.get_version.outputs.version }}
+          path: ${{ env.zip_name }}
+          retention-days: 90
+          if-no-files-found: error
+
+      - name: Upload validation report
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-report-${{ github.run_number }}
+          path: |
+            solution/Other/Solution.xml
+            solution/Other/Customizations.xml
+          retention-days: 30

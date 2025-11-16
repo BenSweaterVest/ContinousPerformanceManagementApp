@@ -1,0 +1,171 @@
+✅ Universal Prompt for Coding Agents: Build a Teams-Hosted Power App Using Dataverse + Power Automate
+
+Below is a well-structured, coding-agent-friendly prompt you can use every time you want Claude (or another LLM) to create or modify a Teams-embedded Power App backed by Dataverse for Teams, with Power Automate flows, and exportable as a Solution.
+
+You can reuse this for any project.
+
+📌 MASTER PROMPT: Generate a Teams Dataverse Power App (with Automation)
+
+You are a coding agent building a complete Power Platform solution designed specifically for Teams environments, using Dataverse for Teams and Power Automate.
+Your output must follow Microsoft’s constraints for Teams-hosted Power Apps.
+
+🎯 Purpose
+
+Generate:
+
+A fully implemented Canvas App (Teams-hosted)
+
+A Data schema that works specifically with Dataverse for Teams
+
+Power Automate flows using the Teams Dataverse connector
+
+A solution that can be exported/imported using the Power Platform CLI
+
+All code as unpacked ALM-ready source files, not .msapp blobs
+
+🧩 Requirements & Constraints (Microsoft-Accurate)
+1. Environment
+
+You must generate resources that run correctly in:
+
+Microsoft Teams Power Apps
+
+Dataverse for Teams environment
+
+Teams-licensed connectors only
+
+Power Automate for Teams context
+
+2. Dataverse for Teams Limitations
+
+All schema must respect:
+
+No complex relationships (no N:N, avoid cascading)
+
+No alternate keys
+
+Only standard field types (text, number, Boolean, choice, lookup)
+
+Storage limits: 2GB per team
+
+Tables cannot use premium capabilities
+
+3. Canvas App Requirements
+
+The exported app must:
+
+Use YAML Canvas App source format
+
+Include screens, components, and formulas
+
+Use only connectors available in Teams environments
+
+Use responsive layout templates when possible
+
+Avoid formulas not supported in Teams-hosted apps
+(e.g., LoadData/SaveData, some advanced components)
+
+4. Power Automate Flows
+
+All flows must:
+
+Use the Dataverse for Teams connector, not full Dataverse
+
+Use Teams-scoped actions (e.g., Post message in channel)
+
+Be generated as unpacked .json + definition folder for ALM
+
+Avoid premium actions
+
+5. Solution Packaging
+
+Provide:
+
+Full solution.xml
+
+Canvas app YAML
+
+Flow definitions
+
+Dataverse tables + metadata XML
+
+Folder structure matching pac solution unpack
+
+Example structure:
+
+/solution_name/
+  /CanvasApps/
+  /Workflows/
+  /Entities/
+  /EnvironmentVariables/
+  solution.xml
+
+6. Deliverables
+
+Return everything as:
+
+Markdown-formatted file tree
+
+Every file fully written (don’t use placeholders)
+
+Include instructions to re-pack using pac solution pack
+
+📦 Required Output Format
+A. Final Deliverables
+
+Complete file structure
+
+All YAML, XML, and JSON files fully written out
+
+Data model documentation
+
+Power Automate automation logic + definitions
+
+README.md with:
+
+Deployment steps
+
+Import instructions
+
+Common troubleshooting (Teams Dataverse issues)
+
+B. Agent Behavior
+
+If something is ambiguous, choose the most Teams-compatible option
+
+Optimize for clarity, maintainability, and Teams deployment success
+
+Avoid features not available in Dataverse for Teams
+
+Output must be fully functional, not conceptual
+
+📘 Example Project Reference (Use Only as Guidance)
+
+Here is a previous GitHub example showing issues we encountered:
+github.com/BenSweaterVest/ContinousPerformanceManagementApp
+
+Common problems you must avoid:
+
+Using premium Dataverse connectors
+
+Using LoadData/SaveData
+
+Using schema types unsupported in Teams
+
+Exporting apps as binary .msapp instead of YAML
+
+Not generating ALM-compatible solutions
+
+🧪 Output Request
+
+Now generate a new generalized boilerplate starter Power App that works in Teams Dataverse, with:
+
+3 tables
+
+1 canvas app
+
+2 Power Automate flows (Create + Approval)
+
+Fully ALM-compatible solution folder
+
+END OF PROMPT

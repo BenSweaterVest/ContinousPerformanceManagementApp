@@ -1,0 +1,61 @@
+# Power Platform Solution Files
+*.zip
+!releases/PerformanceManagement_v*.zip  # Keep official releases only
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+*~
+.DS_Store
+__MACOSX/
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Desktop.ini
+
+# Backup files
+*.bak
+*_backup/
+*.backup
+
+# Editor temp files
+*.swp
+*.swo
+*~
+\#*\#
+.\#*
