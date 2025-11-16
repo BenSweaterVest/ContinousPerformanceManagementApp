@@ -1907,7 +1907,7 @@
       <IsRetrievable>0</IsRetrievable>
       <IsLocalizable>0</IsLocalizable>
               <Targets>
-                <Target>systemuser</Target>
+                <Target>pm_staffmember</Target>
               </Targets>
               <displaynames>
                 <displayname description="Evaluator" languagecode="1033" />
@@ -7203,7 +7203,7 @@
               <IntroducedVersion>1.0</IntroducedVersion>
       <IsAuditEnabled>0</IsAuditEnabled>
               <Targets>
-                <Target>systemuser</Target>
+                <Target>pm_staffmember</Target>
               </Targets>
                     <SourceType>0</SourceType>
       <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
