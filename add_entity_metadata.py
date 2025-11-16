@@ -39,7 +39,7 @@ ENTITY_METADATA = """          <EntitySetName>{entity_set_name}</EntitySetName>
           <IsVisibleInMobile>0</IsVisibleInMobile>
           <IsVisibleInMobileClient>1</IsVisibleInMobileClient>
           <IsReadOnlyInMobileClient>0</IsReadOnlyInMobileClient>
-          <IsOfflineInMobileClient>1</IsOfflineInMobileClient>
+          <IsOfflineInMobileClient>0</IsOfflineInMobileClient>
           <DaysSinceRecordLastModified>0</DaysSinceRecordLastModified>
           <MobileOfflineFilters></MobileOfflineFilters>
           <IsMapiGridEnabled>0</IsMapiGridEnabled>
