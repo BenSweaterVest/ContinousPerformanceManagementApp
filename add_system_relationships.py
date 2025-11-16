@@ -17,31 +17,27 @@ ENTITIES = [
     ("pm_ActionItem", "pm_actionitem"),
 ]
 
-def generate_system_relationship(rel_name, rel_type, referencing_entity, referenced_entity, referencing_attr):
-    """Generate XML for a system relationship"""
+def generate_system_relationship(rel_name, rel_type, referencing_entity, referenced_entity, referencing_attr, description=""):
+    """Generate XML for a system relationship matching Microsoft's exact format"""
     return f"""    <EntityRelationship Name="{rel_name}">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>{referencing_entity}</ReferencingEntityName>
       <ReferencedEntityName>{referenced_entity}</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
       <ReferencingAttributeName>{referencing_attr}</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="{description}" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>{"1" if "createdby" in rel_name or "modifiedby" in rel_name or "owner" in rel_name else "0"}</IsValidForAdvancedFind>
-      <SchemaName>{rel_name}</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
 """
 
@@ -57,7 +53,8 @@ for pascal_name, schema_name in ENTITIES:
         "OneToMany",
         pascal_name,
         "BusinessUnit",
-        "owningbusinessunit"
+        "OwningBusinessUnit",
+        "Unique identifier for the business unit that owns the record"
     ))
 
     # 2. Created By relationship
@@ -66,7 +63,8 @@ for pascal_name, schema_name in ENTITIES:
         "OneToMany",
         pascal_name,
         "SystemUser",
-        "createdby"
+        "CreatedBy",
+        "Unique identifier of the user who created the record"
     ))
 
     # 3. Modified By relationship
@@ -75,7 +73,8 @@ for pascal_name, schema_name in ENTITIES:
         "OneToMany",
         pascal_name,
         "SystemUser",
-        "modifiedby"
+        "ModifiedBy",
+        "Unique identifier of the user who modified the record"
     ))
 
     # 4. Owner relationship
@@ -84,7 +83,8 @@ for pascal_name, schema_name in ENTITIES:
         "OneToMany",
         pascal_name,
         "Owner",
-        "ownerid"
+        "OwnerId",
+        "Owner Id"
     ))
 
     # 5. Team relationship
@@ -93,7 +93,8 @@ for pascal_name, schema_name in ENTITIES:
         "OneToMany",
         pascal_name,
         "Team",
-        "owningteam"
+        "OwningTeam",
+        "Unique identifier for the team that owns the record"
     ))
 
     # 6. User relationship
@@ -102,7 +103,8 @@ for pascal_name, schema_name in ENTITIES:
         "OneToMany",
         pascal_name,
         "SystemUser",
-        "owninguser"
+        "OwningUser",
+        "Unique identifier for the user that owns the record"
     ))
 
 print(f"Generated {len(all_relationships)} system relationships (6 per entity × 9 entities)")

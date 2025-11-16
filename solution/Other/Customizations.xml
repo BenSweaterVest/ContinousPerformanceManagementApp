@@ -8128,1300 +8128,1086 @@
     <!-- System Relationships (6 per entity × 9 entities = 54 total) -->
     <EntityRelationship Name="business_unit_pm_staffmember">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_StaffMember</ReferencingEntityName>
       <ReferencedEntityName>BusinessUnit</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>owningbusinessunit</ReferencingAttributeName>
+      <ReferencingAttributeName>OwningBusinessUnit</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier for the business unit that owns the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>0</IsValidForAdvancedFind>
-      <SchemaName>business_unit_pm_staffmember</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="lk_pm_staffmember_createdby">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_StaffMember</ReferencingEntityName>
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>createdby</ReferencingAttributeName>
+      <ReferencingAttributeName>CreatedBy</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier of the user who created the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-      <SchemaName>lk_pm_staffmember_createdby</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="lk_pm_staffmember_modifiedby">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_StaffMember</ReferencingEntityName>
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>modifiedby</ReferencingAttributeName>
+      <ReferencingAttributeName>ModifiedBy</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier of the user who modified the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-      <SchemaName>lk_pm_staffmember_modifiedby</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="owner_pm_staffmember">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_StaffMember</ReferencingEntityName>
       <ReferencedEntityName>Owner</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>ownerid</ReferencingAttributeName>
+      <ReferencingAttributeName>OwnerId</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Owner Id" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-      <SchemaName>owner_pm_staffmember</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="team_pm_staffmember">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_StaffMember</ReferencingEntityName>
       <ReferencedEntityName>Team</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>owningteam</ReferencingAttributeName>
+      <ReferencingAttributeName>OwningTeam</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier for the team that owns the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>0</IsValidForAdvancedFind>
-      <SchemaName>team_pm_staffmember</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="user_pm_staffmember">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_StaffMember</ReferencingEntityName>
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>owninguser</ReferencingAttributeName>
+      <ReferencingAttributeName>OwningUser</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier for the user that owns the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>0</IsValidForAdvancedFind>
-      <SchemaName>user_pm_staffmember</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="business_unit_pm_evaluationquestion">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_EvaluationQuestion</ReferencingEntityName>
       <ReferencedEntityName>BusinessUnit</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>owningbusinessunit</ReferencingAttributeName>
+      <ReferencingAttributeName>OwningBusinessUnit</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier for the business unit that owns the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>0</IsValidForAdvancedFind>
-      <SchemaName>business_unit_pm_evaluationquestion</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="lk_pm_evaluationquestion_createdby">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_EvaluationQuestion</ReferencingEntityName>
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>createdby</ReferencingAttributeName>
+      <ReferencingAttributeName>CreatedBy</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier of the user who created the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-      <SchemaName>lk_pm_evaluationquestion_createdby</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="lk_pm_evaluationquestion_modifiedby">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_EvaluationQuestion</ReferencingEntityName>
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>modifiedby</ReferencingAttributeName>
+      <ReferencingAttributeName>ModifiedBy</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier of the user who modified the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-      <SchemaName>lk_pm_evaluationquestion_modifiedby</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="owner_pm_evaluationquestion">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_EvaluationQuestion</ReferencingEntityName>
       <ReferencedEntityName>Owner</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>ownerid</ReferencingAttributeName>
+      <ReferencingAttributeName>OwnerId</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Owner Id" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-      <SchemaName>owner_pm_evaluationquestion</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="team_pm_evaluationquestion">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_EvaluationQuestion</ReferencingEntityName>
       <ReferencedEntityName>Team</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>owningteam</ReferencingAttributeName>
+      <ReferencingAttributeName>OwningTeam</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier for the team that owns the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>0</IsValidForAdvancedFind>
-      <SchemaName>team_pm_evaluationquestion</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="user_pm_evaluationquestion">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_EvaluationQuestion</ReferencingEntityName>
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>owninguser</ReferencingAttributeName>
+      <ReferencingAttributeName>OwningUser</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier for the user that owns the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>0</IsValidForAdvancedFind>
-      <SchemaName>user_pm_evaluationquestion</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="business_unit_pm_weeklyevaluation">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_WeeklyEvaluation</ReferencingEntityName>
       <ReferencedEntityName>BusinessUnit</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>owningbusinessunit</ReferencingAttributeName>
+      <ReferencingAttributeName>OwningBusinessUnit</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier for the business unit that owns the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>0</IsValidForAdvancedFind>
-      <SchemaName>business_unit_pm_weeklyevaluation</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="lk_pm_weeklyevaluation_createdby">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_WeeklyEvaluation</ReferencingEntityName>
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>createdby</ReferencingAttributeName>
+      <ReferencingAttributeName>CreatedBy</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier of the user who created the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-      <SchemaName>lk_pm_weeklyevaluation_createdby</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="lk_pm_weeklyevaluation_modifiedby">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_WeeklyEvaluation</ReferencingEntityName>
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>modifiedby</ReferencingAttributeName>
+      <ReferencingAttributeName>ModifiedBy</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier of the user who modified the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-      <SchemaName>lk_pm_weeklyevaluation_modifiedby</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="owner_pm_weeklyevaluation">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_WeeklyEvaluation</ReferencingEntityName>
       <ReferencedEntityName>Owner</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>ownerid</ReferencingAttributeName>
+      <ReferencingAttributeName>OwnerId</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Owner Id" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-      <SchemaName>owner_pm_weeklyevaluation</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="team_pm_weeklyevaluation">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_WeeklyEvaluation</ReferencingEntityName>
       <ReferencedEntityName>Team</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>owningteam</ReferencingAttributeName>
+      <ReferencingAttributeName>OwningTeam</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier for the team that owns the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>0</IsValidForAdvancedFind>
-      <SchemaName>team_pm_weeklyevaluation</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="user_pm_weeklyevaluation">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_WeeklyEvaluation</ReferencingEntityName>
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>owninguser</ReferencingAttributeName>
+      <ReferencingAttributeName>OwningUser</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier for the user that owns the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>0</IsValidForAdvancedFind>
-      <SchemaName>user_pm_weeklyevaluation</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="business_unit_pm_selfevaluation">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_SelfEvaluation</ReferencingEntityName>
       <ReferencedEntityName>BusinessUnit</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>owningbusinessunit</ReferencingAttributeName>
+      <ReferencingAttributeName>OwningBusinessUnit</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier for the business unit that owns the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>0</IsValidForAdvancedFind>
-      <SchemaName>business_unit_pm_selfevaluation</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="lk_pm_selfevaluation_createdby">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_SelfEvaluation</ReferencingEntityName>
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>createdby</ReferencingAttributeName>
+      <ReferencingAttributeName>CreatedBy</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier of the user who created the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-      <SchemaName>lk_pm_selfevaluation_createdby</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="lk_pm_selfevaluation_modifiedby">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_SelfEvaluation</ReferencingEntityName>
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>modifiedby</ReferencingAttributeName>
+      <ReferencingAttributeName>ModifiedBy</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier of the user who modified the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-      <SchemaName>lk_pm_selfevaluation_modifiedby</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="owner_pm_selfevaluation">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_SelfEvaluation</ReferencingEntityName>
       <ReferencedEntityName>Owner</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>ownerid</ReferencingAttributeName>
+      <ReferencingAttributeName>OwnerId</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Owner Id" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-      <SchemaName>owner_pm_selfevaluation</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="team_pm_selfevaluation">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_SelfEvaluation</ReferencingEntityName>
       <ReferencedEntityName>Team</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>owningteam</ReferencingAttributeName>
+      <ReferencingAttributeName>OwningTeam</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier for the team that owns the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>0</IsValidForAdvancedFind>
-      <SchemaName>team_pm_selfevaluation</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="user_pm_selfevaluation">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_SelfEvaluation</ReferencingEntityName>
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>owninguser</ReferencingAttributeName>
+      <ReferencingAttributeName>OwningUser</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier for the user that owns the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>0</IsValidForAdvancedFind>
-      <SchemaName>user_pm_selfevaluation</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="business_unit_pm_idpentry">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_IDPEntry</ReferencingEntityName>
       <ReferencedEntityName>BusinessUnit</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>owningbusinessunit</ReferencingAttributeName>
+      <ReferencingAttributeName>OwningBusinessUnit</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier for the business unit that owns the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>0</IsValidForAdvancedFind>
-      <SchemaName>business_unit_pm_idpentry</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="lk_pm_idpentry_createdby">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_IDPEntry</ReferencingEntityName>
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>createdby</ReferencingAttributeName>
+      <ReferencingAttributeName>CreatedBy</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier of the user who created the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-      <SchemaName>lk_pm_idpentry_createdby</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="lk_pm_idpentry_modifiedby">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_IDPEntry</ReferencingEntityName>
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>modifiedby</ReferencingAttributeName>
+      <ReferencingAttributeName>ModifiedBy</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier of the user who modified the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-      <SchemaName>lk_pm_idpentry_modifiedby</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="owner_pm_idpentry">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_IDPEntry</ReferencingEntityName>
       <ReferencedEntityName>Owner</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>ownerid</ReferencingAttributeName>
+      <ReferencingAttributeName>OwnerId</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Owner Id" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-      <SchemaName>owner_pm_idpentry</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="team_pm_idpentry">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_IDPEntry</ReferencingEntityName>
       <ReferencedEntityName>Team</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>owningteam</ReferencingAttributeName>
+      <ReferencingAttributeName>OwningTeam</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier for the team that owns the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>0</IsValidForAdvancedFind>
-      <SchemaName>team_pm_idpentry</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="user_pm_idpentry">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_IDPEntry</ReferencingEntityName>
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>owninguser</ReferencingAttributeName>
+      <ReferencingAttributeName>OwningUser</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier for the user that owns the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>0</IsValidForAdvancedFind>
-      <SchemaName>user_pm_idpentry</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="business_unit_pm_meetingnote">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_MeetingNote</ReferencingEntityName>
       <ReferencedEntityName>BusinessUnit</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>owningbusinessunit</ReferencingAttributeName>
+      <ReferencingAttributeName>OwningBusinessUnit</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier for the business unit that owns the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>0</IsValidForAdvancedFind>
-      <SchemaName>business_unit_pm_meetingnote</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="lk_pm_meetingnote_createdby">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_MeetingNote</ReferencingEntityName>
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>createdby</ReferencingAttributeName>
+      <ReferencingAttributeName>CreatedBy</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier of the user who created the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-      <SchemaName>lk_pm_meetingnote_createdby</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="lk_pm_meetingnote_modifiedby">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_MeetingNote</ReferencingEntityName>
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>modifiedby</ReferencingAttributeName>
+      <ReferencingAttributeName>ModifiedBy</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier of the user who modified the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-      <SchemaName>lk_pm_meetingnote_modifiedby</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="owner_pm_meetingnote">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_MeetingNote</ReferencingEntityName>
       <ReferencedEntityName>Owner</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>ownerid</ReferencingAttributeName>
+      <ReferencingAttributeName>OwnerId</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Owner Id" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-      <SchemaName>owner_pm_meetingnote</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="team_pm_meetingnote">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_MeetingNote</ReferencingEntityName>
       <ReferencedEntityName>Team</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>owningteam</ReferencingAttributeName>
+      <ReferencingAttributeName>OwningTeam</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier for the team that owns the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>0</IsValidForAdvancedFind>
-      <SchemaName>team_pm_meetingnote</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="user_pm_meetingnote">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_MeetingNote</ReferencingEntityName>
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>owninguser</ReferencingAttributeName>
+      <ReferencingAttributeName>OwningUser</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier for the user that owns the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>0</IsValidForAdvancedFind>
-      <SchemaName>user_pm_meetingnote</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="business_unit_pm_goal">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_Goal</ReferencingEntityName>
       <ReferencedEntityName>BusinessUnit</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>owningbusinessunit</ReferencingAttributeName>
+      <ReferencingAttributeName>OwningBusinessUnit</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier for the business unit that owns the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>0</IsValidForAdvancedFind>
-      <SchemaName>business_unit_pm_goal</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="lk_pm_goal_createdby">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_Goal</ReferencingEntityName>
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>createdby</ReferencingAttributeName>
+      <ReferencingAttributeName>CreatedBy</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier of the user who created the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-      <SchemaName>lk_pm_goal_createdby</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="lk_pm_goal_modifiedby">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_Goal</ReferencingEntityName>
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>modifiedby</ReferencingAttributeName>
+      <ReferencingAttributeName>ModifiedBy</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier of the user who modified the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-      <SchemaName>lk_pm_goal_modifiedby</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="owner_pm_goal">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_Goal</ReferencingEntityName>
       <ReferencedEntityName>Owner</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>ownerid</ReferencingAttributeName>
+      <ReferencingAttributeName>OwnerId</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Owner Id" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-      <SchemaName>owner_pm_goal</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="team_pm_goal">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_Goal</ReferencingEntityName>
       <ReferencedEntityName>Team</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>owningteam</ReferencingAttributeName>
+      <ReferencingAttributeName>OwningTeam</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier for the team that owns the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>0</IsValidForAdvancedFind>
-      <SchemaName>team_pm_goal</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="user_pm_goal">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_Goal</ReferencingEntityName>
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>owninguser</ReferencingAttributeName>
+      <ReferencingAttributeName>OwningUser</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier for the user that owns the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>0</IsValidForAdvancedFind>
-      <SchemaName>user_pm_goal</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="business_unit_pm_recognition">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_Recognition</ReferencingEntityName>
       <ReferencedEntityName>BusinessUnit</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>owningbusinessunit</ReferencingAttributeName>
+      <ReferencingAttributeName>OwningBusinessUnit</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier for the business unit that owns the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>0</IsValidForAdvancedFind>
-      <SchemaName>business_unit_pm_recognition</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="lk_pm_recognition_createdby">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_Recognition</ReferencingEntityName>
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>createdby</ReferencingAttributeName>
+      <ReferencingAttributeName>CreatedBy</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier of the user who created the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-      <SchemaName>lk_pm_recognition_createdby</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="lk_pm_recognition_modifiedby">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_Recognition</ReferencingEntityName>
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>modifiedby</ReferencingAttributeName>
+      <ReferencingAttributeName>ModifiedBy</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier of the user who modified the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-      <SchemaName>lk_pm_recognition_modifiedby</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="owner_pm_recognition">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_Recognition</ReferencingEntityName>
       <ReferencedEntityName>Owner</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>ownerid</ReferencingAttributeName>
+      <ReferencingAttributeName>OwnerId</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Owner Id" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-      <SchemaName>owner_pm_recognition</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="team_pm_recognition">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_Recognition</ReferencingEntityName>
       <ReferencedEntityName>Team</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>owningteam</ReferencingAttributeName>
+      <ReferencingAttributeName>OwningTeam</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier for the team that owns the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>0</IsValidForAdvancedFind>
-      <SchemaName>team_pm_recognition</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="user_pm_recognition">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_Recognition</ReferencingEntityName>
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>owninguser</ReferencingAttributeName>
+      <ReferencingAttributeName>OwningUser</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier for the user that owns the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>0</IsValidForAdvancedFind>
-      <SchemaName>user_pm_recognition</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="business_unit_pm_actionitem">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_ActionItem</ReferencingEntityName>
       <ReferencedEntityName>BusinessUnit</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>owningbusinessunit</ReferencingAttributeName>
+      <ReferencingAttributeName>OwningBusinessUnit</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier for the business unit that owns the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>0</IsValidForAdvancedFind>
-      <SchemaName>business_unit_pm_actionitem</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="lk_pm_actionitem_createdby">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_ActionItem</ReferencingEntityName>
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>createdby</ReferencingAttributeName>
+      <ReferencingAttributeName>CreatedBy</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier of the user who created the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-      <SchemaName>lk_pm_actionitem_createdby</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="lk_pm_actionitem_modifiedby">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_ActionItem</ReferencingEntityName>
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>modifiedby</ReferencingAttributeName>
+      <ReferencingAttributeName>ModifiedBy</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier of the user who modified the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-      <SchemaName>lk_pm_actionitem_modifiedby</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="owner_pm_actionitem">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_ActionItem</ReferencingEntityName>
       <ReferencedEntityName>Owner</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>ownerid</ReferencingAttributeName>
+      <ReferencingAttributeName>OwnerId</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Owner Id" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-      <SchemaName>owner_pm_actionitem</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="team_pm_actionitem">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_ActionItem</ReferencingEntityName>
       <ReferencedEntityName>Team</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>owningteam</ReferencingAttributeName>
+      <ReferencingAttributeName>OwningTeam</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier for the team that owns the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>0</IsValidForAdvancedFind>
-      <SchemaName>team_pm_actionitem</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
     <EntityRelationship Name="user_pm_actionitem">
       <EntityRelationshipType>OneToMany</EntityRelationshipType>
-      <IsCustomRelationship>0</IsCustomRelationship>
-      <IntroducedVersion>2.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0</IntroducedVersion>
       <IsHierarchical>0</IsHierarchical>
       <ReferencingEntityName>pm_ActionItem</ReferencingEntityName>
       <ReferencedEntityName>SystemUser</ReferencedEntityName>
       <CascadeAssign>NoCascade</CascadeAssign>
       <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeArchive>NoCascade</CascadeArchive>
       <CascadeReparent>NoCascade</CascadeReparent>
       <CascadeShare>NoCascade</CascadeShare>
       <CascadeUnshare>NoCascade</CascadeUnshare>
-      <CascadeArchive>NoCascade</CascadeArchive>
-      <ReferencingAttributeName>owninguser</ReferencingAttributeName>
+      <ReferencingAttributeName>OwningUser</ReferencingAttributeName>
       <RelationshipDescription>
         <Descriptions>
-          <Description description="" languagecode="1033" />
+          <Description description="Unique identifier for the user that owns the record" languagecode="1033" />
         </Descriptions>
       </RelationshipDescription>
-      <IsCustomizable>1</IsCustomizable>
-      <IsValidForAdvancedFind>0</IsValidForAdvancedFind>
-      <SchemaName>user_pm_actionitem</SchemaName>
-      <SecurityTypes>Append</SecurityTypes>
     </EntityRelationship>
+
+    <!-- Custom Entity Relationships -->
 
     <!-- Custom Entity Relationships -->
         
