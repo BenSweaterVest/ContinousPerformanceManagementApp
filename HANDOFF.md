@@ -4,7 +4,7 @@
 ## Repository Status
 
 ✅ **Production Ready** - Solution successfully imports to Microsoft Teams Dataverse
-✅ **Well Documented** - 4,000+ lines of comprehensive documentation
+✅ **Well Documented** - 5,000+ lines of comprehensive documentation including complete manual build guide
 ✅ **Clean Codebase** - 120+ unnecessary files removed, organized structure
 ✅ **Open Source Ready** - Can be shared publicly as learning resource
 
@@ -25,7 +25,7 @@ This repository contains a complete Microsoft Teams performance management solut
 - **Contains**: 9 Dataverse entities with complete schema and relationships
 - **Compatible with**: Microsoft Teams Dataverse (November 2025)
 
-### 2. Complete Documentation (8 Files)
+### 2. Complete Documentation (9 Files)
 
 **For Project Understanding:**
 - `README.md` - Project overview and navigation
@@ -33,12 +33,13 @@ This repository contains a complete Microsoft Teams performance management solut
 - `docs/DATA-MODEL.md` - Entity schema and relationships (521 lines)
 
 **For Developers:**
+- `docs/MANUAL-BUILD-GUIDE.md` - **NEW!** Complete step-by-step manual build instructions (900+ lines)
 - `docs/02_GITHUB_SOLUTION_PACKAGING.md` - Version control workflow (601 lines)
-- `docs/03_AI_CANVAS_APP_GUIDE.md` - Canvas app development (429 lines)
+- `docs/03_AI_CANVAS_APP_GUIDE.md` - Understanding .msapp file structure (429 lines)
 - `docs/04_SOLUTION_FIXES_JOURNEY.md` - Troubleshooting guide (574 lines)
 
 **For Deployment:**
-- `docs/DEPLOYMENT-GUIDE.md` - Step-by-step instructions (748 lines)
+- `docs/DEPLOYMENT-GUIDE.md` - Solution import instructions (748 lines)
 - `docs/USER-GUIDE.md` - End-user instructions (702 lines)
 - `docs/RELEASE_NOTES.md` - Version history
 
@@ -123,8 +124,8 @@ ContinousPerformanceManagementApp/
 ### Short Term (1-4 hours)
 
 4. **Build Canvas App**
-   - Review `docs/03_AI_CANVAS_APP_GUIDE.md`
-   - Use Power Apps Studio to create UI
+   - **Option A**: Follow `docs/MANUAL-BUILD-GUIDE.md` for complete step-by-step instructions
+   - **Option B**: Review `docs/03_AI_CANVAS_APP_GUIDE.md` to understand .msapp structure, then build in Power Apps Studio
    - Connect to imported Dataverse tables
 
 5. **Create Flows**
@@ -240,9 +241,11 @@ Before deploying to production:
 
 ## Support & Resources
 
-**Documentation**: All in `docs/` folder - 4,000+ lines
+**Documentation**: All in `docs/` folder - 5,000+ lines including complete manual build guide
 
 **Troubleshooting**: `docs/04_SOLUTION_FIXES_JOURNEY.md` - 10 iterations documented
+
+**Manual Build Instructions**: `docs/MANUAL-BUILD-GUIDE.md` - Step-by-step click-by-click guide (900+ lines)
 
 **Learning**: This repository is designed as an educational resource
 
@@ -266,17 +269,24 @@ This solution was built with AI assistance (Claude by Anthropic) and represents 
 ### Success Metrics
 
 ✅ Solution imports successfully (achieved)
-✅ Comprehensive documentation (4,000+ lines)
+✅ Comprehensive documentation (5,000+ lines including complete manual build guide)
+✅ Step-by-step build instructions (900+ lines, click-by-click)
 ✅ Clean, organized repository (120+ files removed)
 ✅ Ready for open source sharing
 
 ### Recommended First Steps
 
+**Quick Start (Import Solution):**
 1. Read README.md (5 minutes)
 2. Review 01_PROJECT_OVERVIEW.md (15 minutes)
-3. Deploy solution to test environment (30 minutes)
+3. Deploy solution to test environment using DEPLOYMENT-GUIDE.md (30 minutes)
 4. Read 04_SOLUTION_FIXES_JOURNEY.md (20 minutes)
-5. Start building canvas app with 03_AI_CANVAS_APP_GUIDE.md (2-4 hours)
+5. Build canvas app using MANUAL-BUILD-GUIDE.md (2-4 hours)
+
+**Or Manual Build from Scratch:**
+1. Read README.md (5 minutes)
+2. Review 01_PROJECT_OVERVIEW.md and DATA-MODEL.md (30 minutes)
+3. Follow MANUAL-BUILD-GUIDE.md step-by-step (4-6 hours)
 
 ---
 

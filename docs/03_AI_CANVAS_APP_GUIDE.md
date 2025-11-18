@@ -1,9 +1,17 @@
 # AI-Powered Canvas App Development Guide
-**Building Power Apps with AI Assistance**
+**Understanding .msapp File Structure and Canvas App Internals**
 
 ## Introduction
 
-This guide documents our journey building Power Apps canvas apps using AI assistance. Through deep analysis of Microsoft Teams template apps and systematic experimentation, we've uncovered how .msapp files work internally and identified the most practical approaches for AI-assisted development.
+This guide documents the internal structure of PowerApps canvas apps (.msapp files) through deep analysis of Microsoft Teams template apps.
+
+> **Want Step-by-Step Build Instructions?** See the [**Manual Build Guide**](MANUAL-BUILD-GUIDE.md) for complete click-by-click instructions to build the Performance Management app in PowerApps Studio.
+
+This guide is for:
+- Understanding how canvas apps work internally
+- Debugging .msapp import issues
+- Learning about Power Fx formulas and app structure
+- AI-assisted development and automation
 
 **Key Takeaway**: While manually creating canvas apps is theoretically possible, **Power Apps Studio remains the recommended approach**. However, understanding the internal structure is invaluable for debugging, automation, and AI-assisted development.
 

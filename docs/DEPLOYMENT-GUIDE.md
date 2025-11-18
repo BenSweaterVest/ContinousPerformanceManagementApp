@@ -1,6 +1,14 @@
 # Performance Management System - Deployment Guide
+**Importing the Pre-Built Solution**
 
-Step-by-step guide to get this thing running in your environment.
+This guide shows you how to **import the pre-packaged solution** into your Teams environment.
+
+> **Building from Scratch?** If you want to build the entire app manually (creating all tables and the app yourself), see the [**Manual Build Guide**](MANUAL-BUILD-GUIDE.md) instead.
+
+This deployment guide is for users who want to:
+- ✅ Import the pre-built solution ZIP file
+- ✅ Get up and running quickly (30 min - 2 hours)
+- ✅ Customize after importing
 
 ## What You'll Need
 
