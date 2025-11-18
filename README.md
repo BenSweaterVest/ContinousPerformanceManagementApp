@@ -17,6 +17,8 @@ This repository contains:
 
 ## Quick Start
 
+### Option 1: Import Pre-Built Solution (Fastest)
+
 1. **Deploy the Solution**:
    - Download [`releases/PerformanceManagement_v2.0.0.7.zip`](releases/PerformanceManagement_v2.0.0.7.zip)
    - Import into your Microsoft Teams Dataverse environment
@@ -26,6 +28,16 @@ This repository contains:
    - Follow the guide in [docs/03_AI_CANVAS_APP_GUIDE.md](docs/03_AI_CANVAS_APP_GUIDE.md)
    - Or use Power Apps Studio to create your own interface
 
+### Option 2: Build Manually from Scratch (Complete Control)
+
+**NEW:** Follow the comprehensive [Manual Build Guide](docs/MANUAL-BUILD-GUIDE.md) for step-by-step click-by-click instructions to build the entire app manually in PowerApps for Teams without importing the solution.
+
+- ✅ Create all 9 Dataverse tables manually
+- ✅ Build the canvas app step-by-step
+- ✅ Create all Power Automate flows
+- ✅ Complete walkthrough in 4-6 hours
+- ✅ Perfect for learning PowerApps for Teams
+
 ## Documentation
 
 ### For Understanding the Project
@@ -33,8 +45,9 @@ This repository contains:
 - 🎯 [**Data Model**](docs/DATA-MODEL.md) - Entity relationships and field definitions
 
 ### For Developers
+- 📖 [**Manual Build Guide**](docs/MANUAL-BUILD-GUIDE.md) - **NEW!** Step-by-step click-by-click instructions for building the entire app manually in PowerApps for Teams
 - 🐙 [**GitHub Solution Packaging**](docs/02_GITHUB_SOLUTION_PACKAGING.md) - Using GitHub for Power Platform version control
-- 🤖 [**AI Canvas App Development Guide**](docs/03_AI_CANVAS_APP_GUIDE.md) - Comprehensive guide on building canvas apps with AI assistance
+- 🤖 [**AI Canvas App Development Guide**](docs/03_AI_CANVAS_APP_GUIDE.md) - Understanding .msapp file structure and canvas app internals
 - 🔄 [**Solution Fixes Journey**](docs/04_SOLUTION_FIXES_JOURNEY.md) - The 10 iterations of fixes we applied to get the solution working
 
 ### Reference Documentation

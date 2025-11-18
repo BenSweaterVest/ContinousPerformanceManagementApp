@@ -116,15 +116,16 @@ After importing the solution:
 This release includes comprehensive documentation:
 
 - **[README.md](../README.md)** - Project overview and navigation
+- **[MANUAL-BUILD-GUIDE.md](MANUAL-BUILD-GUIDE.md)** - **NEW!** Complete step-by-step instructions for building manually (900+ lines)
 - **[01_PROJECT_OVERVIEW.md](01_PROJECT_OVERVIEW.md)** - Concept, theory, and requirements (337 lines)
 - **[02_GITHUB_SOLUTION_PACKAGING.md](02_GITHUB_SOLUTION_PACKAGING.md)** - Version control guide (601 lines)
-- **[03_AI_CANVAS_APP_GUIDE.md](03_AI_CANVAS_APP_GUIDE.md)** - Canvas app development guide (429 lines)
+- **[03_AI_CANVAS_APP_GUIDE.md](03_AI_CANVAS_APP_GUIDE.md)** - Understanding .msapp file structure (429 lines)
 - **[04_SOLUTION_FIXES_JOURNEY.md](04_SOLUTION_FIXES_JOURNEY.md)** - Troubleshooting journey (574 lines)
 - **[DATA-MODEL.md](DATA-MODEL.md)** - Complete schema documentation (521 lines)
-- **[DEPLOYMENT-GUIDE.md](DEPLOYMENT-GUIDE.md)** - Step-by-step deployment (748 lines)
+- **[DEPLOYMENT-GUIDE.md](DEPLOYMENT-GUIDE.md)** - Solution import instructions (748 lines)
 - **[USER-GUIDE.md](USER-GUIDE.md)** - End-user instructions (702 lines)
 
-**Total:** 4,000+ lines of documentation
+**Total:** 5,000+ lines of documentation
 
 ### The Journey to v2.0.0.7
 
