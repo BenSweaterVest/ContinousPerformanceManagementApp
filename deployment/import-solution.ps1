@@ -6,7 +6,10 @@ param(
     [string]$EnvironmentId,
 
     [Parameter(Mandatory=$false)]
-    [string]$EnvironmentUrl
+    [string]$EnvironmentUrl,
+
+    [Parameter(Mandatory=$false)]
+    [string]$PackagePath
 )
 
 Write-Host "========================================" -ForegroundColor Cyan
@@ -33,17 +36,34 @@ $scriptPath = Split-Path -Parent $MyInvocation.MyCommand.Path
 $projectRoot = Split-Path -Parent $scriptPath
 Set-Location $projectRoot
 
-# Check for solution package
-$packageFile = "PerformanceManagement_1_0_1_0.zip"
+[xml]$solutionXml = Get-Content "solution/Other/Solution.xml"
+$version = $solutionXml.ImportExportXml.SolutionManifest.Version
+
+if ([string]::IsNullOrWhiteSpace($version)) {
+    Write-Host "ERROR: Could not read <Version> from Solution.xml" -ForegroundColor Red
+    exit 1
+}
+
+$defaultPackage = Join-Path $projectRoot ("releases/PerformanceManagement_v{0}.zip" -f $version)
+
+if ([string]::IsNullOrWhiteSpace($PackagePath)) {
+    $packageFile = $defaultPackage
+} elseif ([System.IO.Path]::IsPathRooted($PackagePath)) {
+    $packageFile = $PackagePath
+} else {
+    $packageFile = Join-Path $projectRoot $PackagePath
+}
+
 if (!(Test-Path $packageFile)) {
     Write-Host "ERROR: Solution package not found: $packageFile" -ForegroundColor Red
     Write-Host ""
-    Write-Host "Please run pack-solution.ps1 first to create the package" -ForegroundColor Yellow
+    Write-Host ("Expected path: {0}" -f $defaultPackage) -ForegroundColor Yellow
+    Write-Host "Run pack-solution.ps1 to create it or pass -PackagePath with a custom ZIP." -ForegroundColor Yellow
     Write-Host ""
     exit 1
 }
 
-Write-Host "Found solution package: $packageFile" -ForegroundColor Green
+Write-Host ("Found solution package: {0}" -f $packageFile) -ForegroundColor Green
 Write-Host ""
 
 # Check authentication

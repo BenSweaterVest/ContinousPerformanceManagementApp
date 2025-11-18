@@ -4,6 +4,7 @@
 
 ENVIRONMENT_ID=""
 ENVIRONMENT_URL=""
+PACKAGE_PATH=""
 
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
@@ -16,8 +17,12 @@ while [[ $# -gt 0 ]]; do
             ENVIRONMENT_URL="$2"
             shift 2
             ;;
+        --package|--path)
+            PACKAGE_PATH="$2"
+            shift 2
+            ;;
         *)
-            if [ -z "$ENVIRONMENT_ID" ] && [ -z "$ENVIRONMENT_URL" ]; then
+            if [[ -z "$ENVIRONMENT_ID" && -z "$ENVIRONMENT_URL" ]]; then
                 ENVIRONMENT_ID="$1"
             fi
             shift
@@ -49,12 +54,41 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 cd "$PROJECT_ROOT"
 
-# Check for solution package
-PACKAGE_FILE="PerformanceManagement_1_0_0_0.zip"
+# Determine package path (default based on version)
+if ! command -v python3 >/dev/null 2>&1; then
+    echo "ERROR: python3 is required to detect the solution version."
+    exit 1
+fi
+
+VERSION=$(python3 <<'PY'
+import xml.etree.ElementTree as ET
+from pathlib import Path
+path = Path("solution") / "Other" / "Solution.xml"
+tree = ET.parse(path)
+elem = tree.find(".//Version")
+if elem is None or not elem.text:
+    raise SystemExit("Could not find <Version> in Solution.xml")
+print(elem.text.strip())
+PY
+)
+
+DEFAULT_PACKAGE="releases/PerformanceManagement_v${VERSION}.zip"
+
+if [ -z "$PACKAGE_PATH" ]; then
+    PACKAGE_FILE="$DEFAULT_PACKAGE"
+else
+    PACKAGE_FILE="$PACKAGE_PATH"
+    case "$PACKAGE_FILE" in
+        /*) ;;
+        *) PACKAGE_FILE="$PROJECT_ROOT/$PACKAGE_FILE" ;;
+    esac
+fi
+
 if [ ! -f "$PACKAGE_FILE" ]; then
     echo "ERROR: Solution package not found: $PACKAGE_FILE"
     echo ""
-    echo "Please run ./pack-solution.sh first to create the package"
+    echo "Expected path: $DEFAULT_PACKAGE"
+    echo "Run ./pack-solution.sh to create it or use --package <path>."
     echo ""
     exit 1
 fi
