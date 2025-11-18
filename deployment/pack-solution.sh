@@ -1,93 +1,106 @@
 #!/bin/bash
 # Performance Management Solution - Pack Script (Mac/Linux)
-# This script packs the Power Platform solution into a distributable ZIP file
+# Creates a Teams-ready solution ZIP directly from solution/ contents
+
+set -euo pipefail
 
 echo "======================================"
 echo "Performance Management Solution Pack"
 echo "======================================"
 echo ""
 
-# Check if PAC CLI is installed
-echo "Checking for Power Platform CLI..."
-if ! command -v pac &> /dev/null; then
-    echo "ERROR: Power Platform CLI not found!"
-    echo ""
-    echo "Please install PAC CLI:"
-    echo "  1. Install .NET SDK: https://dotnet.microsoft.com/download"
-    echo "  2. Run: dotnet tool install --global Microsoft.PowerApps.CLI.Tool"
-    echo "  3. Add to PATH: export PATH=\"\$PATH:\$HOME/.dotnet/tools\""
-    echo ""
-    exit 1
-fi
-
-PAC_VERSION=$(pac --version 2>&1)
-echo "Found PAC CLI: $PAC_VERSION"
-echo ""
-
-# Navigate to project root
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
-cd "$PROJECT_ROOT"
+SOLUTION_DIR="$PROJECT_ROOT/solution"
+RELEASE_DIR="$PROJECT_ROOT/releases"
+export PROJECT_ROOT_PATH="$PROJECT_ROOT"
 
-echo "Project root: $PROJECT_ROOT"
-echo ""
-
-# Verify solution folder exists
-if [ ! -d "solution" ]; then
+if [ ! -d "$SOLUTION_DIR" ]; then
     echo "ERROR: 'solution' folder not found!"
     exit 1
 fi
 
-# Pack the solution
-echo "Packing solution..."
+echo "Project root: $PROJECT_ROOT"
 echo ""
 
-OUTPUT_FILE="PerformanceManagement_1_0_0_0.zip"
-OUTPUT_PATH="$PROJECT_ROOT/$OUTPUT_FILE"
-
-# Remove existing zip if present
-if [ -f "$OUTPUT_PATH" ]; then
-    echo "Removing existing package..."
-    rm -f "$OUTPUT_PATH"
-fi
-
-# Execute pack command
-pac solution pack \
-    --zipfile "$OUTPUT_FILE" \
-    --folder "./solution" \
-    --packagetype Unmanaged \
-    --errorlevel Verbose
-
-if [ $? -eq 0 ]; then
-    echo ""
-    echo "======================================"
-    echo "SUCCESS: Solution packed!"
-    echo "======================================"
-    echo ""
-    echo "Output file: $OUTPUT_FILE"
-    echo "Location: $PROJECT_ROOT"
-    echo ""
-
-    if [ -f "$OUTPUT_PATH" ]; then
-        FILE_SIZE=$(du -h "$OUTPUT_PATH" | cut -f1)
-        echo "File size: $FILE_SIZE"
-    fi
-
-    echo ""
-    echo "Next steps:"
-    echo "  1. Review the package"
-    echo "  2. Run ./import-solution.sh to deploy"
-    echo ""
-else
-    echo ""
-    echo "======================================"
-    echo "ERROR: Solution pack failed!"
-    echo "======================================"
-    echo ""
-    echo "Please review the error messages above and:"
-    echo "  - Check all XML files are well-formed"
-    echo "  - Verify solution structure"
-    echo "  - Ensure all required files exist"
-    echo ""
+# Read version from Solution.xml
+if ! command -v python3 >/dev/null 2>&1; then
+    echo "ERROR: python3 is required to read the solution version."
     exit 1
 fi
+
+VERSION=$(python3 <<'PY'
+import xml.etree.ElementTree as ET
+from pathlib import Path
+path = Path("solution") / "Other" / "Solution.xml"
+tree = ET.parse(path)
+elem = tree.find(".//Version")
+if elem is None or not elem.text:
+    raise SystemExit("Could not find <Version> in Solution.xml")
+print(elem.text.strip())
+PY
+)
+
+OUTPUT_FILE="PerformanceManagement_v${VERSION}.zip"
+OUTPUT_PATH="$RELEASE_DIR/$OUTPUT_FILE"
+export OUTPUT_FILE_NAME="$OUTPUT_FILE"
+
+mkdir -p "$RELEASE_DIR"
+
+echo "Packaging version $VERSION → releases/$OUTPUT_FILE"
+echo ""
+
+rm -f "$OUTPUT_PATH"
+
+# Attempt to use zip if available, otherwise fall back to python
+if command -v zip >/dev/null 2>&1; then
+    (
+        cd "$SOLUTION_DIR"
+        zip -rq "$OUTPUT_PATH" . -x "*.DS_Store" "__MACOSX/*" "*~" "Thumbs.db"
+    )
+else
+    echo "zip command not found. Falling back to python3 compression..."
+    python3 <<'PY'
+import os
+import zipfile
+from pathlib import Path
+
+project_root = Path(os.environ["PROJECT_ROOT_PATH"])
+solution_dir = project_root / "solution"
+output_path = project_root / "releases" / os.environ["OUTPUT_FILE_NAME"]
+excludes = {"__MACOSX", ".DS_Store", "Thumbs.db"}
+
+with zipfile.ZipFile(output_path, "w", zipfile.ZIP_DEFLATED) as zf:
+    for root, dirs, files in os.walk(solution_dir):
+        rel_root = os.path.relpath(root, solution_dir)
+        for name in files:
+            if name in excludes:
+                continue
+            src = Path(root) / name
+            rel = os.path.normpath(os.path.join(rel_root, name))
+            if rel == ".":
+                rel = name
+            zf.write(src, rel)
+PY
+fi
+
+if [ ! -f "$OUTPUT_PATH" ]; then
+    echo "ERROR: Failed to create $OUTPUT_FILE"
+    exit 1
+fi
+
+FILE_SIZE=$(du -h "$OUTPUT_PATH" | cut -f1)
+SHA=$(sha256sum "$OUTPUT_PATH" | awk '{print $1}')
+
+echo "======================================"
+echo "SUCCESS: Solution packed!"
+echo "======================================"
+echo ""
+echo "Output file : releases/$OUTPUT_FILE"
+echo "File size   : $FILE_SIZE"
+echo "SHA256      : $SHA"
+echo ""
+echo "Next steps:"
+echo "  1. Upload releases/$OUTPUT_FILE to Microsoft Teams → Power Apps → Import"
+echo "  2. Or run ./import-solution.sh with your environment credentials"
+echo ""
